@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import RecipeCard from '../components/RecipeCard';
 import { removeRecipe, starRecipe, unstarRecipe } from '../actions/recipes';
+
+import RecipeCard from '../components/RecipeCard';
+import { PageHeader } from '../components/PageHeader';
+import Row from 'react-bootstrap/Row';
 
 class Cookbook extends Component {
 
 	render() {
 		const { recipes, removeRecipe, starRecipe, unstarRecipe } = this.props;
 		return (
-			<div>
-				<hr />
-				<div className="row justify-content-center">
-					<h2>Recipes</h2>
-				</div>
-				<hr />
-				<div className="container">
-					<div className="row">
-						<div className="col-md-4">
-							{recipes.map(recipe => 
-								<RecipeCard
-									key={recipe.id}
-									recipe={recipe}
-									starRecipe={starRecipe}
-									unstarRecipe={unstarRecipe}
-									removeRecipe={removeRecipe}
-								/>
-							)}
-						</div>
-					</div>
-				</div>
+			<div className="cookbook-container">
+				<PageHeader title="My Cookbook"/>
+				<Row className="align-self-start justify-content-center">
+					{recipes.map(recipe => 
+						<RecipeCard
+							key={recipe.id}
+							recipe={recipe}
+							starRecipe={starRecipe}
+							unstarRecipe={unstarRecipe}
+							removeRecipe={removeRecipe}
+						/>
+					)}
+				</Row>
 			</div>
 		);
 	}
