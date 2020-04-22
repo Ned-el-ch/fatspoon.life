@@ -7,23 +7,25 @@ import { LinkContainer } from "react-router-bootstrap";
 
 const NavbarCon = () => {
 	return (
-		<Navbar bg="light" variant="light" fixed>
-			<Nav fluid="true" collapseOnSelect="true">
-				<LinkContainer to="/">
-					<NavLink><Navbar.Brand>
+		<Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+			<LinkContainer to="/">
+				<NavLink><Navbar.Brand>
 					<NavItem>Home</NavItem>
-					</Navbar.Brand></NavLink>
-				</LinkContainer>
-				<Navbar.Collapse>
+				</Navbar.Brand></NavLink>
+			</LinkContainer>
+			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+			<Navbar.Collapse id="responsive-navbar-nav">
+				<Nav className="mr-auto">
 				<LinkContainer to="/MyCookbook">
 					<NavLink><NavItem>My Cookbook</NavItem></NavLink>
 				</LinkContainer>
 				<LinkContainer to="/MyFridge">
 					<NavLink><NavItem>My Fridge</NavItem></NavLink>
 				</LinkContainer>
-				</Navbar.Collapse>
-			</Nav>
+				</Nav>
+			</Navbar.Collapse>
 		</Navbar>
+
 	)
 }
 
