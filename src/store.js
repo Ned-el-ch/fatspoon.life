@@ -1,21 +1,12 @@
-import { applyMiddleware, compose, createStore } from 'redux'
-import { routerMiddleware } from 'connected-react-router'
-import { createBrowserHistory } from 'history'
+import { createStore } from 'redux'
 import rootReducer from './reducers/index';
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-export const history = createBrowserHistory();
-
-export default function configureStore(preloadedState) {
-	const store = createStore(
-		rootReducer(history),
-		preloadedState,
-		composeEnhancer(
-			applyMiddleware(
-				routerMiddleware(history)
-			)
-		)
-	)
-	return store;
+export function configureStore(){
+	return createStore(
+		rootReducer, 
+		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+	);
 }
+
+const store = configureStore();
+export default store;
