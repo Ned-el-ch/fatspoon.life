@@ -15,8 +15,8 @@ const NavbarCon = () => {
 					</Navbar.Brand></NavLink>
 				</LinkContainer>
 				<Navbar.Collapse>
-				<LinkContainer to="/recipes">
-					<NavLink><NavItem>My Recipes</NavItem></NavLink>
+				<LinkContainer to="/MyCookbook">
+					<NavLink><NavItem>My Cookbook</NavItem></NavLink>
 				</LinkContainer>
 				<LinkContainer to="/MyFridge">
 					<NavLink><NavItem>My Fridge</NavItem></NavLink>

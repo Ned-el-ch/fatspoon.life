@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import RecipeCard from '../components/RecipeCard';
 import { removeRecipe, starRecipe, unstarRecipe } from '../actions/recipes';
 
-class Recipes extends Component {
+class Cookbook extends Component {
 
 	render() {
 		const { recipes, removeRecipe, starRecipe, unstarRecipe } = this.props;
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
 	})
 };
 
-export default connect(mapStateToProps, { removeRecipe, starRecipe, unstarRecipe })(Recipes);
+export default connect(mapStateToProps, { removeRecipe, starRecipe, unstarRecipe })(Cookbook);
