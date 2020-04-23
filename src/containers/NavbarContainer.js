@@ -57,7 +57,9 @@ class NavbarContainer extends Component {
 					<Form.Group controlId="recipeSearchForm">
 						<FormControl onChange={this.handleOnChange} type="text" placeholder="Find Recipes ..." className="mr-sm-3"/>
 					</Form.Group>
+					<Form.Group controlId="recipeSearchFormSubmitButton">
 						<Button variant="outline-success">Search</Button>
+					</Form.Group>
 					</Form>
 				</Navbar.Collapse>
 			</Navbar>
