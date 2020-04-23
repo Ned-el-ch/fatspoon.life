@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Fridge from './Fridge';
 import Cookbook from './Cookbook';
 import MealPlanner from './MealPlanner';
+import SearchResults from './SearchResults';
 import NavbarContainer from './NavbarContainer';
 
 import Container from "react-bootstrap/Container"
@@ -23,6 +24,7 @@ export default class App extends Component {
 								<Route exact path="/" component={MealPlanner} />
 								<Route exact path="/MyCookbook" component={Cookbook} />
 								<Route exact path="/MyFridge" component={Fridge} />
+								<Route path="/Search" component={SearchResults} />
 							</Switch>
 						</Col>
 						</Row>
