@@ -27,6 +27,7 @@ class Cookbook extends Component {
 			</div>
 		);
 	}
+
 }
 
 const mapStateToProps = state => {
