@@ -31,7 +31,11 @@ class NavbarContainer extends Component {
 			from: 0,
 			to: 5
 		}
-		recipeSearch(query).then(res => this.props.addRecipeResults(res.hits));
+		recipeSearch(query)
+		.then(res => {
+			this.props.addRecipeResults(res.hits)
+			// console.log(JSON.stringify(res.hits))
+		})
 		this.setState({searchTerm: ""});
 	}
 

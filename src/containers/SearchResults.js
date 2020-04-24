@@ -6,7 +6,6 @@ export default class SearchResults extends Component {
 		return (
 			<div className="search-results-container">
 				<PageHeader title="Search Results"/>
-				
 			</div>
 		)
 	}

@@ -32,5 +32,5 @@ export const recipeSearch = (query = {}) => {
 	}
 	return fetch(address)
 		.then(res => res.json())
-		.then(res => (res));
+		// .then(res => (res));
 };
