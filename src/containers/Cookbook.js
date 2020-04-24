@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeRecipe, starRecipe, unstarRecipe } from '../actions/recipes';
+import { starRecipe, unstarRecipe } from '../actions/recipes';
 
 import RecipeCard from '../components/RecipeCard';
 import { PageHeader } from '../components/PageHeader';
@@ -20,7 +20,6 @@ class Cookbook extends Component {
 							recipe={recipe}
 							starRecipe={starRecipe}
 							unstarRecipe={unstarRecipe}
-							removeRecipe={removeRecipe}
 						/>
 					)}
 				</Row>
@@ -36,4 +35,4 @@ const mapStateToProps = state => {
 	})
 };
 
-export default connect(mapStateToProps, { removeRecipe, starRecipe, unstarRecipe })(Cookbook);
+export default connect(mapStateToProps, { starRecipe, unstarRecipe })(Cookbook);

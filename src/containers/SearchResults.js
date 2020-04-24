@@ -13,7 +13,7 @@ class SearchResults extends Component {
 				<PageHeader title="Search Results"/>
 				{recipes.map(recipe => 
 						<RecipeCard
-							key={recipe.id}
+							key={recipe.uri}
 							recipe={recipe}
 							starRecipe={starRecipe}
 							unstarRecipe={unstarRecipe}

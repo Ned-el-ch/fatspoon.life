@@ -13,8 +13,6 @@ import { recipeSearch } from "../concerns/recipeSearch";
 import { connect } from 'react-redux';
 import { addRecipeResults } from "../actions/search";
 
-import { v4 as uuid } from 'uuid';
-
 import { compose } from 'redux'
 import { withRouter } from "react-router-dom";
 
@@ -39,9 +37,9 @@ class NavbarContainer extends Component {
 		}
 		recipeSearch(query)
 		.then(res => {
-			let recipes = res.hits.map(hit => Object.assign({}, hit, {id: uuid()}))
+			let recipes = res.hits.map(hit => Object.assign({}, hit.recipe, {starred: false}))
 			this.props.addRecipeResults(recipes)
-			// console.log(JSON.stringify(res.hits))
+			// console.log(JSON.stringify(recipes))
 		})
 		this.setState({searchTerm: ""});
 		this.props.history.push("/Search")

@@ -20,7 +20,7 @@ export const recipeSearch = (query = {}) => {
 			case "caloriesLow":
 				address += `&calories=${query.caloriesLow}`
 				break;
-			case "to":
+			case "caloriesHigh":
 				address += `-${query.caloriesHigh}`
 				break;
 			case "dietaryRestriction":

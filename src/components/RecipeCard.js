@@ -1,16 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const RecipeCard = ({recipe, removeRecipe, starRecipe, unstarRecipe}) => {
+const RecipeCard = ({recipe, starRecipe, unstarRecipe}) => {
 	return (
 		<div>
-			<h1>{recipe.name}</h1>
-			<p>{recipe.description}</p>
-			<br />
-			<button onClick={() => {starRecipe(recipe.id)}}>Star Recipe</button>
+			<div className="rc-label">{recipe.label}</div>
+			<div className="rc-buttons-container">
+				<button className="rc-star-recipe-button" onClick={() => {starRecipe(recipe)}}>Star Recipe</button>
+				<button className="rc-unstar-recipe-button" onClick={() => {unstarRecipe(recipe.uri)}}>Unstar Recipe</button>
+			</div>
 			<br/>
-			<button onClick={() => {unstarRecipe(recipe.id)}}>Unstar Recipe</button>
-			<br/>
-			<button onClick={() => {removeRecipe(recipe.id)}}>Remove Recipe</button>
 		</div>
 	)
 }
