@@ -7,20 +7,24 @@
   height: 12.5vh;
   background-color: white;
   margin-bottom: 20px;
+  position: relative;
+  min-height: 125px;
 }
 
 .rc-image-container {
   height: 12.5vh;
+  min-height: 125px;
   width: 20vw;
 }
 
 .rc-image-container::after {
   display: block;
   position: relative;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, transparent), color-stop(85%, white), to(white));
-  background-image: linear-gradient(to right, transparent 30%, white 85%, white 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(9%, transparent), color-stop(95%, white));
+  background-image: linear-gradient(to right, transparent 9%, white 95%);
   height: 12.5vh;
-  margin-top: -12.5vh;
+  margin-top: -125px;
+  min-height: 125px;
   width: 100%;
   content: '';
 }
@@ -29,13 +33,16 @@
   -o-object-fit: cover;
      object-fit: cover;
   height: 12.5vh;
+  min-height: 125px;
   width: 100%;
   border-radius: 10px 0 0 10px;
 }
 
-.rc-label:hover::after {
-  color: lightgreen;
-  content: "yes";
+.rc-label {
+  position: absolute;
+  right: 10%;
+  top: 0;
+  font-size: 1.6rem;
 }
 
 a {

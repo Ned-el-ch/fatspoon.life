@@ -1,4 +1,5 @@
 $containerHeight: 12.5vh;
+$minimumHeight: 125px;
 
 .rc-container {
 	@include setPaddingAndMargin(0, 10px);
@@ -7,18 +8,22 @@ $containerHeight: 12.5vh;
 	height: $containerHeight;
 	background-color: white;
 	margin-bottom: 20px;
+	position: relative;
+	min-height: $minimumHeight;
+
 }
 
 .rc-image-container {
 	height: $containerHeight;
+	min-height: $minimumHeight;
 	width: 20vw;
-
 	&::after {
 		display: block;
 		position: relative;
-		background-image: linear-gradient(to right, transparent 30%, white 85%, white 100%);
+		background-image: linear-gradient(to right, transparent 9%, white 95%);
 		height: $containerHeight;
-		margin-top: -$containerHeight;
+		margin-top: -$minimumHeight;
+		min-height: $minimumHeight;
 		width: 100%;
 		content: '';
 	}
@@ -27,15 +32,16 @@ $containerHeight: 12.5vh;
 .rc-image {
 	object-fit: cover;
 	height: $containerHeight;
+	min-height: $minimumHeight;
 	width: 100%;
 	border-radius: 10px 0 0 10px;
 }
 
 .rc-label {
-	&:hover::after {
-		color: lightgreen;
-		content: "yes";
-	}
+	position: absolute;
+	right: 10%;
+	top: 0;
+	font-size: 1.6rem;
 }
 
 a {
