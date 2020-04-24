@@ -2,7 +2,10 @@ import React from 'react';
 
 const RecipeCard = ({recipe, starRecipe, unstarRecipe}) => {
 	return (
-		<div>
+		<div className="rc-container">
+			<div className="rc-image-container">
+				<img className="rc-image" src={recipe.image} alt=""/>
+			</div>
 			<div className="rc-label">{recipe.label}</div>
 			<div className="rc-buttons-container">
 				<button className="rc-star-recipe-button" onClick={() => {starRecipe(recipe)}}>Star Recipe</button>
@@ -13,7 +16,6 @@ const RecipeCard = ({recipe, starRecipe, unstarRecipe}) => {
 					<span className="rc-source-link-text">Source: {recipe.source}</span>
 				</a>
 			</div>
-			<br/>
 		</div>
 	)
 }

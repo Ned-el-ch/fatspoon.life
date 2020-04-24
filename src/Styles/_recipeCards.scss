@@ -1,0 +1,49 @@
+$containerHeight: 12.5vh;
+
+.rc-container {
+	@include setPaddingAndMargin(0, 10px);
+	box-shadow: 0px 5px 15px -5px $boxShadowColor;
+	border-radius: 10px 10px 10px 10px;
+	height: $containerHeight;
+	background-color: white;
+	margin-bottom: 20px;
+}
+
+.rc-image-container {
+	height: $containerHeight;
+	width: 20vw;
+
+	&::after {
+		display: block;
+		position: relative;
+		background-image: linear-gradient(to right, transparent 30%, white 85%, white 100%);
+		height: $containerHeight;
+		margin-top: -$containerHeight;
+		width: 100%;
+		content: '';
+	}
+}
+
+.rc-image {
+	object-fit: cover;
+	height: $containerHeight;
+	width: 100%;
+	border-radius: 10px 0 0 10px;
+}
+
+.rc-label {
+	&:hover::after {
+		color: lightgreen;
+		content: "yes";
+	}
+}
+
+a {
+	color: $primaryAccentColor;
+	font-style: italic;
+	&:hover {
+		color: $primaryAccentColor;
+		text-decoration: none;
+		border-bottom: solid 2px $primaryAccentColor;
+	}
+}

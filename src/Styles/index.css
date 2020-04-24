@@ -1,13 +1,64 @@
-body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	color: #ffdba6;
+.rc-container {
+  padding: 0 !important;
+  margin: 10px !important;
+  -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
+  border-radius: 10px 10px 10px 10px;
+  height: 12.5vh;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.rc-image-container {
+  height: 12.5vh;
+  width: 20vw;
+}
+
+.rc-image-container::after {
+  display: block;
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, transparent), color-stop(85%, white), to(white));
+  background-image: linear-gradient(to right, transparent 30%, white 85%, white 100%);
+  height: 12.5vh;
+  margin-top: -12.5vh;
+  width: 100%;
+  content: '';
+}
+
+.rc-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 12.5vh;
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.rc-label:hover::after {
+  color: lightgreen;
+  content: "yes";
+}
+
+a {
+  color: #ff466d;
+  font-style: italic;
+}
+
+a:hover {
+  color: #ff466d;
+  text-decoration: none;
+  border-bottom: solid 2px #ff466d;
 }
 
 .page-header-text {
-	font-size: 2.8rem;
+  font-size: 2.8rem;
 }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #011627;
+  background-color: #fffcf9;
+}
+/*# sourceMappingURL=index.css.map */
