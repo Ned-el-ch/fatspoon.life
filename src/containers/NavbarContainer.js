@@ -49,9 +49,11 @@ class NavbarContainer extends Component {
 		return (
 			<Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
 				<LinkContainer to="/">
-					<NavLink><Navbar.Brand>
+					<NavLink>
+						{/* <Navbar.Brand> */}
 						<NavItem>Home</NavItem>
-					</Navbar.Brand></NavLink>
+						{/* </Navbar.Brand> */}
+					</NavLink>
 				</LinkContainer>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
