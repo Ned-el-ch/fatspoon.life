@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 class Cookbook extends Component {
 
 	render() {
-		const { recipes, removeRecipe, starRecipe, unstarRecipe } = this.props;
+		const { recipes, starRecipe, unstarRecipe } = this.props;
 		return (
 			<div className="cookbook-container">
 				<PageHeader title="My Cookbook"/>

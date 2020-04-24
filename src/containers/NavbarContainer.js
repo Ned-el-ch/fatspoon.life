@@ -76,4 +76,7 @@ class NavbarContainer extends Component {
 		)
 	}
 }
-export default compose(withRouter, connect(null, { addRecipeResults }))(NavbarContainer);
+export default compose(
+	withRouter,
+	connect(null, { addRecipeResults })
+	)(NavbarContainer);
