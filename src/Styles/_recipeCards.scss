@@ -44,16 +44,3 @@ $minimumHeight: 125px;
 	top: 0;
 	font-size: 1.6rem;
 }
-
-a {
-	color: $primaryAccentColor;
-	font-style: italic;
-	text-decoration: none;
-	border-bottom: solid 2px white;
-
-	&:hover {
-		color: $primaryAccentColor;
-		text-decoration: none;
-		border-bottom: solid 2px $primaryAccentColor;
-	}
-}

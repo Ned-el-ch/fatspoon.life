@@ -1,5 +1,6 @@
 .nav-link {
-	font-style: italic;
+	font-weight: 600;
+	font-style: normal;
 	text-decoration: none;
 	border-bottom: solid 2px white;
 
@@ -29,6 +30,7 @@ a.nav-link {
 }
 
 .btn-outline-success {
+	font-weight: 600;
 	color: $primaryAccentColor;
 	border-color: $primaryAccentColor;
 
