@@ -3,7 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #011627;
+  color: #062035;
   background-color: #fffcf9;
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
@@ -71,11 +71,16 @@ a:hover {
   font-size: calc(30px + (36 - 30) * ((100vw - 300px) / (1600 - 300)));
 }
 
+.bg-dark {
+  background-color: #062035 !important;
+}
+
 .nav-link {
   font-weight: 600;
   font-style: normal;
   text-decoration: none;
   border-bottom: solid 2px white;
+  margin-right: 10px;
 }
 
 .nav-link:hover {
@@ -86,6 +91,10 @@ a:hover {
 
 .nav-link:hover div.nav-item {
   color: white;
+}
+
+.nav-link div.nav-item {
+  padding: 0 10px 0 10px;
 }
 
 .nav-link.active {
@@ -100,6 +109,9 @@ a:hover {
 
 a.nav-link {
   color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  margin-bottom: 15px;
+  margin-top: 5px;
 }
 
 .btn-outline-success {
@@ -128,5 +140,10 @@ a.nav-link {
 .form-control:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+}
+
+.form-inline {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 /*# sourceMappingURL=index.css.map */

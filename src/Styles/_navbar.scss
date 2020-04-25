@@ -1,8 +1,14 @@
+.bg-dark {
+	background-color: $mainTextColor !important;
+}
+
 .nav-link {
 	font-weight: 600;
 	font-style: normal;
 	text-decoration: none;
 	border-bottom: solid 2px white;
+	margin-right: 10px;
+	// border-radius: 0 0 0px 25px;
 
 	&:hover {
 		color: white;
@@ -14,6 +20,10 @@
 		}
 	}
 
+	& div.nav-item {
+		padding: 0 10px 0 10px;
+	}
+
 	&.active {
 		color: $primaryAccentColor;
 		text-decoration: none;
@@ -21,12 +31,16 @@
 
 		& div.nav-item {
 			color: $primaryAccentColor;
+
 		}
 	}
 }
 
 a.nav-link {
 	color: rgba(255, 255, 255, 0.5);
+	padding: 8px;
+	margin-bottom: 15px;
+	margin-top: 5px;
 }
 
 .btn-outline-success {
@@ -55,4 +69,8 @@ a.nav-link {
 	&:focus {
 		box-shadow: $mainBoxShadow !important;
 	}
+}
+
+.form-inline {
+	justify-content: space-around;
 }
