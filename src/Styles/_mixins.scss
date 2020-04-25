@@ -1,4 +1,4 @@
 @mixin setPaddingAndMargin($padding, $margin) {
-	padding: $padding!important;
-	margin: $margin!important;
+	padding: $padding;
+	margin: $margin;
 }

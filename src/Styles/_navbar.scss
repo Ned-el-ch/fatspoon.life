@@ -68,6 +68,7 @@ a.nav-link {
 .form-control {
 	&:focus {
 		box-shadow: $mainBoxShadow !important;
+		border-color: $mainTextColor !important;
 	}
 }
 
