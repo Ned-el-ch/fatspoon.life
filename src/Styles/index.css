@@ -5,19 +5,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #011627;
   background-color: #fffcf9;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 a {
-  color: #ff466d;
+  color: tomato;
   font-style: italic;
   text-decoration: none;
   border-bottom: solid 2px white;
 }
 
 a:hover {
-  color: #ff466d;
+  color: tomato;
   text-decoration: none;
-  border-bottom: solid 2px #ff466d;
+  border-bottom: solid 2px tomato;
 }
 
 .rc-container {
@@ -26,17 +27,16 @@ a:hover {
   -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
   border-radius: 10px 10px 10px 10px;
-  height: 12.5vh;
+  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
   background-color: white;
   margin-bottom: 20px;
   position: relative;
-  min-height: 125px;
 }
 
 .rc-image-container {
-  height: 12.5vh;
-  min-height: 125px;
+  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
   width: 20vw;
+  min-width: 165px;
 }
 
 .rc-image-container::after {
@@ -44,9 +44,9 @@ a:hover {
   position: relative;
   background-image: -webkit-gradient(linear, left top, right top, color-stop(9%, transparent), color-stop(95%, white));
   background-image: linear-gradient(to right, transparent 9%, white 95%);
-  height: 12.5vh;
-  margin-top: -125px;
-  min-height: 125px;
+  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
+  margin-top: calc(-1 * (12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300))));
+  min-width: 165px;
   width: 100%;
   content: '';
 }
@@ -54,21 +54,21 @@ a:hover {
 .rc-image {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 12.5vh;
-  min-height: 125px;
+  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
+  min-width: 165px;
   width: 100%;
   border-radius: 10px 0 0 10px;
 }
 
 .rc-label {
   position: absolute;
-  right: 10%;
+  right: 0;
   top: 0;
-  font-size: 1.6rem;
+  font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .page-header-text {
-  font-size: 2.8rem;
+  font-size: calc(30px + (36 - 30) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .nav-link {
@@ -81,7 +81,7 @@ a:hover {
 .nav-link:hover {
   color: white;
   text-decoration: none;
-  border-bottom: solid 2px #ff466d;
+  border-bottom: solid 2px tomato;
 }
 
 .nav-link:hover div.nav-item {
@@ -89,13 +89,13 @@ a:hover {
 }
 
 .nav-link.active {
-  color: #ff466d;
+  color: tomato;
   text-decoration: none;
-  border-bottom: solid 2px #ff466d;
+  border-bottom: solid 2px tomato;
 }
 
 .nav-link.active div.nav-item {
-  color: #ff466d;
+  color: tomato;
 }
 
 a.nav-link {
@@ -104,13 +104,29 @@ a.nav-link {
 
 .btn-outline-success {
   font-weight: 600;
-  color: #ff466d;
-  border-color: #ff466d;
+  color: tomato;
+  border-color: tomato !important;
 }
 
 .btn-outline-success:hover {
   color: #fff;
-  background-color: #ff466d;
-  border-color: #ff466d;
+  background-color: tomato;
+  border-color: tomato;
+}
+
+.btn-outline-success:active {
+  color: #fff;
+  background-color: tomato !important;
+  border-color: tomato !important;
+}
+
+.btn-outline-success:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
 }
 /*# sourceMappingURL=index.css.map */

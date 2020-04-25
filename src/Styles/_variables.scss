@@ -1,6 +1,11 @@
 $boxShadowColor: rgba(0, 0, 0, 0.05);
 $backgroundColor: rgb(255, 252, 249);
-$primaryAccentColor: rgb(255, 70, 109);
+$primaryAccentColor: rgb(255, 99, 71);
+// $primaryAccentColor: rgb(255, 70, 109);
 $secondaryAccentColor: rgb(196, 255, 134);
 $ternaryAccentColor: rgb(75, 237, 255);
 $mainTextColor: rgb(1, 22, 39);
+$textFontSize: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+$headingFontSize: calc(30px + (36 - 30) * ((100vw - 300px) / (1600 - 300)));
+$labelFontSize: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+$mainBoxShadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);

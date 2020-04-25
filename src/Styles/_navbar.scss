@@ -32,11 +32,27 @@ a.nav-link {
 .btn-outline-success {
 	font-weight: 600;
 	color: $primaryAccentColor;
-	border-color: $primaryAccentColor;
+	border-color: $primaryAccentColor !important;
 
 	&:hover {
 		color: #fff;
 		background-color: $primaryAccentColor;
 		border-color: $primaryAccentColor;
+	}
+
+	&:active {
+		color: #fff;
+		background-color: $primaryAccentColor !important;
+		border-color: $primaryAccentColor !important;
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+	}
+}
+
+.form-control {
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
 	}
 }

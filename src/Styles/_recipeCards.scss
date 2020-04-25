@@ -1,5 +1,7 @@
-$containerHeight: 12.5vh;
+$containerHeight: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
+$fadeMargin: calc(-1 * (12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300))));
 $minimumHeight: 125px;
+$minimumWidth: 165px;
 
 .rc-container {
 	@include setPaddingAndMargin(0, 10px);
@@ -9,22 +11,24 @@ $minimumHeight: 125px;
 	background-color: white;
 	margin-bottom: 20px;
 	position: relative;
-	min-height: $minimumHeight;
+	// min-height: $minimumHeight;
 
 }
 
 .rc-image-container {
 	height: $containerHeight;
-	min-height: $minimumHeight;
+	// min-height: $minimumHeight;
 	width: 20vw;
+	min-width: $minimumWidth;
 
 	&::after {
 		display: block;
 		position: relative;
 		background-image: linear-gradient(to right, transparent 9%, white 95%);
 		height: $containerHeight;
-		margin-top: -$minimumHeight;
-		min-height: $minimumHeight;
+		margin-top: $fadeMargin;
+		// min-height: $minimumHeight;
+		min-width: $minimumWidth;
 		width: 100%;
 		content: '';
 	}
@@ -33,14 +37,15 @@ $minimumHeight: 125px;
 .rc-image {
 	object-fit: cover;
 	height: $containerHeight;
-	min-height: $minimumHeight;
+	// min-height: $minimumHeight;
+	min-width: $minimumWidth;
 	width: 100%;
 	border-radius: 10px 0 0 10px;
 }
 
 .rc-label {
 	position: absolute;
-	right: 10%;
+	right: 0;
 	top: 0;
-	font-size: 1.6rem;
+	font-size: $labelFontSize;
 }
