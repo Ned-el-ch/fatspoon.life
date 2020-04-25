@@ -48,6 +48,8 @@
 a {
   color: #ff466d;
   font-style: italic;
+  text-decoration: none;
+  border-bottom: solid 2px white;
 }
 
 a:hover {
@@ -58,6 +60,47 @@ a:hover {
 
 .page-header-text {
   font-size: 2.8rem;
+}
+
+.nav-link {
+  font-style: italic;
+  text-decoration: none;
+  border-bottom: solid 2px white;
+}
+
+.nav-link:hover {
+  color: white;
+  text-decoration: none;
+  border-bottom: solid 2px #ff466d;
+}
+
+.nav-link:hover div.nav-item {
+  color: white;
+}
+
+.nav-link.active {
+  color: #ff466d;
+  text-decoration: none;
+  border-bottom: solid 2px #ff466d;
+}
+
+.nav-link.active div.nav-item {
+  color: #ff466d;
+}
+
+a.nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-success {
+  color: #ff466d;
+  border-color: #ff466d;
+}
+
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: #ff466d;
+  border-color: #ff466d;
 }
 
 body {

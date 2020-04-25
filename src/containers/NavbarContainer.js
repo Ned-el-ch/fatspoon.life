@@ -48,8 +48,8 @@ class NavbarContainer extends Component {
 	render() {
 		return (
 			<Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
-				<LinkContainer to="/">
-					<NavLink>
+				<LinkContainer exact to="/">
+					<NavLink active={false}>
 						{/* <Navbar.Brand> */}
 						<NavItem>Home</NavItem>
 						{/* </Navbar.Brand> */}
@@ -58,11 +58,11 @@ class NavbarContainer extends Component {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="mr-auto">
-					<LinkContainer to="/MyCookbook">
-						<NavLink><NavItem>My Cookbook</NavItem></NavLink>
+					<LinkContainer exact  to="/MyCookbook">
+						<NavLink active={false}><NavItem>My Cookbook</NavItem></NavLink>
 					</LinkContainer>
-					<LinkContainer to="/MyFridge">
-						<NavLink><NavItem>My Fridge</NavItem></NavLink>
+					<LinkContainer exact to="/MyFridge">
+						<NavLink active={false}><NavItem>My Fridge</NavItem></NavLink>
 					</LinkContainer>
 					</Nav>
 					<Form inline onSubmit={this.handleSubmit}>

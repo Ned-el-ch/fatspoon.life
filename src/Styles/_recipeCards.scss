@@ -17,6 +17,7 @@ $minimumHeight: 125px;
 	height: $containerHeight;
 	min-height: $minimumHeight;
 	width: 20vw;
+
 	&::after {
 		display: block;
 		position: relative;
@@ -47,6 +48,9 @@ $minimumHeight: 125px;
 a {
 	color: $primaryAccentColor;
 	font-style: italic;
+	text-decoration: none;
+	border-bottom: solid 2px white;
+
 	&:hover {
 		color: $primaryAccentColor;
 		text-decoration: none;

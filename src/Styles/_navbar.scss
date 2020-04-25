@@ -1,0 +1,40 @@
+.nav-link {
+	font-style: italic;
+	text-decoration: none;
+	border-bottom: solid 2px white;
+
+	&:hover {
+		color: white;
+		text-decoration: none;
+		border-bottom: solid 2px $primaryAccentColor;
+
+		& div.nav-item {
+			color: white;
+		}
+	}
+
+	&.active {
+		color: $primaryAccentColor;
+		text-decoration: none;
+		border-bottom: solid 2px $primaryAccentColor;
+
+		& div.nav-item {
+			color: $primaryAccentColor;
+		}
+	}
+}
+
+a.nav-link {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-success {
+	color: $primaryAccentColor;
+	border-color: $primaryAccentColor;
+
+	&:hover {
+		color: #fff;
+		background-color: $primaryAccentColor;
+		border-color: $primaryAccentColor;
+	}
+}
