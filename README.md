@@ -4,9 +4,10 @@
 - [What does it do in a nutshell](#short-description)
 - [Main features](#main-features)
 - [Technical description](#technical-description)
+- [Author's Note](#authors-note)
 
 ---
-# <a name="short-description"></a> This app in a nutshell
+# <a name="short-description"></a> In a nutshell
 A recipe searcher, meal planner, ingredient tracker, and shopping list builder all bundled into one convenient app
 
 ---
@@ -63,5 +64,8 @@ Other "helper" packages
 - uuid for easier key/id assignment
 - @testing-library/react to practice writing tests
 
-### P.S.
-On a sidenote, before I made the app, I used to struggle figuring out what to cook. Since then it grew into a useful tool I use almost daily to track what food I have in my house, as well as my dietary intake. Although some bias may exist, my mom has said it made her life a ton easier.
+
+---
+
+# <a name="authors-note"></a> Author's Note
+Before I made the app, I used to struggle figuring out what to cook. Since then it grew into a useful tool I use almost daily to track what food I have in my house, as well as my dietary intake. Although some bias may exist, my mom has said it made her life a ton easier.
