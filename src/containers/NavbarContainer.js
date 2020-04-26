@@ -39,7 +39,7 @@ class NavbarContainer extends Component {
 		.then(res => {
 			let recipes = res.hits.map(hit => Object.assign({}, hit.recipe, {starred: false}))
 			this.props.addRecipeResults(recipes)
-			// console.log(JSON.stringify(recipes))
+			console.log(JSON.stringify(recipes))
 		})
 		this.setState({searchTerm: ""});
 		this.props.history.push("/Search")
@@ -67,7 +67,7 @@ class NavbarContainer extends Component {
 					</Nav>
 					<Form inline onSubmit={this.handleSubmit}>
 					<Form.Group controlId="recipeSearchForm">
-						<FormControl onChange={this.handleOnChange} type="text" placeholder="Find Recipes ..." className="mr-sm-3"/>
+						<FormControl onChange={this.handleOnChange} value={this.state.searchTerm} type="text" placeholder="Find Recipes ..." className="mr-sm-3"/>
 					</Form.Group>
 					<Form.Group controlId="recipeSearchFormSubmitButton">
 						<Button type="submit" variant="outline-success">Search</Button>
