@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader } from '../components/PageHeader'
+import PageHeader from '../components/PageHeader'
 import { connect } from 'react-redux'
 import { starRecipe, unstarRecipe } from '../actions/recipes';
 import RecipeCard from '../components/RecipeCard';

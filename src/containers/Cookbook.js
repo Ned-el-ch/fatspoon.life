@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { starRecipe, unstarRecipe } from '../actions/recipes';
 
 import RecipeCard from '../components/RecipeCard';
-import { PageHeader } from '../components/PageHeader';
+import PageHeader from '../components/PageHeader';
 import Row from 'react-bootstrap/Row';
 
 const Cookbook = (props) => {
