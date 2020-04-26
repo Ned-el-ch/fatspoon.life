@@ -6,8 +6,8 @@ import RecipeCard from '../components/RecipeCard';
 import { PageHeader } from '../components/PageHeader';
 import Row from 'react-bootstrap/Row';
 
-export const Cookbook = () => {
-	const { recipes, starRecipe, unstarRecipe } = this.props;
+const Cookbook = (props) => {
+	const { recipes, starRecipe, unstarRecipe } = props;
 	return (
 		<div className="cookbook-container">
 			<PageHeader title="My Cookbook"/>
