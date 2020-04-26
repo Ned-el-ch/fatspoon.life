@@ -14,10 +14,10 @@ A recipe searcher, meal planner, ingredient tracker, and shopping list builder a
 
 # <a name="main-features"></a> Main Features
 
-Features marked with `S` aren't implemented yet, which at this point is pretty much all of them
+Items marked with `S` on the end aren't implemented yet, which at this point is almost all of them
 
 ## My Cookbook
-- Search over 1.5m recipes, from 500+ top sources `S`
+- Search over 1.5m recipes, from 500+ top sources
 - Full nutrition info and daily intake % for each recipe: `S`
 	- Macronutrients (Fat, Carbs, Fiber, Protein, etc.) `S`
 	- Mineral Count (Na, Mg, Ca, K, Fe, Zn, P, etc.) `S`
@@ -43,7 +43,7 @@ Features marked with `S` aren't implemented yet, which at this point is pretty m
 - Set how often to repeat it `S`
 - Set a number of preset to repeat `S`
 - See what ingredients you may run out of before a certain recipe `S`
-- Get suggestions based on what nutrients you may be lacking `S`
+- Get suggestions based on what nutrients you may be lacking,  `S`
 ---
 # <a name="technical-description"></a> Technical Description
 ### This is a SPA built with ReactJS
