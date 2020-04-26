@@ -14,22 +14,22 @@ import Col from "react-bootstrap/Col"
 const App = () => {
 	return (
 		<div className="app-container">
-		<Router>
-			<NavbarContainer />
-			<Container fluid>
-				<Row className="align-self-start justify-content-center">
-				<Col xs sm md lg xl={10} className="col-xxl">
-					<Switch>
-						<Route exact path="/" component={MealPlanner} />
-						<Route exact path="/MyCookbook" component={Cookbook} />
-						<Route exact path="/MyFridge" component={Fridge} />
-						<Route exact path="/Search" component={SearchResults} />
-					</Switch>
-				</Col>
-				</Row>
-			</Container>
-		</Router>
-	</div>
+			<Router>
+				<NavbarContainer />
+				<Container fluid>
+					<Row className="align-self-start justify-content-center">
+					<Col xs sm md lg xl={10} className="col-xxl">
+						<Switch>
+							<Route exact path="/" component={MealPlanner} />
+							<Route exact path="/MyCookbook" component={Cookbook} />
+							<Route exact path="/MyFridge" component={Fridge} />
+							<Route exact path="/Search" component={SearchResults} />
+						</Switch>
+					</Col>
+					</Row>
+				</Container>
+			</Router>
+		</div>
 	)
 }
 
