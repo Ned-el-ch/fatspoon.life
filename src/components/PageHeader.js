@@ -1,7 +1,7 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row';
 
-export const PageHeader = ({title}) => {
+const PageHeader = ({title}) => {
 	return (
 		<div className="page-header">
 			<hr />
@@ -12,3 +12,5 @@ export const PageHeader = ({title}) => {
 		</div>
 	)
 }
+
+export default PageHeader;
