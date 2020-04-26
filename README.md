@@ -13,6 +13,9 @@ A recipe searcher, meal planner, ingredient tracker, and shopping list builder a
 
 
 # <a name="main-features"></a> Main Features
+
+Features marked with `S` aren't implemented yet, which at this point is pretty much all of them
+
 ## My Cookbook
 - Search over 1.5m recipes, from 500+ top sources
 - Full nutrition info and daily intake % for each recipe:
@@ -40,11 +43,12 @@ A recipe searcher, meal planner, ingredient tracker, and shopping list builder a
 - Set how often to repeat it
 - Set a number of preset to repeat
 - See what ingredients you may run out of before a certain recipe
+- Get suggestions based on what nutrients you may be lacking
 ---
 # <a name="technical-description"></a> Technical Description
 ### This is a SPA built with ReactJS
 
-CI/CD via Netlify
+I built it to practice using redux, SCSS, and unit testing. I used Netlify for CI/CD.
 
 Here's a (sort of) full list of the main packages I used to build it
 - React-Redux
@@ -58,3 +62,6 @@ Here's a (sort of) full list of the main packages I used to build it
 Other "helper" packages
 - uuid for easier key/id assignment
 - @testing-library/react to practice writing tests
+
+### P.S.
+On a sidenote, before I made the app, I used to struggle figuring out what to cook. Since then it grew into a useful tool I use almost daily to track what food I have in my house, as well as my dietary intake. Although some bias may exist, my mom has said it made her life a ton easier.
