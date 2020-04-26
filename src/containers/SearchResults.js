@@ -1,28 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { PageHeader } from '../components/PageHeader'
 import { connect } from 'react-redux'
 import { starRecipe, unstarRecipe } from '../actions/recipes';
 import RecipeCard from '../components/RecipeCard';
 
-class SearchResults extends Component {
-	render() {
-		const { recipes, starRecipe, unstarRecipe } = this.props;
-
-		return (
-			<div className="search-results-container">
-				<PageHeader title="Search Results"/>
-				{recipes.map(recipe => 
-						<RecipeCard
-							key={recipe.uri}
-							recipe={recipe}
-							starRecipe={starRecipe}
-							unstarRecipe={unstarRecipe}
-						/>
-				)}
-			</div>
-		)
-	}
+const SearchResults = (props) => {
+	const { recipes, starRecipe, unstarRecipe } = props;
+	return (
+		<div className="search-results-container">
+			<PageHeader title="Search Results"/>
+			{recipes.map(recipe => 
+				<RecipeCard
+					key={recipe.uri}
+					recipe={recipe}
+					starRecipe={starRecipe}
+					unstarRecipe={unstarRecipe}
+				/>
+			)}
+		</div>
+	)
 }
+
 
 let mapStateToProps = (state) => {
 	return(
