@@ -1,4 +1,5 @@
 # Fatspoon.life
+### [Live site]()
 ## Table of Contents
 - [What does it do in a nutshell](#short-description)
 - [Main features](#main-features)
@@ -42,6 +43,9 @@ A recipe searcher, meal planner, ingredient tracker, and shopping list builder a
 ---
 # <a name="technical-description"></a> Technical Description
 ### This is a SPA built with ReactJS
+
+CI/CD via Netlify
+
 Here's a (sort of) full list of the main packages I used to build it
 - React-Redux
 - Bootstrap & React-Bootstrap
