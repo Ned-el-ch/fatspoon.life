@@ -17,33 +17,33 @@ A recipe searcher, meal planner, ingredient tracker, and shopping list builder a
 Features marked with `S` aren't implemented yet, which at this point is pretty much all of them
 
 ## My Cookbook
-- Search over 1.5m recipes, from 500+ top sources
-- Full nutrition info and daily intake % for each recipe:
-	- Macronutrients (Fat, Carbs, Fiber, Protein, etc.)
-	- Mineral Count (Na, Mg, Ca, K, Fe, Zn, P, etc.)
-	- Vitamin Count (A, C, Thiamin, Folate, B12, etc.)
-	- Calorie count per serving
-- Filter using criteria such as:
-	- Set calorie amount
-	- Set dietary restrictions (Gluten-free, Meat-free, Egg-free, Dairy-free, etc.)
-- See possible allergens at a glance using labels
+- Search over 1.5m recipes, from 500+ top sources `S`
+- Full nutrition info and daily intake % for each recipe: `S`
+	- Macronutrients (Fat, Carbs, Fiber, Protein, etc.) `S`
+	- Mineral Count (Na, Mg, Ca, K, Fe, Zn, P, etc.) `S`
+	- Vitamin Count (A, C, Thiamin, Folate, B12, etc.) `S`
+	- Calorie count per serving `S`
+- Filter using criteria such as: `S`
+	- Set calorie amount `S`
+	- Set dietary restrictions (Gluten-free, Meat-free, Egg-free, Dairy-free, etc.) `S`
+- See possible allergens at a glance using labels `S`
 ## My Shopping List
-- If a recipe has missing ingredients automatically populate a shopping list
+- If a recipe has missing ingredients automatically populate a shopping list `S`
 ## My Fridge
-- Track what ingredients you have on hand
-- See your shopping list and select which ingredients you've bought to add to your fridge
-- Quickly identify categories using labels
+- Track what ingredients you have on hand `S`
+- See your shopping list and select which ingredients you've bought to add to your fridge `S`
+- Quickly identify categories using labels `S`
 ## My Meal Planner
-- Set how many people you're cooking for
-- See nutritional info at glance
-- Set calorie goal
-- Set type of diet (Keto, Paleo, Lean, Vegetarian, etc.)
-- Easily switch out recipes
-- Save weekly plan as a preset
-- Set how often to repeat it
-- Set a number of preset to repeat
-- See what ingredients you may run out of before a certain recipe
-- Get suggestions based on what nutrients you may be lacking
+- Set how many people you're cooking for `S`
+- See nutritional info at glance `S`
+- Set calorie goal `S`
+- Set type of diet (Keto, Paleo, Lean, Vegetarian, etc.) `S`
+- Easily switch out recipes `S`
+- Save weekly plan as a preset `S`
+- Set how often to repeat it `S`
+- Set a number of preset to repeat `S`
+- See what ingredients you may run out of before a certain recipe `S`
+- Get suggestions based on what nutrients you may be lacking `S`
 ---
 # <a name="technical-description"></a> Technical Description
 ### This is a SPA built with ReactJS
