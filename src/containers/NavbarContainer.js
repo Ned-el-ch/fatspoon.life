@@ -65,7 +65,8 @@ class NavbarContainer extends Component {
 						<NavLink active={false}><NavItem>My Fridge</NavItem></NavLink>
 					</LinkContainer>
 					</Nav>
-					<Form inline onSubmit={this.handleSubmit}>
+					<Form inline>
+					{/* <Form inline onSubmit={this.handleSubmit}> */}
 					<Form.Group controlId="recipeSearchForm">
 						<FormControl onChange={this.handleOnChange} value={this.state.searchTerm} type="text" placeholder="Find Recipes ..." className="mr-sm-3"/>
 					</Form.Group>
