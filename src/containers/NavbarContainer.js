@@ -30,17 +30,17 @@ class NavbarContainer extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		let query = {
-			term: this.state.searchTerm,
-			from: 0,
-			to: 5
-		}
-		recipeSearch(query)
-		.then(res => {
-			let recipes = res.hits.map(hit => Object.assign({}, hit.recipe, {starred: false}))
-			this.props.addRecipeResults(recipes)
-			console.log(JSON.stringify(recipes))
-		})
+		// let query = {
+		// 	term: this.state.searchTerm,
+		// 	from: 0,
+		// 	to: 5
+		// }
+		// recipeSearch(query)
+		// .then(res => {
+		// 	let recipes = res.hits.map(hit => Object.assign({}, hit.recipe, {starred: false}))
+		// 	this.props.addRecipeResults(recipes)
+		// 	console.log(JSON.stringify(recipes))
+		// })
 		this.setState({searchTerm: ""});
 		this.props.history.push("/Search")
 	}
@@ -65,8 +65,7 @@ class NavbarContainer extends Component {
 						<NavLink active={false}><NavItem>My Fridge</NavItem></NavLink>
 					</LinkContainer>
 					</Nav>
-					<Form inline>
-					{/* <Form inline onSubmit={this.handleSubmit}> */}
+					<Form inline onSubmit={this.handleSubmit}>
 					<Form.Group controlId="recipeSearchForm">
 						<FormControl onChange={this.handleOnChange} value={this.state.searchTerm} type="text" placeholder="Find Recipes ..." className="mr-sm-3"/>
 					</Form.Group>
