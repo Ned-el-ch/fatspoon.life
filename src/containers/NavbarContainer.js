@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form"
 import FormControl from "react-bootstrap/FormControl"
 import { LinkContainer } from "react-router-bootstrap";
 
-import { recipeSearch } from "../concerns/recipeSearch";
+// import { recipeSearch } from "../concerns/recipeSearch";
 
 import { connect } from 'react-redux';
 import { addRecipeResults } from "../actions/search";
