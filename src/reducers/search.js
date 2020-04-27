@@ -1,8 +1,9 @@
 import * as seedRecipes from "../data/recipes.json"
+import * as allIngredients from "../data/ingredients.json"
 
 let initialState = {
 	recipes: seedRecipes.default,
-	ingredients: []
+	ingredients: allIngredients.default
 }
 
 export default (state = initialState, action) => {

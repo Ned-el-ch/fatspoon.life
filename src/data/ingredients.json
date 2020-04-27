@@ -37,7 +37,7 @@
 		]
 	},
 	{
-		"Vegetables": [
+		"Fruits & Veggies": [
 			"Onions",
 			"Garlic",
 			"Tomatoes",
@@ -92,12 +92,8 @@
 			"Yams",
 			"Turnips",
 			"Canned Tomatoes",
+			"Rocket",
 			"Watercress",
-			"Rocket"
-		]
-	},
-	{
-		"Fruits": [
 			"Lemons",
 			"Apples",
 			"Bananas",
@@ -187,6 +183,7 @@
 			"Croutons",
 			"Pizza dough",
 			"Puff Pastry",
+			"Almond Flour",
 			"Hot Dog Buns",
 			"Barley",
 			"Cornflour",
@@ -200,11 +197,7 @@
 			"Potato Starch",
 			"Starch",
 			"Wholewheat Flour",
-			"Sourdough Starter"
-		]
-	},
-	{
-		"Sweeteners": [
+			"Sourdough Starter",
 			"Sugar",
 			"Brown Sugar",
 			"Light Brown Sugar",
@@ -215,7 +208,7 @@
 		]
 	},
 	{
-		"Meat": [
+		"Meats & Seafood": [
 			"Chicken Breast",
 			"Ground Beef",
 			"Bacon",
@@ -265,11 +258,7 @@
 			"Snails",
 			"Duck Liver",
 			"Duck Hearts",
-			"Goose liver"
-		]
-	},
-	{
-		"Fish": [
+			"Goose liver",
 			"Tuna",
 			"Tuna Steak",
 			"Canned Tuna",
@@ -284,11 +273,7 @@
 			"Mackerel",
 			"Sea bass",
 			"Carp",
-			"Sturgeon"
-		]
-	},
-	{
-		"Seafood": [
+			"Sturgeon",
 			"Shrimp",
 			"Crab",
 			"Prawns",
@@ -298,42 +283,6 @@
 			"Mussels",
 			"Oysters",
 			"Calamari"
-		]
-	},
-	{
-		"Condiments": [
-			"Mayonnaise",
-			"Ketchup",
-			"Mustard",
-			"Vinegar",
-			"Balsamic Vinegar",
-			"Wine Vinegar",
-			"Apple Cider Vinegar",
-			"Cider Vinegar",
-			"Rice Vinegar",
-			"Worcestershire Sauce",
-			"Hot Sauce",
-			"Ranch Sauce",
-			"Caesar Sauce",
-			"Tabasco",
-			"Sriracha",
-			"Honey Mustard Sauce",
-			"Sweet-n-Sour Sauce",
-			"BBQ Sauce"
-		]
-	},
-	{
-		"Oils": [
-			"Olive Oil",
-			"Vegetable Oil",
-			"Sesame Oil",
-			"Coconut Oil",
-			"Peanut Oil",
-			"Sunflower Oil",
-			"Lard",
-			"Goose Fat",
-			"Avocado Oil",
-			"Palm Oil"
 		]
 	},
 	{
@@ -385,7 +334,17 @@
 		]
 	},
 	{
-		"Pastes & Sauces": [
+		"Oils & Condiments": [
+			"Olive Oil",
+			"Vegetable Oil",
+			"Sesame Oil",
+			"Coconut Oil",
+			"Peanut Oil",
+			"Sunflower Oil",
+			"Lard",
+			"Goose Fat",
+			"Avocado Oil",
+			"Palm Oil",
 			"Green Pesto",
 			"Red Pesto",
 			"Tomato Paste",
@@ -405,11 +364,29 @@
 			"Beef Gravy",
 			"Chicken Gravy",
 			"Turkey Gravy",
-			"Mushroom Gravy"
+			"Mushroom Gravy",
+			"Mayonnaise",
+			"Ketchup",
+			"Mustard",
+			"Vinegar",
+			"Balsamic Vinegar",
+			"Wine Vinegar",
+			"Apple Cider Vinegar",
+			"Cider Vinegar",
+			"Rice Vinegar",
+			"Worcestershire Sauce",
+			"Hot Sauce",
+			"Ranch Sauce",
+			"Caesar Sauce",
+			"Tabasco",
+			"Sriracha",
+			"Honey Mustard Sauce",
+			"Sweet-n-Sour Sauce",
+			"BBQ Sauce"
 		]
 	},
 	{
-		"Legumes": [
+		"Legumes & Nuts": [
 			"Beans",
 			"Green Beans",
 			"Peas",
@@ -419,7 +396,20 @@
 			"Kidney Beans",
 			"Pinto beans",
 			"Edamame",
-			"Soybeans"
+			"Soybeans",
+			"Peanuts",
+			"Almonds",
+			"Walnuts",
+			"Hazelnuts",
+			"Pecans",
+			"Cashews",
+			"Pine Nuts",
+			"Pistachios",
+			"Almond Flakes",
+			"Macadamias",
+			"Chestnuts",
+			"Almond Butter",
+			"Peanut Butter"
 		]
 	},
 	{
@@ -448,24 +438,6 @@
 			"Beef Stock",
 			"Chicken Stock",
 			"Vegetable Stock"
-		]
-	},
-	{
-		"Nuts": [
-			"Peanuts",
-			"Almonds",
-			"Walnuts",
-			"Hazelnuts",
-			"Pecans",
-			"Cashews",
-			"Pine Nuts",
-			"Pistachios",
-			"Almond Flour",
-			"Almond Flakes",
-			"Macadamias",
-			"Chestnuts",
-			"Almond Butter",
-			"Peanut Butter"
 		]
 	},
 	{
