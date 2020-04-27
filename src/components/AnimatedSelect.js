@@ -8,7 +8,7 @@ const colouredOptions = getIngredientsForSelect();
 const animatedComponents = makeAnimated();
 
 const colourStyles = {
-	control: styles => ({ ...styles, backgroundColor: '#062035' }),
+	control: styles => ({ ...styles, backgroundColor: '#062035', closeOnSelect: false}),
 	option: (styles, { data, isDisabled, isFocused, isSelected }) => {
 		const color = chroma(data.color);
 		return {
@@ -58,7 +58,35 @@ const colourStyles = {
 		...styles,
 		background: '#062035',
 	}),
- };
+};
+
+const colors = {
+		"primary": "#2684FF",
+		"primary75": "#4C9AFF",
+		"primary50": "#B2D4FF",
+		"primary25": "#DEEBFF",
+		"danger": "#DE350B",
+		"dangerLight": "#FFBDAD",
+		"neutral0": "hsl(0, 0%, 100%)",
+		"neutral5": "hsl(0, 0%, 95%)",
+		"neutral10": "hsl(0, 0%, 90%)",
+		"neutral20": "hsl(0, 0%, 80%)",
+		"neutral30": "hsl(0, 0%, 70%)",
+		"neutral40": "hsl(0, 0%, 60%)",
+		"neutral50": "hsl(0, 0%, 50%)",
+		"neutral60": "hsl(0, 0%, 40%)",
+		"neutral70": "hsl(0, 0%, 30%)",
+		"neutral80": "#ffffff",
+		"neutral90": "hsl(0, 0%, 10%)"
+}
+
+const theme = (theme) => ({
+	...theme,
+	borderRadius: "10px",
+	colors: {
+	...colors
+	},
+ })
 
 const AnimatedSelect = () => {
 	return (
@@ -69,6 +97,7 @@ const AnimatedSelect = () => {
 			isMulti
 			options={colouredOptions}
 			styles={colourStyles}
+			theme={theme}
 		/>
 	);
 }
