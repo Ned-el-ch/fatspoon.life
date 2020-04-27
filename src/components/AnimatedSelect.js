@@ -4,11 +4,11 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { getIngredientsForSelect } from "../concerns/getIngredientsForSelect";
 
-const colourOptions = getIngredientsForSelect();
+const colouredOptions = getIngredientsForSelect();
 const animatedComponents = makeAnimated();
 
 const colourStyles = {
-	control: styles => ({ ...styles, backgroundColor: 'white' }),
+	control: styles => ({ ...styles, backgroundColor: '#062035' }),
 	option: (styles, { data, isDisabled, isFocused, isSelected }) => {
 		const color = chroma(data.color);
 		return {
@@ -54,6 +54,10 @@ const colourStyles = {
 		 color: 'white',
 		},
 	}),
+	menu: (styles, { data }) => ({
+		...styles,
+		background: '#062035',
+	}),
  };
 
 const AnimatedSelect = () => {
@@ -61,9 +65,9 @@ const AnimatedSelect = () => {
 		<Select
 			closeMenuOnSelect={false}
 			components={animatedComponents}
-			// defaultValue={[colourOptions[4], colourOptions[5]]}
+			defaultValue={[colouredOptions[1], colouredOptions[28], colouredOptions[57], colouredOptions[172]]}
 			isMulti
-			options={colourOptions}
+			options={colouredOptions}
 			styles={colourStyles}
 		/>
 	);
