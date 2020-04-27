@@ -1,2446 +1,612 @@
-[
-	{
-		"id": "0",
-		"name": "Carrots",
-		"category": "Vegetable"
-	},
-	{
-		"Dairy": "Butter"
-	},
-	{
-		"Dairy": "egg"
-	},
-	{
-		"Dairy": "milk"
-	},
-	{
-		"Dairy": "parmesan"
-	},
-	{
-		"Dairy": "cheddar"
-	},
-	{
-		"Dairy": "american cheese"
-	},
-	{
-		"Dairy": "sour cream"
-	},
-	{
-		"Dairy": "cream cheese"
-	},
-	{
-		"Dairy": "mozzarella"
-	},
-	{
-		"Dairy": "yogurt"
-	},
-	{
-		"Dairy": "cream"
-	},
-	{
-		"Dairy": "evaporated milk"
-	},
-	{
-		"Dairy": "whipped cream"
-	},
-	{
-		"Dairy": "half and half"
-	},
-	{
-		"Dairy": "feta"
-	},
-	{
-		"Dairy": "monterey jack cheese"
-	},
-	{
-		"Dairy": "condensed milk"
-	},
-	{
-		"Dairy": "cottage cheese"
-	},
-	{
-		"Dairy": "ice cream"
-	},
-	{
-		"Dairy": "swiss cheese"
-	},
-	{
-		"Dairy": "velveeta"
-	},
-	{
-		"Dairy": "frosting"
-	},
-	{
-		"Dairy": "buttermilk"
-	},
-	{
-		"Dairy": "ricotta"
-	},
-	{
-		"Dairy": "goat cheese"
-	},
-	{
-		"Dairy": "provolone"
-	},
-	{
-		"Dairy": "blue cheese"
-	},
-	{
-		"Dairy": "powdered milk"
-	},
-	{
-		"Dairy": "colby cheese"
-	},
-	{
-		"Dairy": "pepper jack"
-	},
-	{
-		"Dairy": "italian cheese"
-	},
-	{
-		"Dairy": "soft cheese"
-	},
-	{
-		"Dairy": "gouda"
-	},
-	{
-		"Dairy": "pepperjack cheese"
-	},
-	{
-		"Dairy": "romano"
-	},
-	{
-		"Dairy": "brie"
-	},
-	{
-		"Dairy": "pizza cheese"
-	},
-	{
-		"Dairy": "ghee"
-	},
-	{
-		"Dairy": "creme fraiche"
-	},
-	{
-		"Dairy": "cheese soup"
-	},
-	{
-		"Dairy": "gruyere"
-	},
-	{
-		"Dairy": "pecorino cheese"
-	},
-	{
-		"Dairy": "custard"
-	},
-	{
-		"Dairy": "muenster"
-	},
-	{
-		"Dairy": "queso fresco cheese"
-	},
-	{
-		"Dairy": "hard cheese"
-	},
-	{
-		"Dairy": "havarti cheese"
-	},
-	{
-		"Dairy": "asiago"
-	},
-	{
-		"Dairy": "mascarpone"
-	},
-	{
-		"Dairy": "neufchatel"
-	},
-	{
-		"Dairy": "halloumi"
-	},
-	{
-		"Dairy": "paneer"
-	},
-	{
-		"Dairy": "brick cheese"
-	},
-	{
-		"Dairy": "camembert cheese"
-	},
-	{
-		"Dairy": "goat milk"
-	},
-	{
-		"Dairy": "garlic herb cheese"
-	},
-	{
-		"Dairy": "edam cheese"
-	},
-	{
-		"Dairy": "manchego"
-	},
-	{
-		"Dairy": "fontina"
-	},
-	{
-		"Dairy": "stilton cheese"
-	},
-	{
-		"Dairy": "emmenthaler cheese"
-	},
-	{
-		"Dairy": "red leicester cheese"
-	},
-	{
-		"Dairy": "jarlsberg cheese"
-	},
-	{
-		"Dairy": "bocconcini cheese"
-	},
-	{
-		"Dairy": "farmer cheese"
-	},
-	{
-		"Dairy": "creme de cassis"
-	},
-	{
-		"Dairy": "wensleydale cheese"
-	},
-	{
-		"Dairy": "longhorn cheese"
-	},
-	{
-		"Dairy": "double gloucester cheese"
-	},
-	{
-		"Dairy": "raclette cheese"
-	},
-	{
-		"Dairy": "lancashire cheese"
-	},
-	{
-		"Dairy": "cheshire cheese"
-	},
-	{
-		"Vegetables": "onion"
-	},
-	{
-		"Vegetables": "garlic"
-	},
-	{
-		"Vegetables": "tomato"
-	},
-	{
-		"Vegetables": "potato"
-	},
-	{
-		"Vegetables": "carrot"
-	},
-	{
-		"Vegetables": "bell pepper"
-	},
-	{
-		"Vegetables": "basil"
-	},
-	{
-		"Vegetables": "parsley"
-	},
-	{
-		"Vegetables": "broccoli"
-	},
-	{
-		"Vegetables": "corn"
-	},
-	{
-		"Vegetables": "spinach"
-	},
-	{
-		"Vegetables": "mushroom"
-	},
-	{
-		"Vegetables": "green beans"
-	},
-	{
-		"Vegetables": "ginger"
-	},
-	{
-		"Vegetables": "chili pepper"
-	},
-	{
-		"Vegetables": "celery"
-	},
-	{
-		"Vegetables": "rosemary"
-	},
-	{
-		"Vegetables": "salad greens"
-	},
-	{
-		"Vegetables": "red onion"
-	},
-	{
-		"Vegetables": "cucumber"
-	},
-	{
-		"Vegetables": "sweet potato"
-	},
-	{
-		"Vegetables": "pickle"
-	},
-	{
-		"Vegetables": "avocado"
-	},
-	{
-		"Vegetables": "zucchini"
-	},
-	{
-		"Vegetables": "cilantro"
-	},
-	{
-		"Vegetables": "frozen vegetables"
-	},
-	{
-		"Vegetables": "olive"
-	},
-	{
-		"Vegetables": "asparagus"
-	},
-	{
-		"Vegetables": "cabbage"
-	},
-	{
-		"Vegetables": "cauliflower"
-	},
-	{
-		"Vegetables": "dill"
-	},
-	{
-		"Vegetables": "kale"
-	},
-	{
-		"Vegetables": "mixed vegetable"
-	},
-	{
-		"Vegetables": "pumpkin"
-	},
-	{
-		"Vegetables": "squash"
-	},
-	{
-		"Vegetables": "mint"
-	},
-	{
-		"Vegetables": "scallion"
-	},
-	{
-		"Vegetables": "sun dried tomato"
-	},
-	{
-		"Vegetables": "shallot"
-	},
-	{
-		"Vegetables": "eggplant"
-	},
-	{
-		"Vegetables": "beet"
-	},
-	{
-		"Vegetables": "butternut squash"
-	},
-	{
-		"Vegetables": "horseradish"
-	},
-	{
-		"Vegetables": "leek"
-	},
-	{
-		"Vegetables": "caper"
-	},
-	{
-		"Vegetables": "brussels sprout"
-	},
-	{
-		"Vegetables": "artichoke heart"
-	},
-	{
-		"Vegetables": "chia seeds"
-	},
-	{
-		"Vegetables": "radish"
-	},
-	{
-		"Vegetables": "sauerkraut"
-	},
-	{
-		"Vegetables": "artichoke"
-	},
-	{
-		"Vegetables": "portobello mushroom"
-	},
-	{
-		"Vegetables": "sweet pepper"
-	},
-	{
-		"Vegetables": "arugula"
-	},
-	{
-		"Vegetables": "spaghetti squash"
-	},
-	{
-		"Vegetables": "capsicum"
-	},
-	{
-		"Vegetables": "bok choy"
-	},
-	{
-		"Vegetables": "parsnip"
-	},
-	{
-		"Vegetables": "okra"
-	},
-	{
-		"Vegetables": "yam"
-	},
-	{
-		"Vegetables": "fennel"
-	},
-	{
-		"Vegetables": "turnip"
-	},
-	{
-		"Vegetables": "snow peas"
-	},
-	{
-		"Vegetables": "bean sprouts"
-	},
-	{
-		"Vegetables": "seaweed"
-	},
-	{
-		"Vegetables": "chard"
-	},
-	{
-		"Vegetables": "collard"
-	},
-	{
-		"Vegetables": "canned tomato"
-	},
-	{
-		"Vegetables": "pimiento"
-	},
-	{
-		"Vegetables": "watercress"
-	},
-	{
-		"Vegetables": "tomatillo"
-	},
-	{
-		"Vegetables": "rocket"
-	},
-	{
-		"Vegetables": "mustard greens"
-	},
-	{
-		"Vegetables": "bamboo shoot"
-	},
-	{
-		"Vegetables": "rutabaga"
-	},
-	{
-		"Vegetables": "endive"
-	},
-	{
-		"Vegetables": "broccoli rabe"
-	},
-	{
-		"Vegetables": "jicama"
-	},
-	{
-		"Vegetables": "kohlrabi"
-	},
-	{
-		"Vegetables": "hearts of palm"
-	},
-	{
-		"Vegetables": "butternut"
-	},
-	{
-		"Vegetables": "celery root"
-	},
-	{
-		"Vegetables": "daikon"
-	},
-	{
-		"Vegetables": "radicchio"
-	},
-	{
-		"Vegetables": "porcini"
-	},
-	{
-		"Vegetables": "chinese broccoli"
-	},
-	{
-		"Vegetables": "jerusalem artichoke"
-	},
-	{
-		"Vegetables": "cress"
-	},
-	{
-		"Vegetables": "water chestnut"
-	},
-	{
-		"Vegetables": "dulse"
-	},
-	{
-		"Vegetables": "micro greens"
-	},
-	{
-		"Vegetables": "burdock"
-	},
-	{
-		"Vegetables": "chayote"
-	},
-	{
-		"Fruits": "lemon"
-	},
-	{
-		"Fruits": "apple"
-	},
-	{
-		"Fruits": "banana"
-	},
-	{
-		"Fruits": "lime"
-	},
-	{
-		"Fruits": "strawberry"
-	},
-	{
-		"Fruits": "orange"
-	},
-	{
-		"Fruits": "pineapple"
-	},
-	{
-		"Fruits": "blueberry"
-	},
-	{
-		"Fruits": "raisin"
-	},
-	{
-		"Fruits": "coconut"
-	},
-	{
-		"Fruits": "grape"
-	},
-	{
-		"Fruits": "peach"
-	},
-	{
-		"Fruits": "raspberry"
-	},
-	{
-		"Fruits": "cranberry"
-	},
-	{
-		"Fruits": "mango"
-	},
-	{
-		"Fruits": "pear"
-	},
-	{
-		"Fruits": "blackberry"
-	},
-	{
-		"Fruits": "cherry"
-	},
-	{
-		"Fruits": "date"
-	},
-	{
-		"Fruits": "watermelon"
-	},
-	{
-		"Fruits": "berries"
-	},
-	{
-		"Fruits": "kiwi"
-	},
-	{
-		"Fruits": "grapefruit"
-	},
-	{
-		"Fruits": "mandarin"
-	},
-	{
-		"Fruits": "craisins"
-	},
-	{
-		"Fruits": "cantaloupe"
-	},
-	{
-		"Fruits": "plum"
-	},
-	{
-		"Fruits": "apricot"
-	},
-	{
-		"Fruits": "clementine"
-	},
-	{
-		"Fruits": "prunes"
-	},
-	{
-		"Fruits": "apple butter"
-	},
-	{
-		"Fruits": "pomegranate"
-	},
-	{
-		"Fruits": "nectarine"
-	},
-	{
-		"Fruits": "fig"
-	},
-	{
-		"Fruits": "tangerine"
-	},
-	{
-		"Fruits": "papaya"
-	},
-	{
-		"Fruits": "rhubarb"
-	},
-	{
-		"Fruits": "sultanas"
-	},
-	{
-		"Fruits": "plantain"
-	},
-	{
-		"Fruits": "currant"
-	},
-	{
-		"Fruits": "passion fruit"
-	},
-	{
-		"Fruits": "guava"
-	},
-	{
-		"Fruits": "persimmons"
-	},
-	{
-		"Fruits": "lychee"
-	},
-	{
-		"Fruits": "lingonberry"
-	},
-	{
-		"Fruits": "tangelos"
-	},
-	{
-		"Fruits": "kumquat"
-	},
-	{
-		"Fruits": "boysenberry"
-	},
-	{
-		"Fruits": "star fruit"
-	},
-	{
-		"Fruits": "quince"
-	},
-	{
-		"Fruits": "honeydew"
-	},
-	{
-		"Fruits": "crabapples"
-	},
-	{
-		"Baking & Grains": "rice"
-	},
-	{
-		"Baking & Grains": "pasta"
-	},
-	{
-		"Baking & Grains": "flour"
-	},
-	{
-		"Baking & Grains": "bread"
-	},
-	{
-		"Baking & Grains": "baking powder"
-	},
-	{
-		"Baking & Grains": "baking soda"
-	},
-	{
-		"Baking & Grains": "bread crumbs"
-	},
-	{
-		"Baking & Grains": "cornstarch"
-	},
-	{
-		"Baking & Grains": "rolled oats"
-	},
-	{
-		"Baking & Grains": "noodle"
-	},
-	{
-		"Baking & Grains": "flour tortillas"
-	},
-	{
-		"Baking & Grains": "pancake mix"
-	},
-	{
-		"Baking & Grains": "yeast"
-	},
-	{
-		"Baking & Grains": "cracker"
-	},
-	{
-		"Baking & Grains": "quinoa"
-	},
-	{
-		"Baking & Grains": "brown rice"
-	},
-	{
-		"Baking & Grains": "cornmeal"
-	},
-	{
-		"Baking & Grains": "self rising flour"
-	},
-	{
-		"Baking & Grains": "cake mix"
-	},
-	{
-		"Baking & Grains": "saltines"
-	},
-	{
-		"Baking & Grains": "popcorn"
-	},
-	{
-		"Baking & Grains": "macaroni cheese mix"
-	},
-	{
-		"Baking & Grains": "corn tortillas"
-	},
-	{
-		"Baking & Grains": "ramen"
-	},
-	{
-		"Baking & Grains": "cereal"
-	},
-	{
-		"Baking & Grains": "biscuits"
-	},
-	{
-		"Baking & Grains": "stuffing mix"
-	},
-	{
-		"Baking & Grains": "couscous"
-	},
-	{
-		"Baking & Grains": "pie crust"
-	},
-	{
-		"Baking & Grains": "bisquick"
-	},
-	{
-		"Baking & Grains": "chips"
-	},
-	{
-		"Baking & Grains": "angel hair"
-	},
-	{
-		"Baking & Grains": "coconut flake"
-	},
-	{
-		"Baking & Grains": "bread flour"
-	},
-	{
-		"Baking & Grains": "croutons"
-	},
-	{
-		"Baking & Grains": "lasagne"
-	},
-	{
-		"Baking & Grains": "pizza dough"
-	},
-	{
-		"Baking & Grains": "bagel"
-	},
-	{
-		"Baking & Grains": "puff pastry"
-	},
-	{
-		"Baking & Grains": "hot dog bun"
-	},
-	{
-		"Baking & Grains": "barley"
-	},
-	{
-		"Baking & Grains": "multigrain bread"
-	},
-	{
-		"Baking & Grains": "potato flakes"
-	},
-	{
-		"Baking & Grains": "pretzel"
-	},
-	{
-		"Baking & Grains": "cornbread"
-	},
-	{
-		"Baking & Grains": "english muffin"
-	},
-	{
-		"Baking & Grains": "cornflour"
-	},
-	{
-		"Baking & Grains": "crescent roll dough"
-	},
-	{
-		"Baking & Grains": "cream of wheat"
-	},
-	{
-		"Baking & Grains": "coconut flour"
-	},
-	{
-		"Baking & Grains": "pita"
-	},
-	{
-		"Baking & Grains": "risotto"
-	},
-	{
-		"Baking & Grains": "muffin mix"
-	},
-	{
-		"Baking & Grains": "bicarbonate of soda"
-	},
-	{
-		"Baking & Grains": "ravioli"
-	},
-	{
-		"Baking & Grains": "wheat"
-	},
-	{
-		"Baking & Grains": "rice flour"
-	},
-	{
-		"Baking & Grains": "polenta"
-	},
-	{
-		"Baking & Grains": "baguette"
-	},
-	{
-		"Baking & Grains": "gnocchi"
-	},
-	{
-		"Baking & Grains": "vermicelli"
-	},
-	{
-		"Baking & Grains": "semolina"
-	},
-	{
-		"Baking & Grains": "wheat germ"
-	},
-	{
-		"Baking & Grains": "buckwheat"
-	},
-	{
-		"Baking & Grains": "croissants"
-	},
-	{
-		"Baking & Grains": "bread dough"
-	},
-	{
-		"Baking & Grains": "filo dough"
-	},
-	{
-		"Baking & Grains": "yeast flake"
-	},
-	{
-		"Baking & Grains": "pierogi"
-	},
-	{
-		"Baking & Grains": "matzo meal"
-	},
-	{
-		"Baking & Grains": "rye"
-	},
-	{
-		"Baking & Grains": "tapioca flour"
-	},
-	{
-		"Baking & Grains": "shortcrust pastry"
-	},
-	{
-		"Baking & Grains": "potato starch"
-	},
-	{
-		"Baking & Grains": "breadsticks"
-	},
-	{
-		"Baking & Grains": "ciabatta"
-	},
-	{
-		"Baking & Grains": "spelt"
-	},
-	{
-		"Baking & Grains": "angel food"
-	},
-	{
-		"Baking & Grains": "tapioca starch"
-	},
-	{
-		"Baking & Grains": "starch"
-	},
-	{
-		"Baking & Grains": "whole wheat flour"
-	},
-	{
-		"Baking & Grains": "gram flour"
-	},
-	{
-		"Baking & Grains": "sourdough starter"
-	},
-	{
-		"Baking & Grains": "wafer"
-	},
-	{
-		"Baking & Grains": "bran"
-	},
-	{
-		"Baking & Grains": "challah"
-	},
-	{
-		"Baking & Grains": "sponge cake"
-	},
-	{
-		"Baking & Grains": "malt extract"
-	},
-	{
-		"Baking & Grains": "sorghum flour"
-	},
-	{
-		"Added Sweeteners": "sugar"
-	},
-	{
-		"Added Sweeteners": "brown sugar"
-	},
-	{
-		"Added Sweeteners": "honey"
-	},
-	{
-		"Added Sweeteners": "confectioners sugar"
-	},
-	{
-		"Added Sweeteners": "maple syrup"
-	},
-	{
-		"Added Sweeteners": "corn syrup"
-	},
-	{
-		"Added Sweeteners": "molasses"
-	},
-	{
-		"Added Sweeteners": "artificial sweetener"
-	},
-	{
-		"Added Sweeteners": "agave nectar"
-	},
-	{
-		"Spices": "cinnamon"
-	},
-	{
-		"Spices": "vanilla"
-	},
-	{
-		"Spices": "garlic powder"
-	},
-	{
-		"Spices": "paprika"
-	},
-	{
-		"Spices": "oregano"
-	},
-	{
-		"Spices": "chili powder"
-	},
-	{
-		"Spices": "red pepper flake"
-	},
-	{
-		"Spices": "cumin"
-	},
-	{
-		"Spices": "cayenne"
-	},
-	{
-		"Spices": "italian seasoning"
-	},
-	{
-		"Spices": "thyme"
-	},
-	{
-		"Spices": "onion powder"
-	},
-	{
-		"Spices": "nutmeg"
-	},
-	{
-		"Spices": "ground nutmeg"
-	},
-	{
-		"Spices": "curry powder"
-	},
-	{
-		"Spices": "bay leaf"
-	},
-	{
-		"Spices": "taco seasoning"
-	},
-	{
-		"Spices": "sage"
-	},
-	{
-		"Spices": "clove"
-	},
-	{
-		"Spices": "allspice"
-	},
-	{
-		"Spices": "turmeric"
-	},
-	{
-		"Spices": "chive"
-	},
-	{
-		"Spices": "peppercorn"
-	},
-	{
-		"Spices": "ground coriander"
-	},
-	{
-		"Spices": "cajun seasoning"
-	},
-	{
-		"Spices": "coriander"
-	},
-	{
-		"Spices": "celery salt"
-	},
-	{
-		"Spices": "vanilla essence"
-	},
-	{
-		"Spices": "herbs"
-	},
-	{
-		"Spices": "steak seasoning"
-	},
-	{
-		"Spices": "poultry seasoning"
-	},
-	{
-		"Spices": "chile powder"
-	},
-	{
-		"Spices": "cardamom"
-	},
-	{
-		"Spices": "italian herbs"
-	},
-	{
-		"Spices": "tarragon"
-	},
-	{
-		"Spices": "garam masala"
-	},
-	{
-		"Spices": "marjoram"
-	},
-	{
-		"Spices": "mustard seed"
-	},
-	{
-		"Spices": "celery seed"
-	},
-	{
-		"Spices": "chinese five spice"
-	},
-	{
-		"Spices": "italian spice"
-	},
-	{
-		"Spices": "saffron"
-	},
-	{
-		"Spices": "onion flake"
-	},
-	{
-		"Spices": "herbes de provence"
-	},
-	{
-		"Spices": "chipotle"
-	},
-	{
-		"Spices": "dill seed"
-	},
-	{
-		"Spices": "fennel seed"
-	},
-	{
-		"Spices": "caraway"
-	},
-	{
-		"Spices": "cacao"
-	},
-	{
-		"Spices": "star anise"
-	},
-	{
-		"Spices": "savory"
-	},
-	{
-		"Spices": "chili paste"
-	},
-	{
-		"Spices": "tamarind"
-	},
-	{
-		"Spices": "aniseed"
-	},
-	{
-		"Spices": "fenugreek"
-	},
-	{
-		"Spices": "lavender"
-	},
-	{
-		"Spices": "old bay seasoning"
-	},
-	{
-		"Spices": "lemon balm"
-	},
-	{
-		"Meats": "chicken breast"
-	},
-	{
-		"Meats": "ground beef"
-	},
-	{
-		"Meats": "bacon"
-	},
-	{
-		"Meats": "sausage"
-	},
-	{
-		"Meats": "beef steak"
-	},
-	{
-		"Meats": "ham"
-	},
-	{
-		"Meats": "hot dog"
-	},
-	{
-		"Meats": "pork chops"
-	},
-	{
-		"Meats": "chicken thighs"
-	},
-	{
-		"Meats": "ground turkey"
-	},
-	{
-		"Meats": "cooked chicken"
-	},
-	{
-		"Meats": "turkey"
-	},
-	{
-		"Meats": "pork"
-	},
-	{
-		"Meats": "pepperoni"
-	},
-	{
-		"Meats": "whole chicken"
-	},
-	{
-		"Meats": "chicken leg"
-	},
-	{
-		"Meats": "ground pork"
-	},
-	{
-		"Meats": "chorizo"
-	},
-	{
-		"Meats": "chicken wings"
-	},
-	{
-		"Meats": "beef roast"
-	},
-	{
-		"Meats": "polish sausage"
-	},
-	{
-		"Meats": "salami"
-	},
-	{
-		"Meats": "pork roast"
-	},
-	{
-		"Meats": "ground chicken"
-	},
-	{
-		"Meats": "pork ribs"
-	},
-	{
-		"Meats": "spam"
-	},
-	{
-		"Meats": "venison"
-	},
-	{
-		"Meats": "pork shoulder"
-	},
-	{
-		"Meats": "bologna"
-	},
-	{
-		"Meats": "bratwurst"
-	},
-	{
-		"Meats": "prosciutto"
-	},
-	{
-		"Meats": "lamb"
-	},
-	{
-		"Meats": "corned beef"
-	},
-	{
-		"Meats": "chicken roast"
-	},
-	{
-		"Meats": "lamb chops"
-	},
-	{
-		"Meats": "pancetta"
-	},
-	{
-		"Meats": "ground lamb"
-	},
-	{
-		"Meats": "beef ribs"
-	},
-	{
-		"Meats": "duck"
-	},
-	{
-		"Meats": "pork belly"
-	},
-	{
-		"Meats": "beef liver"
-	},
-	{
-		"Meats": "leg of lamb"
-	},
-	{
-		"Meats": "canadian bacon"
-	},
-	{
-		"Meats": "beef shank"
-	},
-	{
-		"Meats": "veal"
-	},
-	{
-		"Meats": "chicken giblets"
-	},
-	{
-		"Meats": "cornish hen"
-	},
-	{
-		"Meats": "lamb shoulder"
-	},
-	{
-		"Meats": "lamb shank"
-	},
-	{
-		"Meats": "deer"
-	},
-	{
-		"Meats": "ground veal"
-	},
-	{
-		"Meats": "pastrami"
-	},
-	{
-		"Meats": "rabbit"
-	},
-	{
-		"Meats": "sliced turkey"
-	},
-	{
-		"Meats": "pork loin"
-	},
-	{
-		"Meats": "elk"
-	},
-	{
-		"Meats": "beef suet"
-	},
-	{
-		"Meats": "veal cutlet"
-	},
-	{
-		"Meats": "lamb loin"
-	},
-	{
-		"Meats": "marrow bones"
-	},
-	{
-		"Meats": "goose"
-	},
-	{
-		"Meats": "chicken tenders"
-	},
-	{
-		"Meats": "veal chops"
-	},
-	{
-		"Meats": "quail"
-	},
-	{
-		"Meats": "oxtail"
-	},
-	{
-		"Meats": "pheasant"
-	},
-	{
-		"Meats": "lamb liver"
-	},
-	{
-		"Meats": "moose"
-	},
-	{
-		"Meats": "turkey liver"
-	},
-	{
-		"Meats": "pork liver"
-	},
-	{
-		"Meats": "veal shank"
-	},
-	{
-		"Meats": "foie gras"
-	},
-	{
-		"Meats": "beef sirloin"
-	},
-	{
-		"Meats": "liver sausage"
-	},
-	{
-		"Meats": "sweetbread"
-	},
-	{
-		"Meats": "wild boar"
-	},
-	{
-		"Meats": "snail"
-	},
-	{
-		"Meats": "pigeon"
-	},
-	{
-		"Meats": "duck liver"
-	},
-	{
-		"Meats": "goose liver"
-	},
-	{
-		"Meats": "grouse"
-	},
-	{
-		"Meats": "ostrich"
-	},
-	{
-		"Meats": "soppressata"
-	},
-	{
-		"Meats": "alligator"
-	},
-	{
-		"Fish": "canned tuna"
-	},
-	{
-		"Fish": "salmon"
-	},
-	{
-		"Fish": "tilapia"
-	},
-	{
-		"Fish": "fish fillets"
-	},
-	{
-		"Fish": "cod"
-	},
-	{
-		"Fish": "canned salmon"
-	},
-	{
-		"Fish": "anchovy"
-	},
-	{
-		"Fish": "smoked salmon"
-	},
-	{
-		"Fish": "sardines"
-	},
-	{
-		"Fish": "tuna steak"
-	},
-	{
-		"Fish": "whitefish"
-	},
-	{
-		"Fish": "halibut"
-	},
-	{
-		"Fish": "trout"
-	},
-	{
-		"Fish": "haddock"
-	},
-	{
-		"Fish": "flounder"
-	},
-	{
-		"Fish": "catfish"
-	},
-	{
-		"Fish": "mahi mahi"
-	},
-	{
-		"Fish": "mackerel"
-	},
-	{
-		"Fish": "sole"
-	},
-	{
-		"Fish": "sea bass"
-	},
-	{
-		"Fish": "red snapper"
-	},
-	{
-		"Fish": "swordfish"
-	},
-	{
-		"Fish": "pollock"
-	},
-	{
-		"Fish": "herring"
-	},
-	{
-		"Fish": "perch"
-	},
-	{
-		"Fish": "grouper"
-	},
-	{
-		"Fish": "caviar"
-	},
-	{
-		"Fish": "monkfish"
-	},
-	{
-		"Fish": "rockfish"
-	},
-	{
-		"Fish": "lemon sole"
-	},
-	{
-		"Fish": "pike"
-	},
-	{
-		"Fish": "barramundi"
-	},
-	{
-		"Fish": "eel"
-	},
-	{
-		"Fish": "bluefish"
-	},
-	{
-		"Fish": "carp"
-	},
-	{
-		"Fish": "cuttlefish"
-	},
-	{
-		"Fish": "pompano"
-	},
-	{
-		"Fish": "arctic char"
-	},
-	{
-		"Fish": "john dory"
-	},
-	{
-		"Fish": "marlin"
-	},
-	{
-		"Fish": "amberjack"
-	},
-	{
-		"Fish": "sturgeon"
-	},
-	{
-		"Seafood": "shrimp"
-	},
-	{
-		"Seafood": "crab"
-	},
-	{
-		"Seafood": "prawns"
-	},
-	{
-		"Seafood": "scallop"
-	},
-	{
-		"Seafood": "clam"
-	},
-	{
-		"Seafood": "lobster"
-	},
-	{
-		"Seafood": "mussel"
-	},
-	{
-		"Seafood": "oyster"
-	},
-	{
-		"Seafood": "squid"
-	},
-	{
-		"Seafood": "calamari"
-	},
-	{
-		"Seafood": "crawfish"
-	},
-	{
-		"Seafood": "octopus"
-	},
-	{
-		"Seafood": "cockle"
-	},
-	{
-		"Seafood": "conch"
-	},
-	{
-		"Seafood": "sea urchin"
-	},
-	{
-		"Condiments": "mayonnaise"
-	},
-	{
-		"Condiments": "ketchup"
-	},
-	{
-		"Condiments": "mustard"
-	},
-	{
-		"Condiments": "vinegar"
-	},
-	{
-		"Condiments": "soy sauce"
-	},
-	{
-		"Condiments": "balsamic vinegar"
-	},
-	{
-		"Condiments": "worcestershire"
-	},
-	{
-		"Condiments": "hot sauce"
-	},
-	{
-		"Condiments": "barbecue sauce"
-	},
-	{
-		"Condiments": "ranch dressing"
-	},
-	{
-		"Condiments": "wine vinegar"
-	},
-	{
-		"Condiments": "apple cider vinegar"
-	},
-	{
-		"Condiments": "cider vinegar"
-	},
-	{
-		"Condiments": "italian dressing"
-	},
-	{
-		"Condiments": "rice vinegar"
-	},
-	{
-		"Condiments": "salad dressing"
-	},
-	{
-		"Condiments": "tabasco"
-	},
-	{
-		"Condiments": "fish sauce"
-	},
-	{
-		"Condiments": "teriyaki"
-	},
-	{
-		"Condiments": "steak sauce"
-	},
-	{
-		"Condiments": "tahini"
-	},
-	{
-		"Condiments": "enchilada sauce"
-	},
-	{
-		"Condiments": "vinaigrette dressing"
-	},
-	{
-		"Condiments": "oyster sauce"
-	},
-	{
-		"Condiments": "honey mustard"
-	},
-	{
-		"Condiments": "sriracha"
-	},
-	{
-		"Condiments": "caesar dressing"
-	},
-	{
-		"Condiments": "taco sauce"
-	},
-	{
-		"Condiments": "mirin"
-	},
-	{
-		"Condiments": "blue cheese dressing"
-	},
-	{
-		"Condiments": "sweet and sour sauce"
-	},
-	{
-		"Condiments": "thousand island"
-	},
-	{
-		"Condiments": "picante sauce"
-	},
-	{
-		"Condiments": "buffalo sauce"
-	},
-	{
-		"Condiments": "french dressing"
-	},
-	{
-		"Condiments": "tartar sauce"
-	},
-	{
-		"Condiments": "cocktail sauce"
-	},
-	{
-		"Condiments": "marsala"
-	},
-	{
-		"Condiments": "adobo sauce"
-	},
-	{
-		"Condiments": "tzatziki sauce"
-	},
-	{
-		"Condiments": "sesame dressing"
-	},
-	{
-		"Condiments": "ponzu"
-	},
-	{
-		"Condiments": "duck sauce"
-	},
-	{
-		"Condiments": "pickapeppa sauce"
-	},
-	{
-		"Condiments": "yuzu juice"
-	},
-	{
-		"Condiments": "cream sauce"
-	},
-	{
-		"Oils": "olive oil"
-	},
-	{
-		"Oils": "vegetable oil"
-	},
-	{
-		"Oils": "cooking spray"
-	},
-	{
-		"Oils": "canola oil"
-	},
-	{
-		"Oils": "shortening"
-	},
-	{
-		"Oils": "sesame oil"
-	},
-	{
-		"Oils": "coconut oil"
-	},
-	{
-		"Oils": "peanut oil"
-	},
-	{
-		"Oils": "sunflower oil"
-	},
-	{
-		"Oils": "lard"
-	},
-	{
-		"Oils": "grape seed oil"
-	},
-	{
-		"Oils": "corn oil"
-	},
-	{
-		"Oils": "almond oil"
-	},
-	{
-		"Oils": "avocado oil"
-	},
-	{
-		"Oils": "safflower oil"
-	},
-	{
-		"Oils": "walnut oil"
-	},
-	{
-		"Oils": "hazelnut oil"
-	},
-	{
-		"Oils": "palm oil"
-	},
-	{
-		"Oils": "soybean oil"
-	},
-	{
-		"Oils": "mustard oil"
-	},
-	{
-		"Oils": "pistachio oil"
-	},
-	{
-		"Oils": "soya oil"
-	},
-	{
-		"Seasonings": "bouillon"
-	},
-	{
-		"Seasonings": "ground ginger"
-	},
-	{
-		"Seasonings": "sesame seed"
-	},
-	{
-		"Seasonings": "cream of tartar"
-	},
-	{
-		"Seasonings": "chili sauce"
-	},
-	{
-		"Seasonings": "soya sauce"
-	},
-	{
-		"Seasonings": "apple cider"
-	},
-	{
-		"Seasonings": "hoisin sauce"
-	},
-	{
-		"Seasonings": "liquid smoke"
-	},
-	{
-		"Seasonings": "rice wine"
-	},
-	{
-		"Seasonings": "vegetable bouillon"
-	},
-	{
-		"Seasonings": "poppy seed"
-	},
-	{
-		"Seasonings": "balsamic glaze"
-	},
-	{
-		"Seasonings": "miso"
-	},
-	{
-		"Seasonings": "wasabi"
-	},
-	{
-		"Seasonings": "fish stock"
-	},
-	{
-		"Seasonings": "rose water"
-	},
-	{
-		"Seasonings": "pickling salt"
-	},
-	{
-		"Seasonings": "champagne vinegar"
-	},
-	{
-		"Seasonings": "bbq rub"
-	},
-	{
-		"Seasonings": "jamaican jerk spice"
-	},
-	{
-		"Seasonings": "accent seasoning"
-	},
-	{
-		"Seasonings": "pickling spice"
-	},
-	{
-		"Seasonings": "mustard powder"
-	},
-	{
-		"Seasonings": "mango powder"
-	},
-	{
-		"Seasonings": "adobo seasoning"
-	},
-	{
-		"Seasonings": "kasuri methi"
-	},
-	{
-		"Seasonings": "caribbean jerk seasoning"
-	},
-	{
-		"Seasonings": "brine"
-	},
-	{
-		"Seasonings": "matcha powder"
-	},
-	{
-		"Seasonings": "cassia"
-	},
-	{
-		"Sauces": "tomato sauce"
-	},
-	{
-		"Sauces": "tomato paste"
-	},
-	{
-		"Sauces": "salsa"
-	},
-	{
-		"Sauces": "pesto"
-	},
-	{
-		"Sauces": "alfredo sauce"
-	},
-	{
-		"Sauces": "beef gravy"
-	},
-	{
-		"Sauces": "curry paste"
-	},
-	{
-		"Sauces": "chicken gravy"
-	},
-	{
-		"Sauces": "cranberry sauce"
-	},
-	{
-		"Sauces": "turkey gravy"
-	},
-	{
-		"Sauces": "mushroom gravy"
-	},
-	{
-		"Sauces": "sausage gravy"
-	},
-	{
-		"Sauces": "onion gravy"
-	},
-	{
-		"Sauces": "cream gravy"
-	},
-	{
-		"Sauces": "pork gravy"
-	},
-	{
-		"Sauces": "tomato gravy"
-	},
-	{
-		"Sauces": "giblet gravy"
-	},
-	{
-		"Legumes": "green beans"
-	},
-	{
-		"Legumes": "peas"
-	},
-	{
-		"Legumes": "black beans"
-	},
-	{
-		"Legumes": "chickpea"
-	},
-	{
-		"Legumes": "lentil"
-	},
-	{
-		"Legumes": "refried beans"
-	},
-	{
-		"Legumes": "hummus"
-	},
-	{
-		"Legumes": "chili beans"
-	},
-	{
-		"Legumes": "lima beans"
-	},
-	{
-		"Legumes": "kidney beans"
-	},
-	{
-		"Legumes": "pinto beans"
-	},
-	{
-		"Legumes": "edamame"
-	},
-	{
-		"Legumes": "split peas"
-	},
-	{
-		"Legumes": "snap peas"
-	},
-	{
-		"Legumes": "soybeans"
-	},
-	{
-		"Legumes": "cannellini beans"
-	},
-	{
-		"Legumes": "navy beans"
-	},
-	{
-		"Legumes": "french beans"
-	},
-	{
-		"Legumes": "red beans"
-	},
-	{
-		"Legumes": "great northern beans"
-	},
-	{
-		"Legumes": "fava beans"
-	},
-	{
-		"Alcohol": "white wine"
-	},
-	{
-		"Alcohol": "beer"
-	},
-	{
-		"Alcohol": "red wine"
-	},
-	{
-		"Alcohol": "vodka"
-	},
-	{
-		"Alcohol": "rum"
-	},
-	{
-		"Alcohol": "whiskey"
-	},
-	{
-		"Alcohol": "tequila"
-	},
-	{
-		"Alcohol": "sherry"
-	},
-	{
-		"Alcohol": "bourbon"
-	},
-	{
-		"Alcohol": "cooking wine"
-	},
-	{
-		"Alcohol": "whisky"
-	},
-	{
-		"Alcohol": "liqueur"
-	},
-	{
-		"Alcohol": "brandy"
-	},
-	{
-		"Alcohol": "gin"
-	},
-	{
-		"Alcohol": "kahlua"
-	},
-	{
-		"Alcohol": "irish cream"
-	},
-	{
-		"Alcohol": "triple sec"
-	},
-	{
-		"Alcohol": "champagne"
-	},
-	{
-		"Alcohol": "amaretto"
-	},
-	{
-		"Alcohol": "cabernet sauvignon"
-	},
-	{
-		"Alcohol": "vermouth"
-	},
-	{
-		"Alcohol": "bitters"
-	},
-	{
-		"Alcohol": "maraschino"
-	},
-	{
-		"Alcohol": "sake"
-	},
-	{
-		"Alcohol": "grand marnier"
-	},
-	{
-		"Alcohol": "masala"
-	},
-	{
-		"Alcohol": "dessert wine"
-	},
-	{
-		"Alcohol": "schnapps"
-	},
-	{
-		"Alcohol": "port wine"
-	},
-	{
-		"Alcohol": "sparkling wine"
-	},
-	{
-		"Alcohol": "cognac"
-	},
-	{
-		"Alcohol": "chocolate liqueur"
-	},
-	{
-		"Alcohol": "burgundy wine"
-	},
-	{
-		"Alcohol": "limoncello"
-	},
-	{
-		"Alcohol": "creme de menthe"
-	},
-	{
-		"Alcohol": "bloody mary"
-	},
-	{
-		"Alcohol": "raspberry liquor"
-	},
-	{
-		"Alcohol": "curacao"
-	},
-	{
-		"Alcohol": "frangelico"
-	},
-	{
-		"Alcohol": "shaoxing wine"
-	},
-	{
-		"Alcohol": "absinthe"
-	},
-	{
-		"Alcohol": "madeira wine"
-	},
-	{
-		"Alcohol": "ouzo"
-	},
-	{
-		"Alcohol": "anisette"
-	},
-	{
-		"Alcohol": "grappa"
-	},
-	{
-		"Alcohol": "ciclon"
-	},
-	{
-		"Alcohol": "drambuie"
-	},
-	{
-		"Soup": "chicken broth"
-	},
-	{
-		"Soup": "mushroom soup"
-	},
-	{
-		"Soup": "beef broth"
-	},
-	{
-		"Soup": "tomato soup"
-	},
-	{
-		"Soup": "vegetable stock"
-	},
-	{
-		"Soup": "chicken soup"
-	},
-	{
-		"Soup": "onion soup"
-	},
-	{
-		"Soup": "vegetable soup"
-	},
-	{
-		"Soup": "celery soup"
-	},
-	{
-		"Soup": "dashi"
-	},
-	{
-		"Soup": "lamb stock"
-	},
-	{
-		"Soup": "pork stock"
-	},
-	{
-		"Soup": "veal stock"
-	},
-	{
-		"Nuts": "peanut butter"
-	},
-	{
-		"Nuts": "almond"
-	},
-	{
-		"Nuts": "walnut"
-	},
-	{
-		"Nuts": "pecan"
-	},
-	{
-		"Nuts": "peanut"
-	},
-	{
-		"Nuts": "cashew"
-	},
-	{
-		"Nuts": "flax"
-	},
-	{
-		"Nuts": "pine nut"
-	},
-	{
-		"Nuts": "pistachio"
-	},
-	{
-		"Nuts": "almond meal"
-	},
-	{
-		"Nuts": "hazelnut"
-	},
-	{
-		"Nuts": "macadamia"
-	},
-	{
-		"Nuts": "almond paste"
-	},
-	{
-		"Nuts": "chestnut"
-	},
-	{
-		"Nuts": "praline"
-	},
-	{
-		"Nuts": "macaroon"
-	},
-	{
-		"Dairy Alternatives": "margarine"
-	},
-	{
-		"Dairy Alternatives": "coconut milk"
-	},
-	{
-		"Dairy Alternatives": "almond milk"
-	},
-	{
-		"Dairy Alternatives": "soy milk"
-	},
-	{
-		"Dairy Alternatives": "rice milk"
-	},
-	{
-		"Dairy Alternatives": "hemp milk"
-	},
-	{
-		"Dairy Alternatives": "non dairy creamer"
-	},
-	{
-		"Desserts & Snacks": "chocolate"
-	},
-	{
-		"Desserts & Snacks": "apple sauce"
-	},
-	{
-		"Desserts & Snacks": "strawberry jam"
-	},
-	{
-		"Desserts & Snacks": "graham cracker"
-	},
-	{
-		"Desserts & Snacks": "marshmallow"
-	},
-	{
-		"Desserts & Snacks": "chocolate syrup"
-	},
-	{
-		"Desserts & Snacks": "potato chips"
-	},
-	{
-		"Desserts & Snacks": "nutella"
-	},
-	{
-		"Desserts & Snacks": "chocolate morsels"
-	},
-	{
-		"Desserts & Snacks": "bittersweet chocolate"
-	},
-	{
-		"Desserts & Snacks": "pudding mix"
-	},
-	{
-		"Desserts & Snacks": "raspberry jam"
-	},
-	{
-		"Desserts & Snacks": "dark chocolate"
-	},
-	{
-		"Desserts & Snacks": "chocolate chips"
-	},
-	{
-		"Desserts & Snacks": "jam"
-	},
-	{
-		"Desserts & Snacks": "white chocolate"
-	},
-	{
-		"Desserts & Snacks": "brownie mix"
-	},
-	{
-		"Desserts & Snacks": "chocolate pudding"
-	},
-	{
-		"Desserts & Snacks": "jello"
-	},
-	{
-		"Desserts & Snacks": "caramel"
-	},
-	{
-		"Desserts & Snacks": "chocolate powder"
-	},
-	{
-		"Desserts & Snacks": "candy"
-	},
-	{
-		"Desserts & Snacks": "corn chips"
-	},
-	{
-		"Desserts & Snacks": "cookies"
-	},
-	{
-		"Desserts & Snacks": "apricot jam"
-	},
-	{
-		"Desserts & Snacks": "chocolate bar"
-	},
-	{
-		"Desserts & Snacks": "cookie dough"
-	},
-	{
-		"Desserts & Snacks": "oreo"
-	},
-	{
-		"Desserts & Snacks": "doritos"
-	},
-	{
-		"Desserts & Snacks": "chocolate cookies"
-	},
-	{
-		"Desserts & Snacks": "butterscotch"
-	},
-	{
-		"Desserts & Snacks": "blackberry preserves"
-	},
-	{
-		"Desserts & Snacks": "blueberry jam"
-	},
-	{
-		"Desserts & Snacks": "peach preserves"
-	},
-	{
-		"Desserts & Snacks": "cherry jam"
-	},
-	{
-		"Desserts & Snacks": "fig jam"
-	},
-	{
-		"Desserts & Snacks": "plum jam"
-	},
-	{
-		"Desserts & Snacks": "cinnamon roll"
-	},
-	{
-		"Desserts & Snacks": "fudge"
-	},
-	{
-		"Desserts & Snacks": "cookie crumb"
-	},
-	{
-		"Desserts & Snacks": "grape jelly"
-	},
-	{
-		"Desserts & Snacks": "chilli jam"
-	},
-	{
-		"Desserts & Snacks": "lady fingers"
-	},
-	{
-		"Desserts & Snacks": "black pudding"
-	},
-	{
-		"Desserts & Snacks": "chocolate wafer"
-	},
-	{
-		"Desserts & Snacks": "gummy worms"
-	},
-	{
-		"Desserts & Snacks": "biscotti biscuit"
-	},
-	{
-		"Desserts & Snacks": "doughnut"
-	},
-	{
-		"Desserts & Snacks": "amaretti cookies"
-	},
-	{
-		"Desserts & Snacks": "apple jelly"
-	},
-	{
-		"Desserts & Snacks": "red pepper jelly"
-	},
-	{
-		"Desserts & Snacks": "orange jelly"
-	},
-	{
-		"Desserts & Snacks": "jalapeno jelly"
-	},
-	{
-		"Desserts & Snacks": "mint jelly"
-	},
-	{
-		"Desserts & Snacks": "currant jelly"
-	},
-	{
-		"Desserts & Snacks": "lemon jelly"
-	},
-	{
-		"Desserts & Snacks": "quince jelly"
-	},
-	{
-		"Beverages": "coffee"
-	},
-	{
-		"Beverages": "orange juice"
-	},
-	{
-		"Beverages": "tea"
-	},
-	{
-		"Beverages": "green tea"
-	},
-	{
-		"Beverages": "apple juice"
-	},
-	{
-		"Beverages": "tomato juice"
-	},
-	{
-		"Beverages": "coke"
-	},
-	{
-		"Beverages": "chocolate milk"
-	},
-	{
-		"Beverages": "pineapple juice"
-	},
-	{
-		"Beverages": "lemonade"
-	},
-	{
-		"Beverages": "cranberry juice"
-	},
-	{
-		"Beverages": "espresso"
-	},
-	{
-		"Beverages": "fruit juice"
-	},
-	{
-		"Beverages": "ginger ale"
-	},
-	{
-		"Beverages": "club soda"
-	},
-	{
-		"Beverages": "sprite"
-	},
-	{
-		"Beverages": "kool aid"
-	},
-	{
-		"Beverages": "grenadine"
-	},
-	{
-		"Beverages": "margarita mix"
-	},
-	{
-		"Beverages": "cherry juice"
-	},
-	{
-		"Beverages": "pepsi"
-	},
-	{
-		"Beverages": "mountain dew"
+[{
+		"Dairy": [
+			"Butter",
+			"Egg",
+			"Milk",
+			"Parmesan",
+			"Cheddar",
+			"American cheese",
+			"Sour cream",
+			"Cream cheese",
+			"Mozzarella",
+			"Yogurt",
+			"Cream",
+			"Evaporated milk",
+			"Whipped cream",
+			"Half and half",
+			"Feta",
+			"Monterey jack cheese",
+			"Condensed milk",
+			"Cottage cheese",
+			"Ice cream",
+			"Swiss cheese",
+			"Velveeta",
+			"Frosting",
+			"Buttermilk",
+			"Ricotta",
+			"Goat cheese",
+			"Provolone",
+			"Blue cheese",
+			"Powdered milk",
+			"Colby cheese",
+			"Pepper jack",
+			"Italian cheese",
+			"Soft cheese",
+			"Gouda",
+			"Pepperjack cheese",
+			"Romano",
+			"Brie",
+			"Pizza cheese",
+			"Ghee",
+			"Creme fraiche",
+			"Cheese soup",
+			"Gruyere",
+			"Pecorino cheese",
+			"Custard",
+			"Muenster",
+			"Queso fresco cheese",
+			"Hard cheese",
+			"Havarti cheese",
+			"Asiago",
+			"Mascarpone",
+			"Neufchatel",
+			"Halloumi",
+			"Paneer",
+			"Brick cheese",
+			"Camembert cheese",
+			"Goat milk",
+			"Garlic herb cheese",
+			"Edam cheese",
+			"Manchego",
+			"Fontina",
+			"Stilton cheese",
+			"Emmenthaler cheese",
+			"Red leicester cheese",
+			"Jarlsberg cheese",
+			"Bocconcini cheese",
+			"Farmer cheese",
+			"Creme de cassis",
+			"Wensleydale cheese",
+			"Longhorn cheese",
+			"Double gloucester cheese",
+			"Raclette cheese",
+			"Lancashire cheese",
+			"Cheshire cheese"
+		]
+	},
+	{
+		"Vegetables": [
+			"Onion",
+			"Garlic",
+			"Tomato",
+			"Potato",
+			"Carrot",
+			"Bell pepper",
+			"Basil",
+			"Parsley",
+			"Broccoli",
+			"Corn",
+			"Spinach",
+			"Mushroom",
+			"Green beans",
+			"Ginger",
+			"Chili pepper",
+			"Celery",
+			"Rosemary",
+			"Salad greens",
+			"Red onion",
+			"Cucumber",
+			"Sweet potato",
+			"Pickle",
+			"Avocado",
+			"Zucchini",
+			"Cilantro",
+			"Frozen vegetables",
+			"Olive",
+			"Asparagus",
+			"Cabbage",
+			"Cauliflower",
+			"Dill",
+			"Kale",
+			"Mixed vegetable",
+			"Pumpkin",
+			"Squash",
+			"Mint",
+			"Scallion",
+			"Sun dried tomato",
+			"Shallot",
+			"Eggplant",
+			"Beet",
+			"Butternut squash",
+			"Horseradish",
+			"Leek",
+			"Caper",
+			"Brussels sprout",
+			"Artichoke heart",
+			"Chia seeds",
+			"Radish",
+			"Sauerkraut",
+			"Artichoke",
+			"Portobello mushroom",
+			"Sweet pepper",
+			"Arugula",
+			"Spaghetti squash",
+			"Capsicum",
+			"Bok choy",
+			"Parsnip",
+			"Okra",
+			"Yam",
+			"Fennel",
+			"Turnip",
+			"Snow peas",
+			"Bean sprouts",
+			"Seaweed",
+			"Chard",
+			"Collard",
+			"Canned tomato",
+			"Pimiento",
+			"Watercress",
+			"Tomatillo",
+			"Rocket",
+			"Mustard greens",
+			"Bamboo shoot",
+			"Rutabaga",
+			"Endive",
+			"Broccoli rabe",
+			"Jicama",
+			"Kohlrabi",
+			"Hearts of palm",
+			"Butternut",
+			"Celery root",
+			"Daikon",
+			"Radicchio",
+			"Porcini",
+			"Chinese broccoli",
+			"Jerusalem artichoke",
+			"Cress",
+			"Water chestnut",
+			"Dulse",
+			"Micro greens",
+			"Burdock",
+			"Chayote"
+		]
+	},
+	{
+		"Fruits": [
+			"Lemon",
+			"Apple",
+			"Banana",
+			"Lime",
+			"Strawberry",
+			"Orange",
+			"Pineapple",
+			"Blueberry",
+			"Raisin",
+			"Coconut",
+			"Grape",
+			"Peach",
+			"Raspberry",
+			"Cranberry",
+			"Mango",
+			"Pear",
+			"Blackberry",
+			"Cherry",
+			"Date",
+			"Watermelon",
+			"Berries",
+			"Kiwi",
+			"Grapefruit",
+			"Mandarin",
+			"Craisins",
+			"Cantaloupe",
+			"Plum",
+			"Apricot",
+			"Clementine",
+			"Prunes",
+			"Apple butter",
+			"Pomegranate",
+			"Nectarine",
+			"Fig",
+			"Tangerine",
+			"Papaya",
+			"Rhubarb",
+			"Sultanas",
+			"Plantain",
+			"Currant",
+			"Passion fruit",
+			"Guava",
+			"Persimmons",
+			"Lychee",
+			"Lingonberry",
+			"Tangelos",
+			"Kumquat",
+			"Boysenberry",
+			"Star fruit",
+			"Quince",
+			"Honeydew",
+			"Crabapples"
+		]
+	},
+	{
+		"Pasta & Noods": [
+			"Pasta",
+			"Noodles",
+			"Rice Noodles",
+			"Udon Noodles"
+		]
+	},
+	{
+		"Baking & Grains": [
+			"Rice",
+			"Flour",
+			"Baking Powder",
+			"Baking Soda",
+			"Bread Crumbs",
+			"Cornstarch",
+			"Rolled Oats",
+			"Flour tortillas",
+			"Pancake mix",
+			"Yeast",
+			"Cracker",
+			"Brown rice",
+			"Cornmeal",
+			"Self rising flour",
+			"Cake mix",
+			"Saltines",
+			"Popcorn",
+			"Macaroni cheese mix",
+			"Corn tortillas",
+			"Ramen",
+			"Cereal",
+			"Biscuits",
+			"Stuffing mix",
+			"Couscous",
+			"Pie crust",
+			"Bisquick",
+			"Chips",
+			"Angel hair",
+			"Coconut flake",
+			"Bread flour",
+			"Croutons",
+			"Lasagne",
+			"Pizza dough",
+			"Bagel",
+			"Puff pastry",
+			"Hot dog bun",
+			"Barley",
+			"Multigrain bread",
+			"Potato flakes",
+			"Pretzel",
+			"Cornbread",
+			"English muffin",
+			"Cornflour",
+			"Crescent roll dough",
+			"Cream of wheat",
+			"Coconut flour",
+			"Pita",
+			"Risotto",
+			"Muffin mix",
+			"Bicarbonate of soda",
+			"Ravioli",
+			"Wheat",
+			"Rice flour",
+			"Polenta",
+			"Baguette",
+			"Gnocchi",
+			"Vermicelli",
+			"Semolina",
+			"Wheat germ",
+			"Buckwheat",
+			"Croissants",
+			"Bread dough",
+			"Filo dough",
+			"Yeast flake",
+			"Pierogi",
+			"Matzo meal",
+			"Rye",
+			"Tapioca flour",
+			"Shortcrust pastry",
+			"Potato starch",
+			"Breadsticks",
+			"Ciabatta",
+			"Spelt",
+			"Angel food",
+			"Tapioca starch",
+			"Starch",
+			"Whole wheat flour",
+			"Gram flour",
+			"Sourdough starter",
+			"Wafer",
+			"Bran",
+			"Challah",
+			"Sponge cake",
+			"Malt extract",
+			"Sorghum flour"
+		]
+	},
+	{
+		"Sweeteners": [
+			"Sugar",
+			"Brown Sugar",
+			"Light Brown Sugar",
+			"Dark Brown Sugar",
+			"Honey",
+			"Powdered Sugar",
+			"Maple syrup"
+		]
+	},
+	{
+		"Meats": [
+			"Chicken Breast",
+			"Ground Beef",
+			"Bacon",
+			"Sausages",
+			"Beef Steak",
+			"Ham",
+			"Hot Dogs",
+			"Pork Chops",
+			"Chicken Thighs",
+			"Ground Turkey",
+			"Pork",
+			"Pepperoni",
+			"Whole Chicken",
+			"Chicken Legs",
+			"Ground Pork",
+			"Chorizo",
+			"Chicken Wings",
+			"Salami",
+			"Ground Chicken",
+			"Pork Ribs",
+			"Venison",
+			"Pork Shoulder",
+			"Prosciutto",
+			"Lamb",
+			"Corned Beef",
+			"Lamb Chops",
+			"Pancetta",
+			"Ground Lamb",
+			"Duck",
+			"Duck Breast",
+			"Pork Belly",
+			"Beef Liver",
+			"Leg of Lamb",
+			"Veal",
+			"Lamb Shoulder",
+			"Lamb Shank",
+			"Pastrami",
+			"Rabbit",
+			"Pork Loin",
+			"Marrow Bones",
+			"Chicken Tendies",
+			"Lamb Liver",
+			"Foie Gras",
+			"Sirloin Steak",
+			"Ribeye Steak",
+			"T-Bone Steak",
+			"Snails",
+			"Duck Liver",
+			"Duck Hearts",
+			"Goose liver"
+		]
+	},
+	{
+		"Fish": [
+			"Tuna",
+			"Tuna Steak",
+			"Canned Tuna",
+			"Salmon",
+			"Fish Fillets",
+			"Cod",
+			"Anchovies",
+			"Smoked salmon",
+			"Sardines",
+			"Trout",
+			"Catfish",
+			"Mackerel",
+			"Sea bass",
+			"Carp",
+			"Sturgeon"
+		]
+	},
+	{
+		"Seafood": [
+			"Shrimp",
+			"Crab",
+			"Prawns",
+			"Scallops",
+			"Clams",
+			"Lobster",
+			"Mussels",
+			"Oysters",
+			"Calamari"
+		]
+	},
+	{
+		"Condiments": [
+			"Mayonnaise",
+			"Ketchup",
+			"Mustard",
+			"Vinegar",
+			"Balsamic Vinegar",
+			"Wine Vinegar",
+			"Apple Cider Vinegar",
+			"Cider Vinegar",
+			"Rice Vinegar",
+			"Worcestershire Sauce",
+			"Hot Sauce",
+			"Ranch Sauce",
+			"Caesar Sauce",
+			"Tabasco",
+			"Sriracha",
+			"Honey Mustard Sauce",
+			"Sweet-n-Sour Sauce",
+			"BBQ Sauce"
+		]
+	},
+	{
+		"Oils": [
+			"Olive Oil",
+			"Vegetable Oil",
+			"Sesame Oil",
+			"Coconut Oil",
+			"Peanut Oil",
+			"Sunflower Oil",
+			"Lard",
+			"Goose Fat",
+			"Avocado Oil",
+			"Palm Oil"
+		]
+	},
+	{
+		"Seeds & Spices": [
+			"Salt",
+			"Pepper",
+			"Paprika",
+			"Smoked Paprika",
+			"Garam Masala",
+			"Cinnamon",
+			"Cumin",
+			"Cardamom",
+			"Bay Leaves",
+			"Red Pepper Powder",
+			"Cayenne Pepper",
+			"Thyme",
+			"Dried Basil",
+			"Clovers",
+			"Whole Nutmeg",
+			"Ground Nutmeg",
+			"Ground Nutmeg",
+			"Ground Ginger",
+			"Sesame Seeds",
+			"Mixed Seeds",
+			"Sunflower Seeds",
+			"Poppy Seeds",
+			"Chia Seeds",
+			"Chilli Powder",
+			"Mustard Powder",
+			"Matcha Powder",
+			"Vanilla Powder",
+			"Vanilla Paste",
+			"Vanilla",
+			"Garlic powder",
+			"Oregano",
+			"Onion powder",
+			"Sage",
+			"Turmeric",
+			"Whole Peppercorns",
+			"Marjoram",
+			"Chinese Five Spices",
+			"Saffron",
+			"Onion Flakes",
+			"Cacao Powder",
+			"Star anise",
+			"Tamarind",
+			"Quinoa",
+			"Fenugreek"
+		]
+	},
+	{
+		"Pastes & Sauces": [
+			"Green Pesto",
+			"Red Pesto",
+			"Tomato Paste",
+			"Curry Paste",
+			"Green Curry Paste",
+			"Red Curry Paste",
+			"Cranberry Sauce",
+			"Hoisin Sauce",
+			"Soy Sauce",
+			"Light Soy Sauce",
+			"Dark Soy Sauce",
+			"Fish Sauce",
+			"Mirin",
+			"Teriyaki Sauce",
+			"Oyster Sauce",
+			"Gravy",
+			"Beef Gravy",
+			"Chicken Gravy",
+			"Turkey Gravy",
+			"Mushroom Gravy"
+		]
+	},
+	{
+		"Legumes": [
+			"Beans",
+			"Green Beans",
+			"Peas",
+			"Black beans",
+			"Chickpeas",
+			"Lentils",
+			"Kidney Beans",
+			"Pinto beans",
+			"Edamame",
+			"Soybeans"
+		]
+	},
+	{
+		"Spirits": [
+			"Red Wine",
+			"Rice Wine",
+			"White Wine",
+			"Cooking Wine",
+			"Sparkling Wine",
+			"Champagne",
+			"Amaretto",
+			"Beer",
+			"Liqueur",
+			"Vodka",
+			"Rum",
+			"Whiskey",
+			"Sherry",
+			"Bourbon",
+			"Brandy",
+			"Cognac"
+		]
+	},
+	{
+		"Stocks": [
+			"Fish stock",
+			"Beef Stock",
+			"Chicken Stock",
+			"Vegetable Stock"
+		]
+	},
+	{
+		"Nuts": [
+			"Peanuts",
+			"Almonds",
+			"Walnuts",
+			"Hazelnuts",
+			"Pecans",
+			"Cashews",
+			"Pine Nuts",
+			"Pistachios",
+			"Almond Flour",
+			"Almond Flakes",
+			"Macadamias",
+			"Chestnuts",
+			"Almond Butter",
+			"Peanut Butter"
+		]
+	},
+	{
+		"Sweets & Biscuits": [
+			"Chocolate",
+			"Dark Chocolate",
+			"White Chocolate",
+			"Chocolate Chips",
+			"Nutella",
+			"Strawberry Jam",
+			"Raspberry Jam",
+			"Blueberry Jam",
+			"Apricot Jam",
+			"Carrot Jam",
+			"Marshmallows",
+			"Caramel",
+			"Caramel Sauce",
+			"Oreos",
+			"Graham Crackers",
+			"Biscoff Biscuits"
+		]
 	}
 ]
