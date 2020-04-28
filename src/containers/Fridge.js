@@ -12,7 +12,6 @@ const Fridge = () => {
 			"LOOKS LIKE YOU DON'T HAVE INGREDIENTS YET, WHAT WOULD YOU LIKE TO ADD?"
 			*/}
 			<AnimatedSelect />
-			<button onClick={}>Add to fridge</button>
 		</div>
 	)
 }
