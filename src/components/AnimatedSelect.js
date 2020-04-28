@@ -107,11 +107,17 @@ const removeSelectedOptions = (availableOptions, selectedOptions) => {
 }
 
 const initialSelectedOptions = {toAdd: null}
-const optionsToRender = {toRender: getIngredientsForSelect()}
+const optionsToRender = (ownIngredients) => {
+	debugger
+	// REMOVE INGREDIENTS YOU ALREADY HAVE IN YOUR FRIDGE
+	// ADD THEM BACK TO THE POOL IF YOU REMOVE THEM FROM YOUR FRIDGE
+	let ing = getIngredientsForSelect();
+	return {toRender: getIngredientsForSelect()}
+}
 
-const AnimatedSelect = ({addIngredients}) => {
+const AnimatedSelect = ({ingredients, addIngredients}) => {
 	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
-	const [availableOptions, setAvailableOptions] = useState(optionsToRender);
+	const [availableOptions, setAvailableOptions] = useState(optionsToRender(ingredients));
 	// console.log(state);
 	return (
 		<div className="select-container">

@@ -81,7 +81,7 @@ a:hover {
   padding: 0;
   margin: 10px;
   position: relative;
-  width: 125px;
+  width: 140px;
   height: 110px;
 }
 
@@ -140,10 +140,17 @@ a:hover {
   background-color: #eb5c43;
 }
 
+.ic-heading-container {
+  height: 60px;
+  padding: 5px;
+}
+
 .ic-heading {
   display: block;
-  font-size: 2.5vw;
-  overflow: hidden;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  overflow: scroll;
+  line-height: 1.2rem;
+  word-wrap: break-word;
 }
 
 .ic-buttons-plus {
@@ -159,12 +166,23 @@ a:hover {
   bottom: 5px;
 }
 
+.ic-quantity {
+  position: absolute;
+  font-size: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
+  right: 1.5px;
+  bottom: 37px;
+}
+
 .page-header-text {
   font-size: calc(4rem + (5.4 - 4.4) * ((100vw - 300px) / (1600 - 300)));
   font-family: "LemonJelly";
   color: tomato;
   line-height: 3rem;
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .bg-dark {

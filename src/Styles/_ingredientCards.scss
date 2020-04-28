@@ -5,12 +5,12 @@
 	display: inline-block;
 	@include setPaddingAndMargin(0, 10px);
 	position: relative;
-	width: 125px;
+	width: 140px;
 	height: 110px;
 }
 
 .ic-buttons-container {
-	font-size: $smallButtonFontSize;
+	font-size: $smallFontSize;
 }
 
 .ic-button {
@@ -42,7 +42,7 @@
 			background-color: $primaryAccentColorDark;
 		}
 	}
-	
+
 }
 
 .remove {
@@ -55,17 +55,25 @@
 	top: -0.2rem;
 	right: -0.2rem;
 	border-radius: 0 10px 0 10px;
-	box-shadow:inset -3px 3px 0 0 $boxShadowColor;
+	box-shadow: inset -3px 3px 0 0 $boxShadowColor;
+
 	&:active {
 		background-color: $primaryAccentColorDark;
 	}
 }
 
+.ic-heading-container {
+	height: 60px;
+	// border: solid 1px blue;
+	padding: 5px;
+}
+
 .ic-heading {
 	display: block;
-	font-size: 2.5vw;
-	// overflow: scroll;
-	overflow: hidden;
+	font-size: $normalFontSize;
+	overflow: scroll;
+	line-height: 1.2rem;
+	word-wrap: break-word;
 }
 
 .ic-buttons-plus {
@@ -79,4 +87,11 @@
 	position: absolute;
 	right: 2px;
 	bottom: 5px;
+}
+
+.ic-quantity {
+	position: absolute;
+	font-size: $mediumFontSize;
+	right: 1.5px;
+	bottom: 37px;
 }

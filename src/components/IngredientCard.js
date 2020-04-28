@@ -5,7 +5,9 @@ const IngredientCard = ({ingredient, increaseIngredient, decreaseIngredient, rem
 	const {name, quantity, category, id} = ingredient;
 	return (
 		<div className={`ic-container`}>
-			<span className="ic-heading"></span>
+			<div className="ic-heading-container">
+				<span className="ic-heading">{name}</span>
+			</div>
 			{/* <svg viewBox="0 0 150 18">
 				<text x="0" y="18">{name}</text>
 			</svg> */}
