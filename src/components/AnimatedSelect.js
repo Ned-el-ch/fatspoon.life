@@ -63,7 +63,7 @@ const colourStyles = {
 };
 
 const colors = {
-		"primary": "#2684FF",
+		"primary": "#ff6347",
 		"primary75": "#4C9AFF",
 		"primary50": "#B2D4FF",
 		"primary25": "#DEEBFF",
@@ -90,29 +90,62 @@ const theme = (theme) => ({
 	},
 })
 
-const initialState = {options: []}
+const removeSelectedOptions = (availableOptions, selectedOptions) => {
+	debugger;
+	let options = []
+	for (const availOption of availableOptions) {
+		let optionIsSelected = false;
+		for (const selOption of selectedOptions) {
+			if (availOption.value === selOption.value) {
+				optionIsSelected = true;
+			}
+		}
+		if (!optionIsSelected) {
+			options.push(availOption);
+		}
+	}
+	debugger;
+	return options;
+}
+
+const initialSelectedOptions = {toAdd: null}
+const optionsToRender = {toRender: getIngredientsForSelect()}
 
 const AnimatedSelect = ({addIngredients}) => {
-	const [state, setState] = useState(initialState);
-	console.log(state);
+	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
+	const [availableOptions, setAvailableOptions] = useState(optionsToRender);
+	// console.log(state);
 	return (
 		<div className="select-container">
 			<Select
 			isMulti
 				closeMenuOnSelect={false}
 				components={animatedComponents}
-				defaultValue={[colouredOptions[1], colouredOptions[28], colouredOptions[57], colouredOptions[172]]}
-				options={colouredOptions}
+				// defaultValue={[colouredOptions[1], colouredOptions[28], colouredOptions[57], colouredOptions[172]]}
+				options={availableOptions.toRender}
 				styles={colourStyles}
 				theme={theme}
-				pageSize={5}
-				onChange={options => setState({options})}
-				placeholder="Search or select what ingredients you have"
+				onChange={toAdd => setSelectedOptions({toAdd})}
+				value={selectedOptions.toAdd}
+				placeholder="Search or select the ingredients you have"
 				noResultsText="Looks like I forgot to add this ingredient"
 			/>
-		<button onClick={() => addIngredients(state.options)}>Add To My Fridge!</button>
+		<button onClick={() => {
+			addIngredients(selectedOptions.toAdd);
+			setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
+			setSelectedOptions({toAdd: null});
+		}
+		}>Add To My Fridge!</button>
 		</div>
 	);
 }
 
-export default connect(null, { addIngredients })(AnimatedSelect);
+const mapStateToProps = state => {
+	return(
+		{
+			ingredients: state.ingredients
+		}
+	)
+}
+
+export default connect(mapStateToProps, { addIngredients })(AnimatedSelect);
