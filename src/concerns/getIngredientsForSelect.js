@@ -22,7 +22,7 @@ export const getIngredientsForSelect = () => {
 }
 
 let categoryColors = [
-	{"Eggs & Dairy"			: {"background": '#dddddd', "font": "#062035"}},
+	{"Eggs & Dairy"			: {"background": '#eeeeee', "font": "#062035"}},
 	{"Fruits & Veggies"		: {"background": '#b0f763', "font": "#062035"}},
 	{"Bread, Pasta & Noods"	: {"background": '#debb6a', "font": "#062035"}},
 	{"Baking & Grains"		: {"background": '#c073ff', "font": "#062035"}},
@@ -30,7 +30,6 @@ let categoryColors = [
 	{"Seeds & Spices"			: {"background": '#32eda2', "font": "#062035"}},
 	{"Oils & Condiments"		: {"background": '#92fcf7', "font": "#062035"}},
 	{"Legumes & Nuts"			: {"background": '#ffff00', "font": "#062035"}},
+	{"Sweets & Spirits"		: {"background": '#ed851c', "font": "#062035"}},
 	{"Spirits"					: {"background": '#0052CC', "font": "#062035"}},
-	{"Stocks"					: {"background": '#ed851c', "font": "#062035"}},
-	{"Sweets & Biscuits"		: {"background": '#ffcc00', "font": "#062035"}}
 ];

@@ -135,7 +135,8 @@
 			"Persimmons",
 			"Lychee",
 			"Quince",
-			"Honeydew Melon"
+			"Honeydew Melon",
+			"Vegetable Stock"
 		]
 	},
 	{
@@ -208,6 +209,7 @@
 	},
 	{
 		"Meats & Seafood": [
+			"Chicken Stock",
 			"Chicken Breast",
 			"Chicken Thighs",
 			"Pepperoni",
@@ -216,6 +218,7 @@
 			"Chicken Wings",
 			"Ground Chicken",
 			"Chicken Tendies",
+			"Beef Stock",
 			"Ground Beef",
 			"Beef Steak",
 			"Sirloin Steak",
@@ -258,6 +261,7 @@
 			"Chorizo",
 			"Salami",
 			"Snails",
+			"Fish stock",
 			"Tuna",
 			"Tuna Steak",
 			"Canned Tuna",
@@ -412,35 +416,7 @@
 		]
 	},
 	{
-		"Spirits": [
-			"Red Wine",
-			"Rice Wine",
-			"White Wine",
-			"Cooking Wine",
-			"Sparkling Wine",
-			"Champagne",
-			"Amaretto",
-			"Beer",
-			"Liqueur",
-			"Vodka",
-			"Rum",
-			"Whiskey",
-			"Sherry",
-			"Bourbon",
-			"Brandy",
-			"Cognac"
-		]
-	},
-	{
-		"Stocks": [
-			"Fish stock",
-			"Beef Stock",
-			"Chicken Stock",
-			"Vegetable Stock"
-		]
-	},
-	{
-		"Sweets & Biscuits": [
+		"Sweets & Spirits": [
 			"Chocolate",
 			"Dark Chocolate",
 			"White Chocolate",
@@ -457,7 +433,23 @@
 			"Oreos",
 			"Graham Crackers",
 			"Biscoff Biscuits",
-			"Saltines"
+			"Saltines",
+			"Red Wine",
+			"Rice Wine",
+			"White Wine",
+			"Cooking Wine",
+			"Sparkling Wine",
+			"Champagne",
+			"Amaretto",
+			"Beer",
+			"Liqueur",
+			"Vodka",
+			"Rum",
+			"Whiskey",
+			"Sherry",
+			"Bourbon",
+			"Brandy",
+			"Cognac"
 		]
 	}
 ]

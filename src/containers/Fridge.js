@@ -1,6 +1,7 @@
 import React from 'react'
 import PageHeader from '../components/PageHeader'
 import AnimatedSelect from '../components/AnimatedSelect'
+import { connect } from 'react-redux'
 
 const Fridge = () => {
 	return (
@@ -11,8 +12,12 @@ const Fridge = () => {
 			"LOOKS LIKE YOU DON'T HAVE INGREDIENTS YET, WHAT WOULD YOU LIKE TO ADD?"
 			*/}
 			<AnimatedSelect />
+			<button onClick={}>Add to fridge</button>
 		</div>
 	)
 }
 
-export default Fridge;
+const mapStateToProps = state => {
+	return null;
+}
+export default connect(mapStateToProps, {})(Fridge);
