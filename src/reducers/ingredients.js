@@ -6,34 +6,44 @@ export default (state = [], action) => {
 	switch (action.type) {
 
 		case "ADD_INGREDIENT":
-			return [...state, action.ingredient];
+			
+			// return [...state, Object.assign({}, action.ingredient, {quantity: 0})];
 
 		case "REMOVE_INGREDIENT":
 			return state.filter(ingredient => ingredient.id !== action.ingredientID);
 
 		case "INCREASE_INGREDIENT":
-			index = state.findIndex(ingredient => ingredient.id === action.ingredientID);
-			ingredient = state[index];
+			ingredient = state.find(i => i.id === action.ingredientID);
+			index = state.indexOf(ingredient);
 			return [
 				...state.slice(0, index),
-				Object.assign({}, ingredient, { amount: ingredient.amount += 1 }),
+				Object.assign({}, ingredient, { quantity: ingredient.quantity += action.quantity }),
 				...state.slice(index + 1)
 			];
 
 		case "DECREASE_INGREDIENT":
-			index = state.findIndex(ingredient => ingredient.id === action.ingredientID);
-			ingredient = state[index];
-			if (ingredient.amount > 0) {
+			ingredient = state.find(i => i.id === action.ingredientID);
+			index = state.indexOf(ingredient);
+			if (ingredient.quantity >= action.quantity)
+			{
 				return [
 					...state.slice(0, index),
-					Object.assign({}, ingredient, { amount: ingredient.amount -= 1 }),
+					Object.assign({}, ingredient, { quantity: ingredient.quantity -= action.quantity }),
 					...state.slice(index + 1)
 				];
-			} else {
-				return state;
+			}
+			else
+			{
+				return [
+					...state.slice(0, index),
+					Object.assign({}, ingredient, { quantity: 0 }),
+					...state.slice(index + 1)
+				];
 			}
 
 		default:
 			return state;
+
 	}
+
 }

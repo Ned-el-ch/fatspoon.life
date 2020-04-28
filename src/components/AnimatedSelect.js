@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import chroma from 'chroma-js';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { getIngredientsForSelect } from "../concerns/getIngredientsForSelect";
+import { connect } from 'react-redux';
+import { addIngredients } from '../actions/ingredients';
 
 const colouredOptions = getIngredientsForSelect();
 const animatedComponents = makeAnimated();
@@ -86,20 +88,31 @@ const theme = (theme) => ({
 	colors: {
 	...colors
 	},
- })
+})
 
-const AnimatedSelect = () => {
+const initialState = {options: []}
+
+const AnimatedSelect = ({addIngredients}) => {
+	const [state, setState] = useState(initialState);
+	console.log(state);
 	return (
-		<Select
-			closeMenuOnSelect={false}
-			components={animatedComponents}
-			defaultValue={[colouredOptions[1], colouredOptions[28], colouredOptions[57], colouredOptions[172]]}
+		<div className="select-container">
+			<Select
 			isMulti
-			options={colouredOptions}
-			styles={colourStyles}
-			theme={theme}
-		/>
+				closeMenuOnSelect={false}
+				components={animatedComponents}
+				defaultValue={[colouredOptions[1], colouredOptions[28], colouredOptions[57], colouredOptions[172]]}
+				options={colouredOptions}
+				styles={colourStyles}
+				theme={theme}
+				pageSize={5}
+				onChange={options => setState({options})}
+				placeholder="Search or select what ingredients you have"
+				noResultsText="Looks like I forgot to add this ingredient"
+			/>
+		<button onClick={() => addIngredients(state.options)}>Add To My Fridge!</button>
+		</div>
 	);
 }
 
-export default AnimatedSelect;
+export default connect(null, { addIngredients })(AnimatedSelect);

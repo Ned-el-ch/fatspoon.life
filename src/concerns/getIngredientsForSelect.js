@@ -1,24 +1,20 @@
 import * as ingredients from "../data/ingredients.json";
 
 export const getIngredientsForSelect = () => {
+	let ingredientsArray = ingredients.default;
+	let selectItems = [];
 	// debugger;
-	let ing = ingredients.default;
-	let arr = [];
-	ing.forEach(element => {
-		let key = Object.keys(element)[0];
-		// debugger;
-		element[key].forEach(el => {
-			let cat = categoryColors.find(e => e[Object.keys(element)[0]]);
-			let obj =  {
-				value: el,
-				label: el,
-				color: cat[Object.keys(cat)[0]].background
-			}
-			arr.push(obj)
-		})
-	});
-	// debugger;
-	return arr;
+	for (const ingredient of ingredientsArray) {
+		let category = categoryColors.find(e => Object.keys(e)[0] === ingredient.category);
+		let formattedItem = {
+			value: ingredient.id,
+			label: ingredient.name,
+			color: category[ingredient.category].color,
+			ingredient
+		}
+		selectItems.push(formattedItem)
+	}
+	return selectItems;
 }
 
 let categoryColors = [

@@ -1,7 +1,7 @@
-export const addIngredient = ingredient => {
+export const addIngredients = ingredients => {
 	return {
-		type: "ADD_INGREDIENT",
-		ingredient: Object.assign({}, ingredient, {amount: 0})
+		type: "ADD_INGREDIENTS",
+		ingredients
 	}
 }
 
@@ -12,16 +12,18 @@ export const removeIngredient = ingredientID => {
 	}
 }
 
-export const increaseIngredient = ingredientID => {
+export const increaseIngredient = (ingredientID, quantity) => {
 	return {
 		type: "INCREASE_INGREDIENT",
-		ingredientID
+		ingredientID,
+		quantity
 	}
 }
 
-export const decreaseIngredient = ingredientID => {
+export const decreaseIngredient = (ingredientID, quantity) => {
 	return {
 		type: "DECREASE_INGREDIENT",
-		ingredientID
+		ingredientID,
+		quantity
 	}
 }
