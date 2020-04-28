@@ -91,7 +91,6 @@ const theme = (theme) => ({
 })
 
 const removeSelectedOptions = (availableOptions, selectedOptions) => {
-	debugger;
 	let options = []
 	for (const availOption of availableOptions) {
 		let optionIsSelected = false;
@@ -104,7 +103,6 @@ const removeSelectedOptions = (availableOptions, selectedOptions) => {
 			options.push(availOption);
 		}
 	}
-	debugger;
 	return options;
 }
 
