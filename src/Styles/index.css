@@ -73,9 +73,11 @@ a:hover {
 }
 
 .page-header-text {
-  font-size: calc(4rem + (4.6 - 4) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(4rem + (5.4 - 4.4) * ((100vw - 300px) / (1600 - 300)));
   font-family: "LemonJelly";
   color: tomato;
+  line-height: 3rem;
+  text-align: center;
 }
 
 .bg-dark {
