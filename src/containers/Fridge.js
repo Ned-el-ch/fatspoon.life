@@ -19,8 +19,7 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 					return(
 						<IngredientCard
 							key={ingredient.id}
-							quantity={ingredient.quantity}
-							category={ingredient.category}
+							ingredient={ingredient}
 							removeIngredient={removeIngredient}
 							increaseIngredient={increaseIngredient}
 							decreaseIngredient={decreaseIngredient}

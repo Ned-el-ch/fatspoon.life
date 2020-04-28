@@ -5,8 +5,11 @@ export default (state = [], action) => {
 
 	switch (action.type) {
 
-		case "ADD_INGREDIENT":
-			
+		case "ADD_INGREDIENTS":
+			let ingredients = action.ingredients.map(ing => {
+				return Object.assign({}, ing.ingredient, {quantity: 0})
+			})
+			return [...state, ...ingredients];
 			// return [...state, Object.assign({}, action.ingredient, {quantity: 0})];
 
 		case "REMOVE_INGREDIENT":
