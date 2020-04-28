@@ -125,15 +125,15 @@ const AnimatedSelect = ({addIngredients}) => {
 				theme={theme}
 				onChange={toAdd => setSelectedOptions({toAdd})}
 				value={selectedOptions.toAdd}
-				placeholder="Search or select the ingredients you have"
+				placeholder="Add some new ingredients!"
 				noResultsText="Looks like I forgot to add this ingredient"
 			/>
-		<button onClick={() => {
-			addIngredients(selectedOptions.toAdd);
-			setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
-			setSelectedOptions({toAdd: null});
-		}
-		}>Add To My Fridge!</button>
+			
+			<button disabled={!selectedOptions.toAdd} onClick={() => {
+				addIngredients(selectedOptions.toAdd);
+				setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
+				setSelectedOptions({toAdd: null});
+			}}>Add To My Fridge!</button>
 		</div>
 	);
 }

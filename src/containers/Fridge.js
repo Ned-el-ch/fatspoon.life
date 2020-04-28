@@ -37,8 +37,4 @@ const mapStateToProps = state => {
 	})
 };
 
-const mapDispatchToProps = () => {
-	return { removeIngredient, increaseIngredient, decreaseIngredient }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Fridge);
+export default connect(mapStateToProps, { removeIngredient, increaseIngredient, decreaseIngredient })(Fridge);
