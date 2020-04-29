@@ -81,18 +81,22 @@ a:hover {
   padding: 0;
   margin: 10px;
   position: relative;
-  width: 140px;
+  width: 120px;
   height: 110px;
 }
 
 .ic-buttons-container {
   font-size: calc(8px + (14 - 8) * ((100vw - 300px) / (1600 - 300)));
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
 }
 
 .ic-button {
   border: none;
   outline: none !important;
-  width: 25px;
+  width: 28px;
+  height: 18px;
   text-align: center;
   padding: 0;
   color: white;
@@ -122,6 +126,10 @@ a:hover {
   background-color: #eb5c43;
 }
 
+.ic-buttons-plus {
+  margin-bottom: 3px;
+}
+
 .remove {
   color: white;
   background-color: tomato;
@@ -143,6 +151,7 @@ a:hover {
 .ic-heading-container {
   height: 60px;
   padding: 5px;
+  overflow-x: scroll;
 }
 
 .ic-heading {
@@ -153,24 +162,12 @@ a:hover {
   word-wrap: break-word;
 }
 
-.ic-buttons-plus {
-  margin-bottom: 3px;
-  position: absolute;
-  right: 2px;
-  bottom: 19px;
-}
-
-.ic-buttons-minus {
-  position: absolute;
-  right: 2px;
-  bottom: 5px;
-}
-
 .ic-quantity {
   position: absolute;
   font-size: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
   right: 1.5px;
-  bottom: 37px;
+  bottom: 40px;
+  margin-bottom: 5px;
 }
 
 .page-header-text {
