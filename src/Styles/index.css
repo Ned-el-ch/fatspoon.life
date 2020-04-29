@@ -87,7 +87,7 @@ a:hover {
 }
 
 .ic-buttons-container {
-  font-size: calc(8px + (14 - 8) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   position: absolute;
   right: 3px;
   bottom: 3px;
@@ -151,7 +151,9 @@ a:hover {
 
 .ic-heading-container {
   height: 60px;
-  padding: 5px;
+  width: 80%;
+  margin: 0 10%;
+  padding: 2px;
   overflow-x: scroll;
 }
 
