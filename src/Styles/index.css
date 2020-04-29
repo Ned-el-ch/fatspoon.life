@@ -72,6 +72,16 @@ a:hover {
   font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
 }
 
+.ic-buttons-container {
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+}
+
 .ic-container {
   background-color: white;
   border: solid 0.2rem rgba(0, 0, 0, 0.05);
@@ -86,11 +96,12 @@ a:hover {
   max-height: 130px;
 }
 
-.ic-buttons-container {
-  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
-  position: absolute;
-  right: 3px;
-  bottom: 3px;
+.ic-container:hover .ic-buttons-container {
+  opacity: 1;
+}
+
+.ic-container:hover .ic-quantity {
+  bottom: 40px;
 }
 
 .ic-button {
@@ -133,16 +144,14 @@ a:hover {
 
 .remove {
   color: white;
-  background-color: tomato;
+  background-color: rgba(0, 0, 0, 0.05);
   position: absolute;
   padding: 0;
   width: 20px;
-  height: 25px;
-  top: -0.2rem;
-  right: -0.2rem;
-  border-radius: 0 10px 0 10px;
-  -webkit-box-shadow: inset -3px 3px 0 0 rgba(0, 0, 0, 0.05);
-          box-shadow: inset -3px 3px 0 0 rgba(0, 0, 0, 0.05);
+  height: 20px;
+  top: 0;
+  right: -1px;
+  border-radius: 0 7px;
 }
 
 .remove:active {
@@ -164,6 +173,7 @@ a:hover {
   line-height: 1.2rem;
   word-wrap: break-word;
   font-weight: 500;
+  padding-top: 10px;
 }
 
 .ic-heading-label {
@@ -173,55 +183,61 @@ a:hover {
       -ms-user-select: none;
           user-select: none;
   padding-left: 4px;
-  text-shadow: 1px 1px 0px lightgray;
+  -webkit-box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.05);
+  height: 12px;
+  width: 36px;
+  border-radius: 7px 0;
 }
 
 .ic-heading-label.cat1 {
-  color: #eeeeee;
+  background-color: #eeeeee;
 }
 
 .ic-heading-label.cat2 {
-  color: #b0f763;
+  background-color: #b0f763;
 }
 
 .ic-heading-label.cat3 {
-  color: #debb6a;
+  background-color: #debb6a;
 }
 
 .ic-heading-label.cat4 {
-  color: #c073ff;
+  background-color: #c073ff;
 }
 
 .ic-heading-label.cat5 {
-  color: #4f6fff;
+  background-color: #4f6fff;
 }
 
 .ic-heading-label.cat6 {
-  color: #32eda2;
+  background-color: #32eda2;
 }
 
 .ic-heading-label.cat7 {
-  color: #92fcf7;
+  background-color: #92fcf7;
 }
 
 .ic-heading-label.cat8 {
-  color: #ffff00;
+  background-color: #ffff00;
 }
 
 .ic-heading-label.cat9 {
-  color: #ed851c;
+  background-color: #ed851c;
 }
 
 .ic-quantity {
   position: absolute;
   font-size: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
   right: 1.5px;
-  bottom: 40px;
+  bottom: 0;
   margin-bottom: 5px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: bottom 0.15s;
+  transition: bottom 0.15s;
 }
 
 .fridge-ingredients-container {

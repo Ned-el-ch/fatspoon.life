@@ -1,3 +1,12 @@
+.ic-buttons-container {
+	font-size: $smallFontSize;
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	opacity: 0;
+	@include transition(opacity 0.15s);
+}
+
 .ic-container {
 	background-color: white;
 	// box-shadow: 0 0 0 0.2rem $boxShadowColor;
@@ -11,14 +20,21 @@
 	max-width: 150px;
 	max-height: 130px;
 
+	&:hover {
+
+		& .ic-buttons-container {
+			opacity: 1;
+		}
+
+		& .ic-quantity {
+			bottom: 40px;
+		}
+
+	}
+
+
 }
 
-.ic-buttons-container {
-	font-size: $smallFontSize;
-	position: absolute;
-	right: 3px;
-	bottom: 3px;
-}
 
 .ic-button {
 
@@ -59,15 +75,14 @@
 
 .remove {
 	color: white;
-	background-color: $primaryAccentColor;
+	background-color: $boxShadowColor;
 	position: absolute;
 	padding: 0;
 	width: 20px;
-	height: 25px;
-	top: -0.2rem;
-	right: -0.2rem;
-	border-radius: 0 10px 0 10px;
-	box-shadow: inset -3px 3px 0 0 $boxShadowColor;
+	height: 20px;
+	top: 0;
+	right: -1px;
+	border-radius: 0 7px;
 
 	&:active {
 		background-color: $primaryAccentColorDark;
@@ -90,49 +105,52 @@
 	line-height: 1.2rem;
 	word-wrap: break-word;
 	font-weight: 500;
-
+	padding-top: 10px;
 }
 
 .ic-heading-label {
 	position: absolute;
 	user-select: none;
 	padding-left: 4px;
-	text-shadow: 1px 1px 0px lightgray;
+	box-shadow: 1px 1px 0 1px $boxShadowColor;
+	height: 12px;
+	width: 36px;
+	border-radius: 7px 0;
 
 	&.cat1 {
-		color: $categoryColor1;
+		background-color: $categoryColor1;
 	}
 
 	&.cat2 {
-		color: $categoryColor2;
+		background-color: $categoryColor2;
 	}
 
 	&.cat3 {
-		color: $categoryColor3;
+		background-color: $categoryColor3;
 	}
 
 	&.cat4 {
-		color: $categoryColor4;
+		background-color: $categoryColor4;
 	}
 
 	&.cat5 {
-		color: $categoryColor5;
+		background-color: $categoryColor5;
 	}
 
 	&.cat6 {
-		color: $categoryColor6;
+		background-color: $categoryColor6;
 	}
 
 	&.cat7 {
-		color: $categoryColor7;
+		background-color: $categoryColor7;
 	}
 
 	&.cat8 {
-		color: $categoryColor8;
+		background-color: $categoryColor8;
 	}
 
 	&.cat9 {
-		color: $categoryColor9;
+		background-color: $categoryColor9;
 	}
 
 }
@@ -141,9 +159,10 @@
 	position: absolute;
 	font-size: $mediumFontSize;
 	right: 1.5px;
-	bottom: 40px;
+	bottom: 0;
 	margin-bottom: 5px;
 	user-select: none;
+	@include transition(bottom 0.15s);
 }
 
 .fridge-ingredients-container {
