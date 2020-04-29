@@ -10,6 +10,60 @@
 	height: 110px;
 	max-width: 150px;
 	max-height: 130px;
+
+	&.cat1 {
+		background-image: linear-gradient(to bottom, $categoryColor1, white 45%);
+		border-top-color: $categoryColor1;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat2 {
+		background-image: linear-gradient(to bottom, $categoryColor2, white 45%);
+		border-top-color: $categoryColor2;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat3 {
+		background-image: linear-gradient(to bottom, $categoryColor3, white 45%);
+		border-top-color: $categoryColor3;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat4 {
+		background-image: linear-gradient(to bottom, $categoryColor4, white 45%);
+		border-top-color: $categoryColor4;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat5 {
+		background-image: linear-gradient(to bottom, $categoryColor5, white 45%);
+		border-top-color: $categoryColor5;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat6 {
+		background-image: linear-gradient(to bottom, $categoryColor6, white 45%);
+		border-top-color: $categoryColor6;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat7 {
+		background-image: linear-gradient(to bottom, $categoryColor7, white 45%);
+		border-top-color: $categoryColor7;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat8 {
+		background-image: linear-gradient(to bottom, $categoryColor8, white 45%);
+		border-top-color: $categoryColor8;
+		border-bottom-color: rgb(240, 240, 240);
+	}
+
+	&.cat9 {
+		background-image: linear-gradient(to bottom, $categoryColor9, white 45%);
+		border-top-color: $categoryColor9;
+		border-bottom-color: rgb(240, 240, 240);
+	}
 }
 
 .ic-buttons-container {

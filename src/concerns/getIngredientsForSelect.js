@@ -27,5 +27,4 @@ let categoryColors = [
 	{"Oils & Condiments"    : {"color": '#92fcf7', "font": "#062035"}},
 	{"Legumes & Nuts"       : {"color": '#ffff00', "font": "#062035"}},
 	{"Sweets & Spirits"     : {"color": '#ed851c', "font": "#062035"}},
-	{"Spirits"              : {"color": '#0052CC', "font": "#062035"}},
 ];

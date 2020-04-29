@@ -86,6 +86,69 @@ a:hover {
   max-height: 130px;
 }
 
+.ic-container.cat1 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #eeeeee, white 45%);
+  border-top-color: #eeeeee;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#b0f763), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #b0f763, white 45%);
+  border-top-color: #b0f763;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat3 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#debb6a), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #debb6a, white 45%);
+  border-top-color: #debb6a;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat4 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c073ff), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #c073ff, white 45%);
+  border-top-color: #c073ff;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat5 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4f4f), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #ff4f4f, white 45%);
+  border-top-color: #ff4f4f;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat6 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#32eda2), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #32eda2, white 45%);
+  border-top-color: #32eda2;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat7 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#92fcf7), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #92fcf7, white 45%);
+  border-top-color: #92fcf7;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat8 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffff00), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #ffff00, white 45%);
+  border-top-color: #ffff00;
+  border-bottom-color: #f0f0f0;
+}
+
+.ic-container.cat9 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ed851c), color-stop(45%, white));
+  background-image: linear-gradient(to bottom, #ed851c, white 45%);
+  border-top-color: #ed851c;
+  border-bottom-color: #f0f0f0;
+}
+
 .ic-buttons-container {
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   position: absolute;

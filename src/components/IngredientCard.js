@@ -1,10 +1,35 @@
 import React from 'react'
-import { increaseIngredient } from '../actions/ingredients';
+
+const assignCategoryLabel = category => {
+	switch (category) {
+		case "Eggs & Dairy":
+			return "cat1"
+		case "Fruits & Veggies":
+			return "cat2"
+		case "Bread, Pasta & Noods":
+			return "cat3"
+		case "Baking & Grains":
+			return "cat4"
+		case "Meats & Seafood":
+			return "cat5"
+		case "Seeds & Spices":
+			return "cat6"
+		case "Oils & Condiments":
+			return "cat7"
+		case "Legumes & Nuts":
+			return "cat8"
+		case "Sweets & Spirits":
+			return "cat9"
+		default:
+			return "no-label"
+	}
+}
 
 const IngredientCard = ({ingredient, increaseIngredient, decreaseIngredient, removeIngredient}) => {
 	const {name, quantity, category, id} = ingredient;
+	const label = assignCategoryLabel(category);
 	return (
-		<div className={`ic-container`}>
+		<div className={`ic-container ${label}`}>
 			<div className="ic-heading-container">
 				<span className="ic-heading">{name}</span>
 			</div>
