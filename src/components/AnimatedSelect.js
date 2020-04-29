@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import chroma from 'chroma-js';
-import Select from 'react-select';
+import Select, { createFilter } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { getIngredientsForSelect } from "../concerns/getIngredientsForSelect";
 import { connect } from 'react-redux';
@@ -129,6 +129,7 @@ const AnimatedSelect = ({ingredients, addIngredients}) => {
 				// defaultValue={[colouredOptions[1], colouredOptions[28], colouredOptions[57], colouredOptions[172]]}
 				options={availableOptions.toRender}
 				styles={colourStyles}
+				filterOption={createFilter({ignoreAccents: false})}
 				theme={theme}
 				onChange={toAdd => setSelectedOptions({toAdd})}
 				value={selectedOptions.toAdd}
