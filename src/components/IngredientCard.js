@@ -8,9 +8,6 @@ const IngredientCard = ({ingredient, increaseIngredient, decreaseIngredient, rem
 			<div className="ic-heading-container">
 				<span className="ic-heading">{name}</span>
 			</div>
-			{/* <svg viewBox="0 0 150 18">
-				<text x="0" y="18">{name}</text>
-			</svg> */}
 			<button className="ic-button remove"  onClick={() => removeIngredient(id)}>x</button>
 			<span className="ic-quantity">{quantity >= 1000 ? `${quantity / 1000} kg` : `${quantity} g`}</span>
 			<div className="ic-buttons-container">
