@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #062035;
   background-color: #fffcf9;
-  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
 }
 
 a {
@@ -74,15 +74,16 @@ a:hover {
 
 .ic-container {
   background-color: white;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.05);
-          box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.05);
+  border: solid 0.2rem rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   display: inline-block;
   padding: 0;
-  margin: 10px;
+  margin: 5px;
   position: relative;
-  width: 120px;
+  width: 35vw;
   height: 110px;
+  max-width: 150px;
+  max-height: 130px;
 }
 
 .ic-buttons-container {
@@ -156,10 +157,11 @@ a:hover {
 
 .ic-heading {
   display: block;
-  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
   overflow: scroll;
   line-height: 1.2rem;
   word-wrap: break-word;
+  font-weight: 500;
 }
 
 .ic-quantity {
@@ -168,6 +170,14 @@ a:hover {
   right: 1.5px;
   bottom: 40px;
   margin-bottom: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.fridge-ingredients-container {
+  text-align: center;
 }
 
 .page-header-text {

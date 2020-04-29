@@ -108,7 +108,7 @@ const removeSelectedOptions = (availableOptions, selectedOptions) => {
 
 const initialSelectedOptions = {toAdd: null}
 const optionsToRender = (ownIngredients) => {
-	debugger
+	// debugger
 	// REMOVE INGREDIENTS YOU ALREADY HAVE IN YOUR FRIDGE
 	// ADD THEM BACK TO THE POOL IF YOU REMOVE THEM FROM YOUR FRIDGE
 	let ing = getIngredientsForSelect();

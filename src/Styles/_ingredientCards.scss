@@ -1,12 +1,15 @@
 .ic-container {
 	background-color: white;
-	box-shadow: 0 0 0 0.2rem $boxShadowColor;
+	// box-shadow: 0 0 0 0.2rem $boxShadowColor;
+	border: solid 0.2rem $boxShadowColor;
 	border-radius: 10px;
 	display: inline-block;
-	@include setPaddingAndMargin(0, 10px);
+	@include setPaddingAndMargin(0, 5px);
 	position: relative;
-	width: 120px;
+	width: 35vw;
 	height: 110px;
+	max-width: 150px;
+	max-height: 130px;
 }
 
 .ic-buttons-container {
@@ -83,6 +86,8 @@
 	overflow: scroll;
 	line-height: 1.2rem;
 	word-wrap: break-word;
+	font-weight: 500;
+	// font-family: "LemonJelly";
 }
 
 .ic-quantity {
@@ -91,4 +96,9 @@
 	right: 1.5px;
 	bottom: 40px;
 	margin-bottom: 5px;
+	user-select: none;
+}
+
+.fridge-ingredients-container {
+	text-align: center;
 }
