@@ -112,7 +112,8 @@ const optionsToRender = (ownIngredients) => {
 	// REMOVE INGREDIENTS YOU ALREADY HAVE IN YOUR FRIDGE
 	// ADD THEM BACK TO THE POOL IF YOU REMOVE THEM FROM YOUR FRIDGE
 	let ing = getIngredientsForSelect();
-	return {toRender: getIngredientsForSelect().splice(0, 50)}
+	return {toRender: getIngredientsForSelect()}
+	// return {toRender: getIngredientsForSelect().splice(0, 50)}
 }
 
 const AnimatedSelect = ({ingredients, addIngredients}) => {
