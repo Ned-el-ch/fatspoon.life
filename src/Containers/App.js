@@ -18,7 +18,7 @@ const App = () => {
 				<NavbarContainer />
 				<Container fluid>
 					<Row className="align-self-start justify-content-center">
-					<Col xs sm md lg xl={10} className="col-xxl">
+					<Col xs sm md lg xl={8} className="col-xxl">
 						<Switch>
 							<Route exact path="/" component={MealPlanner} />
 							<Route exact path="/MyCookbook" component={Cookbook} />
