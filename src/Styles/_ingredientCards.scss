@@ -27,7 +27,7 @@
 		}
 
 		& .ic-quantity {
-			bottom: 40px;
+			bottom: 36px;
 		}
 
 	}
@@ -70,7 +70,24 @@
 }
 
 .ic-buttons-plus {
-	margin-bottom: 3px;
+	line-height: 1.2;
+	&::before {
+		content: "+";
+		font-family: monospace;
+		font-size: $normalFontSize;
+		user-select: none;
+	}
+}
+
+.ic-buttons-minus {
+	line-height: 1.2;
+
+	&::before {
+		content: "-";
+		font-family: monospace;
+		font-size: $normalFontSize;
+		user-select: none;
+	}
 }
 
 .remove {

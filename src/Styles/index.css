@@ -101,7 +101,7 @@ a:hover {
 }
 
 .ic-container:hover .ic-quantity {
-  bottom: 40px;
+  bottom: 36px;
 }
 
 .ic-button {
@@ -139,7 +139,31 @@ a:hover {
 }
 
 .ic-buttons-plus {
-  margin-bottom: 3px;
+  line-height: 1.2;
+}
+
+.ic-buttons-plus::before {
+  content: "+";
+  font-family: monospace;
+  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.ic-buttons-minus {
+  line-height: 1.2;
+}
+
+.ic-buttons-minus::before {
+  content: "-";
+  font-family: monospace;
+  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .remove {
@@ -191,39 +215,39 @@ a:hover {
 }
 
 .ic-heading-label.cat1 {
-  background-color: #eeeeee;
+  background-color: #ffe0ac;
 }
 
 .ic-heading-label.cat2 {
-  background-color: #b0f763;
+  background-color: #ffacb7;
 }
 
 .ic-heading-label.cat3 {
-  background-color: #debb6a;
+  background-color: #6886c5;
 }
 
 .ic-heading-label.cat4 {
-  background-color: #c073ff;
+  background-color: #85a392;
 }
 
 .ic-heading-label.cat5 {
-  background-color: #4f6fff;
+  background-color: #f5b971;
 }
 
 .ic-heading-label.cat6 {
-  background-color: #32eda2;
+  background-color: #856c8b;
 }
 
 .ic-heading-label.cat7 {
-  background-color: #92fcf7;
+  background-color: #aabecf;
 }
 
 .ic-heading-label.cat8 {
-  background-color: #ffff00;
+  background-color: #dcedc1;
 }
 
 .ic-heading-label.cat9 {
-  background-color: #ed851c;
+  background-color: #f1935c;
 }
 
 .ic-quantity {

@@ -15,17 +15,22 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 			*/}
 			<AnimatedSelect />
 			<div className="fridge-ingredients-container">
-				{ingredients.map(ingredient => {
-					return(
-						<IngredientCard
-							key={ingredient.id}
-							ingredient={ingredient}
-							removeIngredient={removeIngredient}
-							increaseIngredient={increaseIngredient}
-							decreaseIngredient={decreaseIngredient}
-						/>
-					)
-				})}
+				<div className="fridge-ingredients-filter">
+
+				</div>
+				<div className="fridge-ingredients">
+					{ingredients.map(ingredient => {
+						return(
+							<IngredientCard
+								key={ingredient.id}
+								ingredient={ingredient}
+								removeIngredient={removeIngredient}
+								increaseIngredient={increaseIngredient}
+								decreaseIngredient={decreaseIngredient}
+							/>
+						)
+					})}
+				</div>
 			</div>
 		</div>
 	)
