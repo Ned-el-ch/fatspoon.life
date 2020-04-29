@@ -11,59 +11,6 @@
 	max-width: 150px;
 	max-height: 130px;
 
-	&.cat1 {
-		background-image: linear-gradient(to bottom, $categoryColor1, white 45%);
-		border-top-color: $categoryColor1;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat2 {
-		background-image: linear-gradient(to bottom, $categoryColor2, white 45%);
-		border-top-color: $categoryColor2;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat3 {
-		background-image: linear-gradient(to bottom, $categoryColor3, white 45%);
-		border-top-color: $categoryColor3;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat4 {
-		background-image: linear-gradient(to bottom, $categoryColor4, white 45%);
-		border-top-color: $categoryColor4;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat5 {
-		background-image: linear-gradient(to bottom, $categoryColor5, white 45%);
-		border-top-color: $categoryColor5;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat6 {
-		background-image: linear-gradient(to bottom, $categoryColor6, white 45%);
-		border-top-color: $categoryColor6;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat7 {
-		background-image: linear-gradient(to bottom, $categoryColor7, white 45%);
-		border-top-color: $categoryColor7;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat8 {
-		background-image: linear-gradient(to bottom, $categoryColor8, white 45%);
-		border-top-color: $categoryColor8;
-		border-bottom-color: rgb(240, 240, 240);
-	}
-
-	&.cat9 {
-		background-image: linear-gradient(to bottom, $categoryColor9, white 45%);
-		border-top-color: $categoryColor9;
-		border-bottom-color: rgb(240, 240, 240);
-	}
 }
 
 .ic-buttons-container {
@@ -143,7 +90,51 @@
 	line-height: 1.2rem;
 	word-wrap: break-word;
 	font-weight: 500;
-	// font-family: "LemonJelly";
+
+}
+
+.ic-heading-label {
+	position: absolute;
+	user-select: none;
+	padding-left: 4px;
+	text-shadow: 1px 1px 0px lightgray;
+
+	&.cat1 {
+		color: $categoryColor1;
+	}
+
+	&.cat2 {
+		color: $categoryColor2;
+	}
+
+	&.cat3 {
+		color: $categoryColor3;
+	}
+
+	&.cat4 {
+		color: $categoryColor4;
+	}
+
+	&.cat5 {
+		color: $categoryColor5;
+	}
+
+	&.cat6 {
+		color: $categoryColor6;
+	}
+
+	&.cat7 {
+		color: $categoryColor7;
+	}
+
+	&.cat8 {
+		color: $categoryColor8;
+	}
+
+	&.cat9 {
+		color: $categoryColor9;
+	}
+
 }
 
 .ic-quantity {

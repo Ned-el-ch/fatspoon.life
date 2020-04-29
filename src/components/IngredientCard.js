@@ -30,8 +30,9 @@ const IngredientCard = ({ingredient, increaseIngredient, decreaseIngredient, rem
 	const label = assignCategoryLabel(category);
 	return (
 		<div className={`ic-container ${label}`}>
+			<div className={`ic-heading-label ${label}`}>⬤</div>
 			<div className="ic-heading-container">
-				<span className="ic-heading">{name}</span>
+				<span className={`ic-heading ${label}`}>{name}</span>
 			</div>
 			<button className="ic-button remove"  onClick={() => removeIngredient(id)}>x</button>
 			<span className="ic-quantity">{quantity >= 1000 ? `${quantity / 1000} kg` : `${quantity} g`}</span>
