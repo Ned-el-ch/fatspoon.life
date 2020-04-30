@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { starRecipe, unstarRecipe } from '../Actions/recipes';
 
-import RecipeCard from '../Components/RecipeCard';
-import PageHeader from '../Components/PageHeader';
+import RecipeCard from '../Components/RecipeCard.js';
+import PageHeader from '../Components/PageHeader.js';
 import Row from 'react-bootstrap/Row';
-import RecipeForm from '../Components/RecipeForm';
+import RecipeForm from '../Components/RecipeForm.js';
 
 const Cookbook = (props) => {
 	const { recipes, starRecipe, unstarRecipe } = props;

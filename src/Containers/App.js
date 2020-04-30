@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Fridge from './Fridge';
-import Cookbook from './Cookbook';
-import MealPlanner from './MealPlanner';
-import SearchResults from './SearchResults';
-import NavbarContainer from './NavbarContainer';
+import Fridge from './Fridge.js';
+import Cookbook from './Cookbook.js';
+import MealPlanner from './MealPlanner.js';
+import SearchResults from './SearchResults.js';
+import NavbarContainer from './NavbarContainer.js';
 
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"

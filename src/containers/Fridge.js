@@ -1,7 +1,7 @@
 import React from 'react'
-import PageHeader from '../components/PageHeader'
-import IngredientCard from '../components/IngredientCard'
-import AnimatedSelect from '../components/AnimatedSelect'
+import PageHeader from '../components/PageHeader.js';
+import IngredientCard from '../components/IngredientCard.js';
+import AnimatedSelect from '../components/AnimatedSelect.js';
 import { connect } from 'react-redux'
 import { removeIngredient, increaseIngredient, decreaseIngredient } from '../actions/ingredients'
 
