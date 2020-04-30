@@ -1,7 +1,6 @@
 // import React, { Component } from 'react';
 // import { v4 as uuid } from 'uuid';
-// import { connect } from 'react-redux';
-// import { addRecipe } from '../actions/recipes';
+
 
 // class RecipeForm extends Component {
 
@@ -74,3 +73,46 @@
 // }
 
 // export default connect(null, { addRecipe })(RecipeForm);
+
+import React, { useState } from 'react'
+import { connect } from 'react-redux';
+import { addRecipe } from '../actions/recipes';
+
+const initialState = () => {
+	return (
+		{
+			recipe: null
+		}
+	)
+}
+
+const RecipeForm = () => {
+	const [state, updateRecipe] = useState(initialState);
+	return (
+		<div className="recipe-form-container">
+			{ 
+			state.recipe
+			?
+			<div>
+				<span>u should render the form here </span>
+			</div>
+			:
+			<div>
+				<button className="rf-new-recipe-button">
+					Add a new recipe!
+				</button>
+			</div>
+			}
+		</div>
+	)
+}
+
+const mapStateToProps = state => {
+	return (
+		{
+			ingredients: state.search.ingredients
+		}
+	)
+}
+
+export default connect(mapStateToProps, { addRecipe })(RecipeForm);

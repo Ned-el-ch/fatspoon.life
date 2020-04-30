@@ -4,6 +4,9 @@ export default (state = [], action) => {
 
 	switch (action.type) {
 
+		case "ADD_RECIPE":
+			return state;
+
 		case "STAR_RECIPE":
 			index = state.findIndex(recipe => recipe.uri === action.recipe.uri);
 			if (index === -1) {
