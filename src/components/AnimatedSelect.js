@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addIngredients } from '../actions/ingredients';
+import { addIngredients } from '../Actions/ingredients';
 import chroma from 'chroma-js';
 import Select, { createFilter, components } from 'react-select';
-import { getIngredientsForSelect } from "../concerns/getIngredientsForSelect";
+import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 
 const AnimatedSelect = (props) => {
 	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);

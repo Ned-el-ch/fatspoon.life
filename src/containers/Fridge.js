@@ -1,9 +1,9 @@
 import React from 'react'
-import PageHeader from '../components/PageHeader.js';
-import IngredientCard from '../components/IngredientCard.js';
-import AnimatedSelect from '../components/AnimatedSelect.js';
+import PageHeader from '../Components/PageHeader.js';
+import IngredientCard from '../Components/IngredientCard.js';
+import AnimatedSelect from '../Components/AnimatedSelect.js';
 import { connect } from 'react-redux'
-import { removeIngredient, increaseIngredient, decreaseIngredient } from '../actions/ingredients'
+import { removeIngredient, increaseIngredient, decreaseIngredient } from '../Actions/ingredients'
 
 const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngredient}) => {
 	return (

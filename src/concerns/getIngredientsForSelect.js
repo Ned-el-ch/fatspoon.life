@@ -1,4 +1,4 @@
-import * as ingredients from "../data/ingredients.json";
+import * as ingredients from "../Data/ingredients.json";
 
 export const getIngredientsForSelect = () => {
 	let ingredientsArray = ingredients.default;

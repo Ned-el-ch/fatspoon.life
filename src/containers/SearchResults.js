@@ -1,8 +1,8 @@
 import React from 'react'
-import PageHeader from '../components/PageHeader.js';
+import PageHeader from '../Components/PageHeader.js';
 import { connect } from 'react-redux'
-import { starRecipe, unstarRecipe } from '../actions/recipes';
-import RecipeCard from '../components/RecipeCard.js';
+import { starRecipe, unstarRecipe } from '../Actions/recipes';
+import RecipeCard from '../Components/RecipeCard.js';
 
 const SearchResults = (props) => {
 	const { recipes, starRecipe, unstarRecipe } = props;

@@ -1,5 +1,5 @@
-import * as seedRecipes from "../data/recipes.json"
-import * as allIngredients from "../data/ingredients.json"
+import * as seedRecipes from "../Data/recipes.json"
+import * as allIngredients from "../Data/ingredients.json"
 
 let initialState = {
 	recipes: seedRecipes.default,
