@@ -1,0 +1,29 @@
+.add-to-fridge-container {
+	text-align: center;
+}
+
+.button-add-to-fridge {
+	width: 60%;
+	border: none;
+	background-color: $mainTextColor;
+	outline: none;
+	border-radius: 10px;
+	height: 35px;
+	margin-top: 5px;
+	color: white;
+	font-weight: bold;
+
+	&:hover {
+		background-color: $mainTextColorLight;
+	}
+	&:active {
+		background-color: $mainTextColorLighter;
+		box-shadow: $mainBoxShadow;
+
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+		outline: none;
+	}
+}

@@ -6,11 +6,13 @@ export default (state = [], action) => {
 	switch (action.type) {
 
 		case "ADD_INGREDIENTS":
-			let ingredients = action.ingredients.map(ing => {
-				return Object.assign({}, ing.ingredient, {quantity: 0})
+			let newIngredients = [];
+			action.ingredients.forEach(data => {
+				let arr = state.filter(stateIng => stateIng.id === data.ingredient.id);
+				if (arr.length === 0)
+					newIngredients.push(Object.assign({}, data.ingredient, {quantity: 0}))
 			})
-			return [...state, ...ingredients];
-			// return [...state, Object.assign({}, action.ingredient, {quantity: 0})];
+			return [...state, ...newIngredients];
 
 		case "REMOVE_INGREDIENT":
 			return state.filter(ingredient => ingredient.id !== action.ingredientID);

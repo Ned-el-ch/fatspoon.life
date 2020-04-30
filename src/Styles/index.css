@@ -360,4 +360,36 @@ a.nav-link {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
+
+.add-to-fridge-container {
+  text-align: center;
+}
+
+.button-add-to-fridge {
+  width: 60%;
+  border: none;
+  background-color: #062035;
+  outline: none;
+  border-radius: 10px;
+  height: 35px;
+  margin-top: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.button-add-to-fridge:hover {
+  background-color: #082a46;
+}
+
+.button-add-to-fridge:active {
+  background-color: #0b385e;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+}
+
+.button-add-to-fridge:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+  outline: none;
+}
 /*# sourceMappingURL=index.css.map */

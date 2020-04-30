@@ -24,11 +24,18 @@ const AnimatedSelect = (props) => {
 				placeholder="Add some new ingredients!"
 				noResultsText="Looks like I forgot to add this ingredient"
 			/>
-			<button disabled={!selectedOptions.toAdd} onClick={() => {
-				props.addIngredients(selectedOptions.toAdd);
-				setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
-				setSelectedOptions({toAdd: null});
-			}}>Add To My Fridge!</button>
+			{selectedOptions.toAdd
+			?
+			<div className="add-to-fridge-container">
+				<button className="button-add-to-fridge" onClick={() => {
+					props.addIngredients(selectedOptions.toAdd);
+					setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
+					setSelectedOptions({toAdd: null});
+				}}>Add To My Fridge!</button>
+			</div>
+			:
+			<div></div>
+			}
 		</>
 	)
 }
