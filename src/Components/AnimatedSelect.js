@@ -11,7 +11,7 @@ const AnimatedSelect = (props) => {
 	return (
 		<>
 			<Select
-				isMulti
+				isMulti={true}
 				closeMenuOnSelect={false}
 				options={availableOptions.toRender}
 				// defaultValue={[availableOptions.toRender[1], availableOptions.toRender[28]]}
