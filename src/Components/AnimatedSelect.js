@@ -5,51 +5,6 @@ import chroma from 'chroma-js';
 import Select, { createFilter, components } from 'react-select';
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 
-const AnimatedSelect = (props) => {
-	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
-	const [availableOptions, setAvailableOptions] = useState(optionsToRender(props.ingredients));
-	return (
-		<>
-			<Select
-				isMulti={true}
-				closeMenuOnSelect={false}
-				options={availableOptions.toRender}
-				// defaultValue={[availableOptions.toRender[1], availableOptions.toRender[28]]}
-				filterOption={createFilter({ignoreAccents: false})}
-				components={{Option: CustomOption}}
-				styles={colourStyles}
-				onChange={toAdd => setSelectedOptions({toAdd})}
-				value={selectedOptions.toAdd}
-				theme={theme}
-				placeholder="Add some new ingredients!"
-				noResultsText="Looks like I forgot to add this ingredient"
-			/>
-			{selectedOptions.toAdd
-			?
-			<div className="add-to-fridge-container">
-				<button className="button-add-to-fridge" onClick={() => {
-					props.addIngredients(selectedOptions.toAdd);
-					setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
-					setSelectedOptions({toAdd: null});
-				}}>Add To My Fridge!</button>
-			</div>
-			:
-			<div></div>
-			}
-		</>
-	)
-}
-
-const CustomOption = (props) => {
-	const {innerProps, isFocused, ...otherProps} = props;
-	const {onMouseMove, onMouseOver, ...otherInnerProps} = innerProps;
-	const newProps = {innerProps: {...otherInnerProps}, ...otherProps};
-	return (
-		<components.Option {...newProps} className="react-select-option">{props.children}
-		</components.Option>
-	);
-}
-
 const removeSelectedOptions = (availableOptions, selectedOptions) => {
 	let options = []
 	for (const availOption of availableOptions) {
@@ -150,6 +105,51 @@ const theme = (theme) => ({
 	...colors
 	},
 })
+
+const CustomOption = (props) => {
+	const {innerProps, isFocused, ...otherProps} = props;
+	const {onMouseMove, onMouseOver, ...otherInnerProps} = innerProps;
+	const newProps = {innerProps: {...otherInnerProps}, ...otherProps};
+	return (
+		<components.Option {...newProps} className="react-select-option">{props.children}
+		</components.Option>
+	);
+}
+
+const AnimatedSelect = (props) => {
+	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
+	const [availableOptions, setAvailableOptions] = useState(optionsToRender(props.ingredients));
+	return (
+		<>
+			<Select
+				isMulti={true}
+				closeMenuOnSelect={false}
+				options={availableOptions.toRender}
+				// defaultValue={[availableOptions.toRender[1], availableOptions.toRender[28]]}
+				filterOption={createFilter({ignoreAccents: false})}
+				components={{Option: CustomOption}}
+				styles={colourStyles}
+				onChange={toAdd => setSelectedOptions({toAdd})}
+				value={selectedOptions.toAdd}
+				theme={theme}
+				placeholder="Add some new ingredients!"
+				noResultsText="Looks like I forgot to add this ingredient"
+			/>
+			{selectedOptions.toAdd
+			?
+			<div className="add-to-fridge-container">
+				<button className="button-add-to-fridge" onClick={() => {
+					props.addIngredients(selectedOptions.toAdd);
+					setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
+					setSelectedOptions({toAdd: null});
+				}}>Add To My Fridge!</button>
+			</div>
+			:
+			<div></div>
+			}
+		</>
+	)
+}
 
 const mapStateToProps = state => {
 	return(

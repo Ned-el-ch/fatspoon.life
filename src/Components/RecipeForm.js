@@ -22,9 +22,10 @@ const RecipeForm = () => {
 			</div>
 			:
 			<div>
-				<button className="rf-new-recipe-button">
-					Add a new recipe!
-				</button>
+				<button
+					className="rf-new-recipe-button"
+					onClick={() => updateRecipe({recipe: {}})}
+				>Add a new recipe!</button>
 			</div>
 			}
 		</div>
