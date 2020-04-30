@@ -8,7 +8,7 @@ import './Styles/index.css';
 
 import store from './store'
 
-import App from './containers/App';
+import App from './containers/App.js';
 
 
 ReactDOM.render(
