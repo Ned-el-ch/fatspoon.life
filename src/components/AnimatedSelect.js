@@ -1,13 +1,69 @@
 import React, { useState } from 'react';
-import chroma from 'chroma-js';
-import Select, { createFilter } from 'react-select';
-import makeAnimated from 'react-select/animated';
-import { getIngredientsForSelect } from "../concerns/getIngredientsForSelect";
 import { connect } from 'react-redux';
 import { addIngredients } from '../actions/ingredients';
+import chroma from 'chroma-js';
+import Select, { createFilter, components } from 'react-select';
+import { getIngredientsForSelect } from "../concerns/getIngredientsForSelect";
 
-const colouredOptions = getIngredientsForSelect();
-const animatedComponents = makeAnimated();
+const AnimatedSelect = (props) => {
+	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
+	const [availableOptions, setAvailableOptions] = useState(optionsToRender(props.ingredients));
+	return (
+		<>
+			<Select
+				isMulti
+				closeMenuOnSelect={false}
+				options={availableOptions.toRender}
+				// defaultValue={[availableOptions.toRender[1], availableOptions.toRender[28]]}
+				filterOption={createFilter({ignoreAccents: false})}
+				components={{Option: CustomOption}}
+				styles={colourStyles}
+				onChange={toAdd => setSelectedOptions({toAdd})}
+				value={selectedOptions.toAdd}
+				theme={theme}
+				placeholder="Add some new ingredients!"
+				noResultsText="Looks like I forgot to add this ingredient"
+			/>
+			<button disabled={!selectedOptions.toAdd} onClick={() => {
+				props.addIngredients(selectedOptions.toAdd);
+				setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
+				setSelectedOptions({toAdd: null});
+			}}>Add To My Fridge!</button>
+		</>
+	)
+}
+
+const CustomOption = (props) => {
+	const {innerProps, isFocused, ...otherProps} = props;
+	const {onMouseMove, onMouseOver, ...otherInnerProps} = innerProps;
+	const newProps = {innerProps: {...otherInnerProps}, ...otherProps};
+	return (
+		<components.Option {...newProps} className="react-select-option">{props.children}
+		</components.Option>
+	);
+}
+
+const removeSelectedOptions = (availableOptions, selectedOptions) => {
+	let options = []
+	for (const availOption of availableOptions) {
+		let optionIsSelected = false;
+		for (const selOption of selectedOptions) {
+			if (availOption.value === selOption.value) {
+				optionIsSelected = true;
+			}
+		}
+		if (!optionIsSelected) {
+			options.push(availOption);
+		}
+	}
+	return options;
+}
+const initialSelectedOptions = {toAdd: null}
+const optionsToRender = (ownIngredients) => {
+	// REMOVE INGREDIENTS YOU ALREADY HAVE IN YOUR FRIDGE
+	// ADD THEM BACK TO THE POOL IF YOU REMOVE THEM FROM YOUR FRIDGE
+	return {toRender: getIngredientsForSelect()}
+}
 
 const colourStyles = {
 	control: styles => ({ ...styles, backgroundColor: '#062035', closeOnSelect: false}),
@@ -61,7 +117,6 @@ const colourStyles = {
 		background: '#062035',
 	}),
 };
-
 const colors = {
 		"primary": "#ff6347",
 		"primary75": "#4C9AFF",
@@ -81,7 +136,6 @@ const colors = {
 		"neutral80": "#ffffff",
 		"neutral90": "hsl(0, 0%, 10%)"
 }
-
 const theme = (theme) => ({
 	...theme,
 	borderRadius: "10px",
@@ -89,62 +143,6 @@ const theme = (theme) => ({
 	...colors
 	},
 })
-
-const removeSelectedOptions = (availableOptions, selectedOptions) => {
-	let options = []
-	for (const availOption of availableOptions) {
-		let optionIsSelected = false;
-		for (const selOption of selectedOptions) {
-			if (availOption.value === selOption.value) {
-				optionIsSelected = true;
-			}
-		}
-		if (!optionIsSelected) {
-			options.push(availOption);
-		}
-	}
-	return options;
-}
-
-const initialSelectedOptions = {toAdd: null}
-const optionsToRender = (ownIngredients) => {
-	// debugger
-	// REMOVE INGREDIENTS YOU ALREADY HAVE IN YOUR FRIDGE
-	// ADD THEM BACK TO THE POOL IF YOU REMOVE THEM FROM YOUR FRIDGE
-	let ing = getIngredientsForSelect();
-	return {toRender: getIngredientsForSelect()}
-	// return {toRender: getIngredientsForSelect().splice(0, 50)}
-}
-
-const AnimatedSelect = ({ingredients, addIngredients}) => {
-	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
-	const [availableOptions, setAvailableOptions] = useState(optionsToRender(ingredients));
-	// console.log(state);
-	return (
-		<div className="select-container">
-			<Select
-				isMulti
-				closeMenuOnSelect={false}
-				components={animatedComponents}
-				// defaultValue={[colouredOptions[1], colouredOptions[28], colouredOptions[57], colouredOptions[172]]}
-				options={availableOptions.toRender}
-				styles={colourStyles}
-				filterOption={createFilter({ignoreAccents: false})}
-				theme={theme}
-				onChange={toAdd => setSelectedOptions({toAdd})}
-				value={selectedOptions.toAdd}
-				placeholder="Add some new ingredients!"
-				noResultsText="Looks like I forgot to add this ingredient"
-			/>
-			
-			<button disabled={!selectedOptions.toAdd} onClick={() => {
-				addIngredients(selectedOptions.toAdd);
-				setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
-				setSelectedOptions({toAdd: null});
-			}}>Add To My Fridge!</button>
-		</div>
-	);
-}
 
 const mapStateToProps = state => {
 	return(

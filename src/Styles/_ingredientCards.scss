@@ -185,3 +185,9 @@
 .fridge-ingredients-container {
 	text-align: center;
 }
+
+.react-select-option {
+	&:hover {
+		background-color: rgba(35, 156, 255, 0.25);
+	}
+}
