@@ -23,11 +23,9 @@ const SearchResults = (props) => {
 
 
 let mapStateToProps = (state) => {
-	return(
-		{
-			recipes: state.search.recipes
-		}
-	)
+	return ({
+		recipes: state.search.recipes
+	})
 }
 
 export default connect(mapStateToProps, {starRecipe, unstarRecipe})(SearchResults);

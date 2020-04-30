@@ -8,10 +8,8 @@ import Form from "react-bootstrap/Form"
 import FormControl from "react-bootstrap/FormControl"
 import { LinkContainer } from "react-router-bootstrap";
 
-// import { recipeSearch } from "../concerns/recipeSearch";
-
 import { connect } from 'react-redux';
-import { addRecipeResults } from "../actions/search";
+import { addRecipeResults } from "../Actions/search";
 
 import { compose } from 'redux'
 import { withRouter } from "react-router-dom";
@@ -25,7 +23,9 @@ class NavbarContainer extends Component {
 
 	handleOnChange = (event) => {
 		event.preventDefault();
-		this.setState({searchTerm: event.target.value})
+		this.setState({
+			searchTerm: event.target.value
+		})
 	}
 
 	handleSubmit = (event) => {
@@ -81,4 +81,4 @@ class NavbarContainer extends Component {
 export default compose(
 	withRouter,
 	connect(null, { addRecipeResults })
-	)(NavbarContainer);
+)(NavbarContainer);
