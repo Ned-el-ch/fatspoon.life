@@ -1,10 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ShoppingList from '../Components/ShoppingList'
+import PageHeader from '../Components/PageHeader'
 
 export const ShoppingListContainer = () => {
 	return (
 		<div className="shopping-list-container">
+			<PageHeader title="My Shopping List"/>
 			<ShoppingList />
 		</div>
 	)
