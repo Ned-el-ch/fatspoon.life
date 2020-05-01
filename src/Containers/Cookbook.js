@@ -5,14 +5,14 @@ import { starRecipe, unstarRecipe } from '../Actions/recipes';
 import RecipeCard from '../Components/RecipeCard.js';
 import PageHeader from '../Components/PageHeader.js';
 import Row from 'react-bootstrap/Row';
-import RecipeForm from './RecipeFormContainer.js';
+import RecipeFormContainer from './RecipeFormContainer.js';
 
 const Cookbook = (props) => {
 	const { recipes, starRecipe, unstarRecipe } = props;
 	return (
 		<div className="cookbook-container">
 			<PageHeader title="My Cookbook"/>
-			<RecipeForm/>
+			<RecipeFormContainer />
 			<Row className="align-self-start justify-content-center">
 				{recipes.map(recipe => 
 					<RecipeCard

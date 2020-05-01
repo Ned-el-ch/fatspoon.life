@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { addRecipe } from '../Actions/recipes';
-
+import RecipeForm from "../Components/RecipeForm";
 const initialState = () => {
 	return (
 		{
@@ -18,7 +18,7 @@ const RecipeFormContainer = () => {
 			state.recipe
 			?
 			<div className="recipe-form">
-				<span>u should render the form here </span>
+				<RecipeForm />
 			</div>
 			:
 			<div>
