@@ -9,10 +9,10 @@ export const ShoppingListContainer = () => {
 	)
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = items => {
 	return (
 		{
-			items: state.shoppingListItems
+			items
 		}
 	)
 }

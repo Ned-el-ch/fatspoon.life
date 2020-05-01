@@ -1,8 +1,8 @@
-export const addToShoppingList = shoppingListItems => {
+export const addToShoppingList = itemsToAdd => {
 	return (
 		{
 			type: "ADD_TO_SHOPPING_LIST",
-			shoppingListItems
+			itemsToAdd
 		}
 	)
 }
