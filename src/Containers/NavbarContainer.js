@@ -64,6 +64,9 @@ class NavbarContainer extends Component {
 					<LinkContainer exact to="/MyFridge">
 						<NavLink active={false}><NavItem>My Fridge</NavItem></NavLink>
 					</LinkContainer>
+					<LinkContainer exact to="/MyShoppingList">
+						<NavLink active={false}><NavItem>My Shopping List</NavItem></NavLink>
+					</LinkContainer>
 					</Nav>
 					{/* <Form inline onSubmit={this.handleSubmit}>
 					<Form.Group controlId="recipeSearchForm">
