@@ -12,7 +12,7 @@ export const ShoppingListContainer = () => {
 const mapStateToProps = state => {
 	return (
 		{
-			items: state.itemsToPurchase
+			items: state.shoppingListItems
 		}
 	)
 }
