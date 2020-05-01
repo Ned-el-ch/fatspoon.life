@@ -5,7 +5,7 @@ import { starRecipe, unstarRecipe } from '../Actions/recipes';
 import RecipeCard from '../Components/RecipeCard.js';
 import PageHeader from '../Components/PageHeader.js';
 import Row from 'react-bootstrap/Row';
-import RecipeForm from '../Components/RecipeForm.js';
+import RecipeForm from './RecipeFormContainer.js';
 
 const Cookbook = (props) => {
 	const { recipes, starRecipe, unstarRecipe } = props;

@@ -10,14 +10,14 @@ const initialState = () => {
 	)
 }
 
-const RecipeForm = () => {
+const RecipeFormContainer = () => {
 	const [state, updateRecipe] = useState(initialState);
 	return (
 		<div className="recipe-form-container">
 			{ 
 			state.recipe
 			?
-			<div>
+			<div className="recipe-form">
 				<span>u should render the form here </span>
 			</div>
 			:
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps, { addRecipe })(RecipeForm);
+export default connect(mapStateToProps, { addRecipe })(RecipeFormContainer);

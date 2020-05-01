@@ -1,7 +1,7 @@
 import React from 'react'
 import PageHeader from '../Components/PageHeader.js';
-import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
