@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Fridge from './Fridge.js';
 import Cookbook from './Cookbook.js';
-import MealPlanner from './MealPlanner.js';
+import MealPlannerContainer from './MealPlannerContainer.js';
 import SearchResults from './SearchResults.js';
 import NavbarContainer from './NavbarContainer.js';
 
@@ -20,7 +20,7 @@ const App = () => {
 					<Row className="align-self-start justify-content-center">
 					<Col xs sm md lg xl={8} className="col-xxl">
 						<Switch>
-							<Route exact path="/" component={MealPlanner} />
+							<Route exact path="/" component={MealPlannerContainer} />
 							<Route exact path="/MyCookbook" component={Cookbook} />
 							<Route exact path="/MyFridge" component={Fridge} />
 							<Route exact path="/Search" component={SearchResults} />
