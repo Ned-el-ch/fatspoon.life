@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 export const ShoppingListContainer = () => {
 	return (
-		<div>
+		<div className="shopping-list-container">
 			
 		</div>
 	)
