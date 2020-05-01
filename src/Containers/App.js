@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Fridge from './Fridge.js';
 import Cookbook from './Cookbook.js';
 import MealPlannerContainer from './MealPlannerContainer.js';
-import SearchResults from './SearchResults.js';
+// import SearchResults from './SearchResults.js';
 import NavbarContainer from './NavbarContainer.js';
 
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import ShoppingListContainer from './ShoppingListContainer.js';
 
 const App = () => {
 	return (
@@ -23,6 +24,7 @@ const App = () => {
 							<Route exact path="/" component={MealPlannerContainer} />
 							<Route exact path="/MyCookbook" component={Cookbook} />
 							<Route exact path="/MyFridge" component={Fridge} />
+							<Route exact path="/MyShoppingList" component={ShoppingListContainer} />
 							{/* <Route exact path="/Search" component={SearchResults} /> */}
 						</Switch>
 					</Col>
