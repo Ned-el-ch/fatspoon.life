@@ -10,6 +10,7 @@ $ternaryAccentColor: rgb(75, 237, 255);
 $mainTextColor: rgb(6, 32, 53);
 $mainTextColorLight: rgb(8, 42, 70);
 $mainTextColorLighter: rgb(11, 56, 94);
+$mainTextColorTransparent: rgba(11, 57, 94, 0.3);
 $smallFontSize: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
 $mediumFontSize: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
 $normalFontSize: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));

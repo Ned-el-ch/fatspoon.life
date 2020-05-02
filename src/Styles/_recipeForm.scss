@@ -1,0 +1,9 @@
+.rf-description-remaining-characters {
+	position: absolute;
+	font-size: $smallFontSize;
+	bottom: 0;
+	right: 115px;
+	font-style: italic;
+	color: $mainTextColorTransparent;
+	z-index: 10;
+}

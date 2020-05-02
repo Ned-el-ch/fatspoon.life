@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import IngredientSelect from './IngredientSelect'
 import { InputGroup, FormControl, Row, Col } from "react-bootstrap";
 
+const initialDescription = {
+	text: ""
+}
+
 const RecipeForm = () => {
+	const [description, setDescription] = useState(initialDescription)
 	return (
 		<div className="recipe-form">
 			<Row>
@@ -34,7 +39,16 @@ const RecipeForm = () => {
 			<Row className="align-self-start justify-content-center">
 			<Col xs sm md={{ span: 8, offset: 4 }}>
 				<InputGroup>
-					<FormControl as="textarea" aria-label="Description" maxLength={220} style={{height: "140px", maxHeight: "140px", minHeight: "140px", resize: "none"}}/>
+					<FormControl
+						as="textarea"
+						placeholder="Give your recipe a good (short) description"
+						aria-label="Description"
+						maxLength={150}
+						style={{height: "100px", maxHeight: "100px", minHeight: "100px", resize: "none"}}
+						value={description.text}
+						onChange={(event) => setDescription({text: event.target.value})}
+					/>
+					<span className="rf-description-remaining-characters">{150 - description.text.length} characters remaining</span>
 					<InputGroup.Append>
 						<InputGroup.Text>Description</InputGroup.Text>
 					</InputGroup.Append>

@@ -72,6 +72,16 @@ a:hover {
   font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
 }
 
+.rf-description-remaining-characters {
+  position: absolute;
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  bottom: 0;
+  right: 115px;
+  font-style: italic;
+  color: rgba(11, 57, 94, 0.3);
+  z-index: 10;
+}
+
 .ic-buttons-container {
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   position: absolute;
