@@ -3,6 +3,10 @@ import chroma from 'chroma-js';
 import Select, { createFilter, components } from 'react-select';
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 
+const initialOptionsToRender = {
+	toRender: getIngredientsForSelect()
+}
+
 const CustomOption = (props) => {
 	const {innerProps, isFocused, ...otherProps} = props;
 	const {onMouseMove, onMouseOver, ...otherInnerProps} = innerProps;
@@ -16,11 +20,11 @@ const CustomOption = (props) => {
 const IngredientSelect = () => {
 	const initialSelectedOptions = {toAdd: null};
 	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
-	const [availableOptions, setAvailableOptions] = useState(optionsToRender(getIngredientsForSelect()));
+	const [availableOptions, setAvailableOptions] = useState(initialOptionsToRender);
 	return (
 		<Select
 			isMulti={false}
-			closeMenuOnSelect={false}
+			closeMenuOnSelect={true}
 			options={availableOptions.toRender}
 			// defaultValue={[availableOptions.toRender[1], availableOptions.toRender[28]]}
 			filterOption={createFilter({ignoreAccents: false})}
