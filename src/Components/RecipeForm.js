@@ -5,8 +5,8 @@ import { InputGroup, FormControl, Row, Col } from "react-bootstrap";
 const RecipeForm = () => {
 	return (
 		<div className="recipe-form">
-			<Row className="align-self-start justify-content-right">
-			<Col xs sm md lg xl={8} className="col-xxl">
+			<Row className="align-self-start justify-content-center">
+			<Col xs sm md={{ span: 8, offset: 4 }}>
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg">Title</InputGroup.Text>
@@ -17,7 +17,16 @@ const RecipeForm = () => {
 						aria-describedby="inputGroup-sizing-lg"
 					/>
 				</InputGroup>
-
+			</Col>
+			</Row>
+			<Row className="align-self-start justify-content-center">
+			<Col xs sm md={{ span: 8, offset: 4 }}>
+				<InputGroup>
+					<InputGroup.Prepend>
+						<InputGroup.Text>Description</InputGroup.Text>
+					</InputGroup.Prepend>
+					<FormControl as="textarea" aria-label="Description" />
+				</InputGroup>
 			</Col>
 			</Row>
 
