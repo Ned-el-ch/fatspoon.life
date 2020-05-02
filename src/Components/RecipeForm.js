@@ -6,8 +6,18 @@ const initialDescription = {
 	text: ""
 }
 
+const initialImageLink = {
+	text: ""
+}
+
+const validateLink = link => {
+	let regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/
+	return link.match(regex);
+}
+
 const RecipeForm = () => {
-	const [description, setDescription] = useState(initialDescription)
+	const [description, setDescription] = useState(initialDescription);
+	const [imgLink, setImgLink] = useState(initialImageLink);
 	return (
 		<div className="recipe-form">
 			<Row>
@@ -20,6 +30,8 @@ const RecipeForm = () => {
 						placeholder="Recipe image URL goes here"
 						aria-label="main image"
 						aria-describedby="inputGroup-sizing-lg"
+						value={imgLink.text}
+						onChange={(event) => setImgLink({text: event.target.value})}
 					/>
 				</InputGroup>
 			</Col>
