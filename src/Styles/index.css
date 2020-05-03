@@ -133,16 +133,20 @@ a:hover {
   line-height: 1;
 }
 
+.rf-instructions-container {
+  position: relative;
+}
+
 .rf-instructions-remaining-characters {
   position: absolute;
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
-  bottom: 0;
-  left: 10px;
+  bottom: -18px;
+  left: 0;
   font-style: italic;
   color: rgba(11, 57, 94, 0.3);
   margin-right: -110px;
   margin-bottom: 5px;
-  width: 100px;
+  width: 200px;
   text-align: center;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -201,7 +205,7 @@ a:hover {
   margin-top: 5px;
 }
 
-.rf-remove-ingredient {
+.rf-remove-ingredient, .rf-remove-instruction {
   width: 100%;
   border: 1px solid #ced4da;
   background-color: white;
@@ -223,22 +227,26 @@ a:hover {
           user-select: none;
 }
 
-.rf-remove-ingredient:hover {
+.rf-remove-ingredient:hover, .rf-remove-instruction:hover {
   background-color: tomato;
   color: white;
 }
 
-.rf-remove-ingredient:active {
+.rf-remove-ingredient:active, .rf-remove-instruction:active {
   background-color: red;
   color: white;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
 }
 
-.rf-remove-ingredient:focus {
+.rf-remove-ingredient:focus, .rf-remove-instruction:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
   outline: none;
+}
+
+.rf-remove-instruction {
+  height: 60px;
 }
 
 .rf-remove-margin {

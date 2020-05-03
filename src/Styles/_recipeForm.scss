@@ -32,16 +32,20 @@
   line-height: 1;
 }
 
+.rf-instructions-container {
+  position: relative;
+}
+
 .rf-instructions-remaining-characters {
 	position: absolute;
 	font-size: $smallFontSize;
-	bottom: 0;
-	left: 10px;
+	bottom: -18px;
+	left: 0;
 	font-style: italic;
 	color: $mainTextColorTransparent;
 	margin-right: -110px;
 	margin-bottom: 5px;
-	width: 100px;
+	width: 200px;
 	text-align: center;
   user-select: none;
   line-height: 1;
@@ -87,7 +91,7 @@
   margin-top: 5px;
 }
 
-.rf-remove-ingredient {
+.rf-remove-ingredient, .rf-remove-instruction {
 	width: 100%;
 	border: 1px solid #ced4da;
 	background-color: white;
@@ -115,6 +119,10 @@
 		box-shadow: $mainBoxShadow !important;
 		outline: none;
 	}
+}
+
+.rf-remove-instruction {
+	height: 60px;
 }
 
 .rf-remove-margin {

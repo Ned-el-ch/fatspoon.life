@@ -225,18 +225,17 @@ const RecipeForm = () => {
 			{cookingData.instructions.map((item, index) => {
 				return (
 					<Row key={item.id} className="rf-instructions-row">
-					<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+					<Col xs={10} sm={10} md={{ span: 8, offset: 1}} lg={{ span: 8, offset: 1}} className="rf-remove-margin">
 						<InputGroup>
 							<InputGroup.Prepend>
-								<InputGroup.Text>Instruction {index + 1}.</InputGroup.Text>
+								<InputGroup.Text>Item {index + 1}.</InputGroup.Text>
 							</InputGroup.Prepend>
-							<span className="rf-instructions-remaining-characters">{225 - item.text.length} characters remaining</span>
 							<FormControl
 								as="textarea"
 								placeholder="Give some instructions!"
 								aria-label="instruction"
 								maxLength={225}
-								style={{height: "130px", maxHeight: "130px", minHeight: "130px", resize: "none"}}
+								style={{height: "140px", maxHeight: "140px", minHeight: "140px", resize: "none"}}
 								value={item.text}
 								onChange={(event) => {
 									const ind = cookingData.instructions.findIndex(i => i.id === item.id);
@@ -252,7 +251,10 @@ const RecipeForm = () => {
 								}}
 							/>
 						</InputGroup>
+					<span className="rf-instructions-remaining-characters">{225 - item.text.length} characters remaining</span>
+
 					</Col>
+
 					<Col xs={2} sm={2} md={{ span: 2}} className="rf-remove-margin">
 							<button
 								className="rf-remove-instruction"
