@@ -11,7 +11,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #062035;
@@ -35,8 +35,8 @@ a:hover {
 @media (min-width: 1440px) {
   .col-xxl {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 50%;
-            flex: 0 0 50%;
+        -ms-flex: 0 0 66%;
+            flex: 0 0 66%;
     max-width: 1111px;
   }
 }
@@ -113,6 +113,7 @@ a:hover {
       -ms-user-select: none;
           user-select: none;
   color: #0b385e;
+  line-height: 1;
 }
 
 .rf-description-remaining-characters {
@@ -202,7 +203,7 @@ a:hover {
 }
 
 .rf-instructions-row {
-  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .rf-remove-ingredient, .rf-remove-instruction {

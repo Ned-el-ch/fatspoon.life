@@ -33,7 +33,6 @@ const validateLink = link => {
 
 const RecipeForm = () => {
 	const [info, setInfo] = useState(initialInfo);
-	const [recipeIngredients, setRecipeIngredients] = useState(initialRecipeIngredients);
 	const [cookingData, setCookingData] = useState(initialCookingData);
 	return (
 		<div className="recipe-form">
@@ -93,7 +92,7 @@ const RecipeForm = () => {
 			<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
-						<InputGroup.Text id="inputGroup-sizing-lg">Prep Time</InputGroup.Text>
+						<InputGroup.Text id="inputGroup-sizing-lg">Prep Time (mins)</InputGroup.Text>
 					</InputGroup.Prepend>
 					<FormControl
 						placeholder="Slicing n' dicing"
@@ -107,7 +106,7 @@ const RecipeForm = () => {
 			<Col xs={12} sm={12} md={{ span: 5}} lg={{ span: 5}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
-						<InputGroup.Text id="inputGroup-sizing-lg">Cooking Time</InputGroup.Text>
+						<InputGroup.Text id="inputGroup-sizing-lg">Cooking Time (mins)</InputGroup.Text>
 					</InputGroup.Prepend>
 					<FormControl
 						placeholder="Frying n' crying"
@@ -126,12 +125,12 @@ const RecipeForm = () => {
 						as="textarea"
 						placeholder="Give your recipe a good (short) description"
 						aria-label="Description"
-						maxLength={150}
+						maxLength={155}
 						style={{height: "100px", maxHeight: "100px", minHeight: "100px", resize: "none"}}
 						value={info.description}
 						onChange={(event) => setInfo(Object.assign({}, info, {description: event.target.value}))}
 					/>
-					<span className="rf-description-remaining-characters">{150 - info.description.length} characters remaining</span>
+					<span className="rf-description-remaining-characters">{155 - info.description.length} characters remaining</span>
 					<InputGroup.Append>
 						<InputGroup.Text>Description</InputGroup.Text>
 					</InputGroup.Append>
@@ -228,11 +227,11 @@ const RecipeForm = () => {
 					<Col xs={10} sm={10} md={{ span: 8, offset: 1}} lg={{ span: 8, offset: 1}} className="rf-remove-margin">
 						<InputGroup>
 							<InputGroup.Prepend>
-								<InputGroup.Text>Item {index + 1}.</InputGroup.Text>
+								<InputGroup.Text>{index + 1}.</InputGroup.Text>
 							</InputGroup.Prepend>
 							<FormControl
 								as="textarea"
-								placeholder="Give some instructions!"
+								placeholder="What's next, chef?"
 								aria-label="instruction"
 								maxLength={225}
 								style={{height: "140px", maxHeight: "140px", minHeight: "140px", resize: "none"}}
