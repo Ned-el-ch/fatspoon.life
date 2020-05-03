@@ -90,6 +90,10 @@ a:hover {
   padding-bottom: 250px;
 }
 
+.rf-main-info {
+  padding-bottom: 30px;
+}
+
 .rf-description-remaining-characters {
   position: absolute;
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
