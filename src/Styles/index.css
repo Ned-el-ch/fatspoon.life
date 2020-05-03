@@ -105,7 +105,7 @@ a:hover {
           user-select: none;
 }
 
-.rf-ingredients-list-heading {
+.rf-ingredients-list-heading, .rf-cooking-instructions-heading {
   font-family: "LemonJelly";
   font-size: calc(2.6rem + (3.2 - 2.6) * ((100vw - 300px) / (1600 - 300)));
   -webkit-user-select: none;
@@ -122,7 +122,6 @@ a:hover {
   right: 115px;
   font-style: italic;
   color: rgba(11, 57, 94, 0.3);
-  z-index: 10;
   margin-right: -110px;
   margin-bottom: 5px;
   width: 100px;
@@ -134,7 +133,25 @@ a:hover {
   line-height: 1;
 }
 
-.rf-new-ingredient-button {
+.rf-instructions-remaining-characters {
+  position: absolute;
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  bottom: 0;
+  left: 10px;
+  font-style: italic;
+  color: rgba(11, 57, 94, 0.3);
+  margin-right: -110px;
+  margin-bottom: 5px;
+  width: 100px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 1;
+}
+
+.rf-new-ingredient-button, .rf-new-instruction-button {
   width: 100%;
   border: 1px solid #ced4da;
   background-color: white;
@@ -151,28 +168,37 @@ a:hover {
   font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 600;
   padding: 0 0 44px 0;
+  margin-top: 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 
-.rf-new-ingredient-button:hover {
+.rf-new-ingredient-button:hover, .rf-new-instruction-button:hover {
   background-color: #c4ff86;
   color: white;
 }
 
-.rf-new-ingredient-button:active {
+.rf-new-ingredient-button:active, .rf-new-instruction-button:active {
   background-color: #b0e478;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
   color: white;
 }
 
-.rf-new-ingredient-button:focus {
+.rf-new-ingredient-button:focus, .rf-new-instruction-button:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
   outline: none;
+}
+
+.rf-new-instruction-button {
+  margin-top: 15px;
+}
+
+.rf-instructions-row {
+  margin-top: 5px;
 }
 
 .rf-remove-ingredient {

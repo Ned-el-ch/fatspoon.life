@@ -10,7 +10,7 @@
   user-select: none;
 }
 
-.rf-ingredients-list-heading {
+.rf-ingredients-list-heading, .rf-cooking-instructions-heading {
   font-family: "LemonJelly";
   font-size: $labelFontSizeLarge;
   user-select: none;
@@ -24,7 +24,6 @@
 	right: 115px;
 	font-style: italic;
 	color: $mainTextColorTransparent;
-	z-index: 10;
 	margin-right: -110px;
 	margin-bottom: 5px;
 	width: 100px;
@@ -33,7 +32,22 @@
   line-height: 1;
 }
 
-.rf-new-ingredient-button {
+.rf-instructions-remaining-characters {
+	position: absolute;
+	font-size: $smallFontSize;
+	bottom: 0;
+	left: 10px;
+	font-style: italic;
+	color: $mainTextColorTransparent;
+	margin-right: -110px;
+	margin-bottom: 5px;
+	width: 100px;
+	text-align: center;
+  user-select: none;
+  line-height: 1;
+}
+
+.rf-new-ingredient-button, .rf-new-instruction-button {
 	width: 100%;
 	border: 1px solid #ced4da;
 	background-color: white;
@@ -45,7 +59,8 @@
 	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
 	font-size: $labelFontSize;
 	font-weight: 600;
-	padding: 0 0 44px 0;
+  padding: 0 0 44px 0;
+  margin-top: 10px;
 	user-select: none;
 	&:hover {
 		background-color: $secondaryAccentColor;
@@ -62,6 +77,14 @@
 		box-shadow: $mainBoxShadow !important;
 		outline: none;
 	}
+}
+
+.rf-new-instruction-button {
+  margin-top: 15px;
+}
+
+.rf-instructions-row {
+  margin-top: 5px;
 }
 
 .rf-remove-ingredient {
