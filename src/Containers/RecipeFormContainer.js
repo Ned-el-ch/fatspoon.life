@@ -10,7 +10,7 @@ const initialState = () => {
 	)
 }
 
-const RecipeFormContainer = () => {
+const RecipeFormContainer = ({addRecipe}) => {
 	const [state, updateRecipe] = useState(initialState);
 	return (
 		<div className="recipe-form-container">
@@ -18,7 +18,7 @@ const RecipeFormContainer = () => {
 			!state.recipe
 			?
 			<div className="recipe-form">
-				<RecipeForm />
+				<RecipeForm handleRecipe={addRecipe}/>
 			</div>
 			:
 			<div>
@@ -32,12 +32,4 @@ const RecipeFormContainer = () => {
 	)
 }
 
-const mapStateToProps = state => {
-	return (
-		{
-			ingredients: state.search.ingredients
-		}
-	)
-}
-
-export default connect(mapStateToProps, { addRecipe })(RecipeFormContainer);
+export default connect(null, { addRecipe })(RecipeFormContainer);
