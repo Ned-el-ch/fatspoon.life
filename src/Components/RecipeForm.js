@@ -8,6 +8,15 @@ const initialDescription = {
 	text: ""
 }
 
+const initialInfo = {
+	title: "",
+	description: "",
+	imageLink: "",
+	prepTime: "",
+	cookingTime: "",
+	servingCount: ""
+}
+
 const initialImageLink = {
 	text: ""
 }
@@ -27,8 +36,7 @@ const validateLink = link => {
 }
 
 const RecipeForm = () => {
-	const [description, setDescription] = useState(initialDescription);
-	const [imgLink, setImgLink] = useState(initialImageLink);
+	const [info, setInfo] = useState(initialInfo);
 	const [recipeIngredients, setRecipeIngredients] = useState(initialRecipeIngredients);
 	return (
 		<div className="recipe-form">
@@ -42,8 +50,8 @@ const RecipeForm = () => {
 						placeholder="Recipe image URL goes here"
 						aria-label="main image"
 						aria-describedby="inputGroup-sizing-lg"
-						value={imgLink.text}
-						onChange={(event) => setImgLink({text: event.target.value})}
+						value={info.imageLink}
+						onChange={(event) => setInfo(Object.assign({}, info, {imageLink: event.target.value}))}
 					/>
 				</InputGroup>
 			</Col>
@@ -56,6 +64,8 @@ const RecipeForm = () => {
 						placeholder="Get Creative!"
 						aria-label="title"
 						aria-describedby="inputGroup-sizing-lg"
+						value={info.title}
+						onChange={(event) => setInfo(Object.assign({}, info, {title: event.target.value}))}
 					/>
 				</InputGroup>
 			</Col>
@@ -69,10 +79,10 @@ const RecipeForm = () => {
 						aria-label="Description"
 						maxLength={150}
 						style={{height: "100px", maxHeight: "100px", minHeight: "100px", resize: "none"}}
-						value={description.text}
-						onChange={(event) => setDescription({text: event.target.value})}
+						value={info.description}
+						onChange={(event) => setInfo(Object.assign({}, info, {description: event.target.value}))}
 					/>
-					<span className="rf-description-remaining-characters">{150 - description.text.length} characters remaining</span>
+					<span className="rf-description-remaining-characters">{150 - info.description.length} characters remaining</span>
 					<InputGroup.Append>
 						<InputGroup.Text>Description</InputGroup.Text>
 					</InputGroup.Append>
