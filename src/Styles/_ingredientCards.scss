@@ -110,13 +110,13 @@
 	margin: 0 10%;
 	// border: solid 1px blue;
 	padding: 2px;
-	overflow-x: scroll;
+	overflow: auto;
 }
 
 .ic-heading {
 	display: block;
 	font-size: $normalFontSize;
-	overflow: scroll;
+	overflow: auto;
 	line-height: 1.2rem;
 	word-wrap: break-word;
 	font-weight: 500;
