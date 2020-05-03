@@ -47,7 +47,7 @@ class NavbarContainer extends Component {
 
 	render() {
 		return (
-			<Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+			<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
 				<LinkContainer exact to="/">
 					<NavLink active={false}>
 						{/* <Navbar.Brand> */}

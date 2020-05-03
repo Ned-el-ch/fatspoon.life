@@ -84,6 +84,10 @@ a:hover {
   margin-bottom: 5px;
   width: 100px;
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .rf-new-ingredient-button {
@@ -103,6 +107,10 @@ a:hover {
   font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 600;
   padding: 0 0 40px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .rf-new-ingredient-button:hover {
@@ -139,6 +147,10 @@ a:hover {
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .rf-remove-ingredient:hover {
@@ -169,6 +181,13 @@ a:hover {
 
 .mb-3 {
   margin-bottom: 5px !important;
+}
+
+.input-group-prepend, .input-group-append {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .ic-buttons-container {

@@ -10,6 +10,7 @@
 	margin-bottom: 5px;
 	width: 100px;
 	text-align: center;
+	user-select: none;
 }
 
 .rf-new-ingredient-button {
@@ -25,6 +26,7 @@
 	font-size: $labelFontSize;
 	font-weight: 600;
 	padding: 0 0 40px 0;
+	user-select: none;
 	&:hover {
 		background-color: $secondaryAccentColor;
 		color: white;
@@ -54,6 +56,7 @@
 	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
 	font-size: $smallFontSize;
 	padding: 0;
+	user-select: none;
 	&:hover {
 		background-color: $primaryAccentColor;
 		color: white;
@@ -81,4 +84,8 @@
 
 .mb-3 {
 	margin-bottom: 5px !important;
+}
+
+.input-group-prepend, .input-group-append {
+	user-select: none;
 }
