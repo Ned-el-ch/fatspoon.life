@@ -36,6 +36,7 @@ const colors = {
 	"neutral80": "hsl(0, 0%, 20%)",
 	"neutral90": "hsl(0, 0%, 10%)"
 }
+
 const theme = (theme) => ({
 ...theme,
 borderRadius: "0.25rem",
@@ -53,11 +54,11 @@ const IngredientSelect = ({ingredients, defaultOptionIndex}) => {
 			isMulti={false}
 			closeMenuOnSelect={true}
 			options={availableOptions.toRender}
-			defaultValue={[availableOptions.toRender[defaultOptionIndex]]}
 			filterOption={createFilter({ignoreAccents: false})}
 			components={{Option: CustomOption}}
 			onChange={toAdd => setSelectedOption({toAdd})}
-			value={selectedOption.toAdd}
+			value={selectedOption.toAdd || availableOptions.toRender[defaultOptionIndex]}
+			// defaultValue={}
 			theme={theme}
 			placeholder="Add a new ingredient!"
 			noResultsText="Looks like I forgot to add this ingredient"

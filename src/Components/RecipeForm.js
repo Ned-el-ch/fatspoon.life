@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import IngredientSelect from './IngredientSelect'
 import { InputGroup, FormControl, Row, Col } from "react-bootstrap";
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
+import uuid from 'react-uuid'
 
 const initialDescription = {
 	text: ""
@@ -12,7 +13,11 @@ const initialImageLink = {
 }
 
 const initialRecipeIngredients = {
-	items: []
+	items: [
+		{
+			id: uuid()
+		}
+	]
 }
 
 const validateLink = link => {
@@ -73,39 +78,46 @@ const RecipeForm = () => {
 				</InputGroup>
 			</Col>
 			</Row>
-			<Row>
-				<Col xs={6} sm={6} md={{ span: 5, offset: 4 }} className="rf-remove-margin">
-					<IngredientSelect ingredients={getIngredientsForSelect()} defaultOptionIndex={5}/>
-				</Col>
-				<Col xs={4} sm={4} md={{ span: 2}} className="rf-remove-margin">
-					<InputGroup className="mb-3">
-						
-						<FormControl
-							placeholder="Weight"
-							aria-label="ingredient weight"
-							aria-describedby="inputGroup-sizing-lg"
-							value={imgLink.text}
-							onChange={(event) => setImgLink({text: event.target.value})}
-						/>
-						<InputGroup.Append>
-							<InputGroup.Text id="inputGroup-sizing-lg">g</InputGroup.Text>
-						</InputGroup.Append>
-					</InputGroup>
-				</Col>
-				<Col xs={2} sm={2} md={{ span: 1}} className="rf-remove-margin">
-					<button
-						className="rf-remove-ingredient"
-					>Remove</button>
-				</Col>
-			</Row>
+			{recipeIngredients.items.map((item) => {
+				return (
+					<Row>
+						<Col xs={6} sm={6} md={{ span: 5, offset: 4 }} className="rf-remove-margin">
+							<IngredientSelect ingredients={getIngredientsForSelect()} defaultOptionIndex={null}/>
+						</Col>
+						<Col xs={4} sm={4} md={{ span: 2}} className="rf-remove-margin">
+							<InputGroup className="mb-3">
+								
+								<FormControl
+									placeholder="Weight"
+									aria-label="ingredient weight"
+									aria-describedby="inputGroup-sizing-lg"
+									value={imgLink.text}
+									onChange={(event) => setImgLink({text: event.target.value})}
+								/>
+								<InputGroup.Append>
+									<InputGroup.Text id="inputGroup-sizing-lg">g</InputGroup.Text>
+								</InputGroup.Append>
+							</InputGroup>
+						</Col>
+						<Col xs={2} sm={2} md={{ span: 1}} className="rf-remove-margin">
+							<button
+								className="rf-remove-ingredient"
+								onClick={() => {
+									setRecipeIngredients({items: recipeIngredients.items.filter(i => i.id !== item.id)})
+								}}
+							>Remove</button>
+						</Col>
+					</Row>
+				)
+			})}
 			<Row>
 			<Col xs sm md={{ span: 8, offset: 4 }} className="rf-remove-margin">
 				<button
 					className="rf-new-ingredient-button"
+					onClick={() => setRecipeIngredients({items: [...recipeIngredients.items, {id: uuid()}]})}
 				>+</button>
 			</Col>
 			</Row>
-			{/* <IngredientSelect /> */}
 		</div>
 	)
 }
