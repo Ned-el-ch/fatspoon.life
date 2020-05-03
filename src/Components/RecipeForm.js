@@ -99,7 +99,7 @@ const RecipeForm = () => {
 				</Col>
 			</Row>
 			<Row>
-			<Col xs sm md={{ span: 8, offset: 4 }}>
+			<Col xs sm md={{ span: 8, offset: 4 }} className="rf-remove-margin">
 				<button
 					className="rf-new-ingredient-button"
 				>New Ingredient</button>
