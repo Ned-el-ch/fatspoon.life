@@ -80,6 +80,10 @@ a:hover {
   font-style: italic;
   color: rgba(11, 57, 94, 0.3);
   z-index: 10;
+  margin-right: -110px;
+  margin-bottom: 5px;
+  width: 100px;
+  text-align: center;
 }
 
 .rf-new-ingredient-button {
@@ -88,8 +92,7 @@ a:hover {
   background-color: #062035;
   outline: none;
   border-radius: 10px;
-  height: 35px;
-  margin-top: 5px;
+  height: 38px;
   color: white;
   font-weight: bold;
 }
@@ -124,6 +127,8 @@ a:hover {
   transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  padding: 0;
 }
 
 .rf-remove-ingredient:hover {
