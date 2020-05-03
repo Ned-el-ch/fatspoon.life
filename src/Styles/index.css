@@ -141,7 +141,7 @@ a:hover {
 .rf-instructions-remaining-characters {
   position: absolute;
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
-  bottom: -18px;
+  bottom: -20px;
   left: 0;
   font-style: italic;
   color: rgba(11, 57, 94, 0.3);
@@ -153,7 +153,6 @@ a:hover {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  line-height: 1;
 }
 
 .rf-new-ingredient-button, .rf-new-instruction-button {
@@ -199,7 +198,7 @@ a:hover {
 }
 
 .rf-new-instruction-button {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .rf-instructions-row {
