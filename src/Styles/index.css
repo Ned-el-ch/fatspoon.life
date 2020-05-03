@@ -117,7 +117,7 @@ a:hover {
   outline: none;
   border-radius: 10px;
   height: 38px;
-  color: #062035;
+  color: rgba(11, 57, 94, 0.3);
   font-weight: bold;
   -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
   -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
@@ -133,6 +133,7 @@ a:hover {
 
 .rf-remove-ingredient:active {
   background-color: red;
+  color: white;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
 }
