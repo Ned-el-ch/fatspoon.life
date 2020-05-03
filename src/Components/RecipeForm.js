@@ -43,6 +43,11 @@ const RecipeForm = () => {
 			<div className="rf-main-info">
 			<Row>
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+				<span className="rf-ingredients-list-heading">At a glance</span>
+			</Col>
+			</Row>
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg">Title</InputGroup.Text>
@@ -206,6 +211,11 @@ const RecipeForm = () => {
 					className="rf-new-ingredient-button"
 					onClick={() => setRecipeIngredients({items: [...recipeIngredients.items, {id: uuid()}]})}
 				>+</button>
+			</Col>
+			</Row>
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+				<span className="rf-ingredients-list-heading">Cooking Instructions</span>
 			</Col>
 			</Row>
 		</div>
