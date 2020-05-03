@@ -3,9 +3,9 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavItem from "react-bootstrap/NavItem"
 import NavLink from "react-bootstrap/NavLink"
-import Button from "react-bootstrap/Button"
-import Form from "react-bootstrap/Form"
-import FormControl from "react-bootstrap/FormControl"
+// import Button from "react-bootstrap/Button"
+// import Form from "react-bootstrap/Form"
+// import FormControl from "react-bootstrap/FormControl"
 import { LinkContainer } from "react-router-bootstrap";
 
 import { connect } from 'react-redux';

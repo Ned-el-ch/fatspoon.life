@@ -4,10 +4,6 @@ import { InputGroup, FormControl, Row, Col } from "react-bootstrap";
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 import uuid from 'react-uuid'
 
-const initialDescription = {
-	text: ""
-}
-
 const initialInfo = {
 	title: "",
 	description: "",
@@ -22,16 +18,17 @@ const initialCookingData = {
 	ingredients: []
 }
 
-const initialRecipeIngredients = {
-	items: []
+// const validateLink = link => {
+// 	let regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/
+// 	return link.match(regex);
+// }
+
+const validateNumbers = str => {
+	let regex = /^[1-9]\d*(\.\d+)?$/;
+	return str.match(regex) || str === "";
 }
 
-const validateLink = link => {
-	let regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/
-	return link.match(regex);
-}
-
-const RecipeForm = () => {
+const RecipeForm = ({handleRecipe}) => {
 	const [info, setInfo] = useState(initialInfo);
 	const [cookingData, setCookingData] = useState(initialCookingData);
 	return (
@@ -83,7 +80,10 @@ const RecipeForm = () => {
 						aria-label="title"
 						aria-describedby="inputGroup-sizing-lg"
 						value={info.servingCount}
-						onChange={(event) => setInfo(Object.assign({}, info, {servingCount: event.target.value}))}
+						onChange={(event) => {
+							if (validateNumbers(event.target.value))
+								setInfo(Object.assign({}, info, {servingCount: event.target.value}))
+						}}
 					/>
 				</InputGroup>
 			</Col>
@@ -99,7 +99,10 @@ const RecipeForm = () => {
 						aria-label="title"
 						aria-describedby="inputGroup-sizing-lg"
 						value={info.prepTime}
-						onChange={(event) => setInfo(Object.assign({}, info, {prepTime: event.target.value}))}
+						onChange={(event) => {
+							if (validateNumbers(event.target.value))
+								setInfo(Object.assign({}, info, {prepTime: event.target.value}))
+						}}
 					/>
 				</InputGroup>
 			</Col>
@@ -113,7 +116,10 @@ const RecipeForm = () => {
 						aria-label="title"
 						aria-describedby="inputGroup-sizing-lg"
 						value={info.cookingTime}
-						onChange={(event) => setInfo(Object.assign({}, info, {cookingTime: event.target.value}))}
+						onChange={(event) => {
+							if (validateNumbers(event.target.value))
+								setInfo(Object.assign({}, info, {cookingTime: event.target.value}))
+					}}
 					/>
 				</InputGroup>
 			</Col>
@@ -145,7 +151,6 @@ const RecipeForm = () => {
 			</Col>
 			</Row>
 			{cookingData.ingredients.map(item => {
-				const li = cookingData.ingredients.length - 1;
 				return (
 					<Row key={item.id}>
 						<Col xs={6} sm={6} md={{ span: 6, offset: 1 }} className="rf-remove-margin">
@@ -174,14 +179,16 @@ const RecipeForm = () => {
 									aria-describedby="inputGroup-sizing-lg"
 									value={item.weight}
 									onChange={(event) => {
-										const ind = cookingData.ingredients.findIndex(i => i.id === item.id);
-										const obj = Object.assign({}, cookingData.ingredients[ind], {weight: event.target.value})
-										setCookingData({
-											ingredients: [...cookingData.ingredients.slice(0, ind),
-															obj,
-															...cookingData.ingredients.slice(ind + 1)],
-											instructions: cookingData.instructions
-										})
+										if (validateNumbers(event.target.value)) {
+											const ind = cookingData.ingredients.findIndex(i => i.id === item.id);
+											const obj = Object.assign({}, cookingData.ingredients[ind], {weight: event.target.value})
+											setCookingData({
+												ingredients: [...cookingData.ingredients.slice(0, ind),
+																obj,
+																...cookingData.ingredients.slice(ind + 1)],
+												instructions: cookingData.instructions
+											})
+										}
 									}}
 								/>
 								<InputGroup.Append>
@@ -280,6 +287,15 @@ const RecipeForm = () => {
 			</Col>
 			</Row>
 			</div>
+			<button onClick={() => {
+				let ingredients = cookingData.ingredients.map(i => {
+					return {id: i.ingredient.id, weight: i.weight}
+				});
+				let recipe = {id: uuid(), info, ingredients, instructions: cookingData.instructions}
+				handleRecipe(recipe);
+			}}>
+				Add Recipe
+			</button>
 		</div>
 	)
 }

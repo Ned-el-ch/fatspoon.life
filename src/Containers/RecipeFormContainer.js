@@ -15,10 +15,14 @@ const RecipeFormContainer = ({addRecipe}) => {
 	return (
 		<div className="recipe-form-container">
 			{ 
-			!state.recipe
+			state.recipe
 			?
 			<div className="recipe-form">
-				<RecipeForm handleRecipe={addRecipe}/>
+				<RecipeForm handleRecipe={(recipe) => {
+					addRecipe(recipe)
+					updateRecipe({recipe: null})
+					}}
+				/>
 			</div>
 			:
 			<div>
