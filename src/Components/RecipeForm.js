@@ -40,6 +40,7 @@ const RecipeForm = () => {
 	const [recipeIngredients, setRecipeIngredients] = useState(initialRecipeIngredients);
 	return (
 		<div className="recipe-form">
+			<div className="rf-main-info">
 			<Row>
 			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
@@ -71,6 +72,50 @@ const RecipeForm = () => {
 			</Col>
 			</Row>
 			<Row>
+			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
+				<InputGroup className="mb-3">
+					<InputGroup.Prepend>
+						<InputGroup.Text id="inputGroup-sizing-lg">Prep Time</InputGroup.Text>
+					</InputGroup.Prepend>
+					<FormControl
+						placeholder="Slicing n' dicing"
+						aria-label="title"
+						aria-describedby="inputGroup-sizing-lg"
+						value={info.prepTime}
+						onChange={(event) => setInfo(Object.assign({}, info, {prepTime: event.target.value}))}
+					/>
+				</InputGroup>
+			</Col>
+			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
+				<InputGroup className="mb-3">
+					<InputGroup.Prepend>
+						<InputGroup.Text id="inputGroup-sizing-lg">Cooking Time</InputGroup.Text>
+					</InputGroup.Prepend>
+					<FormControl
+						placeholder="Frying n' crying"
+						aria-label="title"
+						aria-describedby="inputGroup-sizing-lg"
+						value={info.cookingTime}
+						onChange={(event) => setInfo(Object.assign({}, info, {cookingTime: event.target.value}))}
+					/>
+				</InputGroup>
+			</Col>
+			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
+				<InputGroup className="mb-3">
+					<InputGroup.Prepend>
+						<InputGroup.Text id="inputGroup-sizing-lg">Servings</InputGroup.Text>
+					</InputGroup.Prepend>
+					<FormControl
+						placeholder="Feeds this many"
+						aria-label="title"
+						aria-describedby="inputGroup-sizing-lg"
+						value={info.servingCount}
+						onChange={(event) => setInfo(Object.assign({}, info, {servingCount: event.target.value}))}
+					/>
+				</InputGroup>
+			</Col>
+			</Row>
+			<Row>
 			<Col xs sm md={{ span: 8, offset: 4 }} className="rf-remove-margin">
 				<InputGroup>
 					<FormControl
@@ -89,6 +134,8 @@ const RecipeForm = () => {
 				</InputGroup>
 			</Col>
 			</Row>
+			</div>
+			<div className="rf-ingredients-container">
 			{recipeIngredients.items.map((item, index) => {
 				const li = recipeIngredients.items.length - 1;
 				return (
@@ -145,6 +192,7 @@ const RecipeForm = () => {
 					</Row>
 				)
 			})}
+			</div>
 			<Row>
 			<Col xs sm md={{ span: 8, offset: 4 }} className="rf-remove-margin">
 				<button
