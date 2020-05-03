@@ -17,17 +17,13 @@ const initialInfo = {
 	servingCount: ""
 }
 
-const initialImageLink = {
-	text: ""
+const initialCookingData = {
+	instructions: [],
+	ingredients: []
 }
 
 const initialRecipeIngredients = {
-	items: [
-		{
-			id: uuid(),
-			weight: null
-		}
-	]
+	items: []
 }
 
 const validateLink = link => {
@@ -38,6 +34,7 @@ const validateLink = link => {
 const RecipeForm = () => {
 	const [info, setInfo] = useState(initialInfo);
 	const [recipeIngredients, setRecipeIngredients] = useState(initialRecipeIngredients);
+	const [cookingData, setCookingData] = useState(initialCookingData);
 	return (
 		<div className="recipe-form">
 			<div className="rf-main-info">
@@ -148,8 +145,8 @@ const RecipeForm = () => {
 				<span className="rf-ingredients-list-heading">Ingredients List</span>
 			</Col>
 			</Row>
-			{recipeIngredients.items.map((item, index) => {
-				const li = recipeIngredients.items.length - 1;
+			{cookingData.ingredients.map(item => {
+				const li = cookingData.ingredients.length - 1;
 				return (
 					<Row key={item.id}>
 						<Col xs={6} sm={6} md={{ span: 6, offset: 1 }} className="rf-remove-margin">
@@ -158,12 +155,13 @@ const RecipeForm = () => {
 								defaultOptionIndex={null}
 								handleOnChange={(toAdd) => {
 									// debugger
-									const ind = recipeIngredients.items.findIndex(i => i.id === item.id);
-									const obj = Object.assign({}, recipeIngredients.items[ind], {ingredient: toAdd.ingredient})
-									setRecipeIngredients({
-										items: [...recipeIngredients.items.slice(0, ind),
+									const ind = cookingData.ingredients.findIndex(i => i.id === item.id);
+									const obj = Object.assign({}, cookingData.ingredients[ind], {ingredient: toAdd.ingredient})
+									setCookingData({
+										ingredients: [...cookingData.ingredients.slice(0, ind),
 														obj,
-														...recipeIngredients.items.slice(ind + 1)]
+														...cookingData.ingredients.slice(ind + 1)],
+										instructions: cookingData.instructions
 									})
 								}}
 							/>
@@ -177,12 +175,13 @@ const RecipeForm = () => {
 									aria-describedby="inputGroup-sizing-lg"
 									value={item.weight}
 									onChange={(event) => {
-										const ind = recipeIngredients.items.findIndex(i => i.id === item.id);
-										const obj = Object.assign({}, recipeIngredients.items[ind], {weight: event.target.value})
-										setRecipeIngredients({
-											items: [...recipeIngredients.items.slice(0, ind),
+										const ind = cookingData.ingredients.findIndex(i => i.id === item.id);
+										const obj = Object.assign({}, cookingData.ingredients[ind], {weight: event.target.value})
+										setCookingData({
+											ingredients: [...cookingData.ingredients.slice(0, ind),
 															obj,
-															...recipeIngredients.items.slice(ind + 1)]
+															...cookingData.ingredients.slice(ind + 1)],
+											instructions: cookingData.instructions
 										})
 									}}
 								/>
@@ -195,8 +194,9 @@ const RecipeForm = () => {
 							<button
 								className="rf-remove-ingredient"
 								onClick={() => {
-									setRecipeIngredients({
-										items: recipeIngredients.items.filter(i => i.id !== item.id)
+									setCookingData({
+										ingredients: cookingData.ingredients.filter(i => i.id !== item.id),
+										instructions: cookingData.instructions
 									})
 								}}
 							>Remove</button>
@@ -204,20 +204,39 @@ const RecipeForm = () => {
 					</Row>
 				)
 			})}
-			</div>
 			<Row>
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
 				<button
 					className="rf-new-ingredient-button"
-					onClick={() => setRecipeIngredients({items: [...recipeIngredients.items, {id: uuid()}]})}
+					onClick={() => setCookingData({
+						ingredients: [...cookingData.ingredients, {id: uuid(), weight: null}],
+						instructions: cookingData.instructions
+					})}
 				>+</button>
 			</Col>
 			</Row>
+			</div>
+			<div className="rf-ingredients-container">
 			<Row>
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				<span className="rf-ingredients-list-heading">Cooking Instructions</span>
 			</Col>
 			</Row>
+			{cookingData.instructions.map(item => {
+
+			})}
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
+				<button
+					className="rf-new-instruction-button"
+					onClick={() => setCookingData({
+						ingredients: cookingData.ingredients,
+						instructions: [...cookingData.instructions, {id: uuid(), text: null}]
+					})}
+				>+</button>
+			</Col>
+			</Row>
+			</div>
 		</div>
 	)
 }
