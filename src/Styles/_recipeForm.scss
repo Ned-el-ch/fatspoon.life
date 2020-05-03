@@ -1,3 +1,7 @@
+.recipe-form {
+	padding-bottom: 250px;
+}
+
 .rf-description-remaining-characters {
 	position: absolute;
 	font-size: $smallFontSize;
@@ -10,7 +14,8 @@
 	margin-bottom: 5px;
 	width: 100px;
 	text-align: center;
-	user-select: none;
+  user-select: none;
+  line-height: 1;
 }
 
 .rf-new-ingredient-button {
@@ -75,7 +80,7 @@
 }
 
 .rf-remove-margin {
-	padding: 5px;
+	padding: 0 4px;
 }
 
 .row {

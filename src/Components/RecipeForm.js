@@ -15,7 +15,8 @@ const initialImageLink = {
 const initialRecipeIngredients = {
 	items: [
 		{
-			id: uuid()
+			id: uuid(),
+			weight: null
 		}
 	]
 }
@@ -78,11 +79,25 @@ const RecipeForm = () => {
 				</InputGroup>
 			</Col>
 			</Row>
-			{recipeIngredients.items.map((item) => {
+			{recipeIngredients.items.map((item, index) => {
+				const li = recipeIngredients.items.length - 1;
 				return (
-					<Row>
+					<Row key={item.id}>
 						<Col xs={6} sm={6} md={{ span: 5, offset: 4 }} className="rf-remove-margin">
-							<IngredientSelect ingredients={getIngredientsForSelect()} defaultOptionIndex={null}/>
+							<IngredientSelect
+								ingredients={getIngredientsForSelect()}
+								defaultOptionIndex={null}
+								handleOnChange={(toAdd) => {
+									// debugger
+									const ind = recipeIngredients.items.findIndex(i => i.id === item.id);
+									const obj = Object.assign({}, recipeIngredients.items[ind], {ingredient: toAdd.ingredient})
+									setRecipeIngredients({
+										items: [...recipeIngredients.items.slice(0, ind),
+														obj,
+														...recipeIngredients.items.slice(ind + 1)]
+									})
+								}}
+							/>
 						</Col>
 						<Col xs={4} sm={4} md={{ span: 2}} className="rf-remove-margin">
 							<InputGroup className="mb-3">
@@ -91,8 +106,16 @@ const RecipeForm = () => {
 									placeholder="Weight"
 									aria-label="ingredient weight"
 									aria-describedby="inputGroup-sizing-lg"
-									value={imgLink.text}
-									onChange={(event) => setImgLink({text: event.target.value})}
+									value={item.weight}
+									onChange={(event) => {
+										const ind = recipeIngredients.items.findIndex(i => i.id === item.id);
+										const obj = Object.assign({}, recipeIngredients.items[ind], {weight: event.target.value})
+										setRecipeIngredients({
+											items: [...recipeIngredients.items.slice(0, ind),
+															obj,
+															...recipeIngredients.items.slice(ind + 1)]
+										})
+									}}
 								/>
 								<InputGroup.Append>
 									<InputGroup.Text id="inputGroup-sizing-lg">g</InputGroup.Text>
@@ -103,7 +126,9 @@ const RecipeForm = () => {
 							<button
 								className="rf-remove-ingredient"
 								onClick={() => {
-									setRecipeIngredients({items: recipeIngredients.items.filter(i => i.id !== item.id)})
+									setRecipeIngredients({
+										items: recipeIngredients.items.filter(i => i.id !== item.id)
+									})
 								}}
 							>Remove</button>
 						</Col>

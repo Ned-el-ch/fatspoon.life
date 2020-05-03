@@ -45,7 +45,7 @@ colors: {
 },
 })
 
-const IngredientSelect = ({ingredients, defaultOptionIndex}) => {
+const IngredientSelect = ({ingredients, defaultOptionIndex, handleOnChange}) => {
 	const initialSelectedOption = {toAdd: null};
 	const [selectedOption, setSelectedOption] = useState(initialSelectedOption);
 	const [availableOptions, setAvailableOptions] = useState(initialOptionsToRender(ingredients));
@@ -56,7 +56,10 @@ const IngredientSelect = ({ingredients, defaultOptionIndex}) => {
 			options={availableOptions.toRender}
 			filterOption={createFilter({ignoreAccents: false})}
 			components={{Option: CustomOption}}
-			onChange={toAdd => setSelectedOption({toAdd})}
+			onChange={toAdd => {
+        handleOnChange(toAdd);
+        setSelectedOption({toAdd});
+      }}
 			value={selectedOption.toAdd || availableOptions.toRender[defaultOptionIndex]}
 			// defaultValue={}
 			theme={theme}

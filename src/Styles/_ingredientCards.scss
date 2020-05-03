@@ -98,7 +98,8 @@
 	top: 0;
 	right: -1px;
 	border-radius: 0 7px;
-
+	line-height: 1;
+	padding-bottom: 3px;
 	&:active {
 		background-color: $primaryAccentColorDark;
 	}
@@ -110,13 +111,13 @@
 	margin: 0 10%;
 	// border: solid 1px blue;
 	padding: 2px;
-	overflow: auto;
+	overflow: hidden;
 }
 
 .ic-heading {
 	display: block;
 	font-size: $normalFontSize;
-	overflow: auto;
+	overflow: hidden;
 	line-height: 1.2rem;
 	word-wrap: break-word;
 	font-weight: 500;

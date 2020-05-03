@@ -15,7 +15,7 @@ const RecipeFormContainer = () => {
 	return (
 		<div className="recipe-form-container">
 			{ 
-			!state.recipe
+			state.recipe
 			?
 			<div className="recipe-form">
 				<RecipeForm />
