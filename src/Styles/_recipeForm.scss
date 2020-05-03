@@ -3,7 +3,18 @@
 }
 
 .rf-main-info {
-  padding-bottom: 30px;
+  user-select: none;
+}
+
+.rf-ingredients-container {
+  user-select: none;
+}
+
+.rf-ingredients-list-heading {
+  font-family: "LemonJelly";
+  font-size: $labelFontSizeLarge;
+  user-select: none;
+  color: $mainTextColorLighter;
 }
 
 .rf-description-remaining-characters {
@@ -34,7 +45,7 @@
 	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
 	font-size: $labelFontSize;
 	font-weight: 600;
-	padding: 0 0 40px 0;
+	padding: 0 0 44px 0;
 	user-select: none;
 	&:hover {
 		background-color: $secondaryAccentColor;

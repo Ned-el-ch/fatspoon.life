@@ -4,6 +4,7 @@
 }
 
 html {
+  overflow-y: scroll;
   margin-left: calc(100vw - 100%);
   margin-right: 0;
 }
@@ -91,7 +92,27 @@ a:hover {
 }
 
 .rf-main-info {
-  padding-bottom: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.rf-ingredients-container {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.rf-ingredients-list-heading {
+  font-family: "LemonJelly";
+  font-size: calc(2.6rem + (3.2 - 2.6) * ((100vw - 300px) / (1600 - 300)));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #0b385e;
 }
 
 .rf-description-remaining-characters {
@@ -129,7 +150,7 @@ a:hover {
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
   font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 600;
-  padding: 0 0 40px 0;
+  padding: 0 0 44px 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

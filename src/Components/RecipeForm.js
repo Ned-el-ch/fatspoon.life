@@ -42,21 +42,7 @@ const RecipeForm = () => {
 		<div className="recipe-form">
 			<div className="rf-main-info">
 			<Row>
-			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
-				<InputGroup className="mb-3">
-					<InputGroup.Prepend>
-						<InputGroup.Text id="inputGroup-sizing-lg"><span role="img" aria-label="emoji">🖼️</span></InputGroup.Text>
-					</InputGroup.Prepend>
-					<FormControl
-						placeholder="Recipe image URL goes here"
-						aria-label="main image"
-						aria-describedby="inputGroup-sizing-lg"
-						value={info.imageLink}
-						onChange={(event) => setInfo(Object.assign({}, info, {imageLink: event.target.value}))}
-					/>
-				</InputGroup>
-			</Col>
-			<Col xs={12} sm={12} md={8} lg={{ span: 8}} className="rf-remove-margin">
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg">Title</InputGroup.Text>
@@ -72,35 +58,21 @@ const RecipeForm = () => {
 			</Col>
 			</Row>
 			<Row>
-			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
+			<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
-						<InputGroup.Text id="inputGroup-sizing-lg">Prep Time</InputGroup.Text>
+						<InputGroup.Text id="inputGroup-sizing-lg"><span role="img" aria-label="emoji">🖼️</span></InputGroup.Text>
 					</InputGroup.Prepend>
 					<FormControl
-						placeholder="Slicing n' dicing"
-						aria-label="title"
+						placeholder="Recipe image URL goes here"
+						aria-label="main image"
 						aria-describedby="inputGroup-sizing-lg"
-						value={info.prepTime}
-						onChange={(event) => setInfo(Object.assign({}, info, {prepTime: event.target.value}))}
+						value={info.imageLink}
+						onChange={(event) => setInfo(Object.assign({}, info, {imageLink: event.target.value}))}
 					/>
 				</InputGroup>
 			</Col>
-			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
-				<InputGroup className="mb-3">
-					<InputGroup.Prepend>
-						<InputGroup.Text id="inputGroup-sizing-lg">Cooking Time</InputGroup.Text>
-					</InputGroup.Prepend>
-					<FormControl
-						placeholder="Frying n' crying"
-						aria-label="title"
-						aria-describedby="inputGroup-sizing-lg"
-						value={info.cookingTime}
-						onChange={(event) => setInfo(Object.assign({}, info, {cookingTime: event.target.value}))}
-					/>
-				</InputGroup>
-			</Col>
-			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
+			<Col xs={12} sm={12} md={{ span: 5}} lg={{ span: 5}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg">Servings</InputGroup.Text>
@@ -116,7 +88,37 @@ const RecipeForm = () => {
 			</Col>
 			</Row>
 			<Row>
-			<Col xs sm md={{ span: 8, offset: 4 }} className="rf-remove-margin">
+			<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
+				<InputGroup className="mb-3">
+					<InputGroup.Prepend>
+						<InputGroup.Text id="inputGroup-sizing-lg">Prep Time</InputGroup.Text>
+					</InputGroup.Prepend>
+					<FormControl
+						placeholder="Slicing n' dicing"
+						aria-label="title"
+						aria-describedby="inputGroup-sizing-lg"
+						value={info.prepTime}
+						onChange={(event) => setInfo(Object.assign({}, info, {prepTime: event.target.value}))}
+					/>
+				</InputGroup>
+			</Col>
+			<Col xs={12} sm={12} md={{ span: 5}} lg={{ span: 5}} className="rf-remove-margin">
+				<InputGroup className="mb-3">
+					<InputGroup.Prepend>
+						<InputGroup.Text id="inputGroup-sizing-lg">Cooking Time</InputGroup.Text>
+					</InputGroup.Prepend>
+					<FormControl
+						placeholder="Frying n' crying"
+						aria-label="title"
+						aria-describedby="inputGroup-sizing-lg"
+						value={info.cookingTime}
+						onChange={(event) => setInfo(Object.assign({}, info, {cookingTime: event.target.value}))}
+					/>
+				</InputGroup>
+			</Col>
+			</Row>
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				<InputGroup>
 					<FormControl
 						as="textarea"
@@ -136,11 +138,16 @@ const RecipeForm = () => {
 			</Row>
 			</div>
 			<div className="rf-ingredients-container">
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+				<span className="rf-ingredients-list-heading">Ingredients List</span>
+			</Col>
+			</Row>
 			{recipeIngredients.items.map((item, index) => {
 				const li = recipeIngredients.items.length - 1;
 				return (
 					<Row key={item.id}>
-						<Col xs={6} sm={6} md={{ span: 5, offset: 4 }} className="rf-remove-margin">
+						<Col xs={6} sm={6} md={{ span: 6, offset: 1 }} className="rf-remove-margin">
 							<IngredientSelect
 								ingredients={getIngredientsForSelect()}
 								defaultOptionIndex={null}
@@ -179,7 +186,7 @@ const RecipeForm = () => {
 								</InputGroup.Append>
 							</InputGroup>
 						</Col>
-						<Col xs={2} sm={2} md={{ span: 1}} className="rf-remove-margin">
+						<Col xs={2} sm={2} md={{ span: 2}} className="rf-remove-margin">
 							<button
 								className="rf-remove-ingredient"
 								onClick={() => {
@@ -194,7 +201,7 @@ const RecipeForm = () => {
 			})}
 			</div>
 			<Row>
-			<Col xs sm md={{ span: 8, offset: 4 }} className="rf-remove-margin">
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
 				<button
 					className="rf-new-ingredient-button"
 					onClick={() => setRecipeIngredients({items: [...recipeIngredients.items, {id: uuid()}]})}
