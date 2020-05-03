@@ -91,7 +91,7 @@ a:hover {
   border: 1px solid #ced4da;
   background-color: white;
   outline: none;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   height: 38px;
   color: rgba(11, 57, 94, 0.3);
   font-weight: bold;
@@ -128,7 +128,7 @@ a:hover {
   border: 1px solid #ced4da;
   background-color: white;
   outline: none;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   height: 38px;
   color: rgba(11, 57, 94, 0.3);
   font-weight: bold;
