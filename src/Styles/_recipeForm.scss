@@ -14,22 +14,26 @@
 
 .rf-new-ingredient-button {
 	width: 100%;
-	border: none;
-	background-color: $mainTextColor;
+	border: 1px solid #ced4da;
+	background-color: white;
 	outline: none;
 	border-radius: 10px;
 	height: 38px;
-	color: white;
+	color: $mainTextColorTransparent;
 	font-weight: bold;
-
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
+	font-size: $labelFontSize;
+	font-weight: 600;
+	padding: 0 0 40px 0;
 	&:hover {
-		background-color: $mainTextColorLight;
+		background-color: $secondaryAccentColor;
+		color: white;
 	}
 
 	&:active {
-		background-color: $mainTextColorLighter;
+		background-color: $secondaryAccentColorDark;
 		box-shadow: $mainBoxShadow;
-
+		color: white;
 	}
 
 	&:focus {

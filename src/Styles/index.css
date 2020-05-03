@@ -88,23 +88,33 @@ a:hover {
 
 .rf-new-ingredient-button {
   width: 100%;
-  border: none;
-  background-color: #062035;
+  border: 1px solid #ced4da;
+  background-color: white;
   outline: none;
   border-radius: 10px;
   height: 38px;
-  color: white;
+  color: rgba(11, 57, 94, 0.3);
   font-weight: bold;
+  -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
+  font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 600;
+  padding: 0 0 40px 0;
 }
 
 .rf-new-ingredient-button:hover {
-  background-color: #082a46;
+  background-color: #c4ff86;
+  color: white;
 }
 
 .rf-new-ingredient-button:active {
-  background-color: #0b385e;
+  background-color: #b0e478;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+  color: white;
 }
 
 .rf-new-ingredient-button:focus {
