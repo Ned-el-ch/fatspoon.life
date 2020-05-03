@@ -8,15 +8,17 @@ export default (state = [], action) => {
 			return state;
 
 		case "STAR_RECIPE":
-			index = state.findIndex(recipe => recipe.uri === action.recipe.uri);
-			if (index === -1) {
-				return [...state, action.recipe];
-			} else {
-				return state;
-			}
+			// index = state.findIndex(recipe => recipe.uri === action.recipe.uri);
+			// if (index === -1) {
+			// 	return [...state, action.recipe];
+			// } else {
+			// 	return state;
+			// }
+			return state;
 
 		case "UNSTAR_RECIPE":
-			return state.filter(recipe => recipe.uri !== action.recipeURI);
+			// return state.filter(recipe => recipe.uri !== action.recipeURI);
+			return state;
 
 		default:
 			return state;

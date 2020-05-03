@@ -12,6 +12,7 @@
 	margin-top: 5px;
 	color: white;
 	font-weight: bold;
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
 
 	&:hover {
 		background-color: $mainTextColorLight;

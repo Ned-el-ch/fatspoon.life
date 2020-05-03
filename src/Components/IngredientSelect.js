@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import chroma from 'chroma-js';
 import Select, { createFilter, components } from 'react-select';
-import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 
-const initialOptionsToRender = {
-	toRender: getIngredientsForSelect()
+const initialOptionsToRender = (items) => {
+	return {
+		toRender: items
+	}
 }
 
 const CustomOption = (props) => {
@@ -17,21 +17,21 @@ const CustomOption = (props) => {
 	);
 }
 
-const IngredientSelect = () => {
-	const initialSelectedOptions = {toAdd: null};
-	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
-	const [availableOptions, setAvailableOptions] = useState(initialOptionsToRender);
+const IngredientSelect = ({ingredients, defaultOptionIndex}) => {
+	const initialSelectedOption = {toAdd: null};
+	const [selectedOption, setSelectedOption] = useState(initialSelectedOption);
+	const [availableOptions, setAvailableOptions] = useState(initialOptionsToRender(ingredients));
 	return (
 		<Select
 			isMulti={false}
 			closeMenuOnSelect={true}
 			options={availableOptions.toRender}
-			// defaultValue={[availableOptions.toRender[1], availableOptions.toRender[28]]}
+			defaultValue={[availableOptions.toRender[defaultOptionIndex]]}
 			filterOption={createFilter({ignoreAccents: false})}
 			components={{Option: CustomOption}}
-			onChange={toAdd => setSelectedOptions({toAdd})}
-			value={selectedOptions.toAdd}
-			placeholder="Add some new ingredients!"
+			onChange={toAdd => setSelectedOption({toAdd})}
+			value={selectedOption.toAdd}
+			placeholder="Add a new ingredient!"
 			noResultsText="Looks like I forgot to add this ingredient"
 		/>
 	)

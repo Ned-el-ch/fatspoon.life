@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import IngredientSelect from './IngredientSelect'
 import { InputGroup, FormControl, Row, Col } from "react-bootstrap";
+import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 
 const initialDescription = {
 	text: ""
@@ -10,18 +11,23 @@ const initialImageLink = {
 	text: ""
 }
 
+const initialRecipeIngredients = {
+	items: []
+}
+
 const validateLink = link => {
-	let regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/
+	let regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/
 	return link.match(regex);
 }
 
 const RecipeForm = () => {
 	const [description, setDescription] = useState(initialDescription);
 	const [imgLink, setImgLink] = useState(initialImageLink);
+	const [recipeIngredients, setRecipeIngredients] = useState(initialRecipeIngredients);
 	return (
 		<div className="recipe-form">
 			<Row>
-			<Col xs={12} sm={12} md={4} lg={{ span: 4}}>
+			<Col xs={12} sm={12} md={4} lg={{ span: 4}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg"><span role="img" aria-label="emoji">🖼️</span></InputGroup.Text>
@@ -35,7 +41,7 @@ const RecipeForm = () => {
 					/>
 				</InputGroup>
 			</Col>
-			<Col xs={12} sm={12} md={8} lg={{ span: 8}}>
+			<Col xs={12} sm={12} md={8} lg={{ span: 8}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg">Title</InputGroup.Text>
@@ -48,8 +54,8 @@ const RecipeForm = () => {
 				</InputGroup>
 			</Col>
 			</Row>
-			<Row className="align-self-start justify-content-center">
-			<Col xs sm md={{ span: 8, offset: 4 }}>
+			<Row>
+			<Col xs sm md={{ span: 8, offset: 4 }} className="rf-remove-margin">
 				<InputGroup>
 					<FormControl
 						as="textarea"
@@ -67,7 +73,38 @@ const RecipeForm = () => {
 				</InputGroup>
 			</Col>
 			</Row>
-
+			<Row>
+				<Col xs={6} sm={6} md={{ span: 5, offset: 4 }} className="rf-remove-margin">
+					<IngredientSelect ingredients={getIngredientsForSelect()} defaultOptionIndex={5}/>
+				</Col>
+				<Col xs={4} sm={4} md={{ span: 2}} className="rf-remove-margin">
+					<InputGroup className="mb-3">
+						
+						<FormControl
+							placeholder="Weight"
+							aria-label="ingredient weight"
+							aria-describedby="inputGroup-sizing-lg"
+							value={imgLink.text}
+							onChange={(event) => setImgLink({text: event.target.value})}
+						/>
+						<InputGroup.Append>
+							<InputGroup.Text id="inputGroup-sizing-lg">g</InputGroup.Text>
+						</InputGroup.Append>
+					</InputGroup>
+				</Col>
+				<Col xs={2} sm={2} md={{ span: 1}} className="rf-remove-margin">
+					<button
+						className="rf-remove-ingredient"
+					>Remove</button>
+				</Col>
+			</Row>
+			<Row>
+			<Col xs sm md={{ span: 8, offset: 4 }}>
+				<button
+					className="rf-new-ingredient-button"
+				>New Ingredient</button>
+			</Col>
+			</Row>
 			{/* <IngredientSelect /> */}
 		</div>
 	)

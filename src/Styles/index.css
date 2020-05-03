@@ -82,6 +82,79 @@ a:hover {
   z-index: 10;
 }
 
+.rf-new-ingredient-button {
+  width: 100%;
+  border: none;
+  background-color: #062035;
+  outline: none;
+  border-radius: 10px;
+  height: 35px;
+  margin-top: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.rf-new-ingredient-button:hover {
+  background-color: #082a46;
+}
+
+.rf-new-ingredient-button:active {
+  background-color: #0b385e;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+}
+
+.rf-new-ingredient-button:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+  outline: none;
+}
+
+.rf-remove-ingredient {
+  width: 100%;
+  border: 1px solid #ced4da;
+  background-color: white;
+  outline: none;
+  border-radius: 10px;
+  height: 38px;
+  color: #062035;
+  font-weight: bold;
+  -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
+}
+
+.rf-remove-ingredient:hover {
+  background-color: tomato;
+  color: white;
+}
+
+.rf-remove-ingredient:active {
+  background-color: red;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+}
+
+.rf-remove-ingredient:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+  outline: none;
+}
+
+.rf-remove-margin {
+  padding: 5px;
+}
+
+.row {
+  padding: 0 15px;
+}
+
+.mb-3 {
+  margin-bottom: 5px !important;
+}
+
 .ic-buttons-container {
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   position: absolute;
@@ -385,6 +458,11 @@ a.nav-link {
   margin-top: 5px;
   color: white;
   font-weight: bold;
+  -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
 }
 
 .button-add-to-fridge:hover {

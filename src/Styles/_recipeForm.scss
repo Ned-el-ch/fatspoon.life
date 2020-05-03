@@ -7,3 +7,70 @@
 	color: $mainTextColorTransparent;
 	z-index: 10;
 }
+
+.rf-new-ingredient-button {
+	width: 100%;
+	border: none;
+	background-color: $mainTextColor;
+	outline: none;
+	border-radius: 10px;
+	height: 35px;
+	margin-top: 5px;
+	color: white;
+	font-weight: bold;
+
+	&:hover {
+		background-color: $mainTextColorLight;
+	}
+
+	&:active {
+		background-color: $mainTextColorLighter;
+		box-shadow: $mainBoxShadow;
+
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+		outline: none;
+	}
+}
+
+.rf-remove-ingredient {
+	width: 100%;
+	border: 1px solid #ced4da;
+	background-color: white;
+	outline: none;
+	border-radius: 10px;
+	height: 38px;
+	color: $mainTextColor;
+	font-weight: bold;
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
+
+	&:hover {
+		background-color: $primaryAccentColor;
+		color: white;
+	}
+
+	&:active {
+		background-color: red;
+		box-shadow: $mainBoxShadow;
+
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+		outline: none;
+	}
+}
+
+.rf-remove-margin {
+	padding: 5px;
+}
+
+.row {
+	padding: 0 15px;
+}
+
+.mb-3 {
+	margin-bottom: 5px!important;
+}

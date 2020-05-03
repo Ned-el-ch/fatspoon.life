@@ -31,10 +31,7 @@
 		}
 
 	}
-
-
 }
-
 
 .ic-button {
 
@@ -71,6 +68,7 @@
 
 .ic-buttons-plus {
 	line-height: 1.2;
+
 	&::before {
 		content: "+";
 		font-family: monospace;
