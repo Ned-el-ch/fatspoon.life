@@ -20,16 +20,15 @@ body {
 }
 
 a {
-  color: tomato;
-  font-style: italic;
+  color: #062035;
   text-decoration: none;
-  border-bottom: solid 2px white;
+  border-bottom: 2px solid tomato;
 }
 
 a:hover {
-  color: tomato;
+  color: #0b385e;
   text-decoration: none;
-  border-bottom: solid 2px tomato;
+  border-bottom: solid 2px #eb5c43;
 }
 
 @media (min-width: 1440px) {

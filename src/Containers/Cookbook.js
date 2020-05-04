@@ -22,6 +22,12 @@ const createLabels = (recipe, ingredients) => {
 	return labels;
 }
 
+const generateLink = recipe => {
+	let link = recipe.info.title.split(" ").slice(0, 3).join("-")
+	link += "-" + recipe.id.split("-")[0];
+	return link
+}
+
 const Cookbook = (props) => {
 	const { recipes, ingredients, starRecipe, unstarRecipe } = props;
 	return (
@@ -37,6 +43,7 @@ const Cookbook = (props) => {
 						starRecipe={starRecipe}
 						unstarRecipe={unstarRecipe}
 						labels={createLabels(recipe, ingredients)}
+						link={generateLink(recipe)}
 					/>
 				)}
 			</Col>

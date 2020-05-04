@@ -17,15 +17,15 @@ body {
 }
 
 a {
-	color: $primaryAccentColor;
-	font-style: italic;
+	color: $mainTextColor;
+	// font-style: italic;
 	text-decoration: none;
-	border-bottom: solid 2px white;
+	border-bottom: 2px solid $primaryAccentColor;
 
 	&:hover {
-		color: $primaryAccentColor;
+		color: $mainTextColorLighter;
 		text-decoration: none;
-		border-bottom: solid 2px $primaryAccentColor;
+		border-bottom: solid 2px $primaryAccentColorDark;
 	}
 }
 

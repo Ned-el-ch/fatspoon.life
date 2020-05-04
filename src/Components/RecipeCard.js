@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const RecipeCard = (props) => {
-	const { recipe, labels } = props;
+	const { recipe, labels, link } = props;
 	return (
 		<div className="rc-container">
 			<div className="rc-title-container">
-				<span className="rc-title">{recipe.info.title}</span>
+				<Link to={link}>
+					<span className="rc-title">{recipe.info.title}</span>
+				</Link>
 			</div>
 			<div className="rc-labels-container">
 				<div className="rc-labels-missing-items">
