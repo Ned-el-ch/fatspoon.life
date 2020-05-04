@@ -10,16 +10,16 @@ const RecipeCard = (props) => {
 			<div className="rc-labels-container">
 				<div className="rc-labels-missing-items">
 					{labels.missingIngredients === 0 ?
-					<span className="rc-labels-missing-items-none">Got everything!</span>
+					<span className="rc-labels-missing-items-none label">Got everything!</span>
 					:
-					<span className="rc-labels-missing-items-some">Few missing items!</span>
+					<span className="rc-labels-missing-items-some label">Few missing items!</span>
 					}
+				</div>
 					{labels.vegetarian ?
-					<span className="rc-labels-vegetarian">Vegetarian</span>
+					<span className="rc-labels-vegetarian label">Vegetarian</span>
 					:
 					null
 					}
-				</div>
 			</div>
 			<div className="rc-description-container">
 				<span className="rc-description">{recipe.info.description}</span>

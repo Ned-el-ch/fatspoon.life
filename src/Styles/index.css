@@ -101,12 +101,7 @@ a:hover {
 }
 
 .rc-labels-missing-items {
-  position: absolute;
-  top: 20%;
-  padding-left: 5px;
-  padding-top: 5px;
-  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
-  display: block;
+  display: inline-block;
 }
 
 .rc-labels-missing-items .rc-labels-missing-items-none {
@@ -123,8 +118,24 @@ a:hover {
   border-radius: 3px;
 }
 
-.rc-labels-missing-items .rc-labels-vegetarian {
-  border: 2px solid tomato;
+.rc-labels-vegetarian {
+  border: 2px solid #4bedff;
+  background-color: rgba(75, 237, 255, 0.2);
+  padding: 0 1px;
+  border-radius: 3px;
+}
+
+.rc-labels-container {
+  position: absolute;
+  top: 20%;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  display: block;
+}
+
+.rc-labels-container .label {
+  margin-right: 5px;
 }
 
 .recipe-form {
