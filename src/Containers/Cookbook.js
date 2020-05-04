@@ -23,7 +23,7 @@ const createLabels = (recipe, ingredients) => {
 }
 
 const generateLink = recipe => {
-	let link = recipe.info.title.split(" ").slice(0, 3).join("-")
+	let link = "Recipes/" + recipe.info.title.split(" ").slice(0, 3).join("-")
 	link += "-" + recipe.id.split("-")[0];
 	return link
 }
