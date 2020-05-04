@@ -125,6 +125,10 @@ a:hover {
 }
 
 .rc-labels-container {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: absolute;
   top: 20%;
   padding-left: 5px;
