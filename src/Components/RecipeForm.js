@@ -55,8 +55,10 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 						aria-label="title"
 						aria-describedby="inputGroup-sizing-lg"
 						value={info.title}
+						maxLength={45}
 						onChange={(event) => setInfo(Object.assign({}, info, {title: event.target.value}))}
 					/>
+					<span className="rf-title-remaining-characters">{45 - info.title.length} characters remaining</span>
 				</InputGroup>
 			</Col>
 			</Row>
