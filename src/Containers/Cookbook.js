@@ -6,6 +6,7 @@ import RecipeCard from '../Components/RecipeCard.js';
 import PageHeader from '../Components/PageHeader.js';
 import RecipeFormContainer from './RecipeFormContainer.js';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Cookbook = (props) => {
 	const { recipes, starRecipe, unstarRecipe } = props;
@@ -13,7 +14,8 @@ const Cookbook = (props) => {
 		<div className="cookbook-container">
 			<PageHeader title="My Cookbook"/>
 			<RecipeFormContainer />
-			<Row className="align-self-start justify-content-center">
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				{recipes.map(recipe => 
 					<RecipeCard
 						key={recipe.id}
@@ -22,6 +24,7 @@ const Cookbook = (props) => {
 						unstarRecipe={unstarRecipe}
 					/>
 				)}
+			</Col>
 			</Row>
 		</div>
 	)

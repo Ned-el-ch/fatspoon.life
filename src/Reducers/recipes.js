@@ -3,7 +3,7 @@ const defaultRecipes = [
 		id: 'ba41038-d4a7-77c0-8e30-cb6dbfc064',
 		info: {
 			title: 'Pancakes',
-			description: 'it\'s pancakes m8',
+			description: 'This easy American pancake recipe makes light and fluffy pancakes that are great for a weekend brunch. Try adding blueberries to the batter before cooking.',
 			imageLink: 'https://www.inspiredtaste.net/wp-content/uploads/2016/07/Pancake-Recipe-1-1200.jpg',
 			prepTime: '15',
 			cookingTime: '15',
