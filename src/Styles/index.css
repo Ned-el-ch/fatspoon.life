@@ -53,6 +53,10 @@ a:hover {
 
 .rc-image-container {
   height: calc(20vh + (23 - 20) * ((100vw - 300px) / (1000 - 300)));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin-left: 60%;
   width: 40%;
   min-width: 40%;

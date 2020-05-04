@@ -15,7 +15,7 @@ $minimumWidth: 40%;
 
 .rc-image-container {
 	height: $containerHeight;
-	// min-height: $minimumHeight;
+	user-select: none;
 	margin-left: 60%;
 	width: 40%;
 	min-width: $minimumWidth;
