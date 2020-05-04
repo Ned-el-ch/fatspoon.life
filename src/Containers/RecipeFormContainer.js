@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { addRecipe } from '../Actions/recipes';
 import RecipeForm from "../Components/RecipeForm";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const initialState = () => {
 	return (
 		{
@@ -27,12 +29,14 @@ const RecipeFormContainer = ({addRecipe}) => {
 				/>
 			</div>
 			:
-			<div>
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				<button
 					className="rf-new-recipe-button"
 					onClick={() => updateRecipe({recipe: {}})}
 				>+</button>
-			</div>
+			</Col>
+			</Row>
 			}
 		</div>
 	)
