@@ -44,14 +44,14 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 				<span className="rf-ingredients-list-heading">At a glance</span>
 			</Col>
 			</Row>
-			<Row>
+			<Row className="rf-title-row">
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				<InputGroup className="mb-3">
 					<InputGroup.Prepend>
-						<InputGroup.Text id="inputGroup-sizing-lg">Title</InputGroup.Text>
+						<InputGroup.Text id="inputGroup-sizing-lg">Creative Title</InputGroup.Text>
 					</InputGroup.Prepend>
 					<FormControl
-						placeholder="Get Creative!"
+						placeholder="Goes here"
 						aria-label="title"
 						aria-describedby="inputGroup-sizing-lg"
 						value={info.title}

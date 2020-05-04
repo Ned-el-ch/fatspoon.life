@@ -1,4 +1,39 @@
-export default (state = [], action) => {
+const defaultIngredients = [
+	{
+		id: '38a436-0da-bce4-a7a2-3751068bc',
+		name: 'Milk',
+		category: 'Eggs & Dairy',
+		nutritionalInfo: {},
+		index: 0,
+		quantity: 0
+	},
+	{
+		id: '0b4d0-6efe-58bb-2eef-21fe577b2c0f',
+		name: 'Butter',
+		category: 'Eggs & Dairy',
+		nutritionalInfo: {},
+		index: 1,
+		quantity: 0
+	},
+	{
+		id: '6412fc8-23d-4ab0-2abe-31d4b52c0c0',
+		name: 'Self-Raising Flour',
+		category: 'Baking & Grains',
+		nutritionalInfo: {},
+		index: 163,
+		quantity: 0
+	},
+	{
+		id: '2f7ff80-8faf-848d-0d7a-f2431e38404',
+		name: 'Yogurt',
+		category: 'Eggs & Dairy',
+		nutritionalInfo: {},
+		index: 22,
+		quantity: 0
+	}
+]
+
+export default (state = defaultIngredients, action) => {
 
 	let ingredient;
 	let index;

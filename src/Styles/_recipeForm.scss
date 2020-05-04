@@ -11,7 +11,7 @@
 }
 
 .rf-ingredients-list-heading, .rf-cooking-instructions-heading {
-	font-family: "LemonJelly";
+	font-family: "Frenchpress";
 	font-size: $labelFontSizeLarge;
 	user-select: none;
 	color: $mainTextColorLighter;
@@ -31,6 +31,25 @@
 	text-align: center;
 	user-select: none;
 	line-height: 1;
+}
+
+.rf-title-remaining-characters {
+	position: absolute;
+	font-size: $smallFontSize;
+	bottom: -20px;
+	left: 20px;
+	font-style: italic;
+	color: $mainTextColorTransparent;
+	margin-right: -110px;
+	margin-bottom: 5px;
+	width: 200px;
+	text-align: center;
+	user-select: none;
+}
+
+.rf-title-row {
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .rf-instructions-container {
@@ -113,10 +132,6 @@
 		box-shadow: $mainBoxShadow !important;
 		outline: none;
 	}
-}
-
-.rf-new-instruction-button {
-	margin-top: 5px;
 }
 
 .rf-instructions-row {

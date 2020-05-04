@@ -5,7 +5,7 @@ import PageHeader from '../Components/PageHeader'
 const RecipePage = (props) => {
 	return (
 		<div>
-			<PageHeader title={"Pancakes with a lot more words than this container holds lol"}/>
+			<PageHeader title={"12 Pancakes with Nutella and Berries"}/>
 		</div>
 	)
 }

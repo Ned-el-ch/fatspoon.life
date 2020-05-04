@@ -33,6 +33,37 @@ const defaultRecipes = [
 				text: 'then do the other thing idk'
 			}
 		]
+	},
+	{
+		id: 'c841343-66f-23-a70f-300176d7f42',
+		info: {
+			title: '2-Ingredient Donuts!!',
+			description: 'The quickest doughnut recipe you\'ll ever make! 2 simple ingredients make for a super quick snack or dessert!',
+			imageLink: 'https://www.justataste.com/wp-content/uploads/2014/03/easy-homemade-glazed-doughnut-holes-recipe-500x500.jpg',
+			prepTime: '3',
+			cookingTime: '10',
+			servingCount: '3'
+		},
+		ingredients: [
+			{
+				id: '6412fc8-23d-4ab0-2abe-31d4b52c0c0',
+				weight: '150'
+			},
+			{
+				id: '2f7ff80-8faf-848d-0d7a-f2431e38404',
+				weight: '200'
+			}
+		],
+		instructions: [
+			{
+				id: 'dcf4bfb-aa51-65e8-6fcc-acc345351423',
+				text: 'Mix the ingredients'
+			},
+			{
+				id: '685f8d-6fc2-570a-afdc-e6f6a0d7615c',
+				text: 'Fry in vegetable oil at around 200°C'
+			}
+		]
 	}
 ]
 
