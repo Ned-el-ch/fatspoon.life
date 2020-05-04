@@ -45,7 +45,7 @@ a:hover {
   -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
-  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
+  height: calc(20vh + (23 - 20) * ((100vw - 300px) / (1000 - 300)));
   background-color: white;
   position: relative;
   margin-bottom: 200px;
@@ -53,10 +53,10 @@ a:hover {
 }
 
 .rc-image-container {
-  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
-  margin-left: 70%;
-  width: 30%;
-  min-width: 30%;
+  height: calc(20vh + (23 - 20) * ((100vw - 300px) / (1000 - 300)));
+  margin-left: 60%;
+  width: 40%;
+  min-width: 40%;
   z-index: -2;
 }
 
@@ -65,9 +65,9 @@ a:hover {
   position: relative;
   background-image: -webkit-gradient(linear, right top, left top, color-stop(9%, transparent), color-stop(95%, white));
   background-image: linear-gradient(to left, transparent 9%, white 95%);
-  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
-  margin-top: calc(-1 * (15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300))));
-  min-width: 30%;
+  height: calc(20vh + (23 - 20) * ((100vw - 300px) / (1000 - 300)));
+  margin-top: calc(-1 * (20vh + (23 - 20) * ((100vw - 300px) / (1000 - 300))));
+  min-width: 40%;
   width: 100%;
   content: '';
 }
@@ -75,8 +75,8 @@ a:hover {
 .rc-image {
   -o-object-fit: cover;
      object-fit: cover;
-  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
-  min-width: 30%;
+  height: calc(20vh + (23 - 20) * ((100vw - 300px) / (1000 - 300)));
+  min-width: 40%;
   width: 100%;
   border-radius: 0 10px 10px 0;
 }
@@ -86,6 +86,7 @@ a:hover {
   left: 0;
   top: 0;
   font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+  padding-left: 5px;
 }
 
 .rc-description {
@@ -93,8 +94,37 @@ a:hover {
   left: 0;
   bottom: 0;
   font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
-  width: 70%;
+  width: 60%;
   text-align: justify;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+.rc-labels-missing-items {
+  position: absolute;
+  top: 20%;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  display: block;
+}
+
+.rc-labels-missing-items .rc-labels-missing-items-none {
+  border: 2px solid lightgreen;
+  background-color: rgba(196, 255, 134, 0.2);
+  padding: 0 1px;
+  border-radius: 3px;
+}
+
+.rc-labels-missing-items .rc-labels-missing-items-some {
+  border: 2px solid tomato;
+  background-color: rgba(255, 99, 71, 0.2);
+  padding: 0 1px;
+  border-radius: 3px;
+}
+
+.rc-labels-missing-items .rc-labels-vegetarian {
+  border: 2px solid tomato;
 }
 
 .recipe-form {

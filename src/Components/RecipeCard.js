@@ -1,11 +1,25 @@
 import React from 'react';
 
 const RecipeCard = (props) => {
-	const { recipe } = props;
+	const { recipe, labels } = props;
 	return (
 		<div className="rc-container">
 			<div className="rc-title-container">
 				<span className="rc-title">{recipe.info.title}</span>
+			</div>
+			<div className="rc-labels-container">
+				<div className="rc-labels-missing-items">
+					{labels.missingIngredients === 0 ?
+					<span className="rc-labels-missing-items-none">Got everything!</span>
+					:
+					<span className="rc-labels-missing-items-some">Few missing items!</span>
+					}
+					{labels.vegetarian ?
+					<span className="rc-labels-vegetarian">Vegetarian</span>
+					:
+					null
+					}
+				</div>
 			</div>
 			<div className="rc-description-container">
 				<span className="rc-description">{recipe.info.description}</span>

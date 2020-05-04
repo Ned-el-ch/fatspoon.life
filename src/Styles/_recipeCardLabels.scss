@@ -1,0 +1,26 @@
+.rc-labels-missing-items {
+	position: absolute;
+	top: 20%;
+	padding-left: 5px;
+	padding-top: 5px;
+	font-size: $smallFontSize;
+	display: block;
+
+	& .rc-labels-missing-items-none {
+		border: 2px solid lightgreen;
+		background-color: $secondaryAccentColorTransparent;
+		padding: 0 1px;
+		border-radius: 3px;
+	}
+
+	& .rc-labels-missing-items-some {
+		border: 2px solid $primaryAccentColor;
+		background-color: $primaryAccentColorTransparent;
+		padding: 0 1px;
+		border-radius: 3px;
+	}
+
+	& .rc-labels-vegetarian {
+		border: 2px solid $primaryAccentColor;
+	}
+}

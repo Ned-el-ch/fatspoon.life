@@ -8,8 +8,22 @@ import RecipeFormContainer from './RecipeFormContainer.js';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+const createLabels = (recipe, ingredients) => {
+	let availableIngredients = [];
+	recipe.ingredients.forEach(ri => {
+		let ing = ingredients.find(i => i.id === ri.id);
+		if (ing)
+			availableIngredients.push(ing);
+	});
+	let labels = {
+		missingIngredients: recipe.ingredients.length - availableIngredients.length,
+		vegetarian: true
+	};
+	return labels;
+}
+
 const Cookbook = (props) => {
-	const { recipes, starRecipe, unstarRecipe } = props;
+	const { recipes, ingredients, starRecipe, unstarRecipe } = props;
 	return (
 		<div className="cookbook-container">
 			<PageHeader title="My Cookbook"/>
@@ -22,6 +36,7 @@ const Cookbook = (props) => {
 						recipe={recipe}
 						starRecipe={starRecipe}
 						unstarRecipe={unstarRecipe}
+						labels={createLabels(recipe, ingredients)}
 					/>
 				)}
 			</Col>
@@ -32,7 +47,8 @@ const Cookbook = (props) => {
 
 const mapStateToProps = state => {
 	return ({
-		recipes: state.recipes
+		recipes: state.recipes,
+		ingredients : state.ingredients
 	})
 };
 
