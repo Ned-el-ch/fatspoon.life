@@ -52,7 +52,7 @@
 	// line-height: 1;
 }
 
-.rf-new-ingredient-button, .rf-new-instruction-button {
+.rf-new-ingredient-button, .rf-new-instruction-button, .rf-new-recipe-button {
 	width: 100%;
 	border: 1px solid #ced4da;
 	background-color: white;
@@ -74,6 +74,37 @@
 
 	&:active {
 		background-color: $secondaryAccentColorDark;
+		box-shadow: $mainBoxShadow;
+		color: white;
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+		outline: none;
+	}
+}
+
+.rf-close-form-button {
+	position: absolute;
+	right: 4px;
+	width: 10%;
+	border: 1px solid #ced4da;
+	background-color: white;
+	outline: none;
+	border-radius: 0.25rem;
+	color: $mainTextColorTransparent;
+	font-weight: bold;
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
+	font-size: $normalFontSize;
+	font-weight: 600;
+	z-index: 1;
+	&:hover {
+		background-color: $primaryAccentColor;
+		color: white;
+	}
+
+	&:active {
+		background-color: red;
 		box-shadow: $mainBoxShadow;
 		color: white;
 	}

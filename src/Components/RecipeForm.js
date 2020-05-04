@@ -28,12 +28,17 @@ const validateNumbers = str => {
 	return str.match(regex) || str === "";
 }
 
-const RecipeForm = ({handleRecipe}) => {
+const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 	const [info, setInfo] = useState(initialInfo);
 	const [cookingData, setCookingData] = useState(initialCookingData);
 	return (
 		<div className="recipe-form">
 			<div className="rf-main-info">
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+			<button onClick={closeRecipe} className="rf-close-form-button">x</button>
+			</Col>
+			</Row>
 			<Row>
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				<span className="rf-ingredients-list-heading">At a glance</span>

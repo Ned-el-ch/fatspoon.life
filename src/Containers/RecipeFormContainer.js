@@ -18,10 +18,12 @@ const RecipeFormContainer = ({addRecipe}) => {
 			state.recipe
 			?
 			<div className="recipe-form">
-				<RecipeForm handleRecipe={(recipe) => {
-					addRecipe(recipe)
-					updateRecipe({recipe: null})
+				<RecipeForm
+					handleRecipe={(recipe) => {
+						addRecipe(recipe)
+						updateRecipe({recipe: null})
 					}}
+					closeRecipe={() => {updateRecipe({recipe: null})}}
 				/>
 			</div>
 			:
@@ -29,7 +31,7 @@ const RecipeFormContainer = ({addRecipe}) => {
 				<button
 					className="rf-new-recipe-button"
 					onClick={() => updateRecipe({recipe: {}})}
-				>Add a new recipe!</button>
+				>+</button>
 			</div>
 			}
 		</div>
