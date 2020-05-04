@@ -1,34 +1,37 @@
-$containerHeight: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
-$fadeMargin: calc(-1 * (12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300))));
-$minimumHeight: 125px;
-$minimumWidth: 165px;
+$containerHeight: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
+$fadeMargin: calc(-1 * (15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300))));
+$minimumHeight: 185px;
+$minimumWidth: 30%;
 
 .rc-container {
-	@include setPaddingAndMargin(0, 10px);
+	// @include setPaddingAndMargin(0, 10px);
 	box-shadow: 0px 5px 15px -5px $boxShadowColor;
-	border-radius: 10px 10px 10px 10px;
+	border-radius: 10px;
 	height: $containerHeight;
 	background-color: white;
 	position: relative;
 	margin-bottom: 200px;
+	margin-top: 20px;
 }
 
 .rc-image-container {
 	height: $containerHeight;
 	// min-height: $minimumHeight;
-	width: 20vw;
+	margin-left: 70%;
+	width: 30%;
 	min-width: $minimumWidth;
-
+	z-index: -2;
 	&::after {
 		display: block;
 		position: relative;
-		background-image: linear-gradient(to right, transparent 9%, white 95%);
+		background-image: linear-gradient(to left, transparent 9%, white 95%);
 		height: $containerHeight;
 		margin-top: $fadeMargin;
 		// min-height: $minimumHeight;
 		min-width: $minimumWidth;
 		width: 100%;
 		content: '';
+		// z-index: -1;
 	}
 }
 
@@ -38,12 +41,21 @@ $minimumWidth: 165px;
 	// min-height: $minimumHeight;
 	min-width: $minimumWidth;
 	width: 100%;
-	border-radius: 10px 0 0 10px;
+	border-radius: 0 10px 10px 0;
 }
 
-.rc-label {
+.rc-title {
 	position: absolute;
-	right: 0;
+	left: 0;
 	top: 0;
 	font-size: $labelFontSize;
+}
+
+.rc-description {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-size: $normalFontSize;
+	width: 70%;
+	text-align: justify;
 }

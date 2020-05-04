@@ -42,31 +42,32 @@ a:hover {
 }
 
 .rc-container {
-  padding: 0;
-  margin: 10px;
   -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
-  border-radius: 10px 10px 10px 10px;
-  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
+  border-radius: 10px;
+  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
   background-color: white;
   position: relative;
   margin-bottom: 200px;
+  margin-top: 20px;
 }
 
 .rc-image-container {
-  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
-  width: 20vw;
-  min-width: 165px;
+  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
+  margin-left: 70%;
+  width: 30%;
+  min-width: 30%;
+  z-index: -2;
 }
 
 .rc-image-container::after {
   display: block;
   position: relative;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(9%, transparent), color-stop(95%, white));
-  background-image: linear-gradient(to right, transparent 9%, white 95%);
-  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
-  margin-top: calc(-1 * (12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300))));
-  min-width: 165px;
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(9%, transparent), color-stop(95%, white));
+  background-image: linear-gradient(to left, transparent 9%, white 95%);
+  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
+  margin-top: calc(-1 * (15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300))));
+  min-width: 30%;
   width: 100%;
   content: '';
 }
@@ -74,17 +75,26 @@ a:hover {
 .rc-image {
   -o-object-fit: cover;
      object-fit: cover;
-  height: calc(12.5vh + (15.5 - 12.5) * ((100vw - 300px) / (1000 - 300)));
-  min-width: 165px;
+  height: calc(15.5vh + (18.5 - 15.5) * ((100vw - 300px) / (1000 - 300)));
+  min-width: 30%;
   width: 100%;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0 10px 10px 0;
 }
 
-.rc-label {
+.rc-title {
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.rc-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  width: 70%;
+  text-align: justify;
 }
 
 .recipe-form {

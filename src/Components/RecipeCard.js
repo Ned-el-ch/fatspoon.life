@@ -4,14 +4,14 @@ const RecipeCard = (props) => {
 	const { recipe } = props;
 	return (
 		<div className="rc-container">
-			<div className="rc-image-container">
-				<img className="rc-image" src={recipe.info.imageLink} alt=""/>
-			</div>
 			<div className="rc-title-container">
 				<span className="rc-title">{recipe.info.title}</span>
 			</div>
 			<div className="rc-description-container">
 				<span className="rc-description">{recipe.info.description}</span>
+			</div>
+			<div className="rc-image-container">
+				<img className="rc-image" src={recipe.info.imageLink} alt=""/>
 			</div>
 			{/* <div className="rc-buttons-container">
 				<button className="rc-star-recipe-button" onClick={() => {starRecipe(recipe)}}>Star Recipe</button>
