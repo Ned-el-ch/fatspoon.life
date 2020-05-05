@@ -7,7 +7,7 @@ export const getIngredientsForSelect = () => {
 	for (const ingredient of ingredientsArray) {
 		let category = categoryColors.find(e => Object.keys(e)[0] === ingredient.category);
 		let formattedItem = {
-			value: ingredient.id,
+			value: ingredient.uuid,
 			label: ingredient.name,
 			color: category[ingredient.category].color,
 			ingredient

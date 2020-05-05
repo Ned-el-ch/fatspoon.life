@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import IngredientSelect from './IngredientSelect'
 import { InputGroup, FormControl, Row, Col } from "react-bootstrap";
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
-import uuid from 'react-uuid'
+import { uuid } from '../Concerns/uuid'
 
 const initialInfo = {
 	title: "",
