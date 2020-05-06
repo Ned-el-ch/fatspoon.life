@@ -35,7 +35,7 @@ const LoginPage = ({ userLoginFetch, user }) => {
 					<Form.Control type="password" placeholder="Password"/>
 				</Form.Group>
 				<Button variant="primary" type="submit">
-					Log in
+					Login
 				</Button>
 			</Form>
 			{alert

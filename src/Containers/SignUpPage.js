@@ -37,7 +37,7 @@ const SignUpPage = ({ userLoginFetch, user }) => {
 					<Form.Control type="password" placeholder="Password"/>
 				</Form.Group>
 				<Button variant="primary" type="submit">
-					Log in
+					Sign Up
 				</Button>
 			</Form>
 			{alert
