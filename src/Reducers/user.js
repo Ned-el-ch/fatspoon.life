@@ -1,4 +1,4 @@
-const initialState = {}
+const initialState = null
 
 export default (state = initialState, action) => {
 
@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
 		case "LOGIN_USER":
 			return {...state, ...action.userData};
 		case "LOGOUT_USER":
-			return {...state, user: {}}
+			return {...state, user: null}
 		default:
 			return state;
 	}
