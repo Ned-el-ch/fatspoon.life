@@ -1,12 +1,10 @@
-const initialState = {
-	user: {}
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
 
 	switch (action.type) {
 		case "LOGIN_USER":
-			return {...state, user: action.userData};
+			return {...state, ...action.userData};
 		case "LOGOUT_USER":
 			return {...state, user: {}}
 		default:
