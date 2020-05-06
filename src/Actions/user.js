@@ -34,7 +34,9 @@ export const userLoginFetch = user => {
 			.then(data => {
 				if (data.token) {
 					localStorage.setItem("token", data.token)
-					dispatch(loginUser(JSON.parse(data.user_data)))
+					let userData = JSON.parse(data.user_data)
+					dispatch({type: "LOGIN_USER", userData })
+						// dispatch(loginUser(JSON.parse(data.user_data)))
 				} else {
 					//ADD LOGIC TO HANDLE WRONG STUFF
 				}
@@ -60,7 +62,8 @@ export const getProfileFetch = () => {
 						// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
 						localStorage.removeItem("token")
 					} else {
-						dispatch(loginUser(data.user_data))
+						let userData = JSON.parse(data.user_data)
+						dispatch({type: "LOGIN_USER", userData })
 					}
 				})
 		}

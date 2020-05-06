@@ -4,11 +4,18 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-const LoginPage = () => {
+import { userLoginFetch } from '../Actions/user'
+import { connect } from 'react-redux'
+
+const LoginPage = ({ userLoginFetch }) => {
 	return (
 		<Row>
 		<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
-			<Form>
+			<Form onSubmit={(event) => {
+				event.preventDefault();
+				let user = {user: {username: "niki", password: "potato"}}
+				userLoginFetch(user);
+			}}>
 				<Form.Group controlId="formUsername">
 					<Form.Label>Username</Form.Label>
 					<Form.Control type="username" placeholder="Enter Username"/>
@@ -30,4 +37,4 @@ const LoginPage = () => {
 	)
 }
 
-export default LoginPage;
+export default connect(null, { userLoginFetch })(LoginPage);
