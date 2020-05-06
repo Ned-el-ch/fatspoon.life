@@ -38,4 +38,12 @@ const LoginPage = ({ userLoginFetch }) => {
 	)
 }
 
-export default connect(null, { userLoginFetch })(LoginPage);
+const mapStateToProps = state => {
+	return (
+		{
+			user: state.user
+		}
+	)
+}
+
+export default connect(mapStateToProps, { userLoginFetch })(LoginPage);
