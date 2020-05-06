@@ -67,6 +67,10 @@ export const getProfileFetch = () => {
 	}
 }
 
+export const logoutUser = () => ({
+  type: 'LOGOUT_USER'
+})
+
 const loginUser = userData => ({
 		type: 'LOGIN_USER',
 		userData
