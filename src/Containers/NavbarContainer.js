@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavItem from "react-bootstrap/NavItem"
@@ -9,26 +9,23 @@ import NavLink from "react-bootstrap/NavLink"
 import { LinkContainer } from "react-router-bootstrap";
 
 import { connect } from 'react-redux';
-import { addRecipeResults } from "../Actions/search";
+// import { addRecipeResults } from "../Actions/search";
 
-import { compose } from 'redux'
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const NavbarContainer = () => {
-
+const NavbarContainer = ({ user }) => {
+	let history = useHistory();
 	return (
 		<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
 			<LinkContainer exact to="/">
 				<NavLink active={false}>
-					{/* <Navbar.Brand> */}
 					<NavItem>Home</NavItem>
-					{/* </Navbar.Brand> */}
 				</NavLink>
 			</LinkContainer>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto">
-					<LinkContainer exact  to="/MyCookbook">
+					<LinkContainer exact to="/MyCookbook">
 						<NavLink active={false}><NavItem>My Cookbook</NavItem></NavLink>
 					</LinkContainer>
 					<LinkContainer exact to="/MyFridge">
@@ -39,12 +36,21 @@ const NavbarContainer = () => {
 					</LinkContainer>
 				</Nav>
 				<Nav className="ml-auto">
-					<LinkContainer exact to="/Login">
-						<NavLink active={false}><NavItem>Login</NavItem></NavLink>
+					{user
+					?
+					<LinkContainer exact to="/MyProfile">
+						<NavLink active={false}><NavItem>{user.username}</NavItem></NavLink>
 					</LinkContainer>
-					<LinkContainer exact to="/SignUp">
-						<NavLink active={false}><NavItem>Sign Up</NavItem></NavLink>
-					</LinkContainer>
+					:
+					<Fragment>
+						<LinkContainer exact to="/Login">
+							<NavLink active={false}><NavItem>Login</NavItem></NavLink>
+						</LinkContainer>
+						<LinkContainer exact to="/SignUp">
+							<NavLink active={false}><NavItem>Sign Up</NavItem></NavLink>
+						</LinkContainer>
+					</Fragment>
+				}
 				</Nav>
 
 				{/* <Form inline onSubmit={this.handleSubmit}>
@@ -67,7 +73,4 @@ const mapStateToProps = state => {
 		}
 	)
 }
-export default compose(
-	withRouter,
-	connect(mapStateToProps, { addRecipeResults })
-)(NavbarContainer);
+export default connect(mapStateToProps)(NavbarContainer);
