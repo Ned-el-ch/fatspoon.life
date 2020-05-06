@@ -411,7 +411,7 @@ a:hover {
   opacity: 1;
 }
 
-.ic-container:hover .ic-quantity {
+.ic-container:hover .ic-weight {
   bottom: 36px;
 }
 
@@ -563,7 +563,7 @@ a:hover {
   background-color: #f1935c;
 }
 
-.ic-quantity {
+.ic-weight {
   position: absolute;
   font-size: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
   right: 1.5px;
