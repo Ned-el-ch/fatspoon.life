@@ -64,12 +64,11 @@ export const getProfileFetch = () => {
 				.then(res => res.json())
 				.then(data => {
 					if (data.message) {
-						return false;
-					// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
+						// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
 						localStorage.removeItem("token")
+						return false;
 					} else {
-						let userData = JSON.parse(data.user_data)
-						dispatch({type: "LOGIN_USER", userData })
+						dispatch({type: "LOGIN_USER", userData: data })
 						return true
 					}
 				})

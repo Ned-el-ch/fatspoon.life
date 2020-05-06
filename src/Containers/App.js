@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Fridge from './Fridge.js';
@@ -14,8 +14,11 @@ import ShoppingListContainer from './ShoppingListContainer.js';
 import RecipePage from './RecipePage.js';
 import LoginPage from './LoginPage.js';
 import SignUpPage from './SignUpPage.js';
+import { connect } from 'react-redux';
+import { getProfileFetch } from '../Actions/user'
 
-const App = () => {
+const App = ({ getProfileFetch }) => {
+	useEffect(() => getProfileFetch(), [])
 	return (
 		<div className="app-container">
 			<Router>
@@ -41,7 +44,7 @@ const App = () => {
 	)
 }
 
-export default App;
+export default connect(null, { getProfileFetch })(App);
 
 // SAMPLE FETCH TO SIGNUP
 
