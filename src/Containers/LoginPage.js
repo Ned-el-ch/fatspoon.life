@@ -13,7 +13,7 @@ const LoginPage = ({ userLoginFetch }) => {
 		<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 			<Form onSubmit={(event) => {
 				event.preventDefault();
-				let user = {user: {username: "niki", password: "potato"}}
+				let user = {username: "niki", password: "potato"}
 				userLoginFetch(user);
 			}}>
 				<Form.Group controlId="formUsername">
