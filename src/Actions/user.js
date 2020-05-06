@@ -60,7 +60,7 @@ export const getProfileFetch = () => {
 						// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
 						localStorage.removeItem("token")
 					} else {
-						dispatch(loginUser(data.user))
+						dispatch(loginUser(data.user_data))
 					}
 				})
 		}
