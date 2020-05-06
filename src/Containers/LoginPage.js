@@ -18,8 +18,6 @@ const LoginPage = ({ userLoginFetch, user }) => {
 				const username = event.target.elements.username.value;
 				const password = event.target.elements.password.value;
 				userLoginFetch({username, password}).then(setAlert);
-
-				// debugger
 			}}>
 				<Form.Group controlId="username">
 					<Form.Label>Username</Form.Label>
