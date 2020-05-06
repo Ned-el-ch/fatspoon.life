@@ -13,10 +13,11 @@ const LoginPage = ({ userLoginFetch }) => {
 		<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 			<Form onSubmit={(event) => {
 				event.preventDefault();
-				let user = {username: "niki", password: "potato"}
-				userLoginFetch(user);
+				const username = event.target.elements.username.value;
+				const password = event.target.elements.password.value;
+				userLoginFetch({username, password});
 			}}>
-				<Form.Group controlId="formUsername">
+				<Form.Group controlId="username">
 					<Form.Label>Username</Form.Label>
 					<Form.Control type="username" placeholder="Enter Username"/>
 					<Form.Text className="text-muted">
@@ -24,7 +25,7 @@ const LoginPage = ({ userLoginFetch }) => {
 					</Form.Text>
 				</Form.Group>
 
-				<Form.Group controlId="formPassword">
+				<Form.Group controlId="password">
 					<Form.Label>Password</Form.Label>
 					<Form.Control type="password" placeholder="Password"/>
 				</Form.Group>
