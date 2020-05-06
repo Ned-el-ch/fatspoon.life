@@ -11,7 +11,7 @@ export const userPostFetch = user => {
 			.then(res => res.json())
 			.then(data => {
 				if (data.jwt) {
-					localStorage.setItem("token", data.jwt)
+					localStorage.setItem("token", data.token)
 					dispatch(loginUser(data.user_data))
 				} else {
 					// ADD LOGIC TO HANDLE WRONG STUFF
@@ -33,7 +33,7 @@ export const userLoginFetch = user => {
 			.then(res => res.json())
 			.then(data => {
 				if (data.jwt) {
-					localStorage.setItem("token", data.jwt)
+					localStorage.setItem("token", data.token)
 					dispatch(loginUser(data.user_data))
 				} else {
 					//ADD LOGIC TO HANDLE WRONG STUFF
