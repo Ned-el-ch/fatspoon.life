@@ -48,7 +48,7 @@ export default connect(null, { getProfileFetch })(App);
 
 // SAMPLE FETCH TO SIGNUP
 
-// fetch('http://localhost:4000/api/v1/users', {
+// fetch('https://calm-brook-68370.herokuapp.com/api/v1/users', {
 // 	method: 'POST',
 // 	headers: {
 // 		'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export default connect(null, { getProfileFetch })(App);
 
 // SAMPLE FETCH TO LOGIN
 
-// fetch('http://localhost:4000/api/v1/login', {
+// fetch('https://calm-brook-68370.herokuapp.com//api/v1/login', {
 // 	method: 'POST',
 // 	headers: {
 // 		'Content-Type': 'application/json',
@@ -87,12 +87,12 @@ export default connect(null, { getProfileFetch })(App);
 
 // SAMPLE FETCH TO ALL RECIPES BY A USER
 
-// fetch('http://localhost:4000/api/v1/chefs/niki')
+// fetch('https://calm-brook-68370.herokuapp.com//api/v1/chefs/niki')
 // .then(r => r.json()).then(console.log)
 
 // SAMPLE CREATE A RECIPE
 
-// fetch('http://localhost:4000/recipes/new', {
+// fetch('https://calm-brook-68370.herokuapp.com//recipes/new', {
 // 	method: 'POST',
 // 	headers: {
 // 		'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ export default connect(null, { getProfileFetch })(App);
 
 // FETCH UPDATE USER INGREDIENTS
 
-// fetch('http://localhost:4000/api/v1/ingredients/update', {
+// fetch('https://calm-brook-68370.herokuapp.com//api/v1/ingredients/update', {
 // 	method: 'POST',
 // 	headers: {
 // 		'Content-Type': 'application/json',

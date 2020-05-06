@@ -10,7 +10,7 @@ export default (state = data.ingredients, action) => {
 		case "LOAD_INGREDIENTS":
 			let loadedIngredients = action.ingredients.map(ing => {
 				debugger;
-				return allIngredients.default.find(ing => ing.id === ing.ingredient.uuid)
+				return Object.assign({}, allIngredients.default.find(i => i.uuid === ing.ingredient.uuid), {weight: ing.weight})
 			})
 			// debugger;
 			return loadedIngredients;

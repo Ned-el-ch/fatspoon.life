@@ -1,8 +1,8 @@
-import {loadIngredients} from "./ingredients"
+import { loadIngredients } from "./ingredients.js"
 
 export const userSignUpFetch = user => {
 	return dispatch => {
-		return fetch("http://localhost:4000/api/v1/users", {
+		return fetch("https://calm-brook-68370.herokuapp.com/api/v1/users", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
@@ -14,6 +14,7 @@ export const userSignUpFetch = user => {
 			.then(data => {
 				if (data.token) {
 					localStorage.setItem("token", data.token)
+					debugger
 					dispatch(loginUser(JSON.parse(data.user_data)))
 					return false
 				} else {
@@ -26,7 +27,7 @@ export const userSignUpFetch = user => {
 
 export const userLoginFetch = user => {
 	return dispatch => {
-		return fetch("http://localhost:4000/api/v1/login", {
+		return fetch("https://calm-brook-68370.herokuapp.com/api/v1/login", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
@@ -55,7 +56,7 @@ export const getProfileFetch = () => {
 	return dispatch => {
 		const token = localStorage.token;
 		if (token) {
-			return fetch("http://localhost:4000/api/v1/profile", {
+			return fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
 				method: "GET",
 				headers: {
 					'Content-Type': 'application/json',
@@ -71,9 +72,10 @@ export const getProfileFetch = () => {
 						return false;
 					} else {
 						dispatch({type: "LOGIN_USER", userData: data })
-						return data.user_ingredients
+						loadIngredients(data.user_data)
 					}
 				})
+
 		}
 	}
 }
