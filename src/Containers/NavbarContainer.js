@@ -90,7 +90,15 @@ class NavbarContainer extends Component {
 		)
 	}
 }
+
+const mapStateToProps = state => {
+	return (
+		{
+			user: state.user
+		}
+	)
+}
 export default compose(
 	withRouter,
-	connect(null, { addRecipeResults })
+	connect(mapStateToProps, { addRecipeResults })
 )(NavbarContainer);
