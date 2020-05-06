@@ -4,12 +4,13 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Alert from 'react-bootstrap/Alert'
-
-import { userLoginFetch } from '../Actions/user'
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { userLoginFetch } from '../Actions/user'
 
 const LoginPage = ({ userLoginFetch, user }) => {
 	const [alert, setAlert] = useState(false);
+	let history = useHistory();
 	return (
 		<Row>
 		<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
@@ -17,7 +18,11 @@ const LoginPage = ({ userLoginFetch, user }) => {
 				event.preventDefault();
 				const username = event.target.elements.username.value;
 				const password = event.target.elements.password.value;
-				userLoginFetch({username, password}).then(setAlert);
+				userLoginFetch({username, password}).then(res => {
+					setAlert(res);
+					if (!res)
+						history.push("/")
+				});
 			}}>
 				<Form.Group controlId="username">
 					<Form.Label>Username</Form.Label>
