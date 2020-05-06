@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom'
 import { userLoginFetch } from '../Actions/user'
 import PageHeader from '../Components/PageHeader'
 
-const LoginPage = ({ userLoginFetch, user }) => {
+const LoginPage = ({ userLoginFetch }) => {
 	const [alert, setAlert] = useState(false);
 	let history = useHistory();
 	return (
@@ -50,12 +50,4 @@ const LoginPage = ({ userLoginFetch, user }) => {
 	)
 }
 
-const mapStateToProps = state => {
-	return (
-		{
-			user: state.user
-		}
-	)
-}
-
-export default connect(mapStateToProps, { userLoginFetch })(LoginPage);
+export default connect(null, { userLoginFetch })(LoginPage);
