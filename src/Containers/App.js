@@ -12,6 +12,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import ShoppingListContainer from './ShoppingListContainer.js';
 import RecipePage from './RecipePage.js';
+import LoginPage from './LoginPage.js';
 
 const App = () => {
 	return (
@@ -26,6 +27,7 @@ const App = () => {
 							<Route exact path="/MyCookbook" component={Cookbook} />
 							<Route exact path="/MyFridge" component={Fridge} />
 							<Route exact path="/MyShoppingList" component={ShoppingListContainer} />
+							<Route exact path="/Login" component={LoginPage} />
 							<Route path="/Recipes" component={RecipePage} />
 							{/* <Route exact path="/Search" component={SearchResults} /> */}
 						</Switch>
