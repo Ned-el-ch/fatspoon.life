@@ -58,16 +58,22 @@ class NavbarContainer extends Component {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="mr-auto">
-					<LinkContainer exact  to="/MyCookbook">
-						<NavLink active={false}><NavItem>My Cookbook</NavItem></NavLink>
-					</LinkContainer>
-					<LinkContainer exact to="/MyFridge">
-						<NavLink active={false}><NavItem>My Fridge</NavItem></NavLink>
-					</LinkContainer>
-					<LinkContainer exact to="/MyShoppingList">
-						<NavLink active={false}><NavItem>My Shopping List</NavItem></NavLink>
-					</LinkContainer>
+						<LinkContainer exact  to="/MyCookbook">
+							<NavLink active={false}><NavItem>My Cookbook</NavItem></NavLink>
+						</LinkContainer>
+						<LinkContainer exact to="/MyFridge">
+							<NavLink active={false}><NavItem>My Fridge</NavItem></NavLink>
+						</LinkContainer>
+						<LinkContainer exact to="/MyShoppingList">
+							<NavLink active={false}><NavItem>My Shopping List</NavItem></NavLink>
+						</LinkContainer>
 					</Nav>
+					<Nav className="ml-auto">
+						<LinkContainer exact to="/Login">
+							<NavLink active={false}><NavItem>Login</NavItem></NavLink>
+						</LinkContainer>
+					</Nav>
+
 					{/* <Form inline onSubmit={this.handleSubmit}>
 					<Form.Group controlId="recipeSearchForm">
 						<FormControl onChange={this.handleOnChange} value={this.state.searchTerm} type="text" placeholder="Find Recipes ..." className="mr-sm-3"/>
