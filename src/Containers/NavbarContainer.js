@@ -72,6 +72,9 @@ class NavbarContainer extends Component {
 						<LinkContainer exact to="/Login">
 							<NavLink active={false}><NavItem>Login</NavItem></NavLink>
 						</LinkContainer>
+						<LinkContainer exact to="/SignUp">
+							<NavLink active={false}><NavItem>Sign Up</NavItem></NavLink>
+						</LinkContainer>
 					</Nav>
 
 					{/* <Form inline onSubmit={this.handleSubmit}>
