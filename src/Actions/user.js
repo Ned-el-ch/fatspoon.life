@@ -36,9 +36,12 @@ export const userLoginFetch = user => {
 					localStorage.setItem("token", data.token)
 					let userData = JSON.parse(data.user_data)
 					dispatch({type: "LOGIN_USER", userData })
-						// dispatch(loginUser(JSON.parse(data.user_data)))
+					// returns false to setAlert(false)
+					return false;
+					// dispatch(loginUser(JSON.parse(data.user_data)))
 				} else {
-					//ADD LOGIC TO HANDLE WRONG STUFF
+					// returns true to setAlert(true)
+					return true;
 				}
 			})
 	}
@@ -59,11 +62,13 @@ export const getProfileFetch = () => {
 				.then(res => res.json())
 				.then(data => {
 					if (data.message) {
-						// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
+						return false;
+					// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
 						localStorage.removeItem("token")
 					} else {
 						let userData = JSON.parse(data.user_data)
 						dispatch({type: "LOGIN_USER", userData })
+						return true
 					}
 				})
 		}
