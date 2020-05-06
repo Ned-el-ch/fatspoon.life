@@ -1,6 +1,6 @@
 export const userPostFetch = user => {
 	return dispatch => {
-		return fetch("http://localhost:3000/api/v1/users", {
+		return fetch("http://localhost:4000/api/v1/users", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ export const userPostFetch = user => {
 
 export const userLoginFetch = user => {
 	return dispatch => {
-		return fetch("http://localhost:3000/api/v1/login", {
+		return fetch("http://localhost:4000/api/v1/login", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export const getProfileFetch = () => {
 	return dispatch => {
 		const token = localStorage.token;
 		if (token) {
-			return fetch("http://localhost:3000/api/v1/profile", {
+			return fetch("http://localhost:4000/api/v1/profile", {
 				method: "GET",
 				headers: {
 					'Content-Type': 'application/json',
