@@ -13,9 +13,9 @@ export const userSignUpFetch = user => {
 				if (data.token) {
 					localStorage.setItem("token", data.token)
 					dispatch(loginUser(JSON.parse(data.user_data)))
-					return true
-				} else {
 					return false
+				} else {
+					return true
 					// ADD LOGIC TO HANDLE WRONG STUFF
 				}
 			})
