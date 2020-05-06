@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom'
 import { userSignUpFetch } from '../Actions/user'
 import PageHeader from '../Components/PageHeader'
 
-const SignUpPage = ({ userLoginFetch, user }) => {
+const SignUpPage = ({ userSignUpFetch, user }) => {
 	const [alert, setAlert] = useState(false);
 	let history = useHistory();
 	return (
