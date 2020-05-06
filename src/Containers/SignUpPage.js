@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { userSignUpFetch } from '../Actions/user'
 
-const LoginPage = ({ userLoginFetch, user }) => {
+const SignUpPage = ({ userLoginFetch, user }) => {
 	const [alert, setAlert] = useState(false);
 	let history = useHistory();
 	return (
