@@ -1,4 +1,5 @@
 import * as data from "../Data/demo.json";
+import * as allIngredients from "../Data/ingredients.json";
 
 export default (state = data.ingredients, action) => {
 
@@ -6,13 +7,19 @@ export default (state = data.ingredients, action) => {
 	let index;
 
 	switch (action.type) {
-
+		case "LOAD_INGREDIENTS":
+			let loadedIngredients = action.ingredients.map(ing => {
+				debugger;
+				return allIngredients.default.find(ing => ing.id === ing.ingredient.uuid)
+			})
+			// debugger;
+			return loadedIngredients;
 		case "ADD_INGREDIENTS":
 			let newIngredients = [];
 			action.ingredients.forEach(data => {
 				let arr = state.filter(stateIng => stateIng.id === data.ingredient.id);
 				if (arr.length === 0)
-					newIngredients.push(Object.assign({}, data.ingredient, {quantity: 0}))
+					newIngredients.push(Object.assign({}, data.ingredient, {weight: 0}))
 			})
 			return [...state, ...newIngredients];
 
@@ -24,18 +31,18 @@ export default (state = data.ingredients, action) => {
 			index = state.indexOf(ingredient);
 			return [
 				...state.slice(0, index),
-				Object.assign({}, ingredient, { quantity: ingredient.quantity += action.quantity }),
+				Object.assign({}, ingredient, { weight: ingredient.weight += action.weight }),
 				...state.slice(index + 1)
 			];
 
 		case "DECREASE_INGREDIENT":
 			ingredient = state.find(i => i.id === action.ingredientID);
 			index = state.indexOf(ingredient);
-			if (ingredient.quantity >= action.quantity)
+			if (ingredient.weight >= action.weight)
 			{
 				return [
 					...state.slice(0, index),
-					Object.assign({}, ingredient, { quantity: ingredient.quantity -= action.quantity }),
+					Object.assign({}, ingredient, { weight: ingredient.weight -= action.weight }),
 					...state.slice(index + 1)
 				];
 			}
@@ -43,7 +50,7 @@ export default (state = data.ingredients, action) => {
 			{
 				return [
 					...state.slice(0, index),
-					Object.assign({}, ingredient, { quantity: 0 }),
+					Object.assign({}, ingredient, { weight: 0 }),
 					...state.slice(index + 1)
 				];
 			}

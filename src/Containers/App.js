@@ -16,9 +16,10 @@ import LoginPage from './LoginPage.js';
 import SignUpPage from './SignUpPage.js';
 import { connect } from 'react-redux';
 import { getProfileFetch } from '../Actions/user'
+import { loadIngredients } from '../Actions/ingredients.js';
 
-const App = ({ getProfileFetch }) => {
-	useEffect(() => getProfileFetch(), [])
+const App = ({ getProfileFetch, loadIngredients }) => {
+	useEffect(() => {getProfileFetch().then(loadIngredients)}, [])
 	return (
 		<div className="app-container">
 			<Router>
@@ -44,7 +45,7 @@ const App = ({ getProfileFetch }) => {
 	)
 }
 
-export default connect(null, { getProfileFetch })(App);
+export default connect(null, { getProfileFetch, loadIngredients })(App);
 
 // SAMPLE FETCH TO SIGNUP
 

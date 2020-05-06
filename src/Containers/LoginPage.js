@@ -7,9 +7,10 @@ import Alert from 'react-bootstrap/Alert'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { userLoginFetch } from '../Actions/user'
+import { loadIngredients } from '../Actions/ingredients'
 import PageHeader from '../Components/PageHeader'
 
-const LoginPage = ({ userLoginFetch }) => {
+const LoginPage = ({ userLoginFetch, loadIngredients }) => {
 	const [alert, setAlert] = useState(false);
 	let history = useHistory();
 	return (
@@ -22,8 +23,10 @@ const LoginPage = ({ userLoginFetch }) => {
 				const password = event.target.elements.password.value;
 				userLoginFetch({username, password}).then(res => {
 					setAlert(res);
-					if (!res)
+					if (!res) {
 						history.push("/")
+						loadIngredients(res)
+					}
 				});
 			}}>
 				<Form.Group controlId="username">
@@ -50,4 +53,4 @@ const LoginPage = ({ userLoginFetch }) => {
 	)
 }
 
-export default connect(null, { userLoginFetch })(LoginPage);
+export default connect(null, { userLoginFetch, loadIngredients })(LoginPage);

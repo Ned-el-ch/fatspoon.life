@@ -12,18 +12,25 @@ export const removeIngredient = ingredientID => {
 	}
 }
 
-export const increaseIngredient = (ingredientID, quantity) => {
+export const increaseIngredient = (ingredientID, weight) => {
 	return {
 		type: "INCREASE_INGREDIENT",
 		ingredientID,
-		quantity
+		weight
 	}
 }
 
-export const decreaseIngredient = (ingredientID, quantity) => {
+export const decreaseIngredient = (ingredientID, weight) => {
 	return {
 		type: "DECREASE_INGREDIENT",
 		ingredientID,
-		quantity
+		weight
+	}
+}
+
+export const loadIngredients = ingredients => {
+	return {
+		type: "LOAD_INGREDIENTS",
+		ingredients
 	}
 }

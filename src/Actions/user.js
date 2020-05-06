@@ -1,3 +1,5 @@
+import {loadIngredients} from "./ingredients"
+
 export const userSignUpFetch = user => {
 	return dispatch => {
 		return fetch("http://localhost:4000/api/v1/users", {
@@ -39,7 +41,7 @@ export const userLoginFetch = user => {
 					let userData = JSON.parse(data.user_data)
 					dispatch({type: "LOGIN_USER", userData })
 					// returns false to setAlert(false)
-					return false;
+					return userData.user_ingredients;
 					// dispatch(loginUser(JSON.parse(data.user_data)))
 				} else {
 					// returns true to setAlert(true)
@@ -69,7 +71,7 @@ export const getProfileFetch = () => {
 						return false;
 					} else {
 						dispatch({type: "LOGIN_USER", userData: data })
-						return true
+						return data.user_ingredients
 					}
 				})
 		}
