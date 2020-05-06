@@ -7,6 +7,7 @@ import Alert from 'react-bootstrap/Alert'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { userLoginFetch } from '../Actions/user'
+import PageHeader from '../Components/PageHeader'
 
 const LoginPage = ({ userLoginFetch, user }) => {
 	const [alert, setAlert] = useState(false);
@@ -14,6 +15,7 @@ const LoginPage = ({ userLoginFetch, user }) => {
 	return (
 		<Row>
 		<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+			<PageHeader title="Login"/>
 			<Form onSubmit={(event) => {
 				event.preventDefault();
 				const username = event.target.elements.username.value;
