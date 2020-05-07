@@ -28,15 +28,27 @@ const App = ({ getProfileFetch }) => {
 					<Row className="align-self-start justify-content-center">
 					<Col xs sm md lg={10} xl={8} className="col-xxl">
 						<Switch>
-							<Route exact path="/" component={HomePage} />
-							{/* <Route exact path="/" component={MealPlannerContainer} /> */}
-							<Route exact path="/MyCookbook" component={Cookbook} />
-							<Route exact path="/MyFridge" component={Fridge} />
-							<Route exact path="/MyShoppingList" component={ShoppingListContainer} />
-							<Route exact path="/Login" component={LoginPage} />
-							<Route exact path="/SignUp" component={SignUpPage} />
-							<Route path="/Recipes" component={RecipePage} />
-							{/* <Route exact path="/Search" component={SearchResults} /> */}
+							<Route exact path="/">
+								<HomePage/>
+							</Route>
+							<Route exact path="/MyCookbook">
+								<Cookbook/>
+							</Route>
+							<Route exact path="/MyFridge">
+								<Fridge/>
+							</Route>
+							<Route exact path="/MyShoppingList">
+								<ShoppingListContainer/>
+							</Route>
+							<Route exact path="/Login">
+								<LoginPage/>
+							</Route>
+							<Route exact path="/SignUp">
+								<SignUpPage/>
+							</Route>
+							<Route path="/Recipes">
+								<RecipePage/>
+							</Route>
 						</Switch>
 					</Col>
 					</Row>
