@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addIngredients } from '../Actions/ingredients';
+import { addNewIngredients } from '../Actions/ingredients';
 import chroma from 'chroma-js';
 import Select, { createFilter, components } from 'react-select';
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
@@ -139,7 +139,7 @@ const AnimatedSelect = (props) => {
 			?
 			<div className="add-to-fridge-container">
 				<button className="button-add-to-fridge" onClick={() => {
-					props.addIngredients(selectedOptions.toAdd);
+					props.addNewIngredients(selectedOptions.toAdd, props.ingredients);
 					setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
 					setSelectedOptions({toAdd: null});
 				}}>Add To My Fridge!</button>
@@ -159,4 +159,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps, { addIngredients })(AnimatedSelect);
+export default connect(mapStateToProps, { addNewIngredients })(AnimatedSelect);

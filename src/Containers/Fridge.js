@@ -22,7 +22,7 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 					{ingredients.map(ingredient => {
 						return(
 							<IngredientCard
-								key={ingredient.id}
+								key={ingredient.uuid}
 								ingredient={ingredient}
 								removeIngredient={removeIngredient}
 								increaseIngredient={increaseIngredient}
