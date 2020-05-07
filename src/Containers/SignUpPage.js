@@ -31,9 +31,6 @@ const SignUpPage = ({ userSignUpFetch }) => {
 				<Form.Group controlId="username">
 					<Form.Label>Username</Form.Label>
 					<Form.Control type="username" placeholder="This can be anything you want"/>
-					<Form.Text className="text-muted">
-							Case sensitive
-						</Form.Text>
 				</Form.Group>
 				<Form.Group controlId="password">
 					<Form.Label>Password</Form.Label>

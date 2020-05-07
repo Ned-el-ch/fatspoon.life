@@ -19,7 +19,7 @@ const LoginPage = ({ userLoginFetch, loadIngredients }) => {
 			<PageHeader title="Login"/>
 			<Form onSubmit={(event) => {
 				event.preventDefault();
-				const username = event.target.elements.username.value;
+				const username = event.target.elements.username.value.toLocaleLowerCase();
 				const password = event.target.elements.password.value;
 				userLoginFetch({username, password}).then(res => {
 					if (res.length === undefined) {
@@ -33,9 +33,6 @@ const LoginPage = ({ userLoginFetch, loadIngredients }) => {
 				<Form.Group controlId="username">
 					<Form.Label>Username</Form.Label>
 					<Form.Control type="username" placeholder="Enter Username"/>
-						<Form.Text className="text-muted">
-							Case sensitive
-						</Form.Text>
 				</Form.Group>
 				<Form.Group controlId="password">
 					<Form.Label>Password</Form.Label>
