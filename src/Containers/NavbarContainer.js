@@ -52,13 +52,15 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 				<Nav className="ml-auto">
 					{user
 					?
-					<LinkContainer exact to="/MyProfile">
-						<NavDropdown drop="left" title={user.username} id="basic-nav-dropdown">
-							
+					<NavDropdown drop="left" title={user.username} id="basic-nav-dropdown">
+						<LinkContainer exact to="/MyProfile">
 							<NavDropdown.Item href="/MyProfile">My Profile</NavDropdown.Item>
-							<NavDropdown.Item href="#" onClick={() => {logoutUser();clearIngredients();history.push("/")}}>Log Out</NavDropdown.Item>
-						</NavDropdown>
-					</LinkContainer>
+						</LinkContainer>
+						<LinkContainer exact to="/About">
+							<NavDropdown.Item href="/About">About App</NavDropdown.Item>
+						</LinkContainer>
+						<NavDropdown.Item href="#" onClick={() => {logoutUser();clearIngredients();history.push("/")}}>Log Out</NavDropdown.Item>
+					</NavDropdown>
 					:
 					<Fragment>
 						<LinkContainer exact to="/Login">
