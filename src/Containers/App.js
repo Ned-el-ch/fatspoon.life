@@ -17,9 +17,37 @@ import SignUpPage from './SignUpPage.js';
 import { connect } from 'react-redux';
 import { getProfileFetch } from '../Actions/user'
 import HomePage from './HomePage.js';
+import { loadIngredients } from "../Actions/ingredients.js"
+import { loginUser } from "../Actions/user.js"
 
-const App = ({ getProfileFetch }) => {
-	useEffect(() => {getProfileFetch()}, [])
+const App = ({ loginUser, loadIngredients }) => {
+	useEffect(() => {
+		const token = localStorage.token;
+		if (token) {
+			const fetchProfile = () => {
+			return fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
+				method: "GET",
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+					'Authorization': `Bearer ${token}`
+				}
+			})
+				.then(res => res.json())
+				.then(userData => {
+					if (userData.message) {
+						// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
+						localStorage.removeItem("token")
+						return false;
+					} else {
+						loginUser(userData)
+						loadIngredients(userData.user_ingredients)
+					}
+				})
+			}
+			fetchProfile()
+		}
+	}, [])
 	return (
 		<div className="app-container">
 			<Router>
@@ -58,7 +86,7 @@ const App = ({ getProfileFetch }) => {
 	)
 }
 
-export default connect(null, { getProfileFetch })(App);
+export default connect(null, { loginUser, loadIngredients })(App);
 
 // SAMPLE FETCH TO SIGNUP
 
