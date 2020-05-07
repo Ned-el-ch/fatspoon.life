@@ -80,9 +80,14 @@ export const getProfileFetch = () => {
 	}
 }
 
-export const logoutUser = () => ({
-  type: 'LOGOUT_USER'
-})
+export const logoutUser = () => {
+	localStorage.removeItem("token");
+	return (
+		{
+			type: 'LOGOUT_USER'
+		}
+	)
+}
 
 const loginUser = userData => ({
 		type: 'LOGIN_USER',
