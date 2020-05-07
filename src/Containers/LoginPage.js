@@ -22,8 +22,8 @@ const LoginPage = ({ userLoginFetch, loadIngredients }) => {
 				const username = event.target.elements.username.value;
 				const password = event.target.elements.password.value;
 				userLoginFetch({username, password}).then(res => {
-					setAlert(res);
-					if (!res) {
+					setAlert(!res);
+					if (res) {
 						history.push("/")
 						loadIngredients(res)
 					}
