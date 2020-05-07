@@ -1,5 +1,3 @@
-import { loadIngredients } from "./ingredients.js"
-
 export const userSignUpFetch = user => {
 	return dispatch => {
 		return fetch("https://calm-brook-68370.herokuapp.com/api/v1/users", {
@@ -52,34 +50,6 @@ export const userLoginFetch = user => {
 	}
 }
 
-export const getProfileFetch = () => {
-	return dispatch => {
-		const token = localStorage.token;
-		if (token) {
-			return fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
-				method: "GET",
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-					'Authorization': `Bearer ${token}`
-				}
-			})
-				.then(res => res.json())
-				.then(data => {
-					if (data.message) {
-						// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
-						localStorage.removeItem("token")
-						return false;
-					} else {
-						dispatch({type: "LOGIN_USER", userData: data })
-						loadIngredients(data.user_data)
-					}
-				})
-
-		}
-	}
-}
-
 export const logoutUser = () => {
 	localStorage.removeItem("token");
 	return (
@@ -89,7 +59,7 @@ export const logoutUser = () => {
 	)
 }
 
-const loginUser = userData => ({
+export const loginUser = userData => ({
 		type: 'LOGIN_USER',
 		userData
 })
