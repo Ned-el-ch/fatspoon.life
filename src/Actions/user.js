@@ -12,7 +12,6 @@ export const userSignUpFetch = user => {
 			.then(data => {
 				if (data.token) {
 					localStorage.setItem("token", data.token)
-					debugger
 					dispatch(loginUser(JSON.parse(data.user_data)))
 					return false
 				} else {

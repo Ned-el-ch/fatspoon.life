@@ -30,11 +30,14 @@ const SignUpPage = ({ userSignUpFetch }) => {
 			}}>
 				<Form.Group controlId="username">
 					<Form.Label>Username</Form.Label>
-					<Form.Control type="username" placeholder="Enter Username"/>
+					<Form.Control type="username" placeholder="This can be anything you want"/>
+					<Form.Text className="text-muted">
+							Case sensitive
+						</Form.Text>
 				</Form.Group>
 				<Form.Group controlId="password">
 					<Form.Label>Password</Form.Label>
-					<Form.Control type="password" placeholder="Password"/>
+					<Form.Control type="password" placeholder="Make sure it's secure!"/>
 				</Form.Group>
 				<Button variant="primary" type="submit">
 					Sign Up
