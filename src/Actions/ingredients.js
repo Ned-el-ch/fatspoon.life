@@ -35,6 +35,12 @@ export const loadIngredients = ingredients => {
 	}
 }
 
+export const clearIngredients = () => {
+	return {
+		type: "CLEAR_INGREDIENTS"
+	}
+}
+
 export const addNewIngredients = (newIngredients, allIngredients) => {
 	if (localStorage.token) {
 		let ingredients = [];

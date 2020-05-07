@@ -17,6 +17,8 @@ export default (state = data.ingredients, action) => {
 
 	switch (action.type) {
 
+		case "CLEAR_INGREDIENTS":
+			return [];
 		case "LOAD_INGREDIENTS":
 			newState = action.ingredients.map(ing => {
 				return Object.assign({}, allIngredients.default.find(i => i.uuid === ing.ingredient.uuid), {weight: ing.weight})
