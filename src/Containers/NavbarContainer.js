@@ -29,6 +29,8 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 			</LinkContainer>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
+				{user
+				?
 				<Nav className="mr-auto">
 					<LinkContainer exact to="/MyCookbook">
 						<NavLink active={false}><NavItem>My Cookbook</NavItem></NavLink>
@@ -40,6 +42,9 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 						<NavLink active={false}><NavItem>My Shopping List</NavItem></NavLink>
 					</LinkContainer>
 				</Nav>
+				:
+				null
+				}
 				<Nav className="ml-auto">
 					{user
 					?

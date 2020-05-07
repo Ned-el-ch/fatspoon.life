@@ -19,7 +19,7 @@ import { connect } from 'react-redux';
 import HomePage from './HomePage.js';
 import { loadIngredients } from "../Actions/ingredients.js"
 import { loginUser } from "../Actions/user.js"
-import MissingPage from './MissingPage.js';
+import AboutPage from './AboutPage.js';
 
 const App = ({ user, loginUser, loadIngredients }) => {
 	useEffect(() => {
@@ -58,6 +58,9 @@ const App = ({ user, loginUser, loadIngredients }) => {
 							<Route exact path="/">
 								<HomePage/>
 							</Route>
+							{user
+							?
+							<Fragment>
 							<Route exact path="/MyCookbook">
 								<Cookbook/>
 							</Route>
@@ -70,9 +73,10 @@ const App = ({ user, loginUser, loadIngredients }) => {
 							<Route path="/Recipes">
 								<RecipePage/>
 							</Route>
-							{user
-							?
-							null
+							<Route>
+								<AboutPage/>
+							</Route>
+							</Fragment>
 							:
 							<Fragment>
 							<Route exact path="/Login">
@@ -81,11 +85,11 @@ const App = ({ user, loginUser, loadIngredients }) => {
 							<Route exact path="/SignUp">
 								<SignUpPage/>
 							</Route>
+							<Route>
+								<AboutPage/>
+							</Route>
 							</Fragment>
 							}
-							<Route>
-								<MissingPage/>
-							</Route>
 						</Switch>
 					</Col>
 					</Row>
