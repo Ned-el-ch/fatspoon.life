@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Fridge from './Fridge.js';
 import Cookbook from './Cookbook.js';
-import MealPlannerContainer from './MealPlannerContainer.js';
+// import MealPlannerContainer from './MealPlannerContainer.js';
 // import SearchResults from './SearchResults.js';
 import NavbarContainer from './NavbarContainer.js';
 
@@ -16,6 +16,7 @@ import LoginPage from './LoginPage.js';
 import SignUpPage from './SignUpPage.js';
 import { connect } from 'react-redux';
 import { getProfileFetch } from '../Actions/user'
+import HomePage from './HomePage.js';
 
 const App = ({ getProfileFetch }) => {
 	useEffect(() => {getProfileFetch()}, [])
@@ -27,7 +28,8 @@ const App = ({ getProfileFetch }) => {
 					<Row className="align-self-start justify-content-center">
 					<Col xs sm md lg={10} xl={8} className="col-xxl">
 						<Switch>
-							<Route exact path="/" component={MealPlannerContainer} />
+							<Route exact path="/" component={HomePage} />
+							{/* <Route exact path="/" component={MealPlannerContainer} /> */}
 							<Route exact path="/MyCookbook" component={Cookbook} />
 							<Route exact path="/MyFridge" component={Fridge} />
 							<Route exact path="/MyShoppingList" component={ShoppingListContainer} />
