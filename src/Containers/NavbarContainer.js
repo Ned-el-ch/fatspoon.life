@@ -1,19 +1,23 @@
 import React, { Fragment } from 'react'
+import { connect } from 'react-redux';
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavItem from "react-bootstrap/NavItem"
 import NavLink from "react-bootstrap/NavLink"
+import NavDropdown from "react-bootstrap/NavDropdown"
+import { LinkContainer } from "react-router-bootstrap";
+import { useHistory } from "react-router-dom";
+
+import { logoutUser } from "../Actions/user";
+
 // import Button from "react-bootstrap/Button"
 // import Form from "react-bootstrap/Form"
 // import FormControl from "react-bootstrap/FormControl"
-import { LinkContainer } from "react-router-bootstrap";
 
-import { connect } from 'react-redux';
 // import { addRecipeResults } from "../Actions/search";
 
-import { useHistory } from "react-router-dom";
 
-const NavbarContainer = ({ user }) => {
+const NavbarContainer = ({ user, logoutUser }) => {
 	let history = useHistory();
 	return (
 		<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
@@ -39,7 +43,11 @@ const NavbarContainer = ({ user }) => {
 					{user
 					?
 					<LinkContainer exact to="/MyProfile">
-						<NavLink active={false}><NavItem>{user.username}</NavItem></NavLink>
+						<NavDropdown drop="left" title={user.username} id="basic-nav-dropdown">
+							
+							<NavDropdown.Item href="/MyProfile">My Profile</NavDropdown.Item>
+							<NavDropdown.Item href="/" onClick={logoutUser}>Log Out</NavDropdown.Item>
+						</NavDropdown>
 					</LinkContainer>
 					:
 					<Fragment>
@@ -73,4 +81,4 @@ const mapStateToProps = state => {
 		}
 	)
 }
-export default connect(mapStateToProps)(NavbarContainer);
+export default connect(mapStateToProps, { logoutUser })(NavbarContainer);
