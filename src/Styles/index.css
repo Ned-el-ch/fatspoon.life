@@ -602,9 +602,9 @@ a:hover {
   text-align: justify;
 }
 
-.hp-app-get-started {
-  font-size: calc(1.8rem + (2.4 - 1.8) * ((100vw - 300px) / (1600 - 300)));
-  font-weight: 300;
+.hp-app-get-started-container {
+  margin-top: 20px;
+  font-size: 1rem;
 }
 
 .ap-contact {

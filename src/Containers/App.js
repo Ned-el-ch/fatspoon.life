@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Fridge from './Fridge.js';
 import Cookbook from './Cookbook.js';
@@ -56,7 +56,7 @@ const App = ({ user, loginUser, loadIngredients }) => {
 					<Col xs sm md lg={10} xl={8} className="col-xxl">
 						<Switch>
 							<Route exact path="/">
-								<HomePage/>
+								<HomePage userIsLoggedIn={user}/>
 							</Route>
 							{user
 							?
@@ -76,7 +76,6 @@ const App = ({ user, loginUser, loadIngredients }) => {
 							<Route exact path="/About">
 								<AboutPage/>
 							</Route>
-							<Redirect exact from="/" to="About" />
 							</Fragment>
 							:
 							<Fragment>
@@ -89,7 +88,6 @@ const App = ({ user, loginUser, loadIngredients }) => {
 							<Route exact path="/About">
 								<AboutPage/>
 							</Route>
-							<Redirect exact from="/" to="About" />
 							</Fragment>
 							}
 						</Switch>
