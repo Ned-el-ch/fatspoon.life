@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
+import { unregister } from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Styles/index.css';
@@ -20,4 +21,4 @@ ReactDOM.render(
 	document.getElementById('root')
 )
 
-serviceWorker.unregister();
+unregister();
