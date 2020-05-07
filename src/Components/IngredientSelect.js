@@ -48,7 +48,7 @@ colors: {
 const IngredientSelect = ({ingredients, defaultOptionIndex, handleOnChange}) => {
 	const initialSelectedOption = {toAdd: null};
 	const [selectedOption, setSelectedOption] = useState(initialSelectedOption);
-	const [availableOptions, setAvailableOptions] = useState(initialOptionsToRender(ingredients));
+	const [availableOptions] = useState(initialOptionsToRender(ingredients));
 	return (
 		<Select
 			isMulti={false}

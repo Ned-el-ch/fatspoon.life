@@ -15,7 +15,7 @@ import RecipePage from './RecipePage.js';
 import LoginPage from './LoginPage.js';
 import SignUpPage from './SignUpPage.js';
 import { connect } from 'react-redux';
-import { getProfileFetch } from '../Actions/user'
+// import { getProfileFetch } from '../Actions/user'
 import HomePage from './HomePage.js';
 import { loadIngredients } from "../Actions/ingredients.js"
 import { loginUser } from "../Actions/user.js"
@@ -36,9 +36,7 @@ const App = ({ loginUser, loadIngredients }) => {
 				.then(res => res.json())
 				.then(userData => {
 					if (userData.message) {
-						// IF AN ERROR MESSAGE IS RECEIVED, CLEAR TOKEN
 						localStorage.removeItem("token")
-						return false;
 					} else {
 						loginUser(userData)
 						loadIngredients(userData.user_ingredients)
