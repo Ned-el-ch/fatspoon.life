@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Fridge from './Fridge.js';
@@ -19,8 +19,9 @@ import { connect } from 'react-redux';
 import HomePage from './HomePage.js';
 import { loadIngredients } from "../Actions/ingredients.js"
 import { loginUser } from "../Actions/user.js"
+import MissingPage from './MissingPage.js';
 
-const App = ({ loginUser, loadIngredients }) => {
+const App = ({ user, loginUser, loadIngredients }) => {
 	useEffect(() => {
 		const token = localStorage.token;
 		if (token) {
@@ -66,14 +67,24 @@ const App = ({ loginUser, loadIngredients }) => {
 							<Route exact path="/MyShoppingList">
 								<ShoppingListContainer/>
 							</Route>
+							<Route path="/Recipes">
+								<RecipePage/>
+							</Route>
+							{user
+							?
+							null
+							:
+							<Fragment>
 							<Route exact path="/Login">
 								<LoginPage/>
 							</Route>
 							<Route exact path="/SignUp">
 								<SignUpPage/>
 							</Route>
-							<Route path="/Recipes">
-								<RecipePage/>
+							</Fragment>
+							}
+							<Route>
+								<MissingPage/>
 							</Route>
 						</Switch>
 					</Col>
@@ -84,7 +95,13 @@ const App = ({ loginUser, loadIngredients }) => {
 	)
 }
 
-export default connect(null, { loginUser, loadIngredients })(App);
+const mapStateToProps = state => {
+	return (
+		{user: state.user}
+	)
+}
+
+export default connect(mapStateToProps, { loginUser, loadIngredients })(App);
 
 // SAMPLE FETCH TO SIGNUP
 
