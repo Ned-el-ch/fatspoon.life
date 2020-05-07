@@ -608,7 +608,7 @@ a:hover {
 }
 
 .ap-contact {
-  font-size: calc(1.8rem + (2.4 - 1.8) * ((100vw - 300px) / (1600 - 300)));
+  font-size: 1rem;
 }
 
 .ap-description {
