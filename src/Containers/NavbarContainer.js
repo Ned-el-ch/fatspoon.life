@@ -46,7 +46,7 @@ const NavbarContainer = ({ user, logoutUser }) => {
 						<NavDropdown drop="left" title={user.username} id="basic-nav-dropdown">
 							
 							<NavDropdown.Item href="/MyProfile">My Profile</NavDropdown.Item>
-							<NavDropdown.Item href="/" onClick={logoutUser}>Log Out</NavDropdown.Item>
+							<NavDropdown.Item href="#" onClick={() => {logoutUser();history.push("/")}}>Log Out</NavDropdown.Item>
 						</NavDropdown>
 					</LinkContainer>
 					:
