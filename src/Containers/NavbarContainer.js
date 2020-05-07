@@ -43,7 +43,11 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 					</LinkContainer>
 				</Nav>
 				:
-				null
+				<Nav className="mr-auto">
+					<LinkContainer exact to="/About">
+						<NavLink active={false}><NavItem>About</NavItem></NavLink>
+					</LinkContainer>
+				</Nav>
 				}
 				<Nav className="ml-auto">
 					{user
