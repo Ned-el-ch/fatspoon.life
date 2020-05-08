@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
 import PageHeader from '../Components/PageHeader'
 import { useLocation } from 'react-router-dom'
 
-const RecipePage = (props) => {
+const RecipePage = () => {
 	const location = useLocation().pathname.split("-")
 	const uuid = location[location.length - 1]
 	const [recipe, setRecipe] = useState({})
@@ -25,4 +24,4 @@ const RecipePage = (props) => {
 	)
 }
 
-export default connect()(RecipePage)
+export default RecipePage
