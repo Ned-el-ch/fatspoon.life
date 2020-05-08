@@ -32,7 +32,7 @@ const RecipePage = () => {
 				<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
 					<img className="rp-image" src={recipe.imageLink} alt=""/>
 				</Col>
-				<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
+				{/* <Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
 					<div className="rp-subheading-container">
 						<span className="rp-subheading">What to expect</span>
 					</div>
@@ -64,7 +64,7 @@ const RecipePage = () => {
 							{rightList}
 						</ul>
 					</div>
-				</Col>
+				</Col> */}
 				<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 					<div className="rp-subheading-container">
 						<span className="rp-subheading">Instructions</span>
