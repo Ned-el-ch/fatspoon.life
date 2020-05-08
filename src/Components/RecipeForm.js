@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import IngredientSelect from './IngredientSelect'
-import { InputGroup, FormControl, Row, Col } from "react-bootstrap";
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 import { uuid } from '../Concerns/uuid'
 
