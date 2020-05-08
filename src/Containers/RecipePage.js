@@ -32,24 +32,16 @@ const RecipePage = () => {
 				<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
 					<img className="rp-image" src={recipe.imageLink} alt=""/>
 				</Col>
-				{/* <Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
+				<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
 					<div className="rp-subheading-container">
 						<span className="rp-subheading">What to expect</span>
 					</div>
 					<span className="rp-description">{recipe.description}</span>
 					{recipe.recipe_ingredients.map((item, index) => {
 						if (index === 0 || index % 2 === 0) {
-							leftList.push(
-							<li key={item.ingredient.uuid}>
-								<span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}
-							</li>
-						)
+							leftList.push(<li key={item.ingredient.uuid}><span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}</li>)
 						} else {
-							rightList.push(
-							<li key={item.ingredient.uuid}>
-								<span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}
-							</li>
-							)
+							rightList.push(<li key={item.ingredient.uuid}><span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}</li>)
 						}
 					}
 					)}
@@ -64,18 +56,14 @@ const RecipePage = () => {
 							{rightList}
 						</ul>
 					</div>
-				</Col> */}
+				</Col>
 				<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 					<div className="rp-subheading-container">
 						<span className="rp-subheading">Instructions</span>
 					</div>
 					<ol className="rp-instructions-ol">
 						{recipe.instructions.split("|||").map((item, index) => {
-							return (
-								<li key={index}>
-										{item}
-								</li>
-							)
+							return (<li key={index}>{item}</li>)
 						})}
 					</ol>
 				</Col>
