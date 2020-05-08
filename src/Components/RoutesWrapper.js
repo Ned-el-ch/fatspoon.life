@@ -28,6 +28,7 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/Login"><LoginPage/></Route>
 				<Route exact path="/SignUp"><SignUpPage/></Route>
 				<Route exact path="/About"><AboutPage/></Route>
+				<Route path="/Recipes"><RecipePage/></Route>
 			</Switch>
 		)
 	}
