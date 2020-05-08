@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 const createLabels = (recipe, ingredients) => {
 	let availableIngredients = [];
 	recipe.ingredients.forEach(ri => {
-		let ing = ingredients.find(i => i.uuid === ri.uuid);
+		let ing = ingredients.find(i => i.uuid === ri.uuid && i.weight >= ri.weight);
 		if (ing)
 			availableIngredients.push(ing);
 	});
