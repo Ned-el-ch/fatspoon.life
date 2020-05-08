@@ -83,7 +83,7 @@
 	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
 	font-size: $labelFontSize;
 	font-weight: 600;
-	padding: 0 0 44px 0;
+	padding: 0;
 	margin-top: 10px;
 	user-select: none;
 	&:hover {
