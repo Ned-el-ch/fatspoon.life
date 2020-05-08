@@ -1,8 +1,9 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import PageHeader from '../Components/PageHeader'
-import { useLocation } from 'react-router-dom'
+import { useLocation, withRouter } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { connect } from 'react-redux'
 
 const RecipePage = () => {
 	const location = useLocation().pathname.split("-")
@@ -87,4 +88,4 @@ const RecipePage = () => {
 	)
 }
 
-export default RecipePage
+export default withRouter(connect()(RecipePage))

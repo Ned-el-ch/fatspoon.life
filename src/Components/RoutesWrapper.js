@@ -17,8 +17,8 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/MyCookbook"><Cookbook/></Route>
 				<Route exact path="/MyFridge"><Fridge/></Route>
 				<Route exact path="/MyShoppingList"><ShoppingListPage/></Route>
-				<Route path="/Recipes"><RecipePage/></Route>
 				<Route exact path="/About"><AboutPage/></Route>
+				<Route path="/Recipes"><RecipePage/></Route>
 			</Switch>
 		)
 	} else {
