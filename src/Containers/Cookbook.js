@@ -31,8 +31,9 @@ const generateLink = recipe => {
 const Cookbook = (props) => {
 	const { recipes, ingredients, starRecipe, unstarRecipe } = props;
 	return (
-		<div className="cookbook-container">
+		<div className="content cookbook-container">
 			<PageHeader title="My Cookbook"/>
+			<div className="content--inner">
 			<RecipeFormContainer />
 			<Row>
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
@@ -48,6 +49,7 @@ const Cookbook = (props) => {
 				)}
 			</Col>
 			</Row>
+			</div>
 		</div>
 	)
 }

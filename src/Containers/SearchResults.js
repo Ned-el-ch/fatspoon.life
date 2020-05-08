@@ -7,16 +7,18 @@ import RecipeCard from '../Components/RecipeCard.js';
 const SearchResults = (props) => {
 	const { recipes, starRecipe, unstarRecipe } = props;
 	return (
-		<div className="search-results-container">
+		<div className="content search-results-container">
 			<PageHeader title="Search Results"/>
-			{recipes.map(recipe => 
-				<RecipeCard
-					key={recipe.uri}
-					recipe={recipe}
-					starRecipe={starRecipe}
-					unstarRecipe={unstarRecipe}
-				/>
-			)}
+			<div className="content--inner">
+				{recipes.map(recipe => 
+					<RecipeCard
+						key={recipe.uri}
+						recipe={recipe}
+						starRecipe={starRecipe}
+						unstarRecipe={unstarRecipe}
+					/>
+				)}
+			</div>
 		</div>
 	)
 }

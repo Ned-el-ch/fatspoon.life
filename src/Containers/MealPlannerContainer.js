@@ -8,19 +8,21 @@ import { Link } from 'react-router-dom';
 
 const MealPlannerContainer = ({ recipeCount, ingredientCount }) => {
 	return (
-		<div className="meal-planner-container">
+		<div className="content meal-planner-container">
 			<PageHeader title="Welcome to Fatspoon!"/>
-			{/* <PageHeader title="My Meal Planner"/> */}
-			{recipeCount !== 0
-			?
-			<div>
-				<MealPlanner />
+			<div className="content--inner">
+				{/* <PageHeader title="My Meal Planner"/> */}
+				{recipeCount !== 0
+				?
+				<div>
+					<MealPlanner />
+				</div>
+				:
+				<div>
+					<Link to="/MyCookbook">Add some recipes first!</Link>
+				</div>
+				}
 			</div>
-			:
-			<div>
-				<Link to="/MyCookbook">Add some recipes first!</Link>
-			</div>
-			}
 		</div>
 	)
 }

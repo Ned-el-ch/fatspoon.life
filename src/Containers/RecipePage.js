@@ -8,8 +8,11 @@ const RecipePage = (props) => {
 	// useHistory FOR THE ADDRESS I GUESS
 	// useEffect(() => {FETCH THE SPECIFIC PAGE USING THE UUID IN THE ADDRESS}, [])
 	return (
-		<div>
+		<div className="content">
 			<PageHeader title={"12 Pancakes with Nutella and Berries"}/>
+			<div className="content--inner">
+
+			</div>
 		</div>
 	)
 }

@@ -5,9 +5,11 @@ import PageHeader from '../Components/PageHeader'
 
 const ShoppingListContainer = () => {
 	return (
-		<div className="shopping-list-container">
-			<PageHeader title="My Shopping List"/>
-			<ShoppingList />
+		<div className="content shopping-list-container">
+			<div className="content--inner">
+				<PageHeader title="My Shopping List"/>
+				<ShoppingList />
+			</div>
 		</div>
 	)
 }

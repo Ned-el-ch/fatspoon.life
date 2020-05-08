@@ -7,29 +7,30 @@ import { removeIngredient, increaseIngredient, decreaseIngredient } from '../Act
 
 const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngredient}) => {
 	return (
-		<div className="fridge-container">
+		<div className="content fridge-container">
 			<PageHeader title="My Fridge"/>
-			{/*
-			CHECK IF THE USER HAS ANY INGREDIENTS IN THEIR FRIDGE, IF NOT RENDER
-			"LOOKS LIKE YOU DON'T HAVE INGREDIENTS YET, WHAT WOULD YOU LIKE TO ADD?"
-			*/}
-			<AnimatedSelect/>
-			<div className="fridge-ingredients-container">
-				<div className="fridge-ingredients-filter">
-
-				</div>
-				<div className="fridge-ingredients">
-					{ingredients.map(ingredient => {
-						return(
-							<IngredientCard
-								key={ingredient.uuid}
-								ingredient={ingredient}
-								removeIngredient={removeIngredient}
-								increaseIngredient={increaseIngredient}
-								decreaseIngredient={decreaseIngredient}
-							/>
-						)
-					})}
+			<div className="content--inner">
+				{/*
+				CHECK IF THE USER HAS ANY INGREDIENTS IN THEIR FRIDGE, IF NOT RENDER
+				"LOOKS LIKE YOU DON'T HAVE INGREDIENTS YET, WHAT WOULD YOU LIKE TO ADD?"
+				*/}
+				<AnimatedSelect/>
+				<div className="fridge-ingredients-container">
+					<div className="fridge-ingredients-filter">
+					</div>
+					<div className="fridge-ingredients">
+						{ingredients.map(ingredient => {
+							return(
+								<IngredientCard
+									key={ingredient.uuid}
+									ingredient={ingredient}
+									removeIngredient={removeIngredient}
+									increaseIngredient={increaseIngredient}
+									decreaseIngredient={decreaseIngredient}
+								/>
+							)
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

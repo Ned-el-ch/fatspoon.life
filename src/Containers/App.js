@@ -1,10 +1,11 @@
 import React, { useEffect, Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { TransitionGroup, Transition } from "react-transition-group";
+import { play, exit } from "../Concerns/animations"
+
 
 import Fridge from './Fridge.js';
 import Cookbook from './Cookbook.js';
-// import MealPlannerContainer from './MealPlannerContainer.js';
-// import SearchResults from './SearchResults.js';
 import NavbarContainer from './NavbarContainer.js';
 
 import Container from "react-bootstrap/Container"
@@ -15,7 +16,6 @@ import RecipePage from './RecipePage.js';
 import LoginPage from './LoginPage.js';
 import SignUpPage from './SignUpPage.js';
 import { connect } from 'react-redux';
-// import { getProfileFetch } from '../Actions/user'
 import HomePage from './HomePage.js';
 import { loadIngredients } from "../Actions/ingredients.js"
 import { loginUser } from "../Actions/user.js"
@@ -48,54 +48,61 @@ const App = ({ user, loginUser, loadIngredients }) => {
 		}
 	}, [])
 	return (
+		<Router>
 		<div className="app-container">
-			<Router>
 				<NavbarContainer />
 				<Container fluid>
 					<Row className="align-self-start justify-content-center">
 					<Col xs sm md lg={10} xl={8} className="col-xxl">
-						<Switch>
-							<Route exact path="/">
-								<HomePage userIsLoggedIn={user}/>
-							</Route>
-							{user
-							?
-							<Fragment>
-							<Route exact path="/MyCookbook">
-								<Cookbook/>
-							</Route>
-							<Route exact path="/MyFridge">
-								<Fridge/>
-							</Route>
-							<Route exact path="/MyShoppingList">
-								<ShoppingListContainer/>
-							</Route>
-							<Route path="/Recipes">
-								<RecipePage/>
-							</Route>
-							<Route exact path="/About">
-								<AboutPage/>
-							</Route>
-							</Fragment>
-							:
-							<Fragment>
-							<Route exact path="/Login">
-								<LoginPage/>
-							</Route>
-							<Route exact path="/SignUp">
-								<SignUpPage/>
-							</Route>
-							<Route exact path="/About">
-								<AboutPage/>
-							</Route>
-							</Fragment>
+						<Route render={({location}) => {
+							const { pathname, key } = location;
+							if (user) {
+								return (
+								<TransitionGroup component={null}>
+								<Transition
+									key={key}
+									appear={true}
+									onEnter={(node, appears) => play(pathname, node, appears)}
+									onExit={(node, appears) => exit(node, appears)}
+									timeout={{enter: 100, exit: 50}}
+								>
+									<Switch location={location}>
+										<Route exact path="/"><HomePage userIsLoggedIn={user}/></Route>
+										<Route exact path="/MyCookbook"><Cookbook/></Route>
+										<Route exact path="/MyFridge"><Fridge/></Route>
+										<Route exact path="/MyShoppingList"><ShoppingListContainer/></Route>
+										<Route path="/Recipes"><RecipePage/></Route>
+										<Route exact path="/About"><AboutPage/></Route>
+									</Switch>
+								</Transition>
+								</TransitionGroup>
+								)
+							} else {
+								return (
+									<TransitionGroup component={null}>
+									<Transition
+										key={key}
+										appear={true}
+										onEnter={(node, appears) => play(pathname, node, appears)}
+										onExit={(node, appears) => exit(node, appears)}
+										timeout={{enter: 100, exit: 50}}
+									>
+										<Switch location={location}>
+											<Route exact path="/"><HomePage userIsLoggedIn={user}/></Route>
+											<Route exact path="/Login"><LoginPage/></Route>
+											<Route exact path="/SignUp"><SignUpPage/></Route>
+											<Route exact path="/About"><AboutPage/></Route>
+										</Switch>
+									</Transition>
+									</TransitionGroup>
+								)
 							}
-						</Switch>
+						}}/>
 					</Col>
 					</Row>
 				</Container>
-			</Router>
 		</div>
+		</Router>
 	)
 }
 
