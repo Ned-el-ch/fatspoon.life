@@ -88,4 +88,4 @@ const RecipePage = () => {
 	)
 }
 
-export default withRouter(connect()(RecipePage))
+export default withRouter(connect(null)(RecipePage))
