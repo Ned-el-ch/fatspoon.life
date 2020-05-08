@@ -18,7 +18,7 @@ const RecipePage = (props) => {
 	}, [])
 	return (
 		<div className="content">
-			<PageHeader title={""}/>
+			<PageHeader title={recipe.title}/>
 			<div className="content--inner">
 			</div>
 		</div>
