@@ -1,17 +1,25 @@
-import React from 'react'
-// import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import PageHeader from '../Components/PageHeader'
-// import { useHistory } from 'react-router'
+import { useLocation } from 'react-router-dom'
 
 const RecipePage = (props) => {
-	// useHistory FOR THE ADDRESS I GUESS
-	// useEffect(() => {FETCH THE SPECIFIC PAGE USING THE UUID IN THE ADDRESS}, [])
+	const location = useLocation().pathname.split("-")
+	const uuid = location[location.length - 1]
+	const [recipe, setRecipe] = useState({})
+	useEffect(() => {
+		fetch(`https://calm-brook-68370.herokuapp.com/recipes/${uuid}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json'
+			}
+		}).then(res => res.json()).then(setRecipe)
+	}, [])
 	return (
 		<div className="content">
-			<PageHeader title={"12 Pancakes with Nutella and Berries"}/>
+			<PageHeader title={""}/>
 			<div className="content--inner">
-
 			</div>
 		</div>
 	)
