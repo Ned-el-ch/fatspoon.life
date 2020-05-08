@@ -21,7 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #062035;
   background-color: #fffcf9;
-  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
 }
 
 a {
@@ -102,7 +102,7 @@ a:hover {
   position: absolute;
   left: 0;
   bottom: 0;
-  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
   width: 60%;
   text-align: justify;
   padding-left: 5px;
@@ -298,7 +298,7 @@ a:hover {
   transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
-  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 600;
   z-index: 1;
 }
@@ -388,6 +388,51 @@ a:hover {
           user-select: none;
 }
 
+.rp-image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.rp-description {
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
+  text-align: justify;
+}
+
+.rp-ul {
+  display: block;
+  float: left;
+  margin: 0;
+  list-style-type: square;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+
+.rp-ul * {
+  padding-bottom: 3px;
+}
+
+.rp-instructions-ol {
+  text-align: justify;
+}
+
+.rp-instructions-ol * {
+  padding-bottom: 5px;
+}
+
+.rp-subheading {
+  font-family: "Frenchpress";
+  font-size: calc(2.6rem + (3.2 - 2.6) * ((100vw - 300px) / (1600 - 300)));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #0b385e;
+  line-height: 1;
+}
+
 .ic-buttons-container {
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   position: absolute;
@@ -461,7 +506,7 @@ a:hover {
 .ic-buttons-plus::before {
   content: "+";
   font-family: monospace;
-  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -475,7 +520,7 @@ a:hover {
 .ic-buttons-minus::before {
   content: "-";
   font-family: monospace;
-  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -510,7 +555,7 @@ a:hover {
 
 .ic-heading {
   display: block;
-  font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
   overflow: hidden;
   line-height: 1.2rem;
   word-wrap: break-word;

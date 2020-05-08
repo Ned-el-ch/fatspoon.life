@@ -1,0 +1,40 @@
+.rp-image {
+	width: 100%;
+	object-fit: cover;
+	height: 300px;
+	border-radius: 10px;
+}
+
+.rp-description {
+	font-size: $normalFontSize;
+	text-align: justify;
+}
+
+.rp-ul {
+	display: block;
+	float: left;
+	margin: 0;
+	list-style-type: square;
+	word-wrap: break-word;
+	max-width: 200px;
+
+	& * {
+		padding-bottom: 3px;
+	}
+}
+
+.rp-instructions-ol {
+	text-align: justify;
+
+	& * {
+		padding-bottom: 5px;
+	}
+}
+
+.rp-subheading {
+	font-family: "Frenchpress";
+	font-size: $labelFontSizeLarge;
+	user-select: none;
+	color: $mainTextColorLighter;
+	line-height: 1;
+}
