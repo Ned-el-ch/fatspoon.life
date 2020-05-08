@@ -6,13 +6,14 @@ import Col from 'react-bootstrap/Col'
 import { connect } from 'react-redux'
 
 const RecipePage = () => {
-	const location = useLocation().pathname.split("-")
-	const uuid = location[location.length - 1]
 	const [recipe, setRecipe] = useState(null)
 	let leftList = [];
 	let rightList = [];
 
 	useEffect(() => {
+		let location = window.location.href.split("-")
+		const uuid = location[location.length - 1]
+
 		fetch(`https://calm-brook-68370.herokuapp.com/recipes/${uuid}`, {
 			method: 'GET',
 			headers: {
