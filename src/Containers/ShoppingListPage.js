@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ShoppingList from '../Components/ShoppingList'
 import PageHeader from '../Components/PageHeader'
 
-const ShoppingListContainer = () => {
+const ShoppingListPage = () => {
 	return (
 		<div className="content shopping-list-container">
 			<div className="content--inner">
@@ -22,4 +22,4 @@ const mapStateToProps = items => {
 	)
 }
 
-export default connect(mapStateToProps)(ShoppingListContainer)
+export default connect(mapStateToProps)(ShoppingListPage)

@@ -19,7 +19,7 @@ const getHomeTimeline = (node, delay) => {
 
 	timeline
 		.from(node, 0.075, { display: 'none', autoAlpha: 0, delay })
-		.staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
+		.staggerFrom(texts, 0.25, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
 
 	return timeline;
 }
