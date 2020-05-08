@@ -36,7 +36,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 			<div className="rf-main-info">
 			<Row>
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
-			<button onClick={closeRecipe} className="rf-close-form-button">x</button>
+				<button onClick={closeRecipe} className="rf-close-form-button">x</button>
 			</Col>
 			</Row>
 			<Row>
@@ -159,14 +159,13 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 			</Row>
 			{cookingData.ingredients.map(item => {
 				return (
-					<Row key={item.id}>
+					<Row key={item.uuid}>
 						<Col xs={6} sm={6} md={{ span: 6, offset: 1 }} className="rf-remove-margin">
 							<IngredientSelect
 								ingredients={getIngredientsForSelect()}
 								defaultOptionIndex={null}
 								handleOnChange={(toAdd) => {
-									// debugger
-									const ind = cookingData.ingredients.findIndex(i => i.id === item.id);
+									const ind = cookingData.ingredients.findIndex(i => i.uuid === item.uuid);
 									const obj = Object.assign({}, cookingData.ingredients[ind], {ingredient: toAdd.ingredient})
 									setCookingData({
 										ingredients: [...cookingData.ingredients.slice(0, ind),
@@ -179,7 +178,6 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 						</Col>
 						<Col xs={4} sm={4} md={{ span: 2}} className="rf-remove-margin">
 							<InputGroup className="mb-3">
-								
 								<FormControl
 									placeholder="Weight"
 									aria-label="ingredient weight"
@@ -187,7 +185,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 									value={item.weight}
 									onChange={(event) => {
 										if (validateNumbers(event.target.value)) {
-											const ind = cookingData.ingredients.findIndex(i => i.id === item.id);
+											const ind = cookingData.ingredients.findIndex(i => i.uuid === item.uuid);
 											const obj = Object.assign({}, cookingData.ingredients[ind], {weight: event.target.value})
 											setCookingData({
 												ingredients: [...cookingData.ingredients.slice(0, ind),
@@ -208,7 +206,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 								className="rf-remove-ingredient"
 								onClick={() => {
 									setCookingData({
-										ingredients: cookingData.ingredients.filter(i => i.id !== item.id),
+										ingredients: cookingData.ingredients.filter(i => i.uuid !== item.uuid),
 										instructions: cookingData.instructions
 									})
 								}}
@@ -222,7 +220,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 				<button
 					className="rf-new-ingredient-button"
 					onClick={() => setCookingData({
-						ingredients: [...cookingData.ingredients, {id: uuid(), weight: null}],
+						ingredients: [...cookingData.ingredients, {uuid: uuid(), weight: null}],
 						instructions: cookingData.instructions
 					})}
 				>+</button>
@@ -237,7 +235,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 			</Row>
 			{cookingData.instructions.map((item, index) => {
 				return (
-					<Row key={item.id} className="rf-instructions-row">
+					<Row key={item.uuid} className="rf-instructions-row">
 					<Col xs={10} sm={10} md={{ span: 8, offset: 1}} lg={{ span: 8, offset: 1}} className="rf-remove-margin">
 						<InputGroup>
 							<InputGroup.Prepend>
@@ -251,7 +249,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 								style={{height: "140px", maxHeight: "140px", minHeight: "140px", resize: "none"}}
 								value={item.text}
 								onChange={(event) => {
-									const ind = cookingData.instructions.findIndex(i => i.id === item.id);
+									const ind = cookingData.instructions.findIndex(i => i.uuid === item.uuid);
 									const obj = Object.assign({}, cookingData.instructions[ind], {text: event.target.value})
 									setCookingData({
 										ingredients: cookingData.ingredients,
@@ -265,16 +263,14 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 							/>
 						</InputGroup>
 					<span className="rf-instructions-remaining-characters">{225 - item.text.length} characters remaining</span>
-
 					</Col>
-
 					<Col xs={2} sm={2} md={{ span: 2}} className="rf-remove-margin">
 							<button
 								className="rf-remove-instruction"
 								onClick={() => {
 									setCookingData({
 										ingredients: cookingData.ingredients,
-										instructions: cookingData.instructions.filter(i => i.id !== item.id)
+										instructions: cookingData.instructions.filter(i => i.uuid !== item.uuid)
 									})
 								}}
 							>Remove</button>
@@ -288,7 +284,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 					className="rf-new-instruction-button"
 					onClick={() => setCookingData({
 						ingredients: cookingData.ingredients,
-						instructions: [...cookingData.instructions, {id: uuid(), text: ""}]
+						instructions: [...cookingData.instructions, {uuid: uuid(), text: ""}]
 					})}
 				>+</button>
 			</Col>
@@ -296,9 +292,9 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 			</div>
 			<button onClick={() => {
 				let ingredients = cookingData.ingredients.map(i => {
-					return {id: i.ingredient.id, weight: i.weight}
+					return {uuid: i.ingredient.uuid, weight: i.weight}
 				});
-				let recipe = {id: uuid(), info, ingredients, instructions: cookingData.instructions}
+				let recipe = {uuid: uuid(), info, ingredients, instructions: cookingData.instructions}
 				handleRecipe(recipe);
 			}}>
 				Add Recipe

@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 const createLabels = (recipe, ingredients) => {
 	let availableIngredients = [];
 	recipe.ingredients.forEach(ri => {
-		let ing = ingredients.find(i => i.id === ri.id);
+		let ing = ingredients.find(i => i.uuid === ri.uuid);
 		if (ing)
 			availableIngredients.push(ing);
 	});
@@ -23,8 +23,8 @@ const createLabels = (recipe, ingredients) => {
 }
 
 const generateLink = recipe => {
-	let link = "Recipes/" + recipe.info.title.split(" ").slice(0, 3).join("-")
-	link += "-" + recipe.id.split("-")[4];
+	let link = "Recipes/" + recipe.info.title.split(" ").slice(0, 4).join("-")
+	link += "-" + recipe.uuid;
 	return link
 }
 
@@ -38,7 +38,7 @@ const Cookbook = (props) => {
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 				{recipes.map(recipe => 
 					<RecipeCard
-						key={recipe.id}
+						key={recipe.uuid}
 						recipe={recipe}
 						starRecipe={starRecipe}
 						unstarRecipe={unstarRecipe}

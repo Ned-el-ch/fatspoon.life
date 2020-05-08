@@ -8,7 +8,7 @@ export default (state = data.recipes, action) => {
 	switch (action.type) {
 
 		case "ADD_RECIPE":
-			let recipeExists = state.find(r => r.id === action.recipe.id)
+			let recipeExists = state.find(r => r.uuid === action.recipe.uuid)
 			if (recipeExists) {
 				return state;
 			} else {

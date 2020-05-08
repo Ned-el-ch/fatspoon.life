@@ -23,7 +23,6 @@ export default (state = data.ingredients, action) => {
 			newState = action.ingredients.map(ing => {
 				return Object.assign({}, allIngredients.default.find(i => i.uuid === ing.ingredient.uuid), {weight: ing.weight})
 			})
-			// debugger;
 			newState = sort(newState);
 			return newState;
 
@@ -35,7 +34,6 @@ export default (state = data.ingredients, action) => {
 					newIngredients.push(Object.assign({}, data.ingredient, {weight: 0}))
 			})
 			newState = [...state, ...newIngredients];
-			// debugger
 			// updateIngredients(newState);
 			newState = sort(newState);
 			return newState;

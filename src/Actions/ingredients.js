@@ -54,7 +54,6 @@ export const addNewIngredients = (newIngredients, allIngredients) => {
 				ingredients
 			}
 		}
-		debugger
 		return dispatch => {
 			return fetch("https://calm-brook-68370.herokuapp.com/api/v1/ingredients/update", {
 				method: "POST",
@@ -67,7 +66,6 @@ export const addNewIngredients = (newIngredients, allIngredients) => {
 			})
 				.then(res => res.json())
 				.then(data => {
-					// debugger
 					dispatch(loadIngredients(data.user_ingredients))
 				})
 		}

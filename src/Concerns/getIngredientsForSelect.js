@@ -3,7 +3,6 @@ import * as ingredients from "../Data/ingredients.json";
 export const getIngredientsForSelect = () => {
 	let ingredientsArray = ingredients.default;
 	let selectItems = [];
-	// debugger;
 	for (const ingredient of ingredientsArray) {
 		let category = categoryColors.find(e => Object.keys(e)[0] === ingredient.category);
 		let formattedItem = {
