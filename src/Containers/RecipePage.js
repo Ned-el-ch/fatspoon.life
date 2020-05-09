@@ -31,7 +31,7 @@ const RecipePage = (props) => {
 				console.log(e)
 			}
 		})()
-	}, [setRecipe, setRecipeExists])
+	}, [props, setRecipe, setRecipeExists])
 	return (
 		<div className="content">
 			{recipe ?
