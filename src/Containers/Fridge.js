@@ -25,8 +25,6 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 									key={ingredient.uuid}
 									ingredient={ingredient}
 									removeIngredient={removeIngredient}
-									increaseIngredient={increaseIngredient}
-									decreaseIngredient={decreaseIngredient}
 								/>
 							)
 						})}
@@ -43,4 +41,4 @@ const mapStateToProps = state => {
 	})
 };
 
-export default connect(mapStateToProps, { removeIngredient, increaseIngredient, decreaseIngredient })(Fridge);
+export default connect(mapStateToProps, { removeIngredient })(Fridge);
