@@ -1,16 +1,15 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import PageHeader from '../Components/PageHeader'
-// import { withRouter } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-// import { connect } from 'react-redux'
 
-const RecipePage = () => {
+const RecipePage = (props) => {
 	const [recipe, setRecipe] = useState(null)
+	const [recipeExists, setRecipeExists] = useState(true)
 
 	useEffect(() => {
 		(async function () {
-			let location = window.location.href.split("-")
+			let location = props.match.params.recipe.split("-")
 			let uuid = location[location.length - 1]
 			try {
 				await fetch(`https://calm-brook-68370.herokuapp.com/recipes/${uuid.length === 12 ? uuid : null}`, {
@@ -23,7 +22,7 @@ const RecipePage = () => {
 					.then(res => res.json())
 					.then(data => {
 						if (data.message || data.error) {
-							console.log(data)
+							setRecipeExists(false)
 						} else {
 							setRecipe(data)
 						}
@@ -32,7 +31,7 @@ const RecipePage = () => {
 				console.log(e)
 			}
 		})()
-	}, [setRecipe])
+	}, [setRecipe, setRecipeExists])
 	return (
 		<div className="content">
 			{recipe ?
@@ -84,11 +83,10 @@ const RecipePage = () => {
 				</div>
 			</Fragment>
 			:
-			<PageHeader title="Recipe not found"/>
+			<PageHeader title={recipeExists ? "Recipe Loading..." : "Recipe not found"}/>
 			}
 		</div>
 	)
 }
 
 export default RecipePage
-// export default withRouter(connect(null)(RecipePage))

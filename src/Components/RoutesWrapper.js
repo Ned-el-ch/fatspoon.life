@@ -14,21 +14,23 @@ const RoutesWrapper = ({location, user}) => {
 		return (
 			<Switch location={location}>
 				<Route exact path="/"><HomePage userIsLoggedIn={user}/></Route>
-				<Route exact path="/MyCookbook"><Cookbook/></Route>
-				<Route exact path="/MyFridge"><Fridge/></Route>
-				<Route exact path="/MyShoppingList"><ShoppingListPage/></Route>
-				<Route exact path="/About"><AboutPage/></Route>
-				<Route path="/Recipes/:recipe"><RecipePage/></Route>
+				<Route exact path="/MyCookbook" component={Cookbook}/>
+				<Route exact path="/MyFridge" component={Fridge}/>
+				<Route exact path="/MyShoppingList" component={ShoppingListPage}/>
+				<Route exact path="/About" component={AboutPage}/>
+				<Route path="/Recipes/:recipe" component={RecipePage}/>
+				<Route><HomePage userIsLoggedIn={user}/></Route>
 			</Switch>
 		)
 	} else {
 		return (
 			<Switch location={location}>
 				<Route exact path="/"><HomePage userIsLoggedIn={user}/></Route>
-				<Route exact path="/Login"><LoginPage/></Route>
-				<Route exact path="/SignUp"><SignUpPage/></Route>
-				<Route exact path="/About"><AboutPage/></Route>
-				<Route path="/Recipes/:recipe"><RecipePage/></Route>
+				<Route exact path="/Login"component={LoginPage}/>
+				<Route exact path="/SignUp" component={SignUpPage}/>
+				<Route exact path="/About" component={AboutPage}/>
+				<Route path="/Recipes/:recipe" component={RecipePage}/>
+				<Route><HomePage userIsLoggedIn={user}/></Route>
 			</Switch>
 		)
 	}

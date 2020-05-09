@@ -11,10 +11,9 @@ export const play = (node, appears) => {
 		timeline
 			.from(node, 0.075, { display: 'none', autoAlpha: 0, delay })
 			.staggerFrom(texts, 0.25, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
-	
-		window
-			.loadPromise
-			.then(() => requestAnimationFrame(() => timeline.play()))
+
+		window.loadPromise.then(() => requestAnimationFrame(() => timeline.play()))
+
 	}
 }
 
