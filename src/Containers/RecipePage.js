@@ -10,10 +10,10 @@ const RecipePage = () => {
 
 	useEffect(() => {
 		(async function () {
+			let location = window.location.href.split("-")
+			let uuid = location[location.length - 1]
 			try {
-				let location = window.location.href.split("-")
-				let uuid = location[location.length - 1]
-				await fetch(`https://calm-brook-68370.herokuapp.com/recipes/${uuid}`, {
+				await fetch(`https://calm-brook-68370.herokuapp.com/recipes/${uuid.length === 12 ? uuid : null}`, {
 					method: "GET",
 					headers: {
 						'Content-Type': 'application/json',
@@ -22,8 +22,8 @@ const RecipePage = () => {
 				})
 					.then(res => res.json())
 					.then(data => {
-						if (data.message) {
-							console.log(data.message)
+						if (data.message || data.error) {
+							console.log(data)
 						} else {
 							setRecipe(data)
 						}
@@ -53,14 +53,14 @@ const RecipePage = () => {
 					</div>
 					<div className="rp-ul-container">
 						<ul className="rp-ul rp-ingredients-left-ul">
-						{recipe.recipe_ingredients
+						{recipe.recipe_ingredients && recipe.recipe_ingredients
 							.filter((el, index) => index === 0 || index % 2 === 0)
 							.map(item => {
 								return(<li key={item.ingredient.uuid}><span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}</li>)
 						})}
 						</ul>
 						<ul className="rp-ul rp-ingredients-right-ul">
-						{recipe.recipe_ingredients
+						{recipe.recipe_ingredients && recipe.recipe_ingredients
 							.filter((el, index) => index !== 0 && index % 2 !== 0)
 							.map(item => {
 								return(<li key={item.ingredient.uuid}><span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}</li>)
@@ -73,7 +73,9 @@ const RecipePage = () => {
 						<span className="rp-subheading">Instructions</span>
 					</div>
 					<ol className="rp-instructions-ol">
-						{recipe.instructions.split("|||").map((item, index) => {
+						{recipe.instructions && recipe.instructions
+							.split("|||")
+							.map((item, index) => {
 							return (<li key={index}>{item}</li>)
 						})}
 					</ol>
@@ -82,7 +84,7 @@ const RecipePage = () => {
 				</div>
 			</Fragment>
 			:
-			null
+			<PageHeader title="Recipe not found"/>
 			}
 		</div>
 	)
