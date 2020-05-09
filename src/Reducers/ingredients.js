@@ -40,7 +40,7 @@ export default (state = data.ingredients, action) => {
 
 		case "REMOVE_INGREDIENT":
 			newState = state.filter(ingredient => ingredient.uuid !== action.ingredientID);
-			let ingToRemove = state.filter(ingredient => ingredient.uuid === action.ingredientID);
+			// let ingToRemove = state.filter(ingredient => ingredient.uuid === action.ingredientID);
 			// removeIngredients(ingToRemove);
 			newState = sort(newState);
 			return newState;

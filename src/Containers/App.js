@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { TransitionGroup, Transition } from "react-transition-group";
 import { play, exit } from "../Concerns/animations"
@@ -14,31 +14,40 @@ import { loginUser } from "../Actions/user.js"
 import RoutesWrapper from '../Components/RoutesWrapper';
 
 const App = ({ user, loginUser, loadIngredients }) => {
-	useEffect(() => {
+	const userDataCallback = useCallback(
+		(userData) => {
+			loginUser(userData)
+			loadIngredients(userData.user_ingredients)
+		},
+		[loginUser, loadIngredients],
+	)
+	useEffect( () => {
 		const token = localStorage.token;
 		if (token) {
-			const fetchProfile = () => {
-			return fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
-				method: "GET",
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-					'Authorization': `Bearer ${token}`
+			(async function fetchProfile() {
+				try {
+					await fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
+						method: "GET",
+						headers: {
+							'Content-Type': 'application/json',
+							Accept: 'application/json',
+							'Authorization': `Bearer ${token}`
+						}
+					})
+						.then(res => res.json())
+						.then(data => {
+							if (data.message) {
+								localStorage.removeItem("token")
+							} else {
+								userDataCallback(data)
+							}
+						})
+				} catch (e) {
+					console.log(e)
 				}
-			})
-				.then(res => res.json())
-				.then(userData => {
-					if (userData.message) {
-						localStorage.removeItem("token")
-					} else {
-						loginUser(userData)
-						loadIngredients(userData.user_ingredients)
-					}
-				})
-			}
-			fetchProfile()
+			})()
 		}
-	}, [])
+	}, [userDataCallback])
 	return (
 		<Router>
 		<div className="app-container">
@@ -47,13 +56,13 @@ const App = ({ user, loginUser, loadIngredients }) => {
 					<Row className="align-self-start justify-content-center">
 					<Col xs sm md lg={10} xl={8} className="col-xxl">
 							<Route render={({location}) => {
-								const { pathname, key } = location;
+								const { key } = location;
 									return (
 									<TransitionGroup component={null}>
 									<Transition
 										key={key}
 										appear={true}
-										onEnter={(node, appears) => {node ? play(pathname, node, appears) : console.log()}}
+										onEnter={(node, appears) => {node ? play(node, appears) : console.log()}}
 										onExit={(node, appears) => {node ? exit(node, appears) : console.log()}}
 										timeout={{enter: 100, exit: 50}}
 									>
