@@ -56,24 +56,30 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 							setInputVisible(false);
 						}}>✗</button>
 					</div>
-					<input 
-						className="ic-weight-input"
-						// type="text"
-						pattern="[0-9]*"
-						inputMode="numeric"
-						name="weight"
-						autoFocus={true}
-						value={currentWeight}
-						onFocus={(event) => event.target.select()}
-						// onBlur={() => {
-						// 	setCurrentWeight(initialWeight);
-						// 	setInputVisible(false);
-						// }}
-						onChange={(event) => {
-							if (validateNumbers(event.target.value))
-								setCurrentWeight(event.target.value)
-							}
-					}/><span className="ic-weight-input-suffix">g</span>
+					<form onSubmit={() => {
+						updateIngredients(ingredient, currentWeight, editIngredient);
+						setInputVisible(false)
+					}}>
+						<input 
+							className="ic-weight-input"
+							type="tel"
+							pattern="[0-9]*"
+							inputMode="numeric"
+							name="weight"
+							autoFocus={true}
+							value={currentWeight}
+							onFocus={(event) => event.target.select()}
+							// onBlur={() => {
+							// 	setCurrentWeight(initialWeight);
+							// 	setInputVisible(false);
+							// }}
+							onChange={(event) => {
+								if (validateNumbers(event.target.value))
+									setCurrentWeight(event.target.value)
+								}
+						}/>
+					</form>
+					<span className="ic-weight-input-suffix">g</span>
 
 				</div>
 			:
