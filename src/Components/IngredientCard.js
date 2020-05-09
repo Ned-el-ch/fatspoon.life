@@ -58,7 +58,7 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 					</div>
 					<input 
 						className="ic-weight-input"
-						type="text"
+						// type="text"
 						pattern="[0-9]*"
 						inputMode="numeric"
 						name="weight"
