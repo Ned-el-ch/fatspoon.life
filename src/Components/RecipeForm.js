@@ -5,6 +5,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
+import { validateNumbers } from "../Concerns/validateInputs";
 import { uuid } from '../Concerns/uuid'
 
 const initialInfo = {
@@ -25,11 +26,6 @@ const initialCookingData = {
 // 	let regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/
 // 	return link.match(regex);
 // }
-
-const validateNumbers = str => {
-	let regex = /^[1-9]\d*(\.\d+)?$/;
-	return str.match(regex) || str === "";
-}
 
 const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 	const [info, setInfo] = useState(initialInfo);
