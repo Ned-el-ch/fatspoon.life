@@ -14,12 +14,14 @@ $minimumWidth: 40%;
 }
 
 .rc-image-container {
+	// position: absolute;
+	top: 0;
 	height: $containerHeight;
 	user-select: none;
 	margin-left: 60%;
 	width: 40%;
 	min-width: $minimumWidth;
-	z-index: -2;
+	// z-index: -0;
 	&::after {
 		display: block;
 		position: relative;
@@ -43,21 +45,33 @@ $minimumWidth: 40%;
 	border-radius: 0 10px 10px 0;
 }
 
-.rc-title {
+.rc-title-container {
 	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 5px;
+}
+
+.rc-title {
+	// position: absolute;
 	left: 0;
 	top: 0;
 	font-size: $labelFontSize;
 	padding-left: 5px;
-	z-index: 1;
+	z-index: 2;
+}
+
+.rc-description-container {
+	position: absolute;
+	width: 70%;
+	bottom: 0;
+	left: 5px;
 }
 
 .rc-description {
-	position: absolute;
-	left: 0;
-	bottom: 0;
+	// left: 0;
+	// bottom: 0;
 	font-size: $normalFontSize;
-	width: 60%;
 	text-align: justify;
 	padding-left: 5px;
 	padding-bottom: 5px;
