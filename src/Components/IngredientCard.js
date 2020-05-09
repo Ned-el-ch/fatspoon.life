@@ -34,11 +34,17 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 	const [initialWeight, setInitialWeight] = useState(weight);
 	const [currentWeight, setCurrentWeight] = useState(weight);
 	const [inputVisible, setInputVisible] = useState(false);
+	const [clickable, setClickable] = useState(true);
 	useEffect(() => {
 		setInitialWeight(weight)
 	}, [weight])
 	return (
-		<div className={`ic-container ${label}`} onClick={() => setInputVisible(true)}>
+		<div className={`ic-container ${label}`} onClick={() => {
+			if (clickable) {
+				setInputVisible(true)
+				setClickable(false)
+			}
+		}}>
 			<div className={`ic-heading-label ${label}`}></div>
 			<div className="ic-heading-container">
 				<span className={`ic-heading ${label}`}>{name}</span>
@@ -49,15 +55,18 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 					<div className="ic-weight-buttons-container">
 						<button className="ic-button-save ic-button pos" onClick={() => {
 							updateIngredients(ingredient, currentWeight, editIngredient);
+							setClickable(true)
 							setInputVisible(false)
 						}}>✓</button>
 						<button className="ic-button-discard ic-button neg" onClick={() => {
 							setCurrentWeight(initialWeight);
+							setClickable(true)
 							setInputVisible(false);
 						}}>✗</button>
 					</div>
 					<form onSubmit={() => {
 						updateIngredients(ingredient, currentWeight, editIngredient);
+						setClickable(true)
 						setInputVisible(false)
 					}}>
 						<input 
@@ -69,14 +78,10 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 							autoFocus={true}
 							value={currentWeight}
 							onFocus={(event) => event.target.select()}
-							// onBlur={() => {
-							// 	setCurrentWeight(initialWeight);
-							// 	setInputVisible(false);
-							// }}
 							onChange={(event) => {
 								if (validateNumbers(event.target.value))
 									setCurrentWeight(event.target.value)
-								}
+							}
 						}/>
 					</form>
 					<span className="ic-weight-input-suffix">g</span>
