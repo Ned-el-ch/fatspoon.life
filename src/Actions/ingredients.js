@@ -12,21 +12,14 @@ export const removeIngredient = ingredientID => {
 	}
 }
 
-export const increaseIngredient = (ingredientID, weight) => {
+export const editIngredient = (ingredientID, weight) => {
 	return {
-		type: "INCREASE_INGREDIENT",
+		type: "EDIT_INGREDIENT",
 		ingredientID,
 		weight
 	}
 }
 
-export const decreaseIngredient = (ingredientID, weight) => {
-	return {
-		type: "DECREASE_INGREDIENT",
-		ingredientID,
-		weight
-	}
-}
 
 export const loadIngredients = ingredients => {
 	return {
@@ -72,10 +65,9 @@ export const addNewIngredients = (newIngredients, allIngredients) => {
 	}
 }
 
-export const updateIngredients = (ingredient, action, currentWeight, difference) => {
-	action(ingredient.uuid, difference)
+export const updateIngredients = (ingredient, weight, action) => {
+	action(ingredient.uuid, weight)
 	if (localStorage.token) {
-		let weight = currentWeight + difference <= 0 ? 0 : currentWeight + difference
 		let body = {
 			user: {
 				ingredients: [

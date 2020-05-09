@@ -45,38 +45,49 @@ export default (state = data.ingredients, action) => {
 			newState = sort(newState);
 			return newState;
 
-		case "INCREASE_INGREDIENT":
+		case "EDIT_INGREDIENT":
 			ingredient = state.find(i => i.uuid === action.ingredientID);
 			index = state.indexOf(ingredient);
 			newState = [
 				...state.slice(0, index),
-				Object.assign({}, ingredient, { weight: ingredient.weight += action.weight }),
+				Object.assign({}, ingredient, { weight: action.weight }),
 				...state.slice(index + 1)
 			];
 			newState = sort(newState);
 			return newState;
 
-		case "DECREASE_INGREDIENT":
-			ingredient = state.find(i => i.uuid === action.ingredientID);
-			index = state.indexOf(ingredient);
-			if (ingredient.weight >= action.weight * -1)
-			{
-				newState = [
-					...state.slice(0, index),
-					Object.assign({}, ingredient, { weight: ingredient.weight += action.weight }),
-					...state.slice(index + 1)
-				];
-				newState = sort(newState);
-				return newState;
-			}
-			else
-			{
-				return [
-					...state.slice(0, index),
-					Object.assign({}, ingredient, { weight: 0 }),
-					...state.slice(index + 1)
-				];
-			}
+		// case "INCREASE_INGREDIENT":
+		// 	ingredient = state.find(i => i.uuid === action.ingredientID);
+		// 	index = state.indexOf(ingredient);
+		// 	newState = [
+		// 		...state.slice(0, index),
+		// 		Object.assign({}, ingredient, { weight: ingredient.weight += action.weight }),
+		// 		...state.slice(index + 1)
+		// 	];
+		// 	newState = sort(newState);
+		// 	return newState;
+
+		// case "DECREASE_INGREDIENT":
+		// 	ingredient = state.find(i => i.uuid === action.ingredientID);
+		// 	index = state.indexOf(ingredient);
+		// 	if (ingredient.weight >= action.weight * -1)
+		// 	{
+		// 		newState = [
+		// 			...state.slice(0, index),
+		// 			Object.assign({}, ingredient, { weight: ingredient.weight += action.weight }),
+		// 			...state.slice(index + 1)
+		// 		];
+		// 		newState = sort(newState);
+		// 		return newState;
+		// 	}
+		// 	else
+		// 	{
+		// 		return [
+		// 			...state.slice(0, index),
+		// 			Object.assign({}, ingredient, { weight: 0 }),
+		// 			...state.slice(index + 1)
+		// 		];
+		// 	}
 
 		default:
 			return state;
