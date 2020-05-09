@@ -38,7 +38,7 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 		setInitialWeight(weight)
 	}, [weight])
 	return (
-		<div className={`ic-container ${label}`}>
+		<div className={`ic-container ${label}`} onClick={() => setInputVisible(true)}>
 			<div className={`ic-heading-label ${label}`}></div>
 			<div className="ic-heading-container">
 				<span className={`ic-heading ${label}`}>{name}</span>
@@ -83,7 +83,7 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 
 				</div>
 			:
-			<span className="ic-weight" onClick={() => setInputVisible(true)}>{weight >= 1000 ? `${weight / 1000} kg` : `${weight} g`}</span>
+			<span className="ic-weight">{weight >= 1000 ? `${weight / 1000} kg` : `${weight} g`}</span>
 			}
 			{/* <div className="ic-buttons-container">
 				<div className="ic-buttons-plus">
