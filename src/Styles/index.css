@@ -480,15 +480,11 @@ a:hover {
   opacity: 1;
 }
 
-.ic-container:hover .ic-weight {
-  bottom: 36px;
-}
-
 .ic-button {
   border: none;
   outline: none !important;
-  width: 28px;
-  height: 18px;
+  width: 25px;
+  height: 25px;
   text-align: center;
   padding: 0;
   color: white;
@@ -638,12 +634,10 @@ a:hover {
   right: 1.5px;
   bottom: 0;
   margin-bottom: 5px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   -webkit-transition: bottom 0.15s;
   transition: bottom 0.15s;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
 }
 
 .fridge-ingredients-container {
@@ -652,6 +646,31 @@ a:hover {
 
 .react-select-option:hover {
   background-color: rgba(35, 156, 255, 0.25);
+}
+
+.ic-weight-input {
+  position: absolute;
+  width: 50%;
+  right: 10px;
+  bottom: 0;
+  text-align: right;
+  border-radius: 5px;
+  border: none;
+  background-color: #ebeae7;
+  height: 25px;
+  font-size: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.ic-weight-input-suffix {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  font-size: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.ic-weight-buttons-container {
+  position: absolute;
+  bottom: 0;
 }
 
 .page-header-text {
