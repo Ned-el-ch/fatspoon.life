@@ -30,6 +30,11 @@ const RecipeCard = (props) => {
 			<div className="rc-description-container">
 				<span className="rc-description">{recipe.info.description}</span>
 			</div>
+			<div className="rc-servings-and-times-container">
+				<div>Prep Time: {recipe.info.prepTime} mins</div>
+				<div>Cook Time: {recipe.info.cookingTime} mins</div>
+				<div>Serves: {recipe.info.servingCount}</div>
+			</div>
 			{/* <div className="rc-buttons-container">
 				<button className="rc-star-recipe-button" onClick={() => {starRecipe(recipe)}}>Star Recipe</button>
 				<button className="rc-unstar-recipe-button" onClick={() => {unstarRecipe(recipe.uri)}}>Unstar Recipe</button>

@@ -106,16 +106,25 @@ a:hover {
 
 .rc-description-container {
   position: absolute;
-  width: 70%;
-  bottom: 0;
+  width: 75%;
+  bottom: 7px;
   left: 5px;
 }
 
 .rc-description {
   font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
-  text-align: justify;
   padding-left: 5px;
   padding-bottom: 5px;
+}
+
+.rc-servings-and-times-container {
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  text-align: center;
+}
+
+.rc-servings-and-times-container * {
+  display: inline-block;
+  width: 33.3333%;
 }
 
 .rc-labels-missing-items {
