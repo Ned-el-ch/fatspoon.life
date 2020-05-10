@@ -20,11 +20,15 @@ export default (state = data.ingredients, action) => {
 		case "CLEAR_INGREDIENTS":
 			return [];
 		case "LOAD_INGREDIENTS":
-			newState = action.ingredients.map(ing => {
-				return Object.assign({}, allIngredients.default.find(i => i.uuid === ing.ingredient.uuid), {weight: ing.weight})
-			})
-			newState = sort(newState);
-			return newState;
+			if (action.ingredients.length !== 0) {
+				newState = action.ingredients.map(ing => {
+					return Object.assign({}, allIngredients.default.find(i => i.uuid === ing.ingredient.uuid), {weight: ing.weight})
+				})
+				newState = sort(newState);
+				return newState;
+			} else {
+				return state
+			}
 
 		case "ADD_INGREDIENTS":
 			let newIngredients = [];
