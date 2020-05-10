@@ -38,7 +38,7 @@ export const userLoginFetch = user => {
 					localStorage.setItem("token", data.token)
 					let userData = JSON.parse(data.user_data)
 					dispatch({type: "LOGIN_USER", userData })
-					return userData.user_ingredients;
+					return userData;
 				} else {
 					// returns true to setAlert(true)
 					return true;
