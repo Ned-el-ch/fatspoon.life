@@ -2,10 +2,13 @@ import React, { useEffect, useState, Fragment } from 'react'
 import PageHeader from '../Components/PageHeader'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { connect } from 'react-redux'
 
 const RecipePage = (props) => {
+
 	const [recipe, setRecipe] = useState(null)
 	const [recipeExists, setRecipeExists] = useState(true)
+	const { user } = props;
 
 	useEffect(() => {
 		(async function () {
@@ -39,10 +42,10 @@ const RecipePage = (props) => {
 				<PageHeader title={recipe.title}/>
 				<div className="content--inner">
 				<Row>
-				<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
+				<Col xs={12} sm={12} md={{ span: 5}} lg={{ span: 5}} className="rf-remove-margin">
 					<img className="rp-image" src={recipe.imageLink} alt=""/>
 				</Col>
-				<Col xs={12} sm={12} md={{ span: 5, offset: 1}} lg={{ span: 5, offset: 1}} className="rf-remove-margin">
+				<Col xs={12} sm={12} md={{ span: 6, offset: 1}} lg={{ span: 6, offset: 1}} className="rf-remove-margin">
 					<div className="rp-subheading-container">
 						<span className="rp-subheading">What to expect</span>
 					</div>
@@ -55,19 +58,35 @@ const RecipePage = (props) => {
 						{recipe.recipe_ingredients && recipe.recipe_ingredients
 							.filter((el, index) => index === 0 || index % 2 === 0)
 							.map(item => {
-								return(<li key={item.ingredient.uuid}><span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}</li>)
+								let ingredientAvailable = false;
+								if (user){
+									ingredientAvailable = user.user_ingredients.find(e => e.weight >= item.weight && e.ingredient.uuid === item.ingredient.uuid)
+								}
+								return(
+								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
+									<span className="rp-li-weight">
+										{item.weight}
+									</span> g {item.ingredient.name}</li>)
 						})}
 						</ul>
 						<ul className="rp-ul rp-ingredients-right-ul">
 						{recipe.recipe_ingredients && recipe.recipe_ingredients
 							.filter((el, index) => index !== 0 && index % 2 !== 0)
 							.map(item => {
-								return(<li key={item.ingredient.uuid}><span className="rp-li-weight">{item.weight}g</span> {item.ingredient.name}</li>)
+								let ingredientAvailable = false;
+								if (user){
+									ingredientAvailable = user.user_ingredients.find(e => e.weight >= item.weight && e.ingredient.uuid === item.ingredient.uuid)
+								}
+								return(
+								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
+									<span className="rp-li-weight">
+										{item.weight}
+									</span> g {item.ingredient.name}</li>)
 						})}
 						</ul>
 					</div>
 				</Col>
-				<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+				<Col xs={12} sm={12} md={12} lg={12} className="rf-remove-margin">
 					<div className="rp-subheading-container">
 						<span className="rp-subheading">Instructions</span>
 					</div>
@@ -89,4 +108,12 @@ const RecipePage = (props) => {
 	)
 }
 
-export default RecipePage
+const mapStateToProps = state => {
+	return (
+		{
+			user: state.user
+		}
+	)
+}
+
+export default connect(mapStateToProps)(RecipePage)
