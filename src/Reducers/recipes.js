@@ -1,7 +1,7 @@
-import * as data from "../Data/demo.json";
+// import * as data from "../Data/demo.json";
 
 
-export default (state = data.recipes, action) => {
+export default (state = [], action) => {
 
 	// let index;
 
