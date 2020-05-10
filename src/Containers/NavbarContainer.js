@@ -22,11 +22,16 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 	let history = useHistory();
 	return (
 		<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
+			{user
+			?
 			<LinkContainer exact to="/">
-				<NavLink active={false}>
-					<NavItem>Home</NavItem>
-				</NavLink>
+				<NavLink active={false}><NavItem>My Meal Planner</NavItem></NavLink>
 			</LinkContainer>
+			:
+			<LinkContainer exact to="/">
+				<NavLink active={false}><NavItem>Home</NavItem></NavLink>
+			</LinkContainer>
+			}
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				{user
