@@ -22,6 +22,23 @@ const initialCookingData = {
 	ingredients: []
 }
 
+const validateForm = (info = {}, cookingData = {ingredients: [{weight: ""}], instructions: [{text: ""}]}) => {
+	let bool = false;
+	for (const key in info) {
+		if (info[key] === "")
+			bool = true
+	}
+	cookingData.ingredients.forEach(ing => {
+		if (!ing.weight)
+			bool = true
+	});
+	cookingData.instructions.forEach(ing => {
+		if (!ing.text)
+			bool = true
+	});
+	return bool;
+}
+
 // const validateLink = link => {
 // 	let regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/
 // 	return link.match(regex);
@@ -30,6 +47,7 @@ const initialCookingData = {
 const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 	const [info, setInfo] = useState(initialInfo);
 	const [cookingData, setCookingData] = useState(initialCookingData);
+	const [buttonIsDisabled, setButtonIsDisabled] = useState(validateForm());
 	return (
 		<div className="recipe-form">
 			<div className="rf-main-info">
@@ -219,7 +237,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 				<button
 					className="rf-new-ingredient-button"
 					onClick={() => setCookingData({
-						ingredients: [...cookingData.ingredients, {uuid: uuid(), weight: null}],
+						ingredients: [...cookingData.ingredients, {uuid: uuid(), weight: ""}],
 						instructions: cookingData.instructions
 					})}
 				>+</button>
@@ -288,16 +306,20 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 				>+</button>
 			</Col>
 			</Row>
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
+				<button disabled={validateForm(info, cookingData)} className="rf-add-recipe-button" onClick={() => {
+					let ingredients = cookingData.ingredients.map(i => {
+						return {uuid: i.ingredient.uuid, weight: i.weight}
+					});
+					let recipe = {uuid: uuid(), info, ingredients, instructions: cookingData.instructions}
+					handleRecipe(recipe);
+				}}>
+					Add Recipe
+				</button>
+			</Col>
+			</Row>
 			</div>
-			<button onClick={() => {
-				let ingredients = cookingData.ingredients.map(i => {
-					return {uuid: i.ingredient.uuid, weight: i.weight}
-				});
-				let recipe = {uuid: uuid(), info, ingredients, instructions: cookingData.instructions}
-				handleRecipe(recipe);
-			}}>
-				Add Recipe
-			</button>
 		</div>
 	)
 }
