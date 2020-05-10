@@ -871,4 +871,13 @@ a.nav-link {
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
   outline: none;
 }
+
+.fridge-ingredients-filter-container {
+  margin-top: 10px;
+}
+
+.fridge-ingredients-filter-container * {
+  border-radius: 10px;
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300))) !important;
+}
 /*# sourceMappingURL=index.css.map */

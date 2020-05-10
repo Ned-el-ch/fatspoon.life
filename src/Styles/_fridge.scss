@@ -29,3 +29,12 @@
 		outline: none;
 	}
 }
+
+.fridge-ingredients-filter-container {
+	margin-top: 10px;
+	& * {
+	border-radius: 10px;
+
+		font-size: $normalFontSize!important;
+	}
+}
