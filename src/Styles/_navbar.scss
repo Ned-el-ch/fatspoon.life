@@ -2,7 +2,7 @@
 	background-color: $mainTextColor !important;
 }
 
-.nav-link {
+.nav-link, .dropdown-item {
 	font-weight: 600;
 	font-style: normal;
 	text-decoration: none;
@@ -41,7 +41,26 @@ a.nav-link {
 	padding: 8px;
 	margin-bottom: 15px;
 	margin-top: 5px;
+	user-select: none;
 }
+
+a.dropdown-item {
+	color: $mainTextColor;
+	padding: 8px;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	user-select: none;
+
+	&:hover {
+	color: $mainTextColor;
+
+	}
+}
+
+// div.dropdown-menu.show {
+// 	background-color: $mainTextColor;
+
+// }
 
 .btn-outline-success {
 	font-weight: 600;
