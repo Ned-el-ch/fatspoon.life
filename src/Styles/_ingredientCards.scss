@@ -9,7 +9,6 @@
 
 .ic-container {
 	background-color: white;
-	// box-shadow: 0 0 0 0.2rem $boxShadowColor;
 	border: solid 0.2rem $boxShadowColor;
 	border-radius: 10px;
 	display: inline-block;
@@ -20,17 +19,10 @@
 	max-width: 150px;
 	max-height: 130px;
 
-	&:hover {
-
-		& .ic-buttons-container {
-			opacity: 1;
+	&.point {
+		&:hover {
+			cursor: pointer;
 		}
-
-		// & .ic-weight {
-		// 	bottom: 10px;
-		// 	opacity: 0;
-		// }
-
 	}
 }
 

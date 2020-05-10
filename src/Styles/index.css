@@ -517,8 +517,8 @@ a:hover {
   max-height: 130px;
 }
 
-.ic-container:hover .ic-buttons-container {
-  opacity: 1;
+.ic-container.point:hover {
+  cursor: pointer;
 }
 
 .ic-button {
