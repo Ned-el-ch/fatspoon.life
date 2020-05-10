@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PageHeader from '../Components/PageHeader.js';
 import IngredientCard from '../Components/IngredientCard.js';
 import AnimatedSelect from '../Components/AnimatedSelect.js';
 import { connect } from 'react-redux'
-import { removeIngredient, increaseIngredient, decreaseIngredient } from '../Actions/ingredients'
+import { removeIngredient } from '../Actions/ingredients'
 
 const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngredient}) => {
+
+	const [filter, setFilter] = useState("")
+	
 	return (
 		<div className="content fridge-container">
 			<PageHeader title="My Fridge"/>
@@ -19,15 +22,40 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 					<div className="fridge-ingredients-filter">
 					</div>
 					<div className="fridge-ingredients">
-						{ingredients.map(ingredient => {
-							return(
-								<IngredientCard
-									key={ingredient.uuid}
-									ingredient={ingredient}
-									removeIngredient={removeIngredient}
-								/>
-							)
-						})}
+						<div className="fridge-ingredients-filter-container">
+							<span>Find by name: </span>
+							<input
+								type="text"
+								// name="filter"
+								value={filter}
+								onChange={event => {
+									event.preventDefault()
+									setFilter(event.target.value)
+								}}
+							/>
+						</div>
+						{filter
+						?
+							ingredients.filter(e => e.name.toLowerCase().includes(filter.toLowerCase())).map(ingredient => {
+								return(
+									<IngredientCard
+										key={ingredient.uuid}
+										ingredient={ingredient}
+										removeIngredient={removeIngredient}
+									/>
+								)
+							})
+						:
+							ingredients.map(ingredient => {
+								return(
+									<IngredientCard
+										key={ingredient.uuid}
+										ingredient={ingredient}
+										removeIngredient={removeIngredient}
+									/>
+								)
+							})
+						}
 					</div>
 				</div>
 			</div>
