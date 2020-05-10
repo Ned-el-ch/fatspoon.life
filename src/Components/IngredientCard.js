@@ -64,7 +64,8 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 							setInputVisible(false);
 						}}>✗</button>
 					</div>
-					<form onSubmit={() => {
+					<form onSubmit={(event) => {
+						event.preventDefault()
 						updateIngredients(ingredient, currentWeight, editIngredient);
 						setClickable(true)
 						setInputVisible(false)
