@@ -26,3 +26,12 @@ export const addIngredientToRecipe = (recipeID, ingredientID) => {
 		ingredientID
 	}
 }
+
+export const loadRecipes = recipes => {
+	return (
+		{
+			type: "LOAD_RECIPES",
+			recipes
+		}
+	)
+}
