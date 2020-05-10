@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Frenchpress';
   src: url(../Fonts/Frenchpress.otf) format("opentype");
@@ -420,28 +421,64 @@ a:hover {
   text-align: justify;
 }
 
+.rp-ul-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
 .rp-ul {
+  -webkit-padding-start: 10%;
+          padding-inline-start: 10%;
   display: block;
   float: left;
   margin: 0;
-  list-style-type: square;
+  list-style-type: none;
   word-wrap: break-word;
-  max-width: 200px;
+  width: 50%;
 }
 
 .rp-ul * {
-  padding-bottom: 3px;
+  padding-bottom: 10px;
+}
+
+.rp-ul *.available::before {
+  content: "✓";
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+  color: #c4ff86;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.rp-ul *.not-available::before {
+  content: "✗";
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+  color: tomato;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.rp-ul.rp-ingredients-right-ul {
+  margin-left: auto;
 }
 
 .rp-instructions-ol {
   text-align: justify;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
 }
 
 .rp-instructions-ol * {
   padding-bottom: 5px;
 }
 
-.rp-subheading {
+.rp-subheading-container {
   font-family: "Frenchpress";
   font-size: calc(2.6rem + (3.2 - 2.6) * ((100vw - 300px) / (1600 - 300)));
   -webkit-user-select: none;
@@ -449,7 +486,11 @@ a:hover {
       -ms-user-select: none;
           user-select: none;
   color: #0b385e;
-  line-height: 1;
+  padding-bottom: 10px;
+}
+
+.rp-li-weight {
+  font-weight: bolder;
 }
 
 .ic-buttons-container {

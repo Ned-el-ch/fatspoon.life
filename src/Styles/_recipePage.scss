@@ -10,31 +10,69 @@
 	text-align: justify;
 }
 
+.rp-ul-container {
+	display: flex;
+	align-content: space-around;
+}
+
 .rp-ul {
+	padding-inline-start: 10%;
 	display: block;
 	float: left;
 	margin: 0;
-	list-style-type: square;
+	list-style-type: none;
 	word-wrap: break-word;
-	max-width: 200px;
+	width: 50%;
 
 	& * {
-		padding-bottom: 3px;
+		padding-bottom: 10px;
+		&.available {
+			&::before {
+				content: "✓";
+				text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+				color: $secondaryAccentColor;
+				font-weight: bold;
+				display: inline-block;
+				width: 1em;
+				margin-left: -1em;
+			}
+		}
+		&.not-available {
+			&::before {
+				content: "✗";
+				text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+				color: $primaryAccentColor;
+				font-weight: bold;
+				display: inline-block;
+				width: 1em;
+				margin-left: -1em;
+			}
+		}
+
+	}
+
+	&.rp-ingredients-right-ul {
+		margin-left: auto;
 	}
 }
 
 .rp-instructions-ol {
 	text-align: justify;
-
+	padding-inline-start: 0;
 	& * {
 		padding-bottom: 5px;
 	}
 }
 
-.rp-subheading {
+.rp-subheading-container {
 	font-family: "Frenchpress";
 	font-size: $labelFontSizeLarge;
 	user-select: none;
 	color: $mainTextColorLighter;
-	line-height: 1;
+	// line-height: 1;
+	padding-bottom: 10px;
+}
+
+.rp-li-weight {
+	font-weight: bolder;
 }
