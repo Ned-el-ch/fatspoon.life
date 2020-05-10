@@ -10,20 +10,20 @@ import Col from 'react-bootstrap/Col';
 
 const createLabels = (recipe, ingredients) => {
 	let availableIngredients = [];
-	recipe.ingredients.forEach(ri => {
+	recipe.recipe_ingredients.forEach(ri => {
 		let ing = ingredients.find(i => i.uuid === ri.uuid && i.weight >= ri.weight);
 		if (ing)
 			availableIngredients.push(ing);
 	});
 	let labels = {
-		missingIngredients: recipe.ingredients.length - availableIngredients.length,
+		missingIngredients: recipe.recipe_ingredients.length - availableIngredients.length,
 		vegetarian: true
 	};
 	return labels;
 }
 
 const generateLink = recipe => {
-	let link = "Recipes/" + recipe.info.title.split(" ").slice(0, 4).join("-")
+	let link = "Recipes/" + recipe.title.split(" ").slice(0, 4).join("-")
 	link += "-" + recipe.uuid;
 	return link
 }
