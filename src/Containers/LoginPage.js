@@ -8,9 +8,10 @@ import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { userLoginFetch } from '../Actions/user'
 import { loadIngredients } from '../Actions/ingredients'
+import { loadRecipes } from '../Actions/recipes'
 import PageHeader from '../Components/PageHeader'
 
-const LoginPage = ({ userLoginFetch, loadIngredients }) => {
+const LoginPage = ({ userLoginFetch, loadIngredients, loadRecipes }) => {
 	const [alert, setAlert] = useState(false);
 	let history = useHistory();
 	return (
@@ -24,11 +25,12 @@ const LoginPage = ({ userLoginFetch, loadIngredients }) => {
 					const username = event.target.elements.username.value.toLocaleLowerCase();
 					const password = event.target.elements.password.value;
 					userLoginFetch({username, password}).then(res => {
-						if (res.length === undefined) {
+						if (!res.recipes) {
 							setAlert(res);
 						} else {
 							history.push("/")
-							loadIngredients(res)
+							loadIngredients(res.user_ingredients)
+							loadRecipes(res.recipes)
 						}
 					});
 				}}>
@@ -58,4 +60,4 @@ const LoginPage = ({ userLoginFetch, loadIngredients }) => {
 	)
 }
 
-export default connect(null, { userLoginFetch, loadIngredients })(LoginPage);
+export default connect(null, { userLoginFetch, loadIngredients, loadRecipes })(LoginPage);
