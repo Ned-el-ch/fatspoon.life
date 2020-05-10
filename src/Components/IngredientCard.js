@@ -39,7 +39,7 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 		setInitialWeight(weight)
 	}, [weight])
 	return (
-		<div className={`ic-container ${label}`} onClick={() => {
+		<div className={`ic-container ${label} ${clickable ? "point" : ""}`} onClick={() => {
 			if (clickable) {
 				setInputVisible(true)
 				setClickable(false)
