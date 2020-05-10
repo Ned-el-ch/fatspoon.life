@@ -408,6 +408,52 @@ a:hover {
           user-select: none;
 }
 
+.rf-add-recipe-button {
+  width: 100%;
+  border: 1px solid #ced4da;
+  background-color: white;
+  outline: none;
+  border-radius: 0.25rem;
+  height: 38px;
+  color: rgba(11, 57, 94, 0.3);
+  font-weight: bold;
+  -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
+  font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 600;
+  padding: 0;
+  margin-top: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.rf-add-recipe-button:hover {
+  background-color: #c4ff86;
+  color: white;
+}
+
+.rf-add-recipe-button:hover:disabled {
+  background-color: #eb5c43;
+}
+
+.rf-add-recipe-button:active {
+  background-color: #b0e478;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+  color: white;
+}
+
+.rf-add-recipe-button:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+  outline: none;
+}
+
 .rp-image {
   width: 100%;
   -o-object-fit: cover;
