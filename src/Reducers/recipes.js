@@ -28,6 +28,9 @@ export default (state = [], action) => {
 			// return state.filter(recipe => recipe.uri !== action.recipeURI);
 			return state;
 
+			case "LOAD_RECIPES":
+				return [...action.recipes]
+
 		default:
 			return state;
 	}
