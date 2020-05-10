@@ -493,6 +493,17 @@ a:hover {
   font-weight: bolder;
 }
 
+.rp-time-and-servings {
+  font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rp-time-and-servings * {
+  display: inline-block;
+  width: 33.3333%;
+}
+
 .ic-buttons-container {
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   position: absolute;

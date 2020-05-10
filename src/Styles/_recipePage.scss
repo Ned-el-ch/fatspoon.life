@@ -76,3 +76,13 @@
 .rp-li-weight {
 	font-weight: bolder;
 }
+
+.rp-time-and-servings {
+	font-size: $smallFontSize;
+	text-align: center;
+	margin-bottom: 20px;
+	& * {
+		display: inline-block;
+		width: 33.3333%;
+	}
+}
