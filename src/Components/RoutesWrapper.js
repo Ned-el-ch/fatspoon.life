@@ -8,12 +8,13 @@ import LoginPage from '../Containers/LoginPage.js';
 import SignUpPage from '../Containers/SignUpPage.js';
 import HomePage from '../Containers/HomePage.js';
 import AboutPage from '../Containers/AboutPage.js';
+import MealPlanner from './MealPlanner.js';
 
 const RoutesWrapper = ({location, user}) => {
 	if (user) {
 		return (
 			<Switch location={location}>
-				<Route exact path="/"><HomePage userIsLoggedIn={user}/></Route>
+				<Route exact path="/"><MealPlanner/></Route>
 				<Route exact path="/MyCookbook" component={Cookbook}/>
 				<Route exact path="/MyFridge" component={Fridge}/>
 				<Route exact path="/MyShoppingList" component={ShoppingListPage}/>
