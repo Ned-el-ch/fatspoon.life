@@ -133,8 +133,6 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 									.toISOString()
 									.split("T")[0]
 									.split("-").join("")
-							debugger
-							// FETCH TO API TO SAVE RECIPE_MEAL
 							fetchAddToMealPlan(addToMealPlan, uuid(), recipe, dateString, multiplier)
 						}}
 					/>
