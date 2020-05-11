@@ -78,13 +78,14 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 							.filter((el, index) => index === 0 || index % 2 === 0)
 							.map(item => {
 								let ingredientAvailable = false;
+								let newWeight = Math.ceil((item.weight / recipe.servingCount) * multiplier)
 								if (user){
-									ingredientAvailable = user.user_ingredients.find(e => e.weight >= item.weight && e.ingredient.uuid === item.ingredient.uuid)
+									ingredientAvailable = user.user_ingredients.find(e => e.weight >= newWeight && e.ingredient.uuid === item.ingredient.uuid)
 								}
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
 									<span className="rp-li-weight">
-									{Math.ceil((item.weight / recipe.servingCount) * multiplier)}
+									{newWeight}
 									</span> g {item.ingredient.name}</li>)
 						})}
 						</ul>
@@ -93,13 +94,14 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 							.filter((el, index) => index !== 0 && index % 2 !== 0)
 							.map(item => {
 								let ingredientAvailable = false;
+								let newWeight = Math.ceil((item.weight / recipe.servingCount) * multiplier)
 								if (user){
-									ingredientAvailable = user.user_ingredients.find(e => e.weight >= item.weight && e.ingredient.uuid === item.ingredient.uuid)
+									ingredientAvailable = user.user_ingredients.find(e => e.weight >= newWeight && e.ingredient.uuid === item.ingredient.uuid)
 								}
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
 									<span className="rp-li-weight">
-									{Math.ceil((item.weight / recipe.servingCount) * multiplier)}
+									{newWeight}
 									</span> g {item.ingredient.name}</li>)
 						})}
 						</ul>
