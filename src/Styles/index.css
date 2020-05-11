@@ -615,6 +615,49 @@ a:hover {
   outline: none;
 }
 
+.rf-add-to-meal-plan {
+  width: 100%;
+  border: 1px solid #ced4da;
+  background-color: white;
+  outline: none;
+  border-radius: 0.25rem;
+  height: 38px;
+  color: rgba(11, 57, 94, 0.3);
+  font-weight: bold;
+  -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
+  font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 600;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.rf-add-to-meal-plan:hover {
+  background-color: #c4ff86;
+  color: white;
+}
+
+.rf-add-to-meal-plan:active {
+  background-color: #b0e478;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+  color: white;
+}
+
+.rf-add-to-meal-plan:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+  outline: none;
+}
+
 .ic-buttons-container {
   font-size: calc(9px + (14 - 9) * ((100vw - 300px) / (1600 - 300)));
   position: absolute;
