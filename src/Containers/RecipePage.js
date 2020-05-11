@@ -118,6 +118,7 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 					</ol>
 				</Col>
 				</Row>
+				{user ?
 				<Row>
 				<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
 					<button onClick={() => setShowModal(true)} className="rf-add-to-meal-plan">
@@ -139,6 +140,9 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 					/>
 				</Col>
 				</Row>
+				:
+				null
+				}
 				</div>
 			</Fragment>
 			:
