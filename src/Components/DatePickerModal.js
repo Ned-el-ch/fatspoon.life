@@ -28,7 +28,7 @@ export const DatePickerModal = (props) => {
 				/>
 			</Modal.Body>
 			<Modal.Footer>
-				<button onClick={props.onClose}>Close</button>
+				<button onClick={props.onHide}>Close</button>
 				<button onClick={() => props.onSave(startDate)}>Add to meal planner</button>
 			</Modal.Footer>
 		</Modal>
