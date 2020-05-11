@@ -19,6 +19,15 @@ export const removeFromMealPlan = uuid => {
 	)
 }
 
+export const loadMealPlan = meals => {
+	return (
+		{
+			type: "LOAD_MEAL_PLAN",
+			meals
+		}
+	)
+}
+
 export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplier) => {
 	action(uuid, recipe, planned_date, multiplier)
 
@@ -41,7 +50,6 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 					console.log(data)
 					// dispatch(removeFromMealPlan(uuid))
 				} else {
-					debugger
 					dispatch(addToMealPlan(uuid, data.recipe, data.planned_date, data.multiplier))
 				}
 			})
@@ -49,8 +57,8 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 	}
 }
 
-// export const fetchRemoveFromMealPlan = (recipe, date) => {
-// 	RemoveFromMealPlan(recipe.uuid)
+// export const fetchRemoveFromMealPlan = id => {
+// 	removeFromMealPlan(id)
 // 	let token = localStorage.token;
 // 	if (token) {
 // 		return dispatch => {
@@ -61,16 +69,14 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 // 					Accept: 'application/json',
 // 					'Authorization': `Bearer ${token}`
 // 				},
-// 				body: JSON.stringify({recipe: {uuid: recipeID}})
+// 				body: JSON.stringify({recipe: {rmid: id}})
 // 			})
 // 			.then(res => res.json())
 // 			.then(data => {
 // 				if (data.error || data.message) {
 // 					console.log(data)
-// 					dispatch(addToMealPlan(data.recipe, date))
 // 				} else {
-// 					debugger
-// 					displatch(removeFromMealPlan(recipe.uuid))
+// 					dispatch(removeFromMealPlan(id))
 // 				}
 // 			})
 // 		}
