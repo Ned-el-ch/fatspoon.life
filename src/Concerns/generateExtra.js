@@ -24,7 +24,7 @@ export const formatDate = date => {
 	let daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 	let monthNames = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	let day = daysOfTheWeek[newDate.getDay() - 1]
-	let month = monthNames[newDate.getMonth() - 1]
+	let month = monthNames[newDate.getMonth()]
 	let number = newDate.getDate();
 	let year = newDate.getFullYear();
 	const th = (n) => {
