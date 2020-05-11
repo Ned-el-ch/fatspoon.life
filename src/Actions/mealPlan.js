@@ -25,8 +25,8 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 	let token = localStorage.token;
 	if (token) {
 		return dispatch => {
-			return fetch("http://localhost:4000/meal_planner/add", {
-			// return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/add", {
+			// return fetch("http://localhost:4000/meal_planner/add", {
+			return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/add", {
 				method: "POST",
 				headers: {
 					'Content-Type': 'application/json',
