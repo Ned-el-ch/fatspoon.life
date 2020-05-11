@@ -26,6 +26,7 @@
 
 	& * {
 		padding-bottom: 10px;
+
 		&.available {
 			&::before {
 				content: "✓";
@@ -37,6 +38,7 @@
 				margin-left: -1em;
 			}
 		}
+
 		&.not-available {
 			&::before {
 				content: "✗";
@@ -59,30 +61,88 @@
 .rp-instructions-ol {
 	text-align: justify;
 	padding-inline-start: 0;
+
 	& * {
 		padding-bottom: 5px;
 	}
 }
 
-.rp-subheading-container {
+.rp-subheading {
 	font-family: "Frenchpress";
 	font-size: $labelFontSizeLarge;
 	user-select: none;
 	color: $mainTextColorLighter;
-	// line-height: 1;
-	padding-bottom: 10px;
 }
 
 .rp-li-weight {
 	font-weight: bolder;
 }
 
-.rp-time-and-servings {
-	font-size: $smallFontSize;
+.rp-times-container {
+	font-size: $normalFontSize;
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+
 	& * {
 		display: inline-block;
-		width: 33.3333%;
+		width: 50%;
+	}
+}
+
+.rp-servings-container {
+	font-size: $labelFontSize;
+	margin-bottom: 10px;
+}
+
+.rp-servings-button {
+	width: 30px;
+	border: 1px solid #ced4da;
+	background-color: white;
+	outline: none;
+	border-radius: 0.25rem;
+	height: 30px;
+	color: $mainTextColorTransparent;
+	font-weight: bold;
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
+	font-weight: 600;
+	padding: 0;
+	user-select: none;
+	margin-left: 5px;
+	line-height: 0;
+	margin-bottom: 5px;
+	&.pos {
+		&:hover {
+			background-color: $secondaryAccentColor;
+			color: white;
+		}
+
+		&:active {
+			background-color: $secondaryAccentColorDark;
+			box-shadow: $mainBoxShadow;
+			color: white;
+		}
+
+		&:focus {
+			box-shadow: $mainBoxShadow !important;
+			outline: none;
+		}
+	}
+
+	&.neg {
+		&:hover {
+			background-color: $primaryAccentColor;
+			color: white;
+		}
+
+		&:active {
+			background-color: $primaryAccentColorDark;
+			box-shadow: $mainBoxShadow;
+			color: white;
+		}
+
+		&:focus {
+			box-shadow: $mainBoxShadow !important;
+			outline: none;
+		}
 	}
 }
