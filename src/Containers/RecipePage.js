@@ -49,14 +49,18 @@ const RecipePage = (props) => {
 					<div className="rp-subheading-container">
 						<span className="rp-subheading">What to expect</span>
 					</div>
-					<div className="rp-time-and-servings">
+					<div className="rp-times-container">
 						<span className="rp-prep-time-label">Prep Time: {recipe.prepTime} mins</span>
 						<span className="rp-cook-time-label">Cook Time: {recipe.cookingTime} mins</span>
-						<span className="rp-servings-label">Serves: {recipe.servingCount}</span>
 					</div>
 					<span className="rp-description">{recipe.description}</span>
 					<div className="rp-subheading-container">
-						<span className="rp-subheading">Ingredients</span>
+						{/* <span className="rp-subheading"></span> */}
+					<div className="rp-servings-container">
+						<span className="rp-servings-label rp-subheading">Ingredients & Servings: {recipe.servingCount}</span>
+						<button className="rp-servings-button pos">▲</button>
+						<button className="rp-servings-button neg">▼</button>
+					</div>
 					</div>
 					<div className="rp-ul-container">
 						<ul className="rp-ul rp-ingredients-left-ul">
