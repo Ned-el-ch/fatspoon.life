@@ -7,7 +7,7 @@ export default (state = [], action) => {
 		case "ADD_TO_MEAL_PLAN":
 			index = state.find(e => e.uuid === action.recipe.uuid)
 			if (!!index) {
-				return [...state, action.recipe]
+				return [...state, {recipe: action.recipe, multiplier: action.multiplier}]
 			} else {
 				return state;
 			}
