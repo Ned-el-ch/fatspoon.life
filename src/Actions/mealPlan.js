@@ -17,8 +17,12 @@ export const removeFromMealPlan = recipeID => {
 	)
 }
 
-export const fetchAddToMealPlan = (recipe, date) => {
-	addToMealPlan(recipe, date)
+export const fetchAddToMealPlan = (recipe, planned_date, multiplier) => {
+	addToMealPlan(recipe, planned_date, multiplier)
+
+	// PLANNED_DATE needs to be in format YYYYMMDD
+
+
 	let token = localStorage.token;
 	if (token) {
 		return dispatch => {
@@ -29,7 +33,7 @@ export const fetchAddToMealPlan = (recipe, date) => {
 					Accept: 'application/json',
 					'Authorization': `Bearer ${token}`
 				},
-				body: JSON.stringify({recipe: {uuid: recipe.uuid}})
+				body: JSON.stringify({recipe: {uuid: recipe.uuid, planned_date, multiplier}})
 			})
 			.then(res => res.json())
 			.then(data => {
