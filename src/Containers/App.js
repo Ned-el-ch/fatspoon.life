@@ -9,24 +9,26 @@ import Col from "react-bootstrap/Col"
 
 import { connect } from 'react-redux';
 import { loadRecipes } from '../Actions/recipes.js'
+import { loadMealPlan } from '../Actions/mealPlan.js'
 import { loadIngredients } from "../Actions/ingredients.js"
 import { loginUser, logoutUser } from "../Actions/user.js"
 import RoutesWrapper from '../Components/RoutesWrapper';
 
-const App = ({ user, loginUser, logoutUser, loadIngredients, loadRecipes }) => {
+const App = ({ user, loginUser, logoutUser, loadIngredients, loadRecipes, loadMealPlan }) => {
 	const userDataCallback = useCallback(
 		(userData) => {
 			loginUser(userData)
 			loadIngredients(userData.user_ingredients)
 			loadRecipes(userData.recipes)
+			loadMealPlan(userData.recipe_meals)
 		},
-		[loginUser, loadIngredients, loadRecipes],
+		[loginUser, loadIngredients, loadRecipes, loadMealPlan],
 	)
 	useEffect( () => {
 		const token = localStorage.token;
 		if (token) {
 			// called here to optimistically render routes to avoid reloading
-			userDataCallback({user_ingredients: [], recipes: []});
+			userDataCallback({user_ingredients: [], recipes: [], recipe_meals: []});
 			(async function fetchProfile() {
 				try {
 					await fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
@@ -40,7 +42,6 @@ const App = ({ user, loginUser, logoutUser, loadIngredients, loadRecipes }) => {
 						.then(res => res.json())
 						.then(data => {
 							if (data.message) {
-								debugger
 								localStorage.removeItem("token")
 								logoutUser()
 							} else {
@@ -90,4 +91,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps, { loginUser, logoutUser, loadIngredients, loadRecipes })(App);
+export default connect(mapStateToProps, { loginUser, logoutUser, loadIngredients, loadRecipes, loadMealPlan })(App);

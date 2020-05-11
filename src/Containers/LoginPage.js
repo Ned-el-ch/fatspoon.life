@@ -9,9 +9,10 @@ import { useHistory } from 'react-router-dom'
 import { userLoginFetch } from '../Actions/user'
 import { loadIngredients } from '../Actions/ingredients'
 import { loadRecipes } from '../Actions/recipes'
+import { loadMealPlan } from '../Actions/mealPlan'
 import PageHeader from '../Components/PageHeader'
 
-const LoginPage = ({ userLoginFetch, loadIngredients, loadRecipes }) => {
+const LoginPage = ({ userLoginFetch, loadIngredients, loadRecipes, loadMealPlan }) => {
 	const [alert, setAlert] = useState(false);
 	let history = useHistory();
 	return (
@@ -31,6 +32,7 @@ const LoginPage = ({ userLoginFetch, loadIngredients, loadRecipes }) => {
 							history.push("/")
 							loadIngredients(res.user_ingredients)
 							loadRecipes(res.recipes)
+							loadMealPlan(res.recipe_meals)
 						}
 					});
 				}}>
@@ -60,4 +62,4 @@ const LoginPage = ({ userLoginFetch, loadIngredients, loadRecipes }) => {
 	)
 }
 
-export default connect(null, { userLoginFetch, loadIngredients, loadRecipes })(LoginPage);
+export default connect(null, { userLoginFetch, loadIngredients, loadRecipes, loadMealPlan })(LoginPage);
