@@ -108,6 +108,14 @@ const RecipePage = (props) => {
 					</ol>
 				</Col>
 				</Row>
+				<Row>
+				<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
+					<button className="rf-add-to-meal-plan">
+						Add to meal plan
+					</button>
+
+				</Col>
+				</Row>
 				</div>
 			</Fragment>
 			:
