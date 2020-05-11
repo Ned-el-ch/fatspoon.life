@@ -42,7 +42,7 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 					// dispatch(removeFromMealPlan(uuid))
 				} else {
 					debugger
-					dispatch(addToMealPlan(uuid, data, planned_date, multiplier))
+					dispatch(addToMealPlan(uuid, data.recipe, data.planned_date, data.multiplier))
 				}
 			})
 		}
