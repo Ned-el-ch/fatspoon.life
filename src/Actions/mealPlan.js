@@ -57,28 +57,28 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 	}
 }
 
-// export const fetchRemoveFromMealPlan = id => {
-// 	removeFromMealPlan(id)
-// 	let token = localStorage.token;
-// 	if (token) {
-// 		return dispatch => {
-// 			return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/remove", {
-// 				method: "POST",
-// 				headers: {
-// 					'Content-Type': 'application/json',
-// 					Accept: 'application/json',
-// 					'Authorization': `Bearer ${token}`
-// 				},
-// 				body: JSON.stringify({recipe: {rmid: id}})
-// 			})
-// 			.then(res => res.json())
-// 			.then(data => {
-// 				if (data.error || data.message) {
-// 					console.log(data)
-// 				} else {
-// 					dispatch(removeFromMealPlan(id))
-// 				}
-// 			})
-// 		}
-// 	}
-// }
+export const fetchRemoveFromMealPlan = id => {
+	removeFromMealPlan(id)
+	let token = localStorage.token;
+	if (token) {
+		return dispatch => {
+			return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/remove", {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+					'Authorization': `Bearer ${token}`
+				},
+				body: JSON.stringify({recipe: {rmid: id}})
+			})
+			.then(res => res.json())
+			.then(data => {
+				if (data.error || data.message) {
+					console.log(data)
+				} else {
+					dispatch(removeFromMealPlan(id))
+				}
+			})
+		}
+	}
+}
