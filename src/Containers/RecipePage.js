@@ -3,16 +3,20 @@ import PageHeader from '../Components/PageHeader'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { connect } from 'react-redux'
+import { DatePickerModal } from '../Components/DatePickerModal'
+import { uuid } from '../Concerns/uuid'
+import { addToMealPlan, fetchAddToMealPlan } from '../Actions/mealPlan'
 
-const RecipePage = (props) => {
+const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 
 	const [recipe, setRecipe] = useState(null)
 	const [recipeExists, setRecipeExists] = useState(true)
-	const { user } = props;
+	const [showModal, setShowModal] = useState(false)
+	const [multiplier, setMultiplier] = useState(1)
 
 	useEffect(() => {
 		(async function () {
-			let location = props.match.params.recipe.split("-")
+			let location = match.params.recipe.split("-")
 			let uuid = location[location.length - 1]
 			try {
 				await fetch(`https://calm-brook-68370.herokuapp.com/recipes/${uuid.length === 12 ? uuid : null}`, {
@@ -28,13 +32,14 @@ const RecipePage = (props) => {
 							setRecipeExists(false)
 						} else {
 							setRecipe(data)
+							setMultiplier(data.servingCount)
 						}
 					})
 			} catch (e) {
 				console.log(e)
 			}
 		})()
-	}, [props, setRecipe, setRecipeExists])
+	}, [match, setRecipe, setRecipeExists, setMultiplier])
 	return (
 		<div className="content">
 			{recipe ?
@@ -57,9 +62,14 @@ const RecipePage = (props) => {
 					<div className="rp-subheading-container">
 						{/* <span className="rp-subheading"></span> */}
 					<div className="rp-servings-container">
-						<span className="rp-servings-label rp-subheading">Ingredients & Servings: {recipe.servingCount}</span>
-						<button className="rp-servings-button pos">▲</button>
-						<button className="rp-servings-button neg">▼</button>
+						<span className="rp-servings-label rp-subheading">Ingredients & Servings: {multiplier}</span>
+						<button className="rp-servings-button pos" onClick={() => {
+							setMultiplier(multiplier + 1)
+						}}>▲</button>
+						<button className="rp-servings-button neg" onClick={() => {
+							if (multiplier > 1)
+								setMultiplier(multiplier - 1)
+						}}>▼</button>
 					</div>
 					</div>
 					<div className="rp-ul-container">
@@ -74,7 +84,7 @@ const RecipePage = (props) => {
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
 									<span className="rp-li-weight">
-										{item.weight}
+									{Math.ceil((item.weight / recipe.servingCount) * multiplier)}
 									</span> g {item.ingredient.name}</li>)
 						})}
 						</ul>
@@ -89,7 +99,7 @@ const RecipePage = (props) => {
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
 									<span className="rp-li-weight">
-										{item.weight}
+									{Math.ceil((item.weight / recipe.servingCount) * multiplier)}
 									</span> g {item.ingredient.name}</li>)
 						})}
 						</ul>
@@ -110,10 +120,23 @@ const RecipePage = (props) => {
 				</Row>
 				<Row>
 				<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
-					<button className="rf-add-to-meal-plan">
+					<button onClick={() => setShowModal(true)} className="rf-add-to-meal-plan">
 						Add to meal plan
 					</button>
-
+					<DatePickerModal
+						show={showModal}
+						onHide={() => setShowModal(false)}
+						onSave={(date) => {
+							const dateString = 
+								new Date(date.getTime() + (date.getTimezoneOffset()*60*1000))
+									.toISOString()
+									.split("T")[0]
+									.split("-").join("")
+							// debugger
+							// FETCH TO API TO SAVE RECIPE_MEAL
+							fetchAddToMealPlan(addToMealPlan, uuid(), recipe, dateString, multiplier)
+						}}
+					/>
 				</Col>
 				</Row>
 				</div>
@@ -133,4 +156,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps)(RecipePage)
+export default connect(mapStateToProps, { addToMealPlan, fetchAddToMealPlan })(RecipePage)
