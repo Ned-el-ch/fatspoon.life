@@ -191,7 +191,7 @@ a:hover {
 
 .rf-ingredients-list-heading, .rf-cooking-instructions-heading {
   font-family: "Frenchpress";
-  font-size: calc(2.4rem + (3.0 - 2.4) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(2.35rem + (2.95 - 2.35) * ((100vw - 300px) / (1600 - 300)));
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -526,7 +526,7 @@ a:hover {
 
 .rp-subheading {
   font-family: "Frenchpress";
-  font-size: calc(2.4rem + (3.0 - 2.4) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(2.35rem + (2.95 - 2.35) * ((100vw - 300px) / (1600 - 300)));
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1142,7 +1142,7 @@ a.dropdown-item:hover {
 
 .mc-subheading {
   font-family: "Frenchpress";
-  font-size: calc(2.4rem + (3.0 - 2.4) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(2.35rem + (2.95 - 2.35) * ((100vw - 300px) / (1600 - 300)));
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
