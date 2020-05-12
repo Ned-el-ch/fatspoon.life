@@ -47,7 +47,6 @@ const validateForm = (info = {}, cookingData = {ingredients: [{weight: ""}], ins
 const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 	const [info, setInfo] = useState(initialInfo);
 	const [cookingData, setCookingData] = useState(initialCookingData);
-	const [buttonIsDisabled, setButtonIsDisabled] = useState(validateForm());
 	return (
 		<div className="recipe-form">
 			<div className="rf-main-info">
