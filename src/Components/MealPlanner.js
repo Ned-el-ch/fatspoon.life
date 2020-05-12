@@ -8,6 +8,11 @@ import moment from 'moment'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+const filterMeals = (meals, startDate, endDate) => {
+	// debugger
+	return meals.filter(meal => startDate.isBefore(meal.planned_date) && endDate.isAfter(meal.planned_date))
+}
+
 const initialState = {
 	start: moment(),
 	beginWeek: moment().startOf('week').add(1, 'day'),
@@ -46,7 +51,7 @@ const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
 			</Col>
 			</Row>
 			<div className="content--inner">
-				{meals.map(meal => {
+				{filterMeals(meals, beginningOfCurrentWeek, endOfCurrentWeek).map(meal => {
 					return (
 						<MealCard
 							key={meal.id}
