@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { DatePickerModal } from '../Components/DatePickerModal'
 import { uuid } from '../Concerns/uuid'
 import { addToMealPlan, fetchAddToMealPlan } from '../Actions/mealPlan'
+import { useHistory } from 'react-router'
 
 const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 
@@ -13,7 +14,7 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 	const [recipeExists, setRecipeExists] = useState(true)
 	const [showModal, setShowModal] = useState(false)
 	const [multiplier, setMultiplier] = useState(1)
-
+	const history = useHistory()
 	useEffect(() => {
 		(async function () {
 			let location = match.params.recipe.split("-")
@@ -136,6 +137,8 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 									.split("T")[0]
 									.split("-").join("")
 							fetchAddToMealPlan(addToMealPlan, uuid(), recipe, dateString, multiplier)
+							setShowModal(false)
+							history.push("/")
 						}}
 					/>
 				</Col>
