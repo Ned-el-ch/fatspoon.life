@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { updateIngredients, editIngredient } from '../Actions/ingredients'
 
-const ShoppingList = (props) => {
+const ShoppingList = ({ingredients, mealPlan, updateIngredients, editIngredient}) => {
 	return (
 		<div className="shopping-list">
 			
@@ -8,4 +10,13 @@ const ShoppingList = (props) => {
 	)
 }
 
-export default ShoppingList;
+const mapStateToProps = state => {
+	return (
+		{
+			ingredients: state.ingredients,
+			mealPlan: state.mealPlan
+		}
+	)
+}
+
+export default connect(mapStateToProps, { updateIngredients, editIngredient })(ShoppingList);
