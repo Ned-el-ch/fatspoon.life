@@ -28,6 +28,16 @@ export const loadMealPlan = meals => {
 	)
 }
 
+export const updateMultiplier = (id, multiplier) => {
+	return (
+		{
+			type: "UPDATE_MULTIPLIER",
+			id,
+			multiplier
+		}
+	)
+}
+
 export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplier) => {
 	action(uuid, recipe, planned_date, multiplier)
 
@@ -48,7 +58,6 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 			.then(data => {
 				if (data.error || data.message) {
 					console.log(data)
-					// dispatch(removeFromMealPlan(uuid))
 				} else {
 					dispatch(addToMealPlan(uuid, data.recipe, data.planned_date, data.multiplier))
 				}
@@ -57,28 +66,82 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 	}
 }
 
-export const fetchRemoveFromMealPlan = id => {
-	removeFromMealPlan(id)
+export const fetchUpdateMultiplier = (action, id, multiplier) => {
+	action(id, multiplier)
+
 	let token = localStorage.token;
 	if (token) {
 		return dispatch => {
-			return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/remove", {
+			// return fetch("http://localhost:4000/meal_planner/add", {
+			return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/update_multiplier", {
 				method: "POST",
 				headers: {
 					'Content-Type': 'application/json',
 					Accept: 'application/json',
 					'Authorization': `Bearer ${token}`
 				},
-				body: JSON.stringify({recipe: {rmid: id}})
+				body: JSON.stringify({recipe_meal: {id, multiplier}})
 			})
 			.then(res => res.json())
 			.then(data => {
 				if (data.error || data.message) {
 					console.log(data)
 				} else {
-					dispatch(removeFromMealPlan(id))
+					dispatch(action(id, data.multiplier))
 				}
 			})
 		}
 	}
 }
+
+export const fetchRemoveFromMealPlan = (action, id) => {
+	action(id)
+	let token = localStorage.token;
+	if (token) {
+		return dispatch => {
+			return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/destroy", {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+					'Authorization': `Bearer ${token}`
+				},
+				body: JSON.stringify({recipe_meal: {id}})
+			})
+			.then(res => res.json())
+			.then(data => {
+				if (data.error || data.message) {
+					console.log(data)
+				} else {
+					dispatch(action(id))
+				}
+			})
+		}
+	}
+}
+
+// export const fetchWeeklyMeals = (action, id, start_date, end_date) => {
+// 	action(id)
+// 	let token = localStorage.token;
+// 	if (token) {
+// 		return dispatch => {
+// 			return fetch("https://calm-brook-68370.herokuapp.com/meal_planner/destroy", {
+// 				method: "POST",
+// 				headers: {
+// 					'Content-Type': 'application/json',
+// 					Accept: 'application/json',
+// 					'Authorization': `Bearer ${token}`
+// 				},
+// 				body: JSON.stringify({recipe_meal: {id, start_date, end_date}})
+// 			})
+// 			.then(res => res.json())
+// 			.then(data => {
+// 				if (data.error || data.message) {
+// 					console.log(data)
+// 				} else {
+// 					dispatch(action(id))
+// 				}
+// 			})
+// 		}
+// 	}
+// }
