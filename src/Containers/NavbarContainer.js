@@ -57,7 +57,7 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 				<Nav className="ml-auto">
 					{user
 					?
-					<NavDropdown drop="left" title={user.username} id="basic-nav-dropdown">
+					<NavDropdown drop="left" title={user.username ? user.username : "me"} id="basic-nav-dropdown">
 						<LinkContainer exact to="/MyProfile">
 							<NavDropdown.Item href="/MyProfile">My Profile</NavDropdown.Item>
 						</LinkContainer>
