@@ -9,7 +9,6 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 const filterMeals = (meals, startDate, endDate) => {
-	// debugger
 	return meals.filter(meal => startDate.isBefore(meal.planned_date) && endDate.isAfter(meal.planned_date))
 }
 
@@ -20,7 +19,7 @@ const initialState = {
 }
 
 const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
-	const [startingWeek, setStartingWeek] = useState(initialState.start)
+	const [startingWeek] = useState(initialState.start)
 	const [beginningOfCurrentWeek, setBeginningOfCurrentWeek] = useState(initialState.beginWeek)
 	const [endOfCurrentWeek, setEndOfCurrentWeek] = useState(initialState.endWeek)
 	return (
@@ -51,7 +50,8 @@ const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
 			</Col>
 			</Row>
 			<div className="content--inner">
-				{filterMeals(meals, beginningOfCurrentWeek, endOfCurrentWeek).map(meal => {
+				{filterMeals(meals, beginningOfCurrentWeek, endOfCurrentWeek).length > 0 ?
+				filterMeals(meals, beginningOfCurrentWeek, endOfCurrentWeek).map(meal => {
 					return (
 						<MealCard
 							key={meal.id}
@@ -63,6 +63,12 @@ const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
 						/>
 					)
 				})
+				:
+				<Row>
+				<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
+				<div className="mp-subheading-container"><span className="mp-subheading">You don't have any meals planned for this week!</span></div>
+				</Col>
+				</Row>
 				}
 			</div>
 		</div>
