@@ -61,6 +61,7 @@ const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
 							labels={createLabels(meal.recipe, ingredients)}
 							link={generateLink(meal.recipe)}
 							user={user}
+							ingredients={ingredients}
 						/>
 					)
 				})

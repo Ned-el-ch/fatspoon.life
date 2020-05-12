@@ -5,9 +5,8 @@ import Col from 'react-bootstrap/Col'
 import { connect } from 'react-redux';
 import { updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan } from "../Actions/mealPlan"
 
-const MealCard = ({ meal, recipe, labels, link, user, updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan }) => {
+const MealCard = ({ ingredients, meal, recipe, labels, link, user, updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan }) => {
 	const [multiplier, setMultiplier] = useState(meal.multiplier)
-
 	return (
 		<Fragment>
 		<div className="planned-date-container">
@@ -52,7 +51,7 @@ const MealCard = ({ meal, recipe, labels, link, user, updateMultiplier, fetchUpd
 								let ingredientAvailable = false;
 								let newWeight = Math.ceil((item.weight / recipe.servingCount) * multiplier)
 								if (user){
-									ingredientAvailable = user.user_ingredients.find(e => e.weight >= newWeight && e.ingredient.uuid === item.ingredient.uuid)
+									ingredientAvailable = ingredients.find(e => e.weight >= newWeight && e.uuid === item.ingredient.uuid)
 								}
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
@@ -68,7 +67,7 @@ const MealCard = ({ meal, recipe, labels, link, user, updateMultiplier, fetchUpd
 								let ingredientAvailable = false;
 								let newWeight = Math.ceil((item.weight / recipe.servingCount) * multiplier)
 								if (user){
-									ingredientAvailable = user.user_ingredients.find(e => e.weight >= newWeight && e.ingredient.uuid === item.ingredient.uuid)
+									ingredientAvailable = ingredients.find(e => e.weight >= newWeight && e.uuid === item.ingredient.uuid)
 								}
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
