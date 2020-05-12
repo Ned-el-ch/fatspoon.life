@@ -3,14 +3,17 @@ import { formatDate } from '../Concerns/generateExtra'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { connect } from 'react-redux';
-import { updateMultiplier, fetchUpdateMultiplier } from "../Actions/mealPlan"
+import { updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan } from "../Actions/mealPlan"
 
-const MealCard = ({ meal, recipe, labels, link, user, updateMultiplier, fetchUpdateMultiplier }) => {
+const MealCard = ({ meal, recipe, labels, link, user, updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan }) => {
 	const [multiplier, setMultiplier] = useState(meal.multiplier)
 
 	return (
 		<Fragment>
 		<div className="planned-date-container">
+			<button className="mc-delete-meal" onClick={() => {
+				fetchRemoveFromMealPlan(removeFromMealPlan, meal.id)
+			}}>Delete</button>
 			<span className="mc-subheading">{formatDate(meal.planned_date)}</span>
 		</div>
 		<div className="mc-container">
@@ -94,4 +97,4 @@ const MealCard = ({ meal, recipe, labels, link, user, updateMultiplier, fetchUpd
 	)
 }
 
-export default connect(null, { updateMultiplier, fetchUpdateMultiplier })(MealCard);
+export default connect(null, { updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan })(MealCard);
