@@ -40,3 +40,27 @@ export const formatDate = date => {
 	}
 	return `${day}, ${th(number)} ${month}, ${year}`
 }
+
+export const formatWeek = (startDate, endDate) => {
+	let monthNames = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	let start = new Date(startDate.split("T")[0])
+	let end = new Date(endDate.split("T")[0])
+	let startMonth = monthNames[start.getMonth()]
+	let startNumber = start.getDate();
+	let startYear = start.getFullYear();
+	let endMonth = monthNames[end.getMonth()]
+	let endNumber = end.getDate();
+	let endYear = end.getFullYear();
+	const th = (n) => {
+		if (n === 1 || n === 21 || n === 31) {
+			return `${n}st`
+		} else if (n === 2 || n === 22) {
+			return `${n}nd`
+		} else if (n === 3 || n === 23) {
+			return `${n}rd`
+		} else {
+			return `${n}th`
+		}
+	}
+	return `${th(startNumber)} ${startMonth}, ${startYear} — ${th(endNumber)} ${endMonth}, ${endYear}`
+}
