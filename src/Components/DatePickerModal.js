@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 
 export const DatePickerModal = (props) => {
-	const [startDate, setStartDate] = useState(Date.now());
+	const [startDate, setStartDate] = useState(new Date());
 	return (
 		<Modal
 			{...props}
@@ -23,7 +23,7 @@ export const DatePickerModal = (props) => {
 					selected={startDate}
 					onChange={date => setStartDate(date)}
 					// locale="en-GB"
-					minDate={() => Date.now()}
+					minDate={new Date()}
 					placeholderText="Choose a day"
 				/>
 			</Modal.Body>
