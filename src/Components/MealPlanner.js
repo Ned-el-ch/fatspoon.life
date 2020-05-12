@@ -7,6 +7,7 @@ import { generateLink, createLabels, formatWeek } from '../Concerns/generateExtr
 import moment from 'moment'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Link } from "react-router-dom";
 
 const filterMeals = (meals, startDate, endDate) => {
 	return meals.filter(meal => startDate.isBefore(meal.planned_date) && endDate.isAfter(meal.planned_date))
@@ -67,6 +68,7 @@ const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
 				<Row>
 				<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
 				<div className="mp-subheading-container"><span className="mp-subheading">You don't have any meals planned for this week!</span></div>
+				<div className="mp-subheading-container"><span className="mp-subheading">Head over to your <Link to="/MyCookbook">Cookbook</Link> to add some!</span></div>
 				</Col>
 				</Row>
 				}
