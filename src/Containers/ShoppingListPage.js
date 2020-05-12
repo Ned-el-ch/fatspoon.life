@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import ShoppingList from '../Components/ShoppingList'
 import PageHeader from '../Components/PageHeader'
 
@@ -14,12 +13,4 @@ const ShoppingListPage = () => {
 	)
 }
 
-const mapStateToProps = items => {
-	return (
-		{
-			items
-		}
-	)
-}
-
-export default connect(mapStateToProps)(ShoppingListPage)
+export default ShoppingListPage
