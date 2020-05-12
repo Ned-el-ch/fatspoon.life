@@ -85,33 +85,6 @@ const MealCard = ({ meal, recipe, labels, link, user }) => {
 					</ol>
 			</Col>
 			</Row>
-			{/* <div className="mc-title-container">
-				<Link to={link}>
-					<span className="mc-title">{recipe.title}</span>
-				</Link>
-			<div className="mc-labels-container">
-				<div className="mc-labels-missing-items">
-					{labels.missingIngredients === 0 ?
-					<span className="mc-labels-missing-items-none label">Got everything!</span>
-					:
-					<span className="mc-labels-missing-items-some label">Few missing items!</span>
-					}
-				</div>
-					{labels.vegetarian ?
-					<span className="mc-labels-vegetarian label">Vegetarian</span>
-					:
-					null
-					}
-			</div>
-			</div>
-			<div className="mc-description-container">
-				<span className="mc-description">{recipe.description}</span>
-			</div>
-			<div className="mc-servings-and-times-container">
-				<div>Prep Time: {recipe.prepTime} mins</div>
-				<div>Cook Time: {recipe.cookingTime} mins</div>
-				<div>Serves: {recipe.servingCount}</div>
-			</div> */}
 		</div>
 		</Fragment>
 	)
