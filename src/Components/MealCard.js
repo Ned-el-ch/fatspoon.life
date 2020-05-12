@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { formatDate } from '../Concerns/generateExtra'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { connect } from 'react-redux';
+import { updateMultiplier, fetchUpdateMultiplier } from "../Actions/mealPlan"
 
-const MealCard = ({ meal, recipe, labels, link, user }) => {
+const MealCard = ({ meal, recipe, labels, link, user, updateMultiplier, fetchUpdateMultiplier }) => {
 	const [multiplier, setMultiplier] = useState(meal.multiplier)
 
 	return (
@@ -31,10 +33,13 @@ const MealCard = ({ meal, recipe, labels, link, user }) => {
 				<span className="mc-servings-label mc-subheading">Ingredients & Servings: {multiplier}</span>
 				<button className="rp-servings-button pos" onClick={() => {
 					setMultiplier(multiplier + 1)
+					fetchUpdateMultiplier(updateMultiplier, meal.id, multiplier + 1)
 				}}>▲</button>
 				<button className="rp-servings-button neg" onClick={() => {
-					if (multiplier > 1)
+					if (multiplier > 1) {
 						setMultiplier(multiplier - 1)
+						fetchUpdateMultiplier(updateMultiplier, meal.id, multiplier - 1)
+					}
 				}}>▼</button>
 			</div>
 			<div className="rp-ul-container">
@@ -90,4 +95,4 @@ const MealCard = ({ meal, recipe, labels, link, user }) => {
 	)
 }
 
-export default MealCard;
+export default connect(null, { updateMultiplier, fetchUpdateMultiplier })(MealCard);
