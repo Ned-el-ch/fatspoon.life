@@ -1,8 +1,10 @@
-export const addToMealPlan = (uuid, recipe, planned_date, multiplier) => {
+import moment from 'moment'
+
+export const addToMealPlan = (id, recipe, planned_date, multiplier) => {
 	return (
 		{
 			type: "ADD_TO_MEAL_PLAN",
-			uuid,
+			id,
 			planned_date,
 			recipe,
 			multiplier
@@ -10,11 +12,11 @@ export const addToMealPlan = (uuid, recipe, planned_date, multiplier) => {
 	)
 }
 
-export const removeFromMealPlan = uuid => {
+export const removeFromMealPlan = id => {
 	return (
 		{
 			type: "REMOVE_FROM_MEAL_PLAN",
-			uuid
+			id
 		}
 	)
 }
@@ -39,7 +41,7 @@ export const updateMultiplier = (id, multiplier) => {
 }
 
 export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplier) => {
-	action(uuid, recipe, planned_date, multiplier)
+	// action(uuid, recipe, planned_date, multiplier)
 
 	let token = localStorage.token;
 	if (token) {
@@ -59,7 +61,7 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 				if (data.error || data.message) {
 					console.log(data)
 				} else {
-					dispatch(addToMealPlan(uuid, data.recipe, data.planned_date, data.multiplier))
+					dispatch(addToMealPlan(data.id, data.recipe, moment(data.planned_date).format(), data.multiplier))
 				}
 			})
 		}
@@ -68,7 +70,6 @@ export const fetchAddToMealPlan = (action, uuid, recipe, planned_date, multiplie
 
 export const fetchUpdateMultiplier = (action, id, multiplier) => {
 	action(id, multiplier)
-
 	let token = localStorage.token;
 	if (token) {
 		return dispatch => {
