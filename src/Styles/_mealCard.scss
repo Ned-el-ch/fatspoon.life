@@ -37,3 +37,35 @@
 		padding-bottom: 5px;
 	}
 }
+
+.mc-delete-meal {
+	width: 15%;
+	position: absolute;
+	left: 12px;
+	border: 1px solid #ced4da;
+	background-color: white;
+	outline: none;
+	border-radius: 0.25rem;
+	height: 38px;
+	color: $mainTextColorTransparent;
+	font-weight: bold;
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
+	font-size: $normalFontSize;
+	padding: 0;
+	user-select: none;
+	&:hover {
+		background-color: $primaryAccentColor;
+		color: white;
+	}
+
+	&:active {
+		background-color: red;
+		color: white;
+		box-shadow: $mainBoxShadow;
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+		outline: none;
+	}
+}
