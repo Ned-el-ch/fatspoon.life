@@ -1,4 +1,3 @@
-
 export const generateLink = recipe => {
 	let link = "Recipes/" + recipe.title.split(" ").slice(0, 4).join("-")
 	link += "-" + recipe.uuid;
