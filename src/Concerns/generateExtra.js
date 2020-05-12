@@ -21,9 +21,9 @@ export const createLabels = (recipe, ingredients) => {
 
 export const formatDate = date => {
 	let newDate = new Date(date.split("T")[0])
-	let daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+	let daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 	let monthNames = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	let day = daysOfTheWeek[newDate.getDay() - 1]
+	let day = daysOfTheWeek[newDate.getDay()]
 	let month = monthNames[newDate.getMonth()]
 	let number = newDate.getDate();
 	let year = newDate.getFullYear();
