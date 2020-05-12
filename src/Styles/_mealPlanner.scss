@@ -42,3 +42,12 @@
 		outline: none;
 	}
 }
+
+.mp-subheading-container {
+	font-family: "Frenchpress";
+	font-size: $labelFontSizeLarge;
+	user-select: none;
+	color: $mainTextColorLighter;
+	line-height: 1.15;
+	text-align: center;
+}

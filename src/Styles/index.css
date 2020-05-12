@@ -1123,6 +1123,18 @@ a.dropdown-item:hover {
   outline: none;
 }
 
+.mp-subheading-container {
+  font-family: "Frenchpress";
+  font-size: calc(2.35rem + (2.95 - 2.35) * ((100vw - 300px) / (1600 - 300)));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #0b385e;
+  line-height: 1.15;
+  text-align: center;
+}
+
 .mc-container {
   -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.05);
