@@ -71,15 +71,6 @@ const SearchResults = ({ fetchSearchRecipes, recipes, ingredients }) => {
 				:
 				<div className="mp-subheading-container"><span className="mp-subheading">{hasSearched ? "No results found! Try a different query!" : ""}</span></div>
 			}
-
-				{/* {recipes.map(recipe => 
-					<RecipeCard
-						key={recipe.uri}
-						recipe={recipe}
-						starRecipe={starRecipe}
-						unstarRecipe={unstarRecipe}
-					/>
-				)} */}
 			</div>
 		</div>
 	)
