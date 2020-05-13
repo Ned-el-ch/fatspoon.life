@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import { updateIngredients, editIngredient } from '../Actions/ingredients'
 import ShoppingListItem from './ShoppingListItem';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const initialState = (ingredients, mealPlan) => {
 	let items = []
@@ -44,14 +46,22 @@ const ShoppingList = ({ingredients, mealPlan, updateIngredients, editIngredient}
 
 	return (
 		<div className="shopping-list-items-container">
-			{items.map(item => {
+			{items.length > 0 ?
+			items.map(item => {
 				return (
 					<ShoppingListItem
 						key={item.uuid}
 						item={item}
 					/>
 				)
-			})}
+			})
+			:
+			<Row>
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
+			<div className="mp-subheading-container"><span className="mp-subheading">All caught up for this week!</span></div>
+			</Col>
+			</Row>
+			}
 		</div>
 	)
 }
