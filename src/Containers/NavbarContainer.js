@@ -21,7 +21,7 @@ import { clearIngredients } from "../Actions/ingredients";
 const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 	let history = useHistory();
 	return (
-		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
+		<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
 			{user
 			?
 			<LinkContainer exact to="/">
