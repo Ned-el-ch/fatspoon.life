@@ -17,7 +17,8 @@ const Cookbook = (props) => {
 			<RecipeFormContainer />
 			<Row>
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1}} lg={{ span: 10, offset: 1}} className="rf-remove-margin">
-				{recipes.map(recipe => 
+				{recipes.length > 0 ?
+					recipes.map(recipe => 
 					<RecipeCard
 						key={recipe.uuid}
 						recipe={recipe}
@@ -26,7 +27,10 @@ const Cookbook = (props) => {
 						labels={createLabels(recipe, ingredients)}
 						link={generateLink(recipe)}
 					/>
-				)}
+				)
+				:
+				<div className="mp-subheading-container"><span className="mp-subheading">You don't have any recipes yet! Add some with the button above!</span></div>
+			}
 			</Col>
 			</Row>
 			</div>
