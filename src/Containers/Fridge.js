@@ -30,29 +30,33 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 					<div className="fridge-ingredients">
 					<Row>
 					<Col xs={12} sm={12} md={{span: 10, offset: 1}} lg={{span: 10, offset: 1}} className="rf-remove-margin">
-						<div className="fridge-ingredients-filter-container">
-						<InputGroup className="mb-3">
-							<InputGroup.Prepend>
-								<InputGroup.Text id="inputGroup-sizing-lg">Find by</InputGroup.Text>
-							</InputGroup.Prepend>
-							<FormControl
-								placeholder="ingredient name"
-								aria-label="title"
-								aria-describedby="inputGroup-sizing-lg"
-								value={filter}
-								maxLength={25}
-								onChange={event => {
-									event.preventDefault()
-									setFilter(event.target.value)
-								}}
-							/>
-						</InputGroup>
-						</div>
+						{ingredients.length > 0 ?
+							<div className="fridge-ingredients-filter-container">
+							<InputGroup className="mb-3">
+								<InputGroup.Prepend>
+									<InputGroup.Text id="inputGroup-sizing-lg">Find by</InputGroup.Text>
+								</InputGroup.Prepend>
+								<FormControl
+									placeholder="ingredient name"
+									aria-label="title"
+									aria-describedby="inputGroup-sizing-lg"
+									value={filter}
+									maxLength={25}
+									onChange={event => {
+										event.preventDefault()
+										setFilter(event.target.value)
+									}}
+								/>
+							</InputGroup>
+							</div>
+						:
+						null}
 					</Col>
 					</Row>
 						{!filter
 						?
-						ingredients.map(ingredient => {
+						ingredients.length > 0 ?
+						 ingredients.map(ingredient => {
 							return(
 								<IngredientCard
 									key={ingredient.uuid}
@@ -60,7 +64,9 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 									removeIngredient={removeIngredient}
 								/>
 							)
-						})
+						}) :
+							<div className="mp-subheading-container"><span className="mp-subheading">You don't have any ingredients yet! Add some with the button above!</span></div>
+
 						:
 							ingredients.filter(e => e.name.toLowerCase().includes(filter.toLowerCase())).length > 0 
 							?
