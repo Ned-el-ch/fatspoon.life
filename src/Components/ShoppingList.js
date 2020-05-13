@@ -16,6 +16,7 @@ const initialState = (ingredients, mealPlan) => {
 			// IF FOUND THEN SUBTRACT THAT INGREDIENT.WEIGHT FROM ITEM.WEIGHT
 			// IF ITEM.WEIGHT < 0 REMOVE IT FROM ITEMS
 	// RETURN items
+	// debugger
 	mealPlan.forEach(meal => {
 		meal.recipe.recipe_ingredients.forEach(ri => {
 			let ind = items.findIndex(e => e.uuid === ri.ingredient.uuid)
@@ -23,7 +24,7 @@ const initialState = (ingredients, mealPlan) => {
 				items[ind].weight += ri.weight;
 			} else {
 				let weight = (ri.weight / meal.recipe.servingCount) * meal.multiplier
-				items.push({uuid: ri.ingredient.uuid, weight, name: ri.ingredient.name})
+				items.push({uuid: ri.ingredient.uuid, weight, ingWeight: 0, name: ri.ingredient.name})
 			}
 		})
 	});
@@ -31,6 +32,7 @@ const initialState = (ingredients, mealPlan) => {
 		let ind = items.findIndex(e => e.uuid === ingredient.uuid)
 		if (ind > -1) {
 			items[ind].weight -= ingredient.weight
+			items[ind].ingWeight = ingredient.weight
 		}
 	})
 	items = items.filter(item => item.weight > 0)
@@ -52,12 +54,14 @@ const ShoppingList = ({ingredients, mealPlan, updateIngredients, editIngredient}
 					<ShoppingListItem
 						key={item.uuid}
 						item={item}
+						updateIngredients={updateIngredients}
+						editIngredient={editIngredient}
 					/>
 				)
 			})
 			:
 			<Row>
-			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
+			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} lg={{ span: 10, offset: 1 }} className="rf-remove-margin">
 			<div className="mp-subheading-container"><span className="mp-subheading">All caught up for this week!</span></div>
 			</Col>
 			</Row>
