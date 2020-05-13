@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { connect } from 'react-redux';
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
@@ -21,7 +21,7 @@ import { clearIngredients } from "../Actions/ingredients";
 const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 	let history = useHistory();
 	return (
-		<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
+		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
 			{user
 			?
 			<LinkContainer exact to="/">
@@ -46,11 +46,17 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 					<LinkContainer exact to="/MyShoppingList">
 						<NavLink active={false}><NavItem>My Shopping List</NavItem></NavLink>
 					</LinkContainer>
+					<LinkContainer exact to="/Search">
+						<NavLink active={false}><NavItem>Search Recipes</NavItem></NavLink>
+					</LinkContainer>
 				</Nav>
 				:
 				<Nav className="mr-auto">
 					<LinkContainer exact to="/About">
 						<NavLink active={false}><NavItem>About</NavItem></NavLink>
+					</LinkContainer>
+					<LinkContainer exact to="/Search">
+						<NavLink active={false}><NavItem>Search Recipes</NavItem></NavLink>
 					</LinkContainer>
 				</Nav>
 				}
@@ -77,15 +83,6 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 					</Fragment>
 				}
 				</Nav>
-
-				{/* <Form inline onSubmit={this.handleSubmit}>
-				<Form.Group controlId="recipeSearchForm">
-					<FormControl onChange={this.handleOnChange} value={this.state.searchTerm} type="text" placeholder="Find Recipes ..." className="mr-sm-3"/>
-				</Form.Group>
-				<Form.Group controlId="recipeSearchFormSubmitButton">
-					<Button type="submit" variant="outline-success">Search</Button>
-				</Form.Group>
-				</Form> */}
 			</Navbar.Collapse>
 		</Navbar>
 	)
