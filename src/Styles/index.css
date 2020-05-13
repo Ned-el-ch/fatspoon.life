@@ -756,7 +756,7 @@ a:hover {
   width: 20px;
   height: 20px;
   top: 0;
-  right: -1px;
+  right: 0;
   border-radius: 0 7px;
   line-height: 1;
   padding-bottom: 3px;
@@ -857,8 +857,8 @@ a:hover {
 .ic-weight-input {
   position: absolute;
   width: 50%;
-  right: 10px;
-  bottom: 0;
+  right: 12px;
+  bottom: 2px;
   text-align: right;
   border-radius: 5px;
   border: none;
@@ -869,8 +869,8 @@ a:hover {
 
 .ic-weight-input-suffix {
   position: absolute;
-  right: 0;
-  bottom: 4px;
+  right: 1.5px;
+  bottom: 5px;
   font-size: calc(11px + (17 - 11) * ((100vw - 300px) / (1600 - 300)));
 }
 
@@ -1248,7 +1248,7 @@ a.dropdown-item:hover {
 
 .sli-name {
   position: absolute;
-  bottom: 8px;
+  bottom: 6px;
 }
 
 .sli-weight-input-container {
