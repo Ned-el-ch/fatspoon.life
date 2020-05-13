@@ -781,7 +781,6 @@ a:hover {
   overflow: hidden;
   line-height: 1.2rem;
   word-wrap: break-word;
-  font-weight: 500;
   padding-top: 10px;
 }
 
@@ -858,8 +857,8 @@ a:hover {
 .ic-weight-input {
   position: absolute;
   width: 50%;
-  right: 12px;
-  bottom: 2px;
+  right: 15px;
+  bottom: 5px;
   text-align: right;
   border-radius: 5px;
   border: none;
