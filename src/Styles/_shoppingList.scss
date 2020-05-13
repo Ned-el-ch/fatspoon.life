@@ -1,0 +1,131 @@
+.sli-name-container {
+	background-color: white;
+	border: solid 0.2rem $boxShadowColor;
+	border-radius: 10px;
+	display: block;
+	// @include setPaddingAndMargin(0, 5px);
+	position: relative;
+	padding: 5px 0;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	height: 40px;
+
+	&.point {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.sli-weight {
+	position: absolute;
+	font-size: $mediumFontSize;
+	right: 10px;
+	bottom: 22px;
+}
+
+.sli-name {
+	position: absolute;
+	bottom: 8px;
+}
+
+.sli-weight-input-container {
+	position: absolute;
+	font-size: $mediumFontSize;
+	right: 10px;
+	bottom: 20px;
+}
+
+
+.sli-weight-input {
+	position: absolute;
+	width: 70px;
+	right: 10px;
+	bottom: -2px;
+	text-align: right;
+	border-radius: 5px;
+	border: none;
+	background-color: $backgroundColorDark;
+	height: 25px;
+	font-size: $mediumFontSize;
+}
+
+
+.sli-weight-input-suffix {
+	position: absolute;
+	right: 0;
+	bottom: 2px;
+	font-size: $mediumFontSize;
+}
+
+.sli-weight-buttons-container {
+	position: relative;
+	bottom: 0;
+}
+
+.sli-button {
+	position: absolute;
+	border: none;
+	outline: none !important;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	padding: 0;
+	color: white;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+	font-weight: bolder;
+	margin-left: 2px;
+	border-radius: 3px;
+	user-select: none;
+	bottom: -2px;
+
+	&.pos {
+		background-color: $secondaryAccentColor;
+		right: 120px;
+
+		&:active {
+			background-color: $secondaryAccentColorDark;
+		}
+	}
+
+	&.neg {
+		background-color: $primaryAccentColor;
+		right: 90px;
+
+		&:active {
+			background-color: $primaryAccentColorDark;
+		}
+	}
+
+}
+
+.sli-add-ingredient {
+	width: 100%;
+	border: 1px solid #ced4da;
+	background-color: white;
+	outline: none;
+	border-radius: 10px;
+	height: 40px;
+	color: $mainTextColorTransparent;
+	font-weight: bold;
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
+	font-size: $smallFontSize;
+	padding: 0;
+	user-select: none;
+
+	&:hover {
+		background-color: $secondaryAccentColor;
+		color: white;
+	}
+
+	&:active {
+		background-color: $secondaryAccentColorDark;
+		color: white;
+		box-shadow: $mainBoxShadow;
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+		outline: none;
+	}
+}
