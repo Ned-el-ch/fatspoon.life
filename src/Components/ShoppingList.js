@@ -23,7 +23,7 @@ const initialState = (ingredients, mealPlan) => {
 			if (ind > -1) {
 				items[ind].weight += ri.weight;
 			} else {
-				let weight = (ri.weight / meal.recipe.servingCount) * meal.multiplier
+				let weight = Math.ceil((ri.weight / meal.recipe.servingCount) * meal.multiplier)
 				items.push({uuid: ri.ingredient.uuid, weight, ingWeight: 0, name: ri.ingredient.name})
 			}
 		})
