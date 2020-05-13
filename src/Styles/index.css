@@ -702,6 +702,7 @@ a:hover {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  margin-bottom: 2px;
 }
 
 .ic-button.pos {
