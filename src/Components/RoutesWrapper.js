@@ -9,6 +9,7 @@ import SignUpPage from '../Containers/SignUpPage.js';
 import HomePage from '../Containers/HomePage.js';
 import AboutPage from '../Containers/AboutPage.js';
 import MealPlanner from './MealPlanner.js';
+import SearchResults from '../Containers/SearchResults.js';
 
 const RoutesWrapper = ({location, user}) => {
 	if (user) {
@@ -19,6 +20,8 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/MyFridge" component={Fridge}/>
 				<Route exact path="/MyShoppingList" component={ShoppingListPage}/>
 				<Route exact path="/About" component={AboutPage}/>
+				<Route exact path="/Search" component={SearchResults}/>
+				<Route path="/Search/:query" component={SearchResults}/>
 				<Route path="/Recipes/:recipe" component={RecipePage}/>
 				<Route><HomePage userIsLoggedIn={user}/></Route>
 			</Switch>
@@ -30,6 +33,8 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/Login"component={LoginPage}/>
 				<Route exact path="/SignUp" component={SignUpPage}/>
 				<Route exact path="/About" component={AboutPage}/>
+				<Route exact path="/Search" component={SearchResults}/>
+				<Route path="/Search/:query" component={SearchResults}/>
 				<Route path="/Recipes/:recipe" component={RecipePage}/>
 				<Route><HomePage userIsLoggedIn={user}/></Route>
 			</Switch>
