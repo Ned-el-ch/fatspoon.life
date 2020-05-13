@@ -50,19 +50,22 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 						</div>
 					</Col>
 					</Row>
-						{filter
+						{!filter
 						?
-							ingredients.filter(e => e.name.toLowerCase().includes(filter.toLowerCase())).map(ingredient => {
-								return(
-									<IngredientCard
-										key={ingredient.uuid}
-										ingredient={ingredient}
-										removeIngredient={removeIngredient}
-									/>
-								)
-							})
+						ingredients.map(ingredient => {
+							return(
+								<IngredientCard
+									key={ingredient.uuid}
+									ingredient={ingredient}
+									removeIngredient={removeIngredient}
+								/>
+							)
+						})
 						:
-							ingredients.map(ingredient => {
+							ingredients.filter(e => e.name.toLowerCase().includes(filter.toLowerCase())).length > 0 
+							?
+							ingredients.filter(e => e.name.toLowerCase().includes(filter.toLowerCase()))
+							.map(ingredient => {
 								return(
 									<IngredientCard
 										key={ingredient.uuid}
@@ -71,6 +74,8 @@ const Fridge = ({ingredients, removeIngredient, increaseIngredient, decreaseIngr
 									/>
 								)
 							})
+							:
+							<div className="mp-subheading-container"><span className="mp-subheading">Item not found! Try adding it first!</span></div>
 						}
 					</div>
 				</div>
