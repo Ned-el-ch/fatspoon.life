@@ -67,7 +67,7 @@ const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
 				})
 				:
 				<Row>
-				<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
+				<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} lg={{ span: 10, offset: 1 }} className="rf-remove-margin">
 				<div className="mp-subheading-container"><span className="mp-subheading">You don't have any meals planned for this week!</span></div>
 				<div className="mp-subheading-container"><span className="mp-subheading">Head over to your <Link to="/MyCookbook">Cookbook</Link> to add some!</span></div>
 				</Col>
