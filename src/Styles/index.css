@@ -1361,4 +1361,51 @@ a.dropdown-item:hover {
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
   outline: none;
 }
+
+.sr-search-button {
+  width: 100%;
+  border: 1px solid #ced4da;
+  background-color: white;
+  outline: none;
+  border-radius: 0.25rem;
+  height: 38px;
+  color: rgba(11, 57, 94, 0.3);
+  font-weight: bold;
+  -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.sr-search-button:hover {
+  background-color: #c4ff86;
+  color: white;
+}
+
+.sr-search-button:hover:disabled {
+  background-color: #eb5c43;
+  color: white;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+}
+
+.sr-search-button:active {
+  background-color: #b0e478;
+  color: white;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+}
+
+.sr-search-button:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+  outline: none;
+}
 /*# sourceMappingURL=index.css.map */
