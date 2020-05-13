@@ -59,7 +59,7 @@ const SearchResults = ({ fetchSearchRecipes, recipes, ingredients }) => {
 				}}>Search</button>
 			</Col>
 			</Row>
-			{hasSearched || recipes.length > 0 ?
+			{recipes.length > 0 ?
 					recipes.map(recipe => 
 					<RecipeCard
 						key={recipe.uuid}
