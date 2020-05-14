@@ -6,12 +6,14 @@ import { connect } from 'react-redux'
 import { DatePickerModal } from '../Components/DatePickerModal'
 import { uuid } from '../Concerns/uuid'
 import { addToMealPlan, fetchAddToMealPlan } from '../Actions/mealPlan'
+import { starRecipe, unstarRecipe } from '../Actions/recipes'
 import { useHistory } from 'react-router'
 import Star from '../Components/Star'
 
-const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
+const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe, unstarRecipe}) => {
 
 	const [recipe, setRecipe] = useState(null)
+	const [isStarred, setIsStarred] = useState(null)
 	const [recipeExists, setRecipeExists] = useState(true)
 	const [showModal, setShowModal] = useState(false)
 	const [multiplier, setMultiplier] = useState(1)
@@ -35,13 +37,15 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 						} else {
 							setRecipe(data)
 							setMultiplier(data.servingCount)
+							if (!!data.recipe_stars.find(e => e.user.username === user.username))
+								setIsStarred(!!data.recipe_stars.find(e => e.user.username === user.username))
 						}
 					})
 			} catch (e) {
 				console.log(e)
 			}
 		})()
-	}, [match, setRecipe, setRecipeExists, setMultiplier])
+	}, [match, setRecipe, setRecipeExists, setMultiplier, setIsStarred])
 	return (
 		<div className="content">
 			{recipe ?
@@ -49,7 +53,29 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 				<PageHeader title={recipe.title}/>
 				{ user && recipe.user.username !== user.username
 					?
-					<Star toggleFavorite={console.log} isActive={!!recipe.recipe_stars.find(e => e.user.username === user.username)}/>
+					<Star isStarred={isStarred}
+					toggleFavorite={() => {
+						// debugger
+						setIsStarred(!isStarred)
+						fetch(`https://calm-brook-68370.herokuapp.com/recipes/${isStarred ? "unstar" : "star"}`, {
+							method: "POST",
+							headers: {
+								'Content-Type': 'application/json',
+								Accept: 'application/json',
+								'Authorization': `Bearer ${localStorage.getItem('token')}`
+							},
+							body: JSON.stringify({recipe: {uuid: recipe.uuid}})
+						})
+						.then(res => res.json())
+						.then(res => {
+							if (res.error) {
+								setIsStarred(!isStarred)
+							} else {
+								isStarred ? unstarRecipe(recipe.uuid) : starRecipe(recipe)
+							}
+						})
+					}}
+					/>
 					:
 					null
 				}
@@ -170,4 +196,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps, { addToMealPlan, fetchAddToMealPlan })(RecipePage)
+export default connect(mapStateToProps, { addToMealPlan, fetchAddToMealPlan, starRecipe, unstarRecipe })(RecipePage)
