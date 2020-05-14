@@ -15,13 +15,13 @@ const Star = ({toggleFavorite, isActive}) => {
 
 	const [active, setActive] = useState(isActive)
 	return (
-		<div className="lottie lottie-star" onClick={() => {toggleFavorite(active); setActive(!active)}}>
+		<div className="lottie lottie-star" onClick={() => {toggleFavorite(!active); setActive(!active)}}>
 		<Lottie options={defaultOptions}
 			height={110}
 			width={110}
-			isStopped={active}
-			isPaused={active}
-			speed={active ? -1 : 1}
+			isStopped={!active}
+			isPaused={!active}
+			speed={active ? 1 : -1}
 		/>
 		</div>
 	)
