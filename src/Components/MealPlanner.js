@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PageHeader from './PageHeader'
 import MealCard from '../Components/MealCard'
 import { connect } from 'react-redux'
@@ -12,16 +12,56 @@ const filterMeals = (meals, startDate, endDate) => {
 	return meals.filter(meal => startDate.isBefore(meal.planned_date) && endDate.isAfter(meal.planned_date))
 }
 
+const generateMealCards = (mealPlan, startingIngredients, user) => {
+	// debugger
+	const ingredients = startingIngredients.map(e => Object.assign({}, e))
+	const meals = mealPlan.map(e => Object.assign({}, e))
+	// debugger
+	return (
+		meals.map(meal => {
+			let currentIngredients = ingredients.map(e => Object.assign({}, e))
+			let ris = meal.recipe.recipe_ingredients;
+			ris.forEach(ri => {
+				let index = ingredients.findIndex(e => e.uuid === ri.ingredient.uuid)
+				if (index > -1) {
+					ingredients[index].weight -= Math.ceil((ri.weight / meal.recipe.servingCount) * meal.multiplier)
+					// if (ingredients[index].weight < 0) ingredients[index].weight = 0
+				}
+			});
+			// debugger
+			return (
+				<MealCard
+					key={meal.id}
+					meal={meal}
+					recipe={meal.recipe}
+					labels={createLabels(meal.recipe, ingredients)}
+					link={generateLink(meal.recipe)}
+					user={user}
+					ingredients={currentIngredients}
+				/>
+			)
+		})
+	)
+}
+
 const initialState = {
 	start: moment(),
 	beginWeek: moment().startOf('week').add(1, 'day'),
 	endWeek: moment().endOf('week').add(1, 'day')
 }
 
+let remainingIngredients = []
+
 const MealPlanner = ({ingredients, meals, user}) => {
 	const [startingWeek] = useState(initialState.start)
 	const [beginningOfCurrentWeek, setBeginningOfCurrentWeek] = useState(initialState.beginWeek)
 	const [endOfCurrentWeek, setEndOfCurrentWeek] = useState(initialState.endWeek)
+
+	// useEffect(() => {
+	// 	setRemainingIngredients(ingredients)
+	// 	setCurrentIngredients(ingredients)
+	// }, [ingredients, setRemainingIngredients, setCurrentIngredients])
+
 	return (
 		<div className="content meal-planner-container">
 			<PageHeader title="My Meal Planner"/>
@@ -51,19 +91,8 @@ const MealPlanner = ({ingredients, meals, user}) => {
 			</Row>
 			<div className="content--inner">
 				{filterMeals(meals, beginningOfCurrentWeek, endOfCurrentWeek).length > 0 ?
-				filterMeals(meals, beginningOfCurrentWeek, endOfCurrentWeek).map(meal => {
-					return (
-						<MealCard
-							key={meal.id}
-							meal={meal}
-							recipe={meal.recipe}
-							labels={createLabels(meal.recipe, ingredients)}
-							link={generateLink(meal.recipe)}
-							user={user}
-							ingredients={ingredients}
-						/>
-					)
-				})
+				generateMealCards(filterMeals(meals, beginningOfCurrentWeek, endOfCurrentWeek), ingredients, user)
+				
 				:
 				<Row>
 				<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} lg={{ span: 10, offset: 1 }} className="rf-remove-margin">
