@@ -7,6 +7,7 @@ import { DatePickerModal } from '../Components/DatePickerModal'
 import { uuid } from '../Concerns/uuid'
 import { addToMealPlan, fetchAddToMealPlan } from '../Actions/mealPlan'
 import { useHistory } from 'react-router'
+import Star from '../Components/Star'
 
 const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 
@@ -46,6 +47,12 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 			{recipe ?
 			<Fragment>
 				<PageHeader title={recipe.title}/>
+				{ user && recipe.user.username !== user.username
+					?
+					<Star toggleFavorite={console.log} isActive={!!recipe.recipe_stars.find(e => e.user.username === user.username)}/>
+					:
+					null
+				}
 				<div className="content--inner">
 				<Row>
 				<Col xs={12} sm={12} md={{ span: 5}} lg={{ span: 5}} className="rf-remove-margin">
