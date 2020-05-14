@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import { addRecipe } from '../Actions/recipes';
+import { fetchCreateRecipe } from '../Actions/recipes';
 import RecipeForm from "../Components/RecipeForm";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 const initialState = () => {
 	return (
 		{
@@ -12,7 +13,7 @@ const initialState = () => {
 	)
 }
 
-const RecipeFormContainer = ({addRecipe}) => {
+const RecipeFormContainer = ({fetchCreateRecipe}) => {
 	const [state, updateRecipe] = useState(initialState);
 	return (
 		<div className="recipe-form-container">
@@ -22,7 +23,9 @@ const RecipeFormContainer = ({addRecipe}) => {
 			<div className="recipe-form">
 				<RecipeForm
 					handleRecipe={(recipe) => {
-						addRecipe(recipe)
+						const { uuid, info, ingredients, instructions } = recipe
+						debugger
+						fetchCreateRecipe(uuid, info, ingredients, instructions)
 						updateRecipe({recipe: null})
 					}}
 					closeRecipe={() => {updateRecipe({recipe: null})}}
@@ -42,4 +45,4 @@ const RecipeFormContainer = ({addRecipe}) => {
 	)
 }
 
-export default connect(null, { addRecipe })(RecipeFormContainer);
+export default connect(null, { fetchCreateRecipe })(RecipeFormContainer);
