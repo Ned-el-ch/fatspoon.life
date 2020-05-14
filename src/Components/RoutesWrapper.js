@@ -10,6 +10,7 @@ import HomePage from '../Containers/HomePage.js';
 import AboutPage from '../Containers/AboutPage.js';
 import MealPlanner from './MealPlanner.js';
 import SearchResults from '../Containers/SearchResults.js';
+import ProfilePage from '../Containers/ProfilePage.js';
 
 const RoutesWrapper = ({location, user}) => {
 	if (user) {
@@ -21,9 +22,10 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/MyShoppingList" component={ShoppingListPage}/>
 				<Route exact path="/About" component={AboutPage}/>
 				<Route exact path="/Search" component={SearchResults}/>
+				<Route exact path="/MyProfile" component={ProfilePage}/>
 				<Route path="/Search/:query" component={SearchResults}/>
 				<Route path="/Recipes/:recipe" component={RecipePage}/>
-				<Route><HomePage userIsLoggedIn={user}/></Route>
+				<Route><AboutPage/></Route>
 			</Switch>
 		)
 	} else {
