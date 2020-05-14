@@ -5,17 +5,18 @@ export const generateLink = recipe => {
 }
 
 export const createLabels = (recipe, ingredients) => {
-	let availableIngredients = [];
-	recipe.recipe_ingredients.forEach(ri => {
-		let ing = ingredients.find(i => i.uuid === ri.uuid && i.weight >= ri.weight);
-		if (ing)
-			availableIngredients.push(ing);
-	});
-	let labels = {
-		missingIngredients: recipe.recipe_ingredients.length - availableIngredients.length,
-		vegetarian: true
-	};
-	return labels;
+	// let availableIngredients = [];
+	// recipe.recipe_ingredients.forEach(ri => {
+	// 	let ing = ingredients.find(i => i.uuid === ri.uuid && i.weight >= ri.weight);
+	// 	if (ing)
+	// 		availableIngredients.push(ing);
+	// });
+	// let labels = {
+	// 	missingIngredients: recipe.recipe_ingredients.length - availableIngredients.length,
+	// 	vegetarian: true
+	// };
+	// return labels;
+	return {}
 }
 
 export const formatDate = date => {
