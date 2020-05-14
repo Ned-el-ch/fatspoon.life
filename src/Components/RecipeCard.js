@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const RecipeCard = (props) => {
-	const { recipe, labels, link } = props;
+const RecipeCard = ({recipe, labels, link}) => {
 	return (
 		<div className="rc-container">
 			<div className="rc-image-container">
