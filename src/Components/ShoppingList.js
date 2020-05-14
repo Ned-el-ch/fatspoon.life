@@ -19,7 +19,7 @@ const initialState = (ingredients, mealPlan) => {
 		meal.recipe.recipe_ingredients.forEach(ri => {
 			let ind = items.findIndex(e => e.uuid === ri.ingredient.uuid)
 			if (ind > -1) {
-				items[ind].weight += ri.weight;
+				items[ind].weight += Math.ceil((ri.weight / meal.recipe.servingCount) * meal.multiplier);
 			} else {
 				let weight = Math.ceil((ri.weight / meal.recipe.servingCount) * meal.multiplier)
 				items.push({uuid: ri.ingredient.uuid, weight, ingWeight: 0, name: ri.ingredient.name})
