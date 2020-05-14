@@ -32,6 +32,10 @@ const validateForm = (info = {}, cookingData = {ingredients: [{weight: ""}], ins
 		if (!ing.weight)
 			bool = true
 	});
+
+	if (cookingData.ingredients.length === 0 || cookingData.instructions.length === 0)
+		bool = true
+
 	cookingData.instructions.forEach(ing => {
 		if (!ing.text)
 			bool = true
@@ -154,12 +158,12 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 						as="textarea"
 						placeholder="Give your recipe a good (short) description"
 						aria-label="Description"
-						maxLength={155}
+						maxLength={200}
 						style={{height: "100px", maxHeight: "100px", minHeight: "100px", resize: "none"}}
 						value={info.description}
 						onChange={(event) => setInfo(Object.assign({}, info, {description: event.target.value}))}
 					/>
-					<span className="rf-description-remaining-characters">{155 - info.description.length} characters remaining</span>
+					<span className="rf-description-remaining-characters">{200 - info.description.length} characters remaining</span>
 					<InputGroup.Append>
 						<InputGroup.Text>Description</InputGroup.Text>
 					</InputGroup.Append>
@@ -261,7 +265,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 								as="textarea"
 								placeholder="What's next, chef?"
 								aria-label="instruction"
-								maxLength={225}
+								maxLength={325}
 								style={{height: "140px", maxHeight: "140px", minHeight: "140px", resize: "none"}}
 								value={item.text}
 								onChange={(event) => {
@@ -278,7 +282,7 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 								}}
 							/>
 						</InputGroup>
-					<span className="rf-instructions-remaining-characters">{225 - item.text.length} characters remaining</span>
+					<span className="rf-instructions-remaining-characters">{325 - item.text.length} characters remaining</span>
 					</Col>
 					<Col xs={2} sm={2} md={{ span: 2}} className="rf-remove-margin">
 							<button
@@ -311,8 +315,9 @@ const RecipeForm = ({ handleRecipe, closeRecipe }) => {
 					let ingredients = cookingData.ingredients.map(i => {
 						return {uuid: i.ingredient.uuid, weight: i.weight}
 					});
-					let recipe = {uuid: uuid(), info, ingredients, instructions: cookingData.instructions}
-					handleRecipe(recipe);
+					let instructions = cookingData.instructions.map(e => e.text).join("|||")
+					let recipe = {uuid: uuid(), info, ingredients, instructions}
+					handleRecipe(recipe)
 				}}>
 					Add Recipe
 				</button>
