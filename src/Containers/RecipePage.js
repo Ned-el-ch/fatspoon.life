@@ -64,13 +64,13 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan}) => {
 						{/* <span className="rp-subheading"></span> */}
 					<div className="rp-servings-container">
 						<span className="rp-servings-label rp-subheading">Ingredients & Servings: {multiplier}</span>
-						<button className="rp-servings-button pos" onClick={() => {
-							setMultiplier(multiplier + 1)
-						}}>▲</button>
 						<button className="rp-servings-button neg" onClick={() => {
 							if (multiplier > 1)
 								setMultiplier(multiplier - 1)
 						}}>▼</button>
+						<button className="rp-servings-button pos" onClick={() => {
+							setMultiplier(multiplier + 1)
+						}}>▲</button>
 					</div>
 					</div>
 					<div className="rp-ul-container">
