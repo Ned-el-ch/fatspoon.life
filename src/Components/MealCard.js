@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { connect } from 'react-redux';
 import { updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan } from "../Actions/mealPlan"
-
+import { Link } from "react-router-dom"
 const MealCard = ({ ingredients, meal, recipe, labels, link, user, updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan }) => {
 	const [multiplier, setMultiplier] = useState(meal.multiplier)
 	return (
@@ -20,7 +20,7 @@ const MealCard = ({ ingredients, meal, recipe, labels, link, user, updateMultipl
 			<Col xs={12} sm={12} md={12} lg={12} className="rf-remove-margin">
 				<div className="mc-recipe-heading-container">
 					<span className="mc-recipe-heading">
-						{recipe.title}
+					<Link to={link}>{recipe.title}</Link>
 					</span>
 				</div>
 			</Col>
