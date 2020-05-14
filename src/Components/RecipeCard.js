@@ -11,7 +11,7 @@ const RecipeCard = ({recipe, labels, link}) => {
 				<Link to={link}>
 					<span className="rc-title">{recipe.title}</span>
 				</Link>
-			<div className="rc-labels-container">
+			{/* <div className="rc-labels-container">
 				<div className="rc-labels-missing-items">
 					{labels.missingIngredients === 0 ?
 					<span className="rc-labels-missing-items-none label">Got everything!</span>
@@ -24,7 +24,7 @@ const RecipeCard = ({recipe, labels, link}) => {
 					:
 					null
 					}
-			</div>
+			</div> */}
 			</div>
 			<div className="rc-description-container">
 				<span className="rc-description">{recipe.description}</span>
