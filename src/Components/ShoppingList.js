@@ -4,20 +4,18 @@ import { updateIngredients, editIngredient } from '../Actions/ingredients'
 import ShoppingListItem from './ShoppingListItem';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import moment from 'moment'
+
+const filterMeals = (meals) => {
+	let startDate = moment().startOf('week')
+	let endDate = moment().endOf('week')
+	return meals.filter(meal => startDate.isBefore(meal.planned_date) && endDate.isAfter(meal.planned_date))
+}
 
 const initialState = (ingredients, mealPlan) => {
 	let items = []
-	// ITERATE OVER MEAL PLAN AND SELECT THE ONES FOR THE CURRENT WEEK ONLY
-	// ITERATE OVER CURRENT MEALS AND IF
-		// IF ITEM EXISTS IN items ADD TO ITS WEIGHT THE CURRENT RECIPE_INGREDIENT / SERVINGCOUNT * MULTIPLIER
-		// IF IT DOESNT ADD A NEW ITEM TO items
-	// ITERATE OVER ITEMS
-		// TRY TO FIND IT IN ingredients
-			// IF FOUND THEN SUBTRACT THAT INGREDIENT.WEIGHT FROM ITEM.WEIGHT
-			// IF ITEM.WEIGHT < 0 REMOVE IT FROM ITEMS
-	// RETURN items
-	// debugger
-	mealPlan.forEach(meal => {
+	let meals = filterMeals(mealPlan)
+	meals.forEach(meal => {
 		meal.recipe.recipe_ingredients.forEach(ri => {
 			let ind = items.findIndex(e => e.uuid === ri.ingredient.uuid)
 			if (ind > -1) {
