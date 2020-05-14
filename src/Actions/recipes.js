@@ -64,7 +64,6 @@ export const fetchCreateRecipe = (uuid, info, ingredients, instructions) => {
 			})
 				.then(res => res.json())
 				.then(data => {
-					debugger
 					dispatch(addRecipe(data))
 				})
 		}

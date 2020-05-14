@@ -24,7 +24,6 @@ const RecipeFormContainer = ({fetchCreateRecipe}) => {
 				<RecipeForm
 					handleRecipe={(recipe) => {
 						const { uuid, info, ingredients, instructions } = recipe
-						debugger
 						fetchCreateRecipe(uuid, info, ingredients, instructions)
 						updateRecipe({recipe: null})
 					}}
