@@ -20,7 +20,6 @@ export const fetchSearchRecipes = (query) => {
 				if (data.error || data.message) {
 					console.log(data)
 				} else {
-					// debugger
 					dispatch(addRecipeResults(data))
 				}
 			})

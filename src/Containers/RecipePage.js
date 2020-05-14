@@ -55,7 +55,6 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe,
 					?
 					<Star isStarred={isStarred}
 					toggleFavorite={() => {
-						// debugger
 						setIsStarred(!isStarred)
 						fetch(`https://calm-brook-68370.herokuapp.com/recipes/${isStarred ? "unstar" : "star"}`, {
 							method: "POST",

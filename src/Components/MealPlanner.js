@@ -13,10 +13,8 @@ const filterMeals = (meals, startDate, endDate) => {
 }
 
 const generateMealCards = (mealPlan, startingIngredients, user) => {
-	// debugger
 	const ingredients = startingIngredients.map(e => Object.assign({}, e))
 	const meals = mealPlan.map(e => Object.assign({}, e))
-	// debugger
 	return (
 		meals.map(meal => {
 			let currentIngredients = ingredients.map(e => Object.assign({}, e))
@@ -28,7 +26,6 @@ const generateMealCards = (mealPlan, startingIngredients, user) => {
 					// if (ingredients[index].weight < 0) ingredients[index].weight = 0
 				}
 			});
-			// debugger
 			return (
 				<MealCard
 					key={meal.id}

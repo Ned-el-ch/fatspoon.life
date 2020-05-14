@@ -17,7 +17,6 @@ import RoutesWrapper from '../Components/RoutesWrapper';
 const App = ({ user, loginUser, logoutUser, loadIngredients, loadRecipes, loadMealPlan }) => {
 	const userDataCallback = useCallback(
 		(userData) => {
-			debugger
 			let starred = userData.recipe_stars.map(e => e.recipe)
 			loginUser(userData)
 			loadIngredients(userData.user_ingredients)
