@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import PageHeader from './PageHeader'
 import MealCard from '../Components/MealCard'
 import { connect } from 'react-redux'
-import { fetchRemoveFromMealPlan } from "../Actions/mealPlan"
 import { generateLink, createLabels, formatWeek } from '../Concerns/generateExtra'
 import moment from 'moment'
 import Row from 'react-bootstrap/Row'
