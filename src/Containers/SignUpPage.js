@@ -20,7 +20,7 @@ const SignUpPage = ({ userSignUpFetch }) => {
 				<PageHeader title="Sign Up"/>
 				<Form onSubmit={(event) => {
 					event.preventDefault();
-					const username = event.target.elements.username.value;
+					const username = event.target.elements.username.value.toLocaleLowerCase();
 					const password = event.target.elements.password.value;
 					userSignUpFetch({username, password}).then(res => {
 						if (!res) {
