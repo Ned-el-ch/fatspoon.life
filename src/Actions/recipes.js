@@ -35,3 +35,38 @@ export const loadRecipes = recipes => {
 		}
 	)
 }
+
+export const fetchCreateRecipe = (uuid, info, ingredients, instructions) => {
+	const { title, imageLink, description, prepTime, cookingTime, servingCount } = info
+	if (localStorage.token) {
+		let body = {
+			recipe: {
+				uuid,
+				title,
+				description,
+				imageLink,
+				prepTime,
+				cookingTime,
+				servingCount,
+				instructions,
+				ingredients
+			}
+		}
+		return dispatch => {
+			return fetch("https://calm-brook-68370.herokuapp.com/recipes/new", {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+					'Authorization': `Bearer ${localStorage.token}`
+				},
+				body: JSON.stringify(body)
+			})
+				.then(res => res.json())
+				.then(data => {
+					debugger
+					dispatch(addRecipe(data))
+				})
+		}
+	}
+}
