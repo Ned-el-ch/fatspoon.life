@@ -17,9 +17,11 @@ import RoutesWrapper from '../Components/RoutesWrapper';
 const App = ({ user, loginUser, logoutUser, loadIngredients, loadRecipes, loadMealPlan }) => {
 	const userDataCallback = useCallback(
 		(userData) => {
+			debugger
+			let starred = userData.recipe_stars.map(e => e.recipe)
 			loginUser(userData)
 			loadIngredients(userData.user_ingredients)
-			loadRecipes(userData.recipes)
+			loadRecipes([...userData.recipes, ...starred])
 			loadMealPlan(userData.recipe_meals)
 		},
 		[loginUser, loadIngredients, loadRecipes, loadMealPlan],
@@ -28,7 +30,7 @@ const App = ({ user, loginUser, logoutUser, loadIngredients, loadRecipes, loadMe
 		const token = localStorage.token;
 		if (token) {
 			// called here to optimistically render routes to avoid reloading
-			userDataCallback({user_ingredients: [], recipes: [], recipe_meals: []});
+			userDataCallback({user_ingredients: [], recipes: [], recipe_meals: [], recipe_stars: []});
 			(async function fetchProfile() {
 				try {
 					await fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
