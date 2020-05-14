@@ -105,9 +105,11 @@
 	// border: solid 1px blue;
 	padding: 2px;
 	overflow: hidden;
+	position: relative;
 }
 
 .ic-heading {
+	width: 90%;
 	display: block;
 	font-size: $normalFontSize;
 	overflow: hidden;
@@ -115,6 +117,8 @@
 	word-wrap: break-word;
 	// font-weight: 500;
 	padding-top: 10px;
+	position: absolute;
+	text-align: center;
 }
 
 .ic-heading-label {

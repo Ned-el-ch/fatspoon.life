@@ -863,14 +863,18 @@ a:hover {
   margin: 0 10%;
   padding: 2px;
   overflow: hidden;
+  position: relative;
 }
 
 .ic-heading {
+  width: 90%;
   display: block;
   font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
   overflow: hidden;
   word-wrap: break-word;
   padding-top: 10px;
+  position: absolute;
+  text-align: center;
 }
 
 .ic-heading-label {
