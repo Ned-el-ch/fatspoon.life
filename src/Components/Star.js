@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Lottie from 'react-lottie'
 import animationData from '../Data/star.json'
 
@@ -11,17 +11,15 @@ const defaultOptions = {
 	}
 };
 
-const Star = ({toggleFavorite, isActive}) => {
-
-	const [active, setActive] = useState(isActive)
+const Star = ({toggleFavorite, isStarred}) => {
 	return (
-		<div className="lottie lottie-star" onClick={() => {toggleFavorite(!active); setActive(!active)}}>
+		<div className="lottie lottie-star" onClick={toggleFavorite}>
 		<Lottie options={defaultOptions}
 			height={110}
 			width={110}
-			isStopped={!active}
-			isPaused={!active}
-			speed={active ? 1 : -1}
+			isStopped={!isStarred}
+			isPaused={false}
+			speed={isStarred ? 1 : -1}
 		/>
 		</div>
 	)
