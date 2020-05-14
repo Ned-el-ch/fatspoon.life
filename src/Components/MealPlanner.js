@@ -19,7 +19,7 @@ const initialState = {
 	endWeek: moment().endOf('week').add(1, 'day')
 }
 
-const MealPlanner = ({ingredients, meals, fetchRemoveFromMealPlan, user}) => {
+const MealPlanner = ({ingredients, meals, user}) => {
 	const [startingWeek] = useState(initialState.start)
 	const [beginningOfCurrentWeek, setBeginningOfCurrentWeek] = useState(initialState.beginWeek)
 	const [endOfCurrentWeek, setEndOfCurrentWeek] = useState(initialState.endWeek)
@@ -88,4 +88,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps, { fetchRemoveFromMealPlan })(MealPlanner);
+export default connect(mapStateToProps)(MealPlanner);
