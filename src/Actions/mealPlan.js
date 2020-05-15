@@ -30,6 +30,14 @@ export const loadMealPlan = meals => {
 	)
 }
 
+export const clearMealPlan = () => {
+	return (
+		{
+			type: "CLEAR_MEAL_PLAN"
+		}
+	)
+}
+
 export const updateMultiplier = (id, multiplier) => {
 	return (
 		{

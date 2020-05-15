@@ -8,6 +8,9 @@ export default (state = [], action) => {
 
 	switch (action.type) {
 
+		case "CLEAR_MEAL_PLAN":
+			return [];
+
 		case "ADD_TO_MEAL_PLAN":
 			index = state.find(e => e.id === action.id)
 			if (!index) {
