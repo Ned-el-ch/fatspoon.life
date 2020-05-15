@@ -13,11 +13,13 @@ import { fetchSearchRecipes } from "../Actions/search";
 import { createLabels, generateLink } from "../Concerns/generateExtra"
 import Form from 'react-bootstrap/Form';
 import { useParams } from 'react-router'
+import LottieLoading from '../Components/LottieLoading.js';
 
 const SearchResults = ({ fetchSearchRecipes, recipes, ingredients }) => {
 	// const { recipes, starRecipe, unstarRecipe } = props;
 	const [searchQuery, setSearchQuery] = useState("");
 	const [hasSearched, setHasSearched] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
 	let params = useParams()
 	useEffect(() => {
 		if (params.query) {
@@ -34,7 +36,8 @@ const SearchResults = ({ fetchSearchRecipes, recipes, ingredients }) => {
 			<Col xs={10} sm={10} md={{ span: 8, offset: 1}} lg={{ span: 8, offset: 1}} className="rf-remove-margin">
 				<Form onSubmit={(event) => {
 					event.preventDefault()
-					fetchSearchRecipes(searchQuery)
+					setIsLoading(true)
+					fetchSearchRecipes(searchQuery).then(() => setIsLoading(false))
 					setSearchQuery("")
 					setHasSearched(true)
 				}}>
@@ -69,7 +72,15 @@ const SearchResults = ({ fetchSearchRecipes, recipes, ingredients }) => {
 					/>
 				)
 				:
-				<div className="mp-subheading-container"><span className="mp-subheading">{hasSearched ? "No results found! Try a different query!" : ""}</span></div>
+				<div className="mp-subheading-container">
+					{ isLoading ?
+						<LottieLoading />
+						:
+					<span className="mp-subheading">
+						{hasSearched ? "No results found! Try a different query!" : ""}
+					</span>
+					}
+				</div>
 			}
 			</div>
 		</div>
