@@ -63,7 +63,7 @@ const AboutPage = ({userIsLoggedIn}) => {
 				<span className="ap-packages">List of "helper" packages I used for the frontend</span>
 				<ul className="ap-ul">
 					<li className="ap-li">
-						Chroma-js
+						Chroma.js
 					</li>
 					<li className="ap-li">
 						React-Datepicker
