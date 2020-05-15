@@ -19,6 +19,12 @@ export const createLabels = (recipe, ingredients) => {
 	return {}
 }
 
+export const compareToday = date => {
+	let today = new Date();
+	let d = new Date(date.split("T")[0])
+	return today.getDay() === d.getDay()
+}
+
 export const formatDate = date => {
 	let newDate = new Date(date.split("T")[0])
 	let daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
