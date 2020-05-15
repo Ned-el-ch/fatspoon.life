@@ -10,6 +10,8 @@ import { useHistory } from "react-router-dom";
 
 import { logoutUser } from "../Actions/user";
 import { clearIngredients } from "../Actions/ingredients";
+import { clearRecipes } from "../Actions/recipes";
+import { clearMealPlan } from "../Actions/mealPlan";
 
 // import Button from "react-bootstrap/Button"
 // import Form from "react-bootstrap/Form"
@@ -18,7 +20,7 @@ import { clearIngredients } from "../Actions/ingredients";
 // import { addRecipeResults } from "../Actions/search";
 
 
-const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
+const NavbarContainer = ({ user, logoutUser, clearIngredients, clearMealPlan, clearRecipes }) => {
 	let history = useHistory();
 	return (
 		<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
@@ -70,7 +72,13 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients }) => {
 						<LinkContainer exact to="/About">
 							<NavDropdown.Item href="/About">About App</NavDropdown.Item>
 						</LinkContainer>
-						<NavDropdown.Item href="#" onClick={() => {logoutUser();clearIngredients();history.push("/")}}>Log Out</NavDropdown.Item>
+						<NavDropdown.Item href="#" onClick={() => {
+							logoutUser();
+							clearIngredients();
+							clearMealPlan();
+							clearRecipes();
+							history.push("/")}}
+							>Log Out</NavDropdown.Item>
 					</NavDropdown>
 					:
 					<Fragment>
@@ -95,4 +103,4 @@ const mapStateToProps = state => {
 		}
 	)
 }
-export default connect(mapStateToProps, { logoutUser, clearIngredients })(NavbarContainer);
+export default connect(mapStateToProps, { logoutUser, clearIngredients, clearRecipes, clearMealPlan })(NavbarContainer);
