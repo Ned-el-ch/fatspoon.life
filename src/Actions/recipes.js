@@ -36,6 +36,14 @@ export const loadRecipes = recipes => {
 	)
 }
 
+export const clearRecipes = () => {
+	return (
+		{
+			type: "CLEAR_RECIPES"
+		}
+	)
+}
+
 export const fetchCreateRecipe = (uuid, info, ingredients, instructions) => {
 	const { title, imageLink, description, prepTime, cookingTime, servingCount } = info
 	if (localStorage.token) {

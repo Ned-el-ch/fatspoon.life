@@ -26,8 +26,11 @@ export default (state = [], action) => {
 		case "UNSTAR_RECIPE":
 			return state.filter(recipe => recipe.uuid !== action.recipeID);
 
-			case "LOAD_RECIPES":
-				return [...action.recipes]
+		case "LOAD_RECIPES":
+			return [...action.recipes]
+
+		case "CLEAR_RECIPES":
+			return []
 
 		default:
 			return state;
