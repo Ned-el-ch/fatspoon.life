@@ -12,7 +12,7 @@
 
 # <a name="main-features"></a> Main Features
 
-Items marked with `S` on the end aren't implemented *"yet"*
+Items marked with `S` on the end aren't implemented *"yet"*. Also the <a href="https://trello.com/b/1MW9tjnK/fatspoonlife">Trello board</a> has some of the more *creative* ideas that don't quite fit as features yet.
 
 ## My Cookbook
 - `Create` and store your own recipes
