@@ -22,7 +22,8 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/MyCookbook" component={Cookbook}/>
 				<Route exact path="/MyFridge" component={Fridge}/>
 				<Route exact path="/MyShoppingList" component={ShoppingListPage}/>
-				<Route exact path="/About" component={AboutPage}/>
+				<Route exact path="/About" ><AboutPage userIsLoggedIn={user}/></Route>
+				{/* <Route exact path="/About" component={AboutPage}/> */}
 				<Route exact path="/Search" component={SearchResults}/>
 				{/* <Route exact path="/MyProfile" component={ProfilePage}/> */}
 				<Route path="/Search/:query" component={SearchResults}/>
@@ -36,7 +37,8 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/"><HomePage userIsLoggedIn={user}/></Route>
 				<Route exact path="/Login"component={LoginPage}/>
 				<Route exact path="/SignUp" component={SignUpPage}/>
-				<Route exact path="/About" component={AboutPage}/>
+				{/* <Route exact path="/About" component={AboutPage}/> */}
+				<Route exact path="/About" ><AboutPage userIsLoggedIn={user}/></Route>
 				<Route exact path="/Search" component={SearchResults}/>
 				<Route path="/Search/:query" component={SearchResults}/>
 				<Route path="/Recipes/:recipe" component={RecipePage}/>
