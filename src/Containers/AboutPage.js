@@ -35,7 +35,7 @@ const AboutPage = ({userIsLoggedIn}) => {
 				<div className="hp-app-get-started-container">
 				<span className="ap-contact">Find me on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Ned_el_ch">Twitter</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch">GitHub</a>, and <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ned-el-ch/">LinkedIn</a></span>
 				</div>
-				<span className="ap-description">This is an SPA I built to practice using React, Redux, SCSS, and Ruby on Rails (as an API). Check out the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon.life">frontend repo</a> or the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon.life-backend">backend repo</a> if you want to know more.</span>
+				<span className="ap-description">This is a single-page app I built to practice using React, Redux, SCSS, and Ruby on Rails (as an API). Check out the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon.life">frontend repo</a> or the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon.life-backend">backend repo</a> if you want to know more.</span>
 				<span className="ap-packages">List of main packages I used for the frontend</span>
 				<ul className="ap-ul">
 					<li className="ap-li">
