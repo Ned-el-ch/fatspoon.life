@@ -66,9 +66,9 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients, clearMealPlan, cl
 					{user
 					?
 					<NavDropdown drop="left" title={user.username ? user.username : "me"} id="basic-nav-dropdown">
-						<LinkContainer exact to="/MyProfile">
+						{/* <LinkContainer exact to="/MyProfile">
 							<NavDropdown.Item href="/MyProfile">My Profile</NavDropdown.Item>
-						</LinkContainer>
+						</LinkContainer> */}
 						<LinkContainer exact to="/About">
 							<NavDropdown.Item href="/About">About App</NavDropdown.Item>
 						</LinkContainer>
