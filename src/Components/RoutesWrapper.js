@@ -10,7 +10,9 @@ import HomePage from '../Containers/HomePage.js';
 import AboutPage from '../Containers/AboutPage.js';
 import MealPlanner from './MealPlanner.js';
 import SearchResults from '../Containers/SearchResults.js';
-import ProfilePage from '../Containers/ProfilePage.js';
+import LottieDino from './LottieDino.js';
+import DefaultPage from '../Containers/DefaultPage.js';
+// import ProfilePage from '../Containers/ProfilePage.js';
 
 const RoutesWrapper = ({location, user}) => {
 	if (user) {
@@ -22,10 +24,10 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/MyShoppingList" component={ShoppingListPage}/>
 				<Route exact path="/About" component={AboutPage}/>
 				<Route exact path="/Search" component={SearchResults}/>
-				<Route exact path="/MyProfile" component={ProfilePage}/>
+				{/* <Route exact path="/MyProfile" component={ProfilePage}/> */}
 				<Route path="/Search/:query" component={SearchResults}/>
 				<Route path="/Recipes/:recipe" component={RecipePage}/>
-				<Route><AboutPage/></Route>
+				<Route><DefaultPage/></Route>
 			</Switch>
 		)
 	} else {
@@ -38,7 +40,8 @@ const RoutesWrapper = ({location, user}) => {
 				<Route exact path="/Search" component={SearchResults}/>
 				<Route path="/Search/:query" component={SearchResults}/>
 				<Route path="/Recipes/:recipe" component={RecipePage}/>
-				<Route><HomePage userIsLoggedIn={user}/></Route>
+				<Route><DefaultPage/></Route>
+				{/* <Route><HomePage userIsLoggedIn={user}/></Route> */}
 			</Switch>
 		)
 	}
