@@ -6,7 +6,7 @@
 
 ---
 # <a name="short-description"></a> In a nutshell
-An all-in-one app that makes it easy to cook at home more by helping you track ingredients, recipes, shopping list, and weekly meal plan!
+<a href="https://fatspoon.life" target="_blank">Fatspoon.life</a> is an all-in-one app that makes it easy to cook at home more by helping you track ingredients, recipes, shopping list, and weekly meal plan!
 
 ---
 
