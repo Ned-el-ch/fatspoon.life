@@ -10,7 +10,7 @@ import { starRecipe, unstarRecipe } from '../Actions/recipes'
 import { useHistory } from 'react-router'
 import LottieStar from '../Components/LottieStar'
 
-const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe, unstarRecipe}) => {
+const RecipePage = ({match, user, ingredients, addToMealPlan, fetchAddToMealPlan, starRecipe, unstarRecipe}) => {
 
 	const [recipe, setRecipe] = useState(null)
 	const [isStarred, setIsStarred] = useState(null)
@@ -113,7 +113,7 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe,
 								let ingredientAvailable = false;
 								let newWeight = Math.ceil((item.weight / recipe.servingCount) * multiplier)
 								if (user){
-									ingredientAvailable = user.user_ingredients.find(e => e.weight >= newWeight && e.ingredient.uuid === item.ingredient.uuid)
+									ingredientAvailable = ingredients.find(e => e.weight >= newWeight && e.uuid === item.ingredient.uuid)
 								}
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
@@ -129,7 +129,7 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe,
 								let ingredientAvailable = false;
 								let newWeight = Math.ceil((item.weight / recipe.servingCount) * multiplier)
 								if (user){
-									ingredientAvailable = user.user_ingredients.find(e => e.weight >= newWeight && e.ingredient.uuid === item.ingredient.uuid)
+									ingredientAvailable = ingredients.find(e => e.weight >= newWeight && e.uuid === item.ingredient.uuid)
 								}
 								return(
 								<li key={item.ingredient.uuid} className={ingredientAvailable ? "available" : user ? "not-available" : ""}>
@@ -190,7 +190,8 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe,
 const mapStateToProps = state => {
 	return (
 		{
-			user: state.user
+			user: state.user,
+			ingredients: state.ingredients
 		}
 	)
 }
