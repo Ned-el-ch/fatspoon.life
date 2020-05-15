@@ -15,29 +15,41 @@
 Items marked with `S` on the end aren't implemented *"yet"*
 
 ## My Cookbook
-- Create and store your own recipes
+- `Create` and store your own recipes
 - Add others' recipes to your cookbook
 - Automatically adjust ingredient amount based on servings
-- Search for recipes by name and keyword
+- Add a picture when creating a recipe
 - See info about recipes at a glance with labels `S`
+- Search for recipes by name and keyword
+- Host the picture `S`
+- `Edit` a recipe `S`
+- `Delete` a recipe `S`
 ## My Shopping List
 - If a recipe has missing ingredients automatically populate a shopping list
 - Adjust how much much of each item you're purchasing on the go
 - If the amount is >= to what you need for the week, the item will disappear when you click `Done`
 - If it's less, the remaining amount of what you need will update
+- Add custom items `S`
 ## My Fridge
 - Track what ingredients you have on hand
 - Adjust quantities by just typing in the number on each ingredient card
 - Filter ingredients by name
 - Quickly identify categories using labels
 - Remove items
+- Add multiple ingredients at a time
+- Add images for ingredients `S`
+- Organize fridge in a more meaningful way `S`
+- Filter recipes by category `S`
 ## My Meal Planner
 - Choose a recipe and date, and add it to your meal planner
 - See the ingredients you have and don't have enough of at a glance
 - Calculate if you can make the first item, then second, third, etc. *(e.g. I have 700ml of Milk, and 2 recipes that need 500ml each. I should see that I can make the first one but not the second one)*
 - Adjust servings
-- See instructions for today's item
+- View the meals only for the current week
+- View past and future planned meals
+- See instructions only for today's meal
 - `Delete` a meal
+- `Edit` a meal `S`
 - `Complete` a meal and automatically take out those ingredient amounts from your fridge `S`
 
 ---
