@@ -11,7 +11,7 @@ const defaultOptions = {
 	}
 };
 
-const Star = ({toggleFavorite, isStarred}) => {
+const LottieStar = ({toggleFavorite, isStarred}) => {
 	return (
 		<div className="lottie lottie-star" onClick={toggleFavorite}>
 		<Lottie options={defaultOptions}
@@ -25,4 +25,4 @@ const Star = ({toggleFavorite, isStarred}) => {
 	)
 }
 
-export default Star
+export default LottieStar

@@ -8,7 +8,7 @@ import { uuid } from '../Concerns/uuid'
 import { addToMealPlan, fetchAddToMealPlan } from '../Actions/mealPlan'
 import { starRecipe, unstarRecipe } from '../Actions/recipes'
 import { useHistory } from 'react-router'
-import Star from '../Components/Star'
+import LottieStar from '../Components/LottieStar'
 
 const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe, unstarRecipe}) => {
 
@@ -53,7 +53,7 @@ const RecipePage = ({match, user, addToMealPlan, fetchAddToMealPlan, starRecipe,
 				<PageHeader title={recipe.title}/>
 				{ user && recipe.user.username !== user.username
 					?
-					<Star isStarred={isStarred}
+					<LottieStar isStarred={isStarred}
 					toggleFavorite={() => {
 						setIsStarred(!isStarred)
 						fetch(`https://calm-brook-68370.herokuapp.com/recipes/${isStarred ? "unstar" : "star"}`, {
