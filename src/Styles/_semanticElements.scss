@@ -35,3 +35,50 @@ a {
 		max-width: 1111px;
 	}
 }
+
+.carousel-caption {
+	color: white;
+	& .carousel-heading {
+		font-size: $labelFontSize;
+		position: absolute;
+		bottom: 100px;
+		right: 10px;
+		left: 10px;
+		z-index: 1;
+	}
+	& .carousel-description {
+		font-size: $normalFontSize;
+		position: absolute;
+		bottom: 30px;
+		right: 5%;
+		left: 5%;
+		z-index: 1;
+		width: 90%;
+	}
+	&::after {
+		display: block;
+		position: relative;
+		background-image: linear-gradient(to bottom, transparent 9%, rgba(0, 0, 0, 0.8) 55%, black 95%);
+		height: 200px;
+		margin-top: 200px;
+		// min-height: $minimumHeight;
+		min-width: 200px;
+		width: 100%;
+		content: '';
+	}
+
+	& a {
+		color: white;
+		&:hover {
+			color: rgb(221, 221, 221);
+		}
+	}
+}
+
+.carousel-control-next, .carousel-control-prev {
+	background: rgba(0, 0, 0, 0.5);
+	@include transition(background 0.15s);
+	&:hover {
+		background: rgba(0, 0, 0, 0.8);
+	}
+}
