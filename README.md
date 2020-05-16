@@ -49,8 +49,8 @@ Items marked with `S` on the end aren't implemented *"yet"*. Also the <a href="h
 - View past and future planned meals
 - See instructions only for today's meal
 - `Delete` a meal
+- `Complete` a meal and automatically take out those ingredient amounts from your fridge
 - `Edit` a meal `S`
-- `Complete` a meal and automatically take out those ingredient amounts from your fridge `S`
 
 ---
 # <a name="technical-description"></a> Technical Description
@@ -77,4 +77,4 @@ Other "helper" packages
 ---
 
 # <a name="authors-note"></a> Author's Note
-Before I made the app, I used to struggle figuring out what to cook. Since then it grew into a useful tool I use to track what food I have in my house, as well as my dietary intake. Although some bias may exist, my mom has said it made her life a ton easier.
+Before I made the app, I used to struggle figuring out what to cook. Since then I still have trouble choosing, but when I do decide it's much easier to keep track of everything.
