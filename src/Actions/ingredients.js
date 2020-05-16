@@ -12,11 +12,10 @@ export const removeIngredient = ingredientID => {
 	}
 }
 
-export const editIngredient = (ingredientID, weight) => {
+export const editIngredient = ingredient => {
 	return {
 		type: "EDIT_INGREDIENT",
-		ingredientID,
-		weight
+		ingredient
 	}
 }
 
@@ -65,16 +64,9 @@ export const addNewIngredients = (newIngredients, allIngredients) => {
 	}
 }
 
-export const updateIngredients = (ingredient, weight, action) => {
-	action(ingredient.uuid, weight)
+export const updateIngredients = (ingredients, action) => {
+	ingredients.forEach(ing => action(ing))
 	if (localStorage.token) {
-		let body = {
-			user: {
-				ingredients: [
-					{uuid: ingredient.uuid, weight}
-				]
-			}
-		}
 		return dispatch => {
 			return fetch("https://calm-brook-68370.herokuapp.com/api/v1/ingredients/update", {
 				method: "POST",
@@ -83,10 +75,11 @@ export const updateIngredients = (ingredient, weight, action) => {
 					Accept: 'application/json',
 					'Authorization': `Bearer ${localStorage.token}`
 				},
-				body: JSON.stringify(body)
+				body: JSON.stringify({user: {ingredients}})
 			})
 				.then(res => res.json())
 				.then(data => {
+					debugger
 					dispatch(loadIngredients(data.user_ingredients))
 				})
 		}
