@@ -38,23 +38,20 @@ export default (state = data.ingredients, action) => {
 					newIngredients.push(Object.assign({}, data.ingredient, {weight: 0}))
 			})
 			newState = [...state, ...newIngredients];
-			// updateIngredients(newState);
 			newState = sort(newState);
 			return newState;
 
 		case "REMOVE_INGREDIENT":
 			newState = state.filter(ingredient => ingredient.uuid !== action.ingredientID);
-			// let ingToRemove = state.filter(ingredient => ingredient.uuid === action.ingredientID);
-			// removeIngredients(ingToRemove);
 			newState = sort(newState);
 			return newState;
 
 		case "EDIT_INGREDIENT":
-			ingredient = state.find(i => i.uuid === action.ingredientID);
+			ingredient = state.find(i => i.uuid === action.ingredient.uuid);
 			index = state.indexOf(ingredient);
 			newState = [
 				...state.slice(0, index),
-				Object.assign({}, ingredient, { weight: action.weight }),
+				Object.assign({}, ingredient, { weight: action.ingredient.weight }),
 				...state.slice(index + 1)
 			];
 			newState = sort(newState);
