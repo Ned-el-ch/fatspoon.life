@@ -79,7 +79,6 @@ export const updateIngredients = (ingredients, action) => {
 			})
 				.then(res => res.json())
 				.then(data => {
-					debugger
 					dispatch(loadIngredients(data.user_ingredients))
 				})
 		}
