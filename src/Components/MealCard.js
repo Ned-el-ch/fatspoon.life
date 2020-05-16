@@ -1,13 +1,56 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { formatDate, compareToday } from '../Concerns/generateExtra'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { connect } from 'react-redux';
 import { updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan } from "../Actions/mealPlan"
+import { updateIngredients, editIngredient } from "../Actions/ingredients"
 import { Link } from "react-router-dom"
 
-const MealCard = ({ ingredients, meal, recipe, labels, link, user, updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan }) => {
+const formatMealIngredients = (ingredients, meal) => {
+	let totalWeights = meal.recipe.recipe_ingredients.map(item => {
+		let weightToRemove = Math.ceil((item.weight / meal.recipe.servingCount) * meal.multiplier)
+		let ingredient = ingredients.find(e => e.uuid === item.ingredient.uuid)
+		if (ingredient) {
+			return {uuid: item.ingredient.uuid, weight: ingredient.weight- weightToRemove}
+		} else {
+			return {uuid: item.ingredient.uuid, weight: -weightToRemove}
+		}
+	})
+	// debugger
+	return totalWeights
+}
+
+const validateAllAvailable = (newIngredients) => {
+	let available = true;
+	newIngredients.forEach(e => {
+		if (e.weight < 0)
+			available = false
+	})
+	return available
+}
+
+const MealCard = (
+	{ ingredients,
+		meal,
+		recipe,
+		// labels,
+		link,
+		user,
+		updateMultiplier,
+		fetchUpdateMultiplier,
+		removeFromMealPlan,
+		fetchRemoveFromMealPlan,
+		updateIngredients,
+		editIngredient
+	}) => {
 	const [multiplier, setMultiplier] = useState(meal.multiplier)
+	const [allAvailable, setAllAvailable] = useState(false)
+
+	useEffect(() => {
+			setAllAvailable(validateAllAvailable(formatMealIngredients(ingredients, meal)))
+	}, [ingredients, meal, setAllAvailable])
+
 	return (
 		<Fragment>
 		<div className="planned-date-container">
@@ -15,7 +58,9 @@ const MealCard = ({ ingredients, meal, recipe, labels, link, user, updateMultipl
 				<button className="mc-delete-meal" onClick={() => {
 					fetchRemoveFromMealPlan(removeFromMealPlan, meal.id)
 				}}>Delete</button>
-				<button className="mc-complete-meal" onClick={() => {
+				<button disabled={!allAvailable} className="mc-complete-meal" onClick={() => {
+					let newIngredients = formatMealIngredients(ingredients, meal)
+					updateIngredients(newIngredients, editIngredient)
 					fetchRemoveFromMealPlan(removeFromMealPlan, meal.id)
 				}}>Complete</button>
 			</div>
@@ -106,4 +151,13 @@ const MealCard = ({ ingredients, meal, recipe, labels, link, user, updateMultipl
 	)
 }
 
-export default connect(null, { updateMultiplier, fetchUpdateMultiplier, removeFromMealPlan, fetchRemoveFromMealPlan })(MealCard);
+export default connect(
+	null,
+	{
+		updateMultiplier,
+		fetchUpdateMultiplier,
+		removeFromMealPlan,
+		fetchRemoveFromMealPlan,
+		updateIngredients,
+		editIngredient
+	})(MealCard);
