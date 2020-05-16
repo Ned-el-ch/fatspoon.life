@@ -38,10 +38,14 @@
 	}
 }
 
+.mc-buttons-container {
+	position: relative;
+}
+
 .mc-delete-meal {
-	width: 15%;
-	position: absolute;
-	left: 12px;
+	// width: 15%;
+	display: block;
+	float: left;
 	border: 1px solid #ced4da;
 	background-color: white;
 	outline: none;
@@ -51,7 +55,7 @@
 	font-weight: bold;
 	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
 	font-size: $normalFontSize;
-	padding: 0;
+	padding: 0 10px;
 	user-select: none;
 	&:hover {
 		background-color: $primaryAccentColor;
@@ -60,6 +64,40 @@
 
 	&:active {
 		background-color: red;
+		color: white;
+		box-shadow: $mainBoxShadow;
+	}
+
+	&:focus {
+		box-shadow: $mainBoxShadow !important;
+		outline: none;
+	}
+}
+
+.mc-complete-meal {
+	// width: 20%;
+	display: block;
+	float: left;
+	// left: 130px;
+	border: 1px solid #ced4da;
+	background-color: white;
+	outline: none;
+	border-radius: 0.25rem;
+	height: 38px;
+	color: $mainTextColorTransparent;
+	font-weight: bold;
+	@include transition(color 0.15s, background-color 0.15s, box-shadow 0.15s);
+	font-size: $normalFontSize;
+	padding: 0 10px;
+	margin-left: 10px;
+	user-select: none;
+	&:hover {
+		background-color: $secondaryAccentColor;
+		color: white;
+	}
+
+	&:active {
+		background-color: $secondaryAccentColorDark;
 		color: white;
 		box-shadow: $mainBoxShadow;
 	}

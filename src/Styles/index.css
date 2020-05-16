@@ -1329,10 +1329,13 @@ a.dropdown-item:hover {
   padding-bottom: 5px;
 }
 
+.mc-buttons-container {
+  position: relative;
+}
+
 .mc-delete-meal {
-  width: 15%;
-  position: absolute;
-  left: 12px;
+  display: block;
+  float: left;
   border: 1px solid #ced4da;
   background-color: white;
   outline: none;
@@ -1346,7 +1349,7 @@ a.dropdown-item:hover {
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
   transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
   font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
-  padding: 0;
+  padding: 0 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1366,6 +1369,48 @@ a.dropdown-item:hover {
 }
 
 .mc-delete-meal:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
+  outline: none;
+}
+
+.mc-complete-meal {
+  display: block;
+  float: left;
+  border: 1px solid #ced4da;
+  background-color: white;
+  outline: none;
+  border-radius: 0.25rem;
+  height: 38px;
+  color: rgba(11, 57, 94, 0.3);
+  font-weight: bold;
+  -webkit-transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  -webkit-transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
+  font-size: calc(13px + (17 - 13) * ((100vw - 300px) / (1600 - 300)));
+  padding: 0 10px;
+  margin-left: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.mc-complete-meal:hover {
+  background-color: #c4ff86;
+  color: white;
+}
+
+.mc-complete-meal:active {
+  background-color: #b0e478;
+  color: white;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5);
+}
+
+.mc-complete-meal:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
           box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.5) !important;
   outline: none;
