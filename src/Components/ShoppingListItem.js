@@ -23,7 +23,8 @@ const ShoppingListItem = ({item, updateIngredients, editIngredient}) => {
 			<Row>
 			<Col xs={2} sm={2} md={2} lg={2} className="rf-remove-margin">
 				<button className="sli-add-ingredient" onClick={() => {
-					updateIngredients({uuid}, parseInt(postWeight) + parseInt(ingWeight), editIngredient)
+					let newWeight = parseInt(postWeight) + parseInt(ingWeight)
+					updateIngredients([{uuid, weight: newWeight}], editIngredient)
 				}}>
 					Done
 				</button>

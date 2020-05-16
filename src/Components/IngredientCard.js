@@ -54,7 +54,8 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 				<div className="ic-weight-input-container">
 					<div className="ic-weight-buttons-container">
 						<button className="ic-button-save ic-button pos" onClick={() => {
-							updateIngredients(ingredient, currentWeight, editIngredient);
+							let newIngredient = {uuid: ingredient.uuid, weight:currentWeight}
+							updateIngredients([newIngredient], editIngredient);
 							setClickable(true)
 							setInputVisible(false)
 						}}>✓</button>
@@ -66,7 +67,8 @@ const IngredientCard = ({updateIngredients, removeAnIngredient, ingredient, edit
 					</div>
 					<form onSubmit={(event) => {
 						event.preventDefault()
-						updateIngredients(ingredient, currentWeight, editIngredient);
+						let newIngredient = {uuid: ingredient.uuid, weight:currentWeight}
+						updateIngredients([newIngredient], editIngredient);
 						setClickable(true)
 						setInputVisible(false)
 					}}>
