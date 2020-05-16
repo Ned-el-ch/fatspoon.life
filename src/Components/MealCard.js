@@ -11,9 +11,14 @@ const MealCard = ({ ingredients, meal, recipe, labels, link, user, updateMultipl
 	return (
 		<Fragment>
 		<div className="planned-date-container">
-			<button className="mc-delete-meal" onClick={() => {
-				fetchRemoveFromMealPlan(removeFromMealPlan, meal.id)
-			}}>Delete</button>
+			<div className="mc-buttons-container">
+				<button className="mc-delete-meal" onClick={() => {
+					fetchRemoveFromMealPlan(removeFromMealPlan, meal.id)
+				}}>Delete</button>
+				<button className="mc-complete-meal" onClick={() => {
+					fetchRemoveFromMealPlan(removeFromMealPlan, meal.id)
+				}}>Complete</button>
+			</div>
 			<span className="mc-subheading">{formatDate(meal.planned_date)}</span>
 		</div>
 		<div className="mc-container">
