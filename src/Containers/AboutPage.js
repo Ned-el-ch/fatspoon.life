@@ -8,10 +8,6 @@ const AboutPage = ({userIsLoggedIn}) => {
 		<div className="content ap-container">
 			<PageHeader title={"Made by Niki Nedelchev"}/>
 			<div className="content--inner">
-				<div className="hp-app-get-started-container">
-					<span className="hp-app-get-started">Here are some screenshots!</span>
-				</div>
-				<ScreenshotCarousel/>
 				{userIsLoggedIn ?
 				<Fragment>
 					<div className="hp-app-get-started-container">
@@ -32,6 +28,10 @@ const AboutPage = ({userIsLoggedIn}) => {
 					<span className="hp-app-get-started">Get started by <Link to="/Login">logging in</Link> or <Link to="/SignUp">signing up</Link>!</span>
 				</div>
 				}
+				<div className="hp-app-get-started-container">
+					<span className="hp-app-get-started">Here are some screenshots!</span>
+				</div>
+				<ScreenshotCarousel/>
 				<div className="hp-app-get-started-container">
 				<span className="ap-contact">Find me on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Ned_el_ch">Twitter</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch">GitHub</a>, and <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ned-el-ch/">LinkedIn</a></span>
 				</div>
