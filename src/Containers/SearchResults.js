@@ -77,7 +77,7 @@ const SearchResults = ({ fetchSearchRecipes, recipes, ingredients }) => {
 						<LottieLoading />
 						:
 					<span className="mp-subheading">
-						{hasSearched ? "No results found! Try a different query!" : ""}
+						{hasSearched ? "No results found! Try something else like pasta, rice, chicken, etc..." : ""}
 					</span>
 					}
 				</div>
