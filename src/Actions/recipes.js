@@ -28,24 +28,27 @@ export const addIngredientToRecipe = (recipeID, ingredientID) => {
 }
 
 export const loadRecipes = recipes => {
-	return (
-		{
-			type: "LOAD_RECIPES",
-			recipes
-		}
-	)
+	return ({
+		type: "LOAD_RECIPES",
+		recipes
+	})
 }
 
 export const clearRecipes = () => {
-	return (
-		{
-			type: "CLEAR_RECIPES"
-		}
-	)
+	return ({
+		type: "CLEAR_RECIPES"
+	})
 }
 
 export const fetchCreateRecipe = (uuid, info, ingredients, instructions) => {
-	const { title, imageLink, description, prepTime, cookingTime, servingCount } = info
+	const {
+		title,
+		imageLink,
+		description,
+		prepTime,
+		cookingTime,
+		servingCount
+	} = info
 	if (localStorage.token) {
 		let body = {
 			recipe: {
@@ -61,15 +64,15 @@ export const fetchCreateRecipe = (uuid, info, ingredients, instructions) => {
 			}
 		}
 		return dispatch => {
-			return fetch("https://calm-brook-68370.herokuapp.com/recipes/new", {
-				method: "POST",
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-					'Authorization': `Bearer ${localStorage.token}`
-				},
-				body: JSON.stringify(body)
-			})
+			return fetch("https://ancient-harbor-35585.herokuapp.com/recipes/new", {
+					method: "POST",
+					headers: {
+						'Content-Type': 'application/json',
+						Accept: 'application/json',
+						'Authorization': `Bearer ${localStorage.token}`
+					},
+					body: JSON.stringify(body)
+				})
 				.then(res => res.json())
 				.then(data => {
 					dispatch(addRecipe(data))

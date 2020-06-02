@@ -22,7 +22,7 @@ const SignUpPage = ({ userSignUpFetch }) => {
 					event.preventDefault();
 					const username = event.target.elements.username.value.toLocaleLowerCase();
 					const password = event.target.elements.password.value;
-					userSignUpFetch({username, password}).then(res => {
+					userSignUpFetch(username, password).then(res => {
 						if (!res) {
 							history.push("/")
 						} else {

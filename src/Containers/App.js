@@ -11,50 +11,56 @@ import { connect } from 'react-redux';
 import { loadRecipes } from '../Actions/recipes.js'
 import { loadMealPlan } from '../Actions/mealPlan.js'
 import { loadIngredients } from "../Actions/ingredients.js"
-import { loginUser, logoutUser } from "../Actions/user.js"
+import { userProfileFetch } from "../Actions/user.js"
 import RoutesWrapper from '../Components/RoutesWrapper';
 
-const App = ({ user, loginUser, logoutUser, loadIngredients, loadRecipes, loadMealPlan }) => {
+const App = ({ user, userProfileFetch, loadIngredients, loadRecipes, loadMealPlan }) => {
 	const userDataCallback = useCallback(
 		(userData) => {
-			let starred = userData.recipe_stars.map(e => e.recipe)
-			loginUser(userData)
-			loadIngredients(userData.user_ingredients)
+			let starred = userData.recipeStars.map(e => e.recipe)
+			// loginUser(userData)
+			loadIngredients(userData.userIngredients)
 			loadRecipes([...userData.recipes, ...starred])
-			loadMealPlan(userData.recipe_meals)
+			loadMealPlan(userData.recipeMeals)
 		},
-		[loginUser, loadIngredients, loadRecipes, loadMealPlan],
+		[loadIngredients, loadRecipes, loadMealPlan],
 	)
 	useEffect( () => {
 		const token = localStorage.token;
+		// userProfileFetch()
+		userProfileFetch()
+		.then(userDataCallback)
+		.catch(console.log)
+
 		if (token) {
 			// called here to optimistically render routes to avoid reloading
-			userDataCallback({user_ingredients: [], recipes: [], recipe_meals: [], recipe_stars: []});
-			(async function fetchProfile() {
-				try {
-					await fetch("https://calm-brook-68370.herokuapp.com/api/v1/profile", {
-						method: "GET",
-						headers: {
-							'Content-Type': 'application/json',
-							Accept: 'application/json',
-							'Authorization': `Bearer ${token}`
-						}
-					})
-						.then(res => res.json())
-						.then(data => {
-							if (data.message) {
-								localStorage.removeItem("token")
-								logoutUser()
-							} else {
-								userDataCallback(data)
-							}
-						})
-				} catch (e) {
-					logoutUser()
-				}
-			})()
+			// userDataCallback({user_ingredients: [], recipes: [], recipe_meals: [], recipe_stars: []});
+			// (async function fetchProfile() {
+			// 	try {
+			// 		await fetch("http://localhost:6900/api/users/profile", {
+			// 			method: "GET",
+			// 			headers: {
+			// 				'Content-Type': 'application/json',
+			// 				Accept: 'application/json',
+			// 				'Authorization': `Bearer ${token}`
+			// 			}
+			// 		})
+			// 			.then(res => res.json())
+			// 			.then(data => {
+			// 				if (data.message) {
+			// 					localStorage.removeItem("token")
+			// 					logoutUser()
+			// 				} else {
+			// 					userDataCallback(data)
+			// 				}
+			// 			})
+			// 	} catch (e) {
+			// 		logoutUser()
+			// 	}
+			// })()
+
 		}
-	}, [userDataCallback, logoutUser])
+	}, [userDataCallback])
 	return (
 		<Router>
 		<div className="app-container">
@@ -92,4 +98,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps, { loginUser, logoutUser, loadIngredients, loadRecipes, loadMealPlan })(App);
+export default connect(mapStateToProps, { userProfileFetch, loadIngredients, loadRecipes, loadMealPlan })(App);

@@ -43,8 +43,8 @@ const generateMealCards = (mealPlan, startingIngredients, user) => {
 
 const initialState = {
 	start: moment(),
-	beginWeek: moment().startOf('week').add(1, 'day'),
-	endWeek: moment().endOf('week').add(1, 'day')
+	beginWeek: moment().startOf('isoWeek'),
+	endWeek: moment().endOf('isoWeek')
 }
 
 let remainingIngredients = []
@@ -69,13 +69,13 @@ const MealPlanner = ({ingredients, meals, user}) => {
 			<Col xs={12} sm={12} md={{ span: 10, offset: 1 }} className="rf-remove-margin">
 				<div className="mp-week-button-container">
 					<button onClick={(event) => {
-						setBeginningOfCurrentWeek(beginningOfCurrentWeek.clone().subtract(7, 'day'))
-						setEndOfCurrentWeek(endOfCurrentWeek.clone().subtract(7, 'day'))
+						setBeginningOfCurrentWeek(beginningOfCurrentWeek.clone().subtract(1, 'week'))
+						setEndOfCurrentWeek(endOfCurrentWeek.clone().subtract(1, 'week'))
 					}}
 					className="mp-week-button previous">Previous Week</button>
 					<button onClick={() => {
-						setBeginningOfCurrentWeek(startingWeek.clone().startOf('week').add(1, 'day'))
-						setEndOfCurrentWeek(startingWeek.clone().endOf('week').add(1, 'day'))
+						setBeginningOfCurrentWeek(startingWeek.clone().startOf('isoWeek'))
+						setEndOfCurrentWeek(startingWeek.clone().endOf('isoWeek'))
 					}}
 					className="mp-week-button current">Current Week</button>
 					<button onClick={() => {

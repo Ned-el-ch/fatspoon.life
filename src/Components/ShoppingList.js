@@ -7,8 +7,8 @@ import Col from 'react-bootstrap/Col';
 import moment from 'moment'
 
 const filterMeals = (meals) => {
-	let startDate = moment().startOf('week').add(1, 'day')
-	let endDate = moment().endOf('week').add(1, 'day')
+	let startDate = moment().startOf('isoWeek')
+	let endDate = moment().endOf('isoWeek')
 	return meals.filter(meal => startDate.isBefore(meal.planned_date) && endDate.isAfter(meal.planned_date))
 }
 

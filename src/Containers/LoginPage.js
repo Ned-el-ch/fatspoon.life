@@ -25,14 +25,14 @@ const LoginPage = ({ userLoginFetch, loadIngredients, loadRecipes, loadMealPlan 
 					event.preventDefault();
 					const username = event.target.elements.username.value.toLocaleLowerCase();
 					const password = event.target.elements.password.value;
-					userLoginFetch({username, password}).then(res => {
+					userLoginFetch(username, password).then(res => {
 						if (!res.recipes) {
 							setAlert(res);
 						} else {
 							history.push("/")
-							loadIngredients(res.user_ingredients)
+							loadIngredients(res.userIngredients)
 							loadRecipes(res.recipes)
-							loadMealPlan(res.recipe_meals)
+							loadMealPlan(res.recipeMeals)
 						}
 					});
 				}}>

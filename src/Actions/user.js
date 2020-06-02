@@ -1,18 +1,22 @@
-export const userSignUpFetch = user => {
+export const userSignUpFetch = (username, password) => {
 	return dispatch => {
-		return fetch("https://calm-brook-68370.herokuapp.com/api/v1/users", {
-			method: "POST",
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json'
-			},
-			body: JSON.stringify({user})
-		})
+		return fetch("http://localhost:6900/api/users/signup", {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				},
+				body: JSON.stringify({
+					username,
+					password
+				})
+			})
 			.then(res => res.json())
 			.then(data => {
+				debugger
 				if (data.token) {
 					localStorage.setItem("token", data.token)
-					dispatch(loginUser(JSON.parse(data.user_data)))
+					dispatch(loginUser(data.userData))
 					return false
 				} else {
 					return true
@@ -22,22 +26,29 @@ export const userSignUpFetch = user => {
 	}
 }
 
-export const userLoginFetch = user => {
+export const userLoginFetch = (username, password) => {
+	console.log(username, password)
 	return dispatch => {
-		return fetch("https://calm-brook-68370.herokuapp.com/api/v1/login", {
-			method: "POST",
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json'
-			},
-			body: JSON.stringify({user})
-		})
+		return fetch("http://localhost:6900/api/users/login", {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				},
+				body: JSON.stringify({
+					username,
+					password
+				})
+			})
 			.then(res => res.json())
-			.then(data => {
-				if (data.token) {
-					localStorage.setItem("token", data.token)
-					let userData = JSON.parse(data.user_data)
-					dispatch({type: "LOGIN_USER", userData })
+			.then(userData => {
+				// debugger
+				if (userData.token) {
+					localStorage.setItem("token", userData.token)
+					dispatch({
+						type: "LOGIN_USER",
+						userData
+					})
 					return userData;
 				} else {
 					// returns true to setAlert(true)
@@ -47,16 +58,43 @@ export const userLoginFetch = user => {
 	}
 }
 
+export const userProfileFetch = () => {
+	let token = localStorage.getItem('token')
+	// debugger
+	if (token) {
+		return dispatch => {
+			return fetch("http://localhost:6900/api/users/profile", {
+					method: "GET",
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json',
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(data => data.json())
+				.then(userData => {
+					// debugger
+					console.log(userData)
+					if (userData.message) {
+						dispatch(logoutUser())
+						return true
+					} else {
+						dispatch(loginUser(userData))
+						return userData
+					}
+				})
+		}
+	}
+}
+
 export const logoutUser = () => {
 	localStorage.removeItem("token");
-	return (
-		{
-			type: 'LOGOUT_USER'
-		}
-	)
+	return ({
+		type: 'LOGOUT_USER'
+	})
 }
 
 export const loginUser = userData => ({
-		type: 'LOGIN_USER',
-		userData
+	type: 'LOGIN_USER',
+	userData
 })
