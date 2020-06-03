@@ -8,20 +8,21 @@ import LoginPage from '../Containers/LoginPage.js';
 import SignUpPage from '../Containers/SignUpPage.js';
 import HomePage from '../Containers/HomePage.js';
 import AboutPage from '../Containers/AboutPage.js';
-import MealPlanner from './MealPlanner.js';
+import OrdersPage from '../Containers/OrdersPage.js';
 import SearchResults from '../Containers/SearchResults.js';
 import LottieDino from './LottieDino.js';
 import DefaultPage from '../Containers/DefaultPage.js';
+import { connect } from 'react-redux';
 // import ProfilePage from '../Containers/ProfilePage.js';
 
 const RoutesWrapper = ({location, user}) => {
 	if (user) {
 		return (
 			<Switch location={location}>
-				<Route exact path="/"><MealPlanner/></Route>
-				<Route exact path="/MyCookbook" component={Cookbook}/>
-				<Route exact path="/MyFridge" component={Fridge}/>
-				<Route exact path="/MyShoppingList" component={ShoppingListPage}/>
+				<Route exact path="/"><OrdersPage/></Route>
+				<Route exact path="/Recipes" component={Cookbook}/>
+				<Route exact path="/Inventory" component={Fridge}/>
+				<Route exact path="/ShoppingList" component={ShoppingListPage}/>
 				<Route exact path="/About" ><AboutPage userIsLoggedIn={user}/></Route>
 				{/* <Route exact path="/About" component={AboutPage}/> */}
 				<Route exact path="/Search" component={SearchResults}/>
@@ -49,4 +50,12 @@ const RoutesWrapper = ({location, user}) => {
 	}
 }
 
-export default RoutesWrapper;
+const mapStateToProps = state => {
+	return (
+		{
+			user: state.user
+		}
+	)
+}
+
+export default connect(mapStateToProps)(RoutesWrapper);

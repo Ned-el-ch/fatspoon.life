@@ -6,7 +6,33 @@ export default (state = initialState, action) => {
 		case "LOGIN_USER":
 			return {...action.userData};
 		case "LOGOUT_USER":
-			return null;
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+		case "LOGOUT_USER":
+      return null;
+      
+
 		default:
 			return state;
 	}

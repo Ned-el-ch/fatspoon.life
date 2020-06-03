@@ -1,10 +1,13 @@
+// const API_URL = "https://ancient-harbor-35585.herokuapp.com"
+const API_URL = "http://localhost:6900"
+
 export const userSignUpFetch = (username, password) => {
 	return dispatch => {
-		return fetch("http://localhost:6900/api/users/signup", {
+		return fetch(`${API_URL}/api/users/signup`, {
 				method: "POST",
 				headers: {
 					'Content-Type': 'application/json',
-					Accept: 'application/json'
+					'Accept': 'application/json'
 				},
 				body: JSON.stringify({
 					username,
@@ -17,23 +20,22 @@ export const userSignUpFetch = (username, password) => {
 				if (data.token) {
 					localStorage.setItem("token", data.token)
 					dispatch(loginUser(data.userData))
-					return false
-				} else {
 					return true
-					// ADD LOGIC TO HANDLE WRONG STUFF
+				} else {
+					return false
 				}
 			})
 	}
 }
 
 export const userLoginFetch = (username, password) => {
-	console.log(username, password)
+	// console.log(username, password)
 	return dispatch => {
-		return fetch("http://localhost:6900/api/users/login", {
+		return fetch(`${API_URL}/api/users/login`, {
 				method: "POST",
 				headers: {
 					'Content-Type': 'application/json',
-					Accept: 'application/json'
+					'Accept': 'application/json'
 				},
 				body: JSON.stringify({
 					username,
@@ -42,17 +44,16 @@ export const userLoginFetch = (username, password) => {
 			})
 			.then(res => res.json())
 			.then(userData => {
-				// debugger
+				debugger
 				if (userData.token) {
 					localStorage.setItem("token", userData.token)
 					dispatch({
 						type: "LOGIN_USER",
 						userData
 					})
-					return userData;
-				} else {
-					// returns true to setAlert(true)
 					return true;
+				} else {
+					return false;
 				}
 			})
 	}
@@ -60,35 +61,30 @@ export const userLoginFetch = (username, password) => {
 
 export const userProfileFetch = () => {
 	let token = localStorage.getItem('token')
-	// debugger
-	if (token) {
-		return dispatch => {
-			return fetch("http://localhost:6900/api/users/profile", {
-					method: "GET",
-					headers: {
-						'Content-Type': 'application/json',
-						'Accept': 'application/json',
-						'Authorization': `Bearer ${token}`
-					}
-				})
-				.then(data => data.json())
-				.then(userData => {
-					// debugger
-					console.log(userData)
-					if (userData.message) {
-						dispatch(logoutUser())
-						return true
-					} else {
-						dispatch(loginUser(userData))
-						return userData
-					}
-				})
-		}
+	return dispatch => {
+		return fetch(`${API_URL}/api/users/profile`, {
+			method: "GET",
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept': 'application/json',
+				'Authorization': `Bearer ${token}`
+			}
+		})
+		.then(data => data.json())
+		.then(userData => {
+			console.log(userData)
+			if (userData.error) {
+				dispatch(logoutUser())
+			} else {
+				dispatch(loginUser(userData))
+			}
+		})
+		.catch(console.log)
 	}
 }
 
 export const logoutUser = () => {
-	localStorage.removeItem("token");
+	localStorage.removeItem('token');
 	return ({
 		type: 'LOGOUT_USER'
 	})

@@ -1,11 +1,13 @@
 import moment from 'moment'
+// const API_URL = "https://ancient-harbor-35585.herokuapp.com"
+const API_URL = "http://localhost:6900"
 
 export const addOrderFetch = (recipe, plannedDate, multiplier, address) => {
 
 	let token = localStorage.token;
 	if (token) {
 		return dispatch => {
-			return fetch("https://ancient-harbor-35585.herokuapp.com/orders", {
+			return fetch(`${API_URL}/api/orders`, {
 					method: "POST",
 					headers: {
 						'Content-Type': 'application/json',
@@ -39,7 +41,7 @@ export const updateOrderFetch = (order) => {
 	let token = localStorage.token;
 	if (token) {
 		return dispatch => {
-			return fetch(`https://ancient-harbor-35585.herokuapp.com/orders/${order._id}`, {
+			return fetch(`${API_URL}/api/orders/${order._id}`, {
 					method: "PUT",
 					headers: {
 						'Content-Type': 'application/json',
@@ -70,7 +72,7 @@ export const deleteOrderFetch = (order) => {
 	let token = localStorage.token;
 	if (token) {
 		return dispatch => {
-			return fetch(`https://ancient-harbor-35585.herokuapp.com/orders/${order._id}`, {
+			return fetch(`${API_URL}/api/orders/${order._id}`, {
 					method: "DELETE",
 					headers: {
 						'Content-Type': 'application/json',
@@ -112,69 +114,6 @@ export const deleteOrderFetch = (order) => {
 
 
 
-
-
-export const fetchUpdateMultiplier = (action, id, multiplier) => {
-	action(id, multiplier)
-	let token = localStorage.token;
-	if (token) {
-		return dispatch => {
-			// return fetch("http://localhost:4000/meal_planner/add", {
-			return fetch("https://ancient-harbor-35585.herokuapp.com/meal_planner/update_multiplier", {
-					method: "POST",
-					headers: {
-						'Content-Type': 'application/json',
-						Accept: 'application/json',
-						'Authorization': `Bearer ${token}`
-					},
-					body: JSON.stringify({
-						recipe_meal: {
-							id,
-							multiplier
-						}
-					})
-				})
-				.then(res => res.json())
-				.then(data => {
-					if (data.error || data.message) {
-						console.log(data)
-					} else {
-						dispatch(action(id, data.multiplier))
-					}
-				})
-		}
-	}
-}
-
-export const fetchRemoveFromMealPlan = (action, id) => {
-	action(id)
-	let token = localStorage.token;
-	if (token) {
-		return dispatch => {
-			return fetch("https://ancient-harbor-35585.herokuapp.com/meal_planner/destroy", {
-					method: "POST",
-					headers: {
-						'Content-Type': 'application/json',
-						Accept: 'application/json',
-						'Authorization': `Bearer ${token}`
-					},
-					body: JSON.stringify({
-						recipe_meal: {
-							id
-						}
-					})
-				})
-				.then(res => res.json())
-				.then(data => {
-					if (data.error || data.message) {
-						console.log(data)
-					} else {
-						dispatch(action(id))
-					}
-				})
-		}
-	}
-}
 
 
 export const addToMealPlan = (id, recipe, planned_date, multiplier) => {

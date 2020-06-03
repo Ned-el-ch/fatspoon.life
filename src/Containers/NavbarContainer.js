@@ -27,7 +27,7 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients, clearMealPlan, cl
 			{user
 			?
 			<LinkContainer exact to="/">
-				<NavLink active={false}><NavItem>My Meal Planner</NavItem></NavLink>
+				<NavLink active={false}><NavItem>Orders</NavItem></NavLink>
 			</LinkContainer>
 			:
 			<LinkContainer exact to="/">
@@ -39,27 +39,27 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients, clearMealPlan, cl
 				{user
 				?
 				<Nav className="mr-auto">
-					<LinkContainer exact to="/MyCookbook">
-						<NavLink active={false}><NavItem>My Cookbook</NavItem></NavLink>
+					<LinkContainer exact to="/Recipes">
+						<NavLink active={false}><NavItem>Recipes</NavItem></NavLink>
 					</LinkContainer>
-					<LinkContainer exact to="/MyFridge">
-						<NavLink active={false}><NavItem>My Fridge</NavItem></NavLink>
+					<LinkContainer exact to="/Inventory">
+						<NavLink active={false}><NavItem>Inventory</NavItem></NavLink>
 					</LinkContainer>
-					<LinkContainer exact to="/MyShoppingList">
-						<NavLink active={false}><NavItem>My Shopping List</NavItem></NavLink>
+					<LinkContainer exact to="/ShoppingList">
+						<NavLink active={false}><NavItem>Shopping List</NavItem></NavLink>
 					</LinkContainer>
-					<LinkContainer exact to="/Search">
+					{/* <LinkContainer exact to="/Search">
 						<NavLink active={false}><NavItem>Search Recipes</NavItem></NavLink>
-					</LinkContainer>
+					</LinkContainer> */}
 				</Nav>
 				:
 				<Nav className="mr-auto">
 					<LinkContainer exact to="/About">
 						<NavLink active={false}><NavItem>About</NavItem></NavLink>
 					</LinkContainer>
-					<LinkContainer exact to="/Search">
+					{/* <LinkContainer exact to="/Search">
 						<NavLink active={false}><NavItem>Search Recipes</NavItem></NavLink>
-					</LinkContainer>
+					</LinkContainer> */}
 				</Nav>
 				}
 				<Nav className="ml-auto">
@@ -75,10 +75,9 @@ const NavbarContainer = ({ user, logoutUser, clearIngredients, clearMealPlan, cl
 						<NavDropdown.Item href="#" onClick={() => {
 							logoutUser();
 							clearIngredients();
-							clearMealPlan();
-							clearRecipes();
-							history.push("/")}}
-							>Log Out</NavDropdown.Item>
+              history.push("/")}
+              }
+            >Log Out</NavDropdown.Item>
 					</NavDropdown>
 					:
 					<Fragment>

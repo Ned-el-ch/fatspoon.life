@@ -1,3 +1,6 @@
+// const API_URL = "https://ancient-harbor-35585.herokuapp.com"
+const API_URL = "http://localhost:6900"
+
 export const addIngredients = ingredients => {
 	return {
 		type: "ADD_INGREDIENTS",
@@ -30,7 +33,7 @@ export const newUserIngredientFetch = (newIngredients, allIngredients) => {
 				}))
 		})
 		return dispatch => {
-			return fetch("https://ancient-harbor-35585.herokuapp.com/api/userIngredients", {
+			return fetch(`${API_URL}/api/userIngredients`, {
 					method: "POST",
 					headers: {
 						'Content-Type': 'application/json',
@@ -53,7 +56,7 @@ export const updateUserIngredientFetch = (ui) => {
 	let token = localStorage.token
 	if (token) {
 		return dispatch => {
-			return fetch(`https://ancient-harbor-35585.herokuapp.com/api/userIngredients/${ui._id}`, {
+			return fetch(`${API_URL}/api/userIngredients/${ui._id}`, {
 					method: "PUT",
 					headers: {
 						'Content-Type': 'application/json',
@@ -76,7 +79,7 @@ export const removeUserIngredientFetch = ui => {
 	let token = localStorage.getItem('token')
 	if (token) {
 		return dispatch => {
-			return fetch(`https://ancient-harbor-35585.herokuapp.com/api/userIngredients/${ui._id}`, {
+			return fetch(`${API_URL}/api/userIngredients/${ui._id}`, {
 					method: "DELETE",
 					headers: {
 						'Content-Type': 'application/json',
