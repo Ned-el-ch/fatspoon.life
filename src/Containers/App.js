@@ -10,11 +10,11 @@ import Col from "react-bootstrap/Col"
 import { connect } from 'react-redux';
 import { loadRecipes } from '../Actions/recipes.js'
 import { loadMealPlan } from '../Actions/mealPlan.js'
-import { loadIngredients } from "../Actions/ingredients.js"
-import { userProfileFetch } from "../Actions/user.js"
+import { loadIngredients, allIngredientsFetch } from "../Actions/ingredients.js"
+import { userProfileFetch } from "../Actions/userAuth.js"
 import RoutesWrapper from '../Components/RoutesWrapper';
 
-const App = ({ user, userProfileFetch, loadIngredients, loadRecipes, loadMealPlan }) => {
+const App = ({ user, userProfileFetch, allIngredientsFetch, loadIngredients, loadRecipes, loadMealPlan }) => {
 	const userDataCallback = useCallback(
 		(userData) => {
 			let starred = userData.recipeStars.map(e => e.recipe)
@@ -27,7 +27,7 @@ const App = ({ user, userProfileFetch, loadIngredients, loadRecipes, loadMealPla
 	)
 	useEffect( () => {
 		const token = localStorage.token;
-		// userProfileFetch()
+		allIngredientsFetch()
 		userProfileFetch()
 		.then(userDataCallback)
 		.catch(console.log)
@@ -98,4 +98,4 @@ const mapStateToProps = state => {
 	)
 }
 
-export default connect(mapStateToProps, { userProfileFetch, loadIngredients, loadRecipes, loadMealPlan })(App);
+export default connect(mapStateToProps, { userProfileFetch, allIngredientsFetch, loadIngredients, loadRecipes, loadMealPlan })(App);

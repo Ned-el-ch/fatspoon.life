@@ -11,84 +11,53 @@ const sort = (arr) => {
 
 export default (state = data.ingredients, action) => {
 
-	let ingredient;
-	let index;
-	let newState;
+	// let ingredient;
+	// let index;
+	// let newState;
 
 	switch (action.type) {
 
 		case "CLEAR_INGREDIENTS":
 			return [];
+
 		case "LOAD_INGREDIENTS":
-			if (action.ingredients.length !== 0) {
-				newState = action.ingredients.map(ing => {
-					return Object.assign({}, allIngredients.default.find(i => i.uuid === ing.ingredient.uuid), {weight: ing.weight})
-				})
-				newState = sort(newState);
-				return newState;
-			} else {
-				return state
-			}
+			return [...action.ingredients]
+			// if (action.ingredients.length !== 0) {
+			// 	newState = action.ingredients.map(ing => {
+			// 		return Object.assign({}, allIngredients.default.find(i => i.uuid === ing.ingredient.uuid), {weight: ing.weight})
+			// 	})
+			// 	newState = sort(newState);
+			// 	return newState;
+			// } else {
+			// 	return state
+			// }
 
-		case "ADD_INGREDIENTS":
-			let newIngredients = [];
-			action.ingredients.forEach(data => {
-				let arr = state.filter(stateIng => stateIng.uuid === data.ingredient.uuid);
-				if (arr.length === 0)
-					newIngredients.push(Object.assign({}, data.ingredient, {weight: 0}))
-			})
-			newState = [...state, ...newIngredients];
-			newState = sort(newState);
-			return newState;
+		// case "ADD_INGREDIENTS":
+		// 	let newIngredients = [];
+		// 	action.ingredients.forEach(data => {
+		// 		let arr = state.filter(stateIng => stateIng.uuid === data.ingredient.uuid);
+		// 		if (arr.length === 0)
+		// 			newIngredients.push(Object.assign({}, data.ingredient, {weight: 0}))
+		// 	})
+		// 	newState = [...state, ...newIngredients];
+		// 	newState = sort(newState);
+		// 	return newState;
 
-		case "REMOVE_INGREDIENT":
-			newState = state.filter(ingredient => ingredient.uuid !== action.ingredientID);
-			newState = sort(newState);
-			return newState;
+		// case "REMOVE_INGREDIENT":
+		// 	newState = state.filter(ingredient => ingredient.uuid !== action.ingredientID);
+		// 	newState = sort(newState);
+		// 	return newState;
 
-		case "EDIT_INGREDIENT":
-			ingredient = state.find(i => i.uuid === action.ingredient.uuid);
-			index = state.indexOf(ingredient);
-			newState = [
-				...state.slice(0, index),
-				Object.assign({}, ingredient, { weight: action.ingredient.weight }),
-				...state.slice(index + 1)
-			];
-			newState = sort(newState);
-			return newState;
-
-		// case "INCREASE_INGREDIENT":
-		// 	ingredient = state.find(i => i.uuid === action.ingredientID);
+		// case "EDIT_INGREDIENT":
+		// 	ingredient = state.find(i => i.uuid === action.ingredient.uuid);
 		// 	index = state.indexOf(ingredient);
 		// 	newState = [
 		// 		...state.slice(0, index),
-		// 		Object.assign({}, ingredient, { weight: ingredient.weight += action.weight }),
+		// 		Object.assign({}, ingredient, { weight: action.ingredient.weight }),
 		// 		...state.slice(index + 1)
 		// 	];
 		// 	newState = sort(newState);
 		// 	return newState;
-
-		// case "DECREASE_INGREDIENT":
-		// 	ingredient = state.find(i => i.uuid === action.ingredientID);
-		// 	index = state.indexOf(ingredient);
-		// 	if (ingredient.weight >= action.weight * -1)
-		// 	{
-		// 		newState = [
-		// 			...state.slice(0, index),
-		// 			Object.assign({}, ingredient, { weight: ingredient.weight += action.weight }),
-		// 			...state.slice(index + 1)
-		// 		];
-		// 		newState = sort(newState);
-		// 		return newState;
-		// 	}
-		// 	else
-		// 	{
-		// 		return [
-		// 			...state.slice(0, index),
-		// 			Object.assign({}, ingredient, { weight: 0 }),
-		// 			...state.slice(index + 1)
-		// 		];
-		// 	}
 
 		default:
 			return state;

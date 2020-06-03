@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col'
 import Alert from 'react-bootstrap/Alert'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { userSignUpFetch } from '../Actions/user'
+import { userSignUpFetch } from '../Actions/userAuth'
 import PageHeader from '../Components/PageHeader'
 
 const SignUpPage = ({ userSignUpFetch }) => {

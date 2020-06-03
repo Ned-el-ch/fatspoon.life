@@ -1,6 +1,6 @@
 import {
 	logoutUser
-} from "./user"
+} from "./userAuth"
 
 export const addRecipeResults = recipeResults => {
 	return {

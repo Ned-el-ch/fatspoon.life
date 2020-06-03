@@ -8,7 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown"
 import { LinkContainer } from "react-router-bootstrap";
 import { useHistory } from "react-router-dom";
 
-import { logoutUser } from "../Actions/user";
+import { logoutUser } from "../Actions/userAuth";
 import { clearIngredients } from "../Actions/ingredients";
 import { clearRecipes } from "../Actions/recipes";
 import { clearMealPlan } from "../Actions/mealPlan";
