@@ -2,10 +2,10 @@ export default (state = [], action) => {
 
 	switch (action.type) {
 
-		case "LOAD_RECIPES":
-			return [...action.recipes]
+		case "LOAD_USER_INGREDIENTS":
+			return [...action.userIngredients]
 
-		case "CLEAR_RECIPES":
+		case "CLEAR_USER_INGREDIENTS":
 			return []
 
 		default:

@@ -19,7 +19,8 @@ const LottieLoading = () => {
 			width={150}
 			isStopped={false}
 			isPaused={false}
-			speed={3}
+			speed={1.5}
+			isClickToPauseDisabled={true}
 		/>
 		</div>
 	)

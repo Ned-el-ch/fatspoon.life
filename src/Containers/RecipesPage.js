@@ -8,11 +8,11 @@ import RecipeFormContainer from './RecipeFormContainer.js';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Cookbook = (props) => {
+const RecipesPage = (props) => {
 	const { recipes, ingredients, starRecipe, unstarRecipe } = props;
 	return (
 		<div className="content cookbook-container">
-			<PageHeader title="My Cookbook"/>
+			<PageHeader title="My Recipes"/>
 			<div className="content--inner">
 			<RecipeFormContainer />
 			<Row>
@@ -45,4 +45,4 @@ const mapStateToProps = state => {
 	})
 };
 
-export default connect(mapStateToProps, { starRecipe, unstarRecipe })(Cookbook);
+export default connect(mapStateToProps, { starRecipe, unstarRecipe })(RecipesPage);

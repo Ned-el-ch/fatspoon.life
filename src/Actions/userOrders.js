@@ -1,8 +1,7 @@
-import moment from 'moment'
 // const API_URL = "https://ancient-harbor-35585.herokuapp.com"
 const API_URL = "http://localhost:6900"
 
-export const addOrderFetch = (recipe, plannedDate, multiplier, address) => {
+export const addOrderFetch = (order) => {
 
 	let token = localStorage.token;
 	if (token) {
@@ -15,23 +14,14 @@ export const addOrderFetch = (recipe, plannedDate, multiplier, address) => {
 						'Authorization': `Bearer ${token}`
 					},
 					body: JSON.stringify({
-						recipe: {
-							recipe: recipe._id,
-							plannedDate,
-							multiplier,
-							address
-						}
+						recipe: order.recipe,
+						plannedDate: order.plannedDate,
+						multiplier: order.multiplier,
+						address: order.address
 					})
 				})
 				.then(res => res.json())
-				.then(data => {
-					console.log(data)
-					// if (data.error || data.message) {
-					// 	console.log(data)
-					// } else {
-					// 	dispatch(addToMealPlan(data.id, data.recipe, moment(data.planned_date).format(), data.multiplier))
-					// }
-				})
+				.then(console.log)
 		}
 	}
 }
@@ -58,11 +48,6 @@ export const updateOrderFetch = (order) => {
 				})
 				.then(res => res.json())
 				.then(console.log)
-			// if (data.error || data.message) {
-			// 	console.log(data)
-			// } else {
-			// 	dispatch(addToMealPlan(data.id, data.recipe, moment(data.planned_date).format(), data.multiplier))
-			// }
 		}
 	}
 }
@@ -82,74 +67,55 @@ export const deleteOrderFetch = (order) => {
 				})
 				.then(res => res.json())
 				.then(console.log)
-			// if (data.error || data.message) {
-			// 	console.log(data)
-			// } else {
-			// 	dispatch(addToMealPlan(data.id, data.recipe, moment(data.planned_date).format(), data.multiplier))
-			// }
 		}
 	}
 }
 
+export const getOrdersFetch = (weekBeginDate, weekEndDate) => {
+	console.log(weekBeginDate, weekEndDate)
+	let token = localStorage.token;
+	if (token) {
+		return dispatch => {
+			return fetch(`${API_URL}/api/orders?startdate=${weekBeginDate}&enddate=${weekEndDate}`, {
+					method: "GET",
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json',
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(res => res.json())
+				.then(res => {
+					return false
+				})
+		}
+	}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const addToMealPlan = (id, recipe, planned_date, multiplier) => {
+export const addOrder = (order) => {
 	return ({
-		type: "ADD_TO_MEAL_PLAN",
-		id,
-		planned_date,
-		recipe,
-		multiplier
+		type: "ADD_ORDER",
+		order
 	})
 }
 
-export const removeFromMealPlan = id => {
+export const updateOrder = (order) => {
 	return ({
-		type: "REMOVE_FROM_MEAL_PLAN",
-		id
+		type: "UPDATE_ORDER",
+		order
 	})
 }
 
-export const loadMealPlan = meals => {
+export const deleteOrder = (order) => {
 	return ({
-		type: "LOAD_MEAL_PLAN",
-		meals
+		type: "DELETE_ORDER",
+		order
 	})
 }
 
-export const clearMealPlan = () => {
+export const loadOrders = (orders) => {
 	return ({
-		type: "CLEAR_MEAL_PLAN"
-	})
-}
-
-export const updateMultiplier = (id, multiplier) => {
-	return ({
-		type: "UPDATE_MULTIPLIER",
-		id,
-		multiplier
+		type: "LOAD_ORDERS",
+		orders
 	})
 }

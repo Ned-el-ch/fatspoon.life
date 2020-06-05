@@ -3,12 +3,12 @@ import PageHeader from '../Components/PageHeader'
 import { Link } from 'react-router-dom';
 import { ScreenshotCarousel } from '../Components/ScreenshotCarousel';
 
-const AboutPage = ({userIsLoggedIn}) => {
+const AboutPage = () => {
 	return (
 		<div className="content ap-container">
 			<PageHeader title={"Made by Niki Nedelchev"}/>
 			<div className="content--inner">
-				{userIsLoggedIn ?
+				{/* {userIsLoggedIn ?
 				<Fragment>
 					<div className="hp-app-get-started-container">
 						<span className="hp-app-get-started">Get started by adding your own recipes in <Link to="/MyCookbook">My Cookbook</Link> or <Link to="/Search">Search</Link> for some! When you view a recipe authored by someone else you can star it, and it'll be added to your cookbook!</span>
@@ -31,7 +31,7 @@ const AboutPage = ({userIsLoggedIn}) => {
 				<div className="hp-app-get-started-container">
 					<span className="hp-app-get-started">Here are some screenshots!</span>
 				</div>
-				<ScreenshotCarousel/>
+				<ScreenshotCarousel/> */}
 				<div className="hp-app-get-started-container">
 				<span className="ap-contact">Find me on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Ned_el_ch">Twitter</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch">GitHub</a>, and <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ned-el-ch/">LinkedIn</a></span>
 				</div>
@@ -73,9 +73,6 @@ const AboutPage = ({userIsLoggedIn}) => {
 					</li>
 					<li className="ap-li">
 						Moment.js for handling dates
-					</li>
-					<li className="ap-li">
-						Custom UUID function in lieu of a package for better customisation
 					</li>
 				</ul>
 			</div>

@@ -1,39 +1,16 @@
-const initialState = null
-
-export default (state = initialState, action) => {
+export default (state = null, action) => {
 
 	switch (action.type) {
 		case "LOGIN_USER":
-			return {...action.userData};
+			return {
+				...action.userData
+			};
+
 		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
-		case "LOGOUT_USER":
-      return null;
-      
+			return null;
 
 		default:
 			return state;
 	}
+
 }

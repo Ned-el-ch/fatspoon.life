@@ -1,49 +1,49 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
-import ShoppingListPage from '../Containers/ShoppingListPage.js';
-import Fridge from '../Containers/Fridge.js';
-import Cookbook from '../Containers/Cookbook.js';
-import RecipePage from '../Containers/RecipePage.js';
-import LoginPage from '../Containers/LoginPage.js';
-import SignUpPage from '../Containers/SignUpPage.js';
-import HomePage from '../Containers/HomePage.js';
-import AboutPage from '../Containers/AboutPage.js';
-import OrdersPage from '../Containers/OrdersPage.js';
-import SearchResults from '../Containers/SearchResults.js';
-import LottieDino from './LottieDino.js';
-import DefaultPage from '../Containers/DefaultPage.js';
+import ShoppingListPage from '../Containers/ShoppingListPage';
+import Fridge from '../Containers/Fridge';
+import RecipesPage from '../Containers/RecipesPage';
+import RecipePage from '../Containers/RecipePage';
+import LoginPage from '../Containers/LoginPage';
+import SignUpPage from '../Containers/SignUpPage';
+import HomePage from '../Containers/HomePage';
+import AboutPage from '../Containers/AboutPage';
+import OrdersPage from '../Containers/OrdersPage';
+import SearchResults from '../Containers/SearchResults';
+import LottieDino from './LottieDino';
+import DefaultPage from '../Containers/DefaultPage';
 import { connect } from 'react-redux';
-// import ProfilePage from '../Containers/ProfilePage.js';
+// import ProfilePage from '../Containers/ProfilePage';
 
 const RoutesWrapper = ({location, user}) => {
 	if (user) {
 		return (
 			<Switch location={location}>
-				<Route exact path="/"><OrdersPage/></Route>
-				<Route exact path="/Recipes" component={Cookbook}/>
+				<Route exact path="/" component={OrdersPage}></Route>
+				<Route exact path="/Recipes" component={RecipesPage}/>
 				<Route exact path="/Inventory" component={Fridge}/>
 				<Route exact path="/ShoppingList" component={ShoppingListPage}/>
-				<Route exact path="/About" ><AboutPage userIsLoggedIn={user}/></Route>
-				{/* <Route exact path="/About" component={AboutPage}/> */}
-				<Route exact path="/Search" component={SearchResults}/>
-				{/* <Route exact path="/MyProfile" component={ProfilePage}/> */}
-				<Route path="/Search/:query" component={SearchResults}/>
-				<Route path="/Recipes/:recipe" component={RecipePage}/>
+				<Route exact path="/About" component={AboutPage}></Route>
 				<Route><DefaultPage/></Route>
+				{/* <Route exact path="/About" component={AboutPage}/> */}
+				{/* <Route exact path="/Search" component={SearchResults}/> */}
+				{/* <Route exact path="/MyProfile" component={ProfilePage}/> */}
+				{/* <Route path="/Search/:query" component={SearchResults}/> */}
+				{/* <Route path="/Recipes/:recipe" component={RecipePage}/> */}
 			</Switch>
 		)
 	} else {
 		return (
 			<Switch location={location}>
-				<Route exact path="/"><HomePage userIsLoggedIn={user}/></Route>
+				<Route exact path="/" component={HomePage}></Route>
 				<Route exact path="/Login"component={LoginPage}/>
 				<Route exact path="/SignUp" component={SignUpPage}/>
-				{/* <Route exact path="/About" component={AboutPage}/> */}
-				<Route exact path="/About" ><AboutPage userIsLoggedIn={user}/></Route>
-				<Route exact path="/Search" component={SearchResults}/>
-				<Route path="/Search/:query" component={SearchResults}/>
-				<Route path="/Recipes/:recipe" component={RecipePage}/>
+				<Route exact path="/About" component={AboutPage}></Route>
 				<Route><DefaultPage/></Route>
+				{/* <Route exact path="/About" component={AboutPage}/> */}
+				{/* <Route exact path="/Search" component={SearchResults}/> */}
+				{/* <Route path="/Search/:query" component={SearchResults}/> */}
+				{/* <Route path="/Recipes/:recipe" component={RecipePage}/> */}
 				{/* <Route><HomePage userIsLoggedIn={user}/></Route> */}
 			</Switch>
 		)
