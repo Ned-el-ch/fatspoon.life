@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { addNewIngredients } from '../Actions/ingredients';
 import chroma from 'chroma-js';
 import Select, { createFilter, components } from 'react-select';
+import { newUserIngredientsFetch } from '../Actions/userIngredients'
 import { getIngredientsForSelect } from "../Concerns/getIngredientsForSelect";
 
 const removeSelectedOptions = (availableOptions, selectedOptions) => {
@@ -17,14 +17,14 @@ const removeSelectedOptions = (availableOptions, selectedOptions) => {
 		if (!optionIsSelected) {
 			options.push(availOption);
 		}
-	}
+  }
 	return options;
 }
 const initialSelectedOptions = {toAdd: null}
-const optionsToRender = (ownIngredients) => {
+const optionsToRender = (ingredients, userIngredients) => {
 	// REMOVE INGREDIENTS YOU ALREADY HAVE IN YOUR FRIDGE
 	// ADD THEM BACK TO THE POOL IF YOU REMOVE THEM FROM YOUR FRIDGE
-	return {toRender: getIngredientsForSelect()}
+	return getIngredientsForSelect(ingredients)
 }
 
 const colourStyles = {
@@ -116,15 +116,20 @@ const CustomOption = (props) => {
 	);
 }
 
-const AnimatedSelect = (props) => {
+const AnimatedSelect = ({ingredients, userIngredients, newUserIngredientsFetch}) => {
 	const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
-	const [availableOptions, setAvailableOptions] = useState(optionsToRender(props.ingredients));
+  const [availableOptions, setAvailableOptions] = useState([]);
+  
+  useEffect(() => {
+    setAvailableOptions(optionsToRender(ingredients, userIngredients))
+  }, [optionsToRender, ingredients, userIngredients])
+
 	return (
 		<>
 			<Select
 				isMulti={true}
 				closeMenuOnSelect={false}
-				options={availableOptions.toRender}
+				options={availableOptions}
 				// defaultValue={[availableOptions.toRender[1], availableOptions.toRender[28]]}
 				filterOption={createFilter({ignoreAccents: false})}
 				components={{Option: CustomOption}}
@@ -132,15 +137,15 @@ const AnimatedSelect = (props) => {
 				onChange={toAdd => setSelectedOptions({toAdd})}
 				value={selectedOptions.toAdd}
 				theme={theme}
-				placeholder="Add some new ingredients!"
-				noResultsText="Looks like I forgot to add this ingredient"
+				placeholder="Add some new items!"
+				noResultsText="Ability to add new item coming soon!"
 			/>
 			{selectedOptions.toAdd
 			?
 			<div className="add-to-fridge-container">
 				<button className="button-add-to-fridge" onClick={() => {
-					props.addNewIngredients(selectedOptions.toAdd, props.ingredients);
-					setAvailableOptions({toRender: removeSelectedOptions(availableOptions.toRender, selectedOptions.toAdd)})
+					newUserIngredientsFetch(selectedOptions.toAdd, userIngredients);
+					setAvailableOptions(removeSelectedOptions(availableOptions, selectedOptions.toAdd))
 					setSelectedOptions({toAdd: null});
 				}}>Add To My Fridge!</button>
 			</div>
@@ -154,9 +159,10 @@ const AnimatedSelect = (props) => {
 const mapStateToProps = state => {
 	return(
 		{
-			ingredients: state.ingredients
+      ingredients: state.ingredients,
+      userIngredients: state.userIngredients
 		}
 	)
 }
 
-export default connect(mapStateToProps, { addNewIngredients })(AnimatedSelect);
+export default connect(mapStateToProps, { newUserIngredientsFetch })(AnimatedSelect);

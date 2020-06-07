@@ -22,15 +22,18 @@ export const updateIngredient = ingredient => {
 	}
 }
 
-export const newUserIngredientFetch = (newIngredients, allIngredients) => {
-	if (localStorage.token) {
+export const newUserIngredientsFetch = (newIngredients, currentUserIngredients) => {
+  debugger
+	let token = localStorage.getItem('token')
+	if (token) {
 		let ingredients = [];
-		newIngredients.forEach(data => {
-			let arr = allIngredients.filter(stateIng => stateIng._id === data.ingredient._id);
+		newIngredients.forEach(ingredient => {
+			let arr = currentUserIngredients.filter(ui => ui.ingredient._id === ingredient.value);
 			if (arr.length === 0)
-				ingredients.push(Object.assign({}, data.ingredient, {
+				ingredients.push({
+          _id: ingredient.value,
 					weight: 0
-				}))
+				})
 		})
 		return dispatch => {
 			return fetch(`${API_URL}/api/userIngredients`, {
@@ -38,22 +41,20 @@ export const newUserIngredientFetch = (newIngredients, allIngredients) => {
 					headers: {
 						'Content-Type': 'application/json',
 						Accept: 'application/json',
-						'Authorization': `Bearer ${localStorage.token}`
+						'Authorization': `Bearer ${token}`
 					},
 					body: JSON.stringify({
 						ingredients
 					})
 				})
 				.then(res => res.json())
-				.then(data => {
-					dispatch(loadIngredients(data.user_ingredients))
-				})
+				.then(console.log)
 		}
 	}
 }
 
 export const updateUserIngredientFetch = (ui) => {
-	let token = localStorage.token
+	let token = localStorage.getItem('token')
 	if (token) {
 		return dispatch => {
 			return fetch(`${API_URL}/api/userIngredients/${ui._id}`, {
@@ -68,9 +69,7 @@ export const updateUserIngredientFetch = (ui) => {
 					})
 				})
 				.then(res => res.json())
-				.then(data => {
-					dispatch(updateIngredient(data.ingredient))
-				})
+				.then(console.log)
 		}
 	}
 }
@@ -88,9 +87,7 @@ export const removeUserIngredientFetch = ui => {
 					}
 				})
 				.then(res => res.json())
-				.then(() => {
-					dispatch(removeIngredient(ui))
-				})
+				.then(console.log)
 		}
 	}
 }

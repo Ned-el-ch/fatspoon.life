@@ -101,7 +101,7 @@ export const userProfileFetch = () => {
 			})
 			.then(data => data.json())
 			.then(data => {
-				console.log(data)
+				console.log(data.userData)
 				if (data.success) {
 					let user = {
 						username: data.userData.username,
