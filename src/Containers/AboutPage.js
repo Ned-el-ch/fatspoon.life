@@ -6,7 +6,7 @@ import { ScreenshotCarousel } from '../Components/ScreenshotCarousel';
 const AboutPage = ({userIsLoggedIn}) => {
 	return (
 		<div className="content ap-container">
-			<PageHeader title={"Made by Niki Nedelchev"}/>
+			<PageHeader title={"Made by @ned-el-ch"}/>
 			<div className="content--inner">
 				{userIsLoggedIn ?
 				<Fragment>
@@ -35,10 +35,7 @@ const AboutPage = ({userIsLoggedIn}) => {
 				<br/>
 				</div>
 				<ScreenshotCarousel/>
-				<div className="hp-app-get-started-container">
-				<span className="ap-contact">Find me on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Ned_el_ch">Twitter</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch">GitHub</a>, and <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ned-el-ch/">LinkedIn</a></span>
-				</div>
-				<span className="ap-description">This is a single-page app I built to practice using React, Redux, SCSS, and Ruby on Rails (as an API). Check out the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon.life">frontend repo</a> or the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon.life-backend">backend repo</a> if you want to know more.</span>
+				<span className="ap-description">This is a single-page app I built to practice using React, Redux, SCSS, and Ruby on Rails (as an API). Check out the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon-frontend">frontend repo</a> or the <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ned-el-ch/fatspoon-backend">backend repo</a> if you want to know more.</span>
 				<span className="ap-packages">List of main packages I used for the frontend</span>
 				<ul className="ap-ul">
 					<li className="ap-li">
@@ -51,7 +48,7 @@ const AboutPage = ({userIsLoggedIn}) => {
 						React-Bootstrap
 					</li>
 					<li className="ap-li">
-						React-Router, -Dom
+						React-Router, React-Router-Dom
 					</li>
 					<li className="ap-li">
 						React-Lottie, GSAP, and React-Transition-Group for animations
@@ -60,10 +57,10 @@ const AboutPage = ({userIsLoggedIn}) => {
 						React-Select
 					</li>
 					<li className="ap-li">
-						SCSS for styling elements
+						CSS/SCSS for styling elements
 					</li>
 				</ul>
-				<span className="ap-packages">List of "helper" packages I used for the frontend</span>
+				<span className="ap-packages">List of helper packages I used for the frontend</span>
 				<ul className="ap-ul">
 					<li className="ap-li">
 						Chroma.js
@@ -77,11 +74,11 @@ const AboutPage = ({userIsLoggedIn}) => {
 					<li className="ap-li">
 						Moment.js for handling dates
 					</li>
-					<li className="ap-li">
-						Custom UUID function in lieu of a package for better customisation
-					</li>
 				</ul>
 			</div>
+			<span className="ap-contact">Find me on <a target="_blank" rel="noopener noreferrer" href="https://ned_el_ch.dev">my portfolio website!</a></span>
+			<br/>
+			<br/>
 		</div>
 	)
 }
