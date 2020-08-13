@@ -28,8 +28,11 @@ const AboutPage = ({userIsLoggedIn}) => {
 					<span className="hp-app-get-started">Get started by <Link to="/Login">logging in</Link> or <Link to="/SignUp">signing up</Link>!</span>
 				</div>
 				}
+
 				<div className="hp-app-get-started-container">
-					<span className="hp-app-get-started">Here are some screenshots!</span>
+				<span className="ap-contact">Welcome to Fatspoon - An all-in-one app that makes it easy to cook at home more by helping you track ingredients, recipes, shopping list, and weekly meal plan. Here are some screenshots!</span>
+				<br/>
+				<br/>
 				</div>
 				<ScreenshotCarousel/>
 				<div className="hp-app-get-started-container">
