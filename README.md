@@ -71,7 +71,6 @@ Other "helper" packages
 - React-Datepicker
 - Redux-Devtools-Extension
 - Moment.js for handling dates
-- Custom UUID function in lieu of a package for better customisation
 
 
 ---
